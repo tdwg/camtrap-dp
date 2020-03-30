@@ -1,0 +1,280 @@
+{
+    "fields": [
+	
+	{
+            "name": "observation_id",
+            "type": "string",
+	    "format": "default",
+	    "description": "Unique identifier of the observation in this table.",
+	    "example": "1",
+	    "constraints": {
+                "required": true,
+		"unique": true
+            }
+        },
+
+        {
+            "name": "deployment_id",
+            "type": "string",
+	    "format": "default",
+	    "description": "Reference (foreign key) to the `deployments.csv` table.",
+	    "example": "L01-D01",
+	    "constraints": {
+                "required": true
+            }
+        },
+
+	{
+            "name": "file_name",
+            "type": "string",
+            "format": "default",
+	    "description": "Name of a multimedia file which is a source of this observation.",
+	    "example": "IMG0001.jpg",
+	    "constraints": {
+                "required": true
+            }
+        },
+
+	{
+            "name": "file_mimetype",
+            "type": "string",
+            "format": "default",
+	    "default": "image/jpeg",
+	    "description": "Mimetype of a multimedia file which is a source of this observation.",
+	    "example": "image/jpeg",
+	    "constraints": {
+                "required": true
+            }
+        },
+
+	{
+            "name": "file_location",
+            "type": "string",
+            "format": "uri",
+	    "description": "Url or a relative path to a multimedia file which is a source of this observation. Additional information on how to access this file is provided in a package-level metadata.",
+	    "example": [
+		"https://trapper.org/storage/resource/media/259024/file/",
+		"gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
+		"project/collection/deployment_id/IMG0001.jpg"
+	    ],
+	    "constraints": {
+                "required": true
+            }
+        },
+
+        {
+            "name": "date_recorded",
+	    "type": "datetime",
+	    "format": "any",
+            "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
+            "example": "2020-03-24T11:21:46Z",
+            "constraints": {
+                "required": true
+            }
+        },
+
+	{
+            "name": "is_empty",
+            "type": "boolean",
+	    "default": "false",
+	    "description": "A flag indicating if file is empty i.e. not providing an observation.",
+	    "example": "true",
+	    "constraints": {
+		"required": true
+            }
+        },
+
+	{
+            "name": "sequence_based",
+            "type": "boolean",
+	    "default": "false",
+	    "description": "A flag indicating if classifications were made per sequence of files or for each single file.",
+	    "example": "false",
+	    "constraints": {
+		"required": true
+            }
+        },
+	
+	{
+            "name": "sequence_id",
+            "type": "string",
+	    "format": "default",
+	    "description": "Unique identifier of sequence of files considered as one independent observation in this table. Sequence can be a series of pictures taken one by one or the 'event' with a pre-defined maximum time-interval between sub-sequent observations which are considered as one independent observation (see a package-level metadata for a definition of event).",
+	    "example": "1",
+	    "constraints": {
+                "required": false
+            }
+        },
+		
+	{
+            "name": "classified_by",
+            "type": "string",
+            "format": "default",
+	    "description": "Classification type.",
+	    "example": "Human",
+	    "constraints": {
+		"required": false,
+		"enum": [
+                    "Human",
+                    "Machine"
+		]
+            }
+        },
+
+	{
+            "name": "uncertainty",
+            "type": "number",
+            "format": "default",
+	    "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
+	    "example": "0.95",
+	    "constraints": {
+		"required": false,
+		"minimum": 0,
+		"maximum": 1
+            }
+        },
+
+	{
+            "name": "species_latin",
+            "type": "string",
+            "format": "default",
+	    "description": "A scientific name of identified species.",
+	    "example": "Canis lupus",
+	    "constraints": {
+		"required": false
+            }
+        },
+
+	{
+	    "name": "species_common",
+            "type": "string",
+            "format": "default",
+	    "description": "A common name of identified species.",
+	    "example": "Wolf",
+	    "constraints": {
+		"required": false
+            }
+        },
+	
+	{
+	    "name": "species_count",
+            "type": "integer",
+            "format": "default",
+	    "description": "Number of individuals identified (optionally of given age, sex and behaviour; see below). Interpretation depends on the value of `sequence_based` field.",
+	    "example": "5",
+	    "constraints": {
+		"required": false,
+		"minimum": 1
+            }
+        },
+
+	{
+	    "name": "species_count_new",
+            "type": "integer",
+            "format": "default",
+	    "description": "Number of `NEW` individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
+	    "example": "2",
+	    "constraints": {
+		"required": false,
+		"minimum": 0
+            }
+        },
+	
+	{
+	    "name": "age",
+            "type": "string",
+            "format": "default",
+	    "description": "Age of identified individuals",
+	    "example": "Adult",
+	    "constraints": {
+		"required": false,
+		"enum": [
+                    "Adult",
+                    "Juvenile",
+		    "Unknown"
+		]
+
+            }
+        },
+
+	{
+	    "name": "sex",
+            "type": "string",
+            "format": "default",
+	    "description": "Sex of identified individuals",
+	    "example": "Female",
+	    "constraints": {
+		"required": false,
+		"enum": [
+                    "Female",
+                    "Male",
+		    "Unknown"
+		]
+
+            }
+        },
+
+	{
+	    "name": "behaviour",
+	    "type": "string",
+	    "format": "default",
+	    "description": "Dominant behaviour of identified individuals.",
+	    "example": "Vigilance",
+	    "constraints": {
+		"required": false,
+		"enum": [
+		    "Grazing",
+		    "Browsing",
+		    "Rooting",
+		    "Vigilance",
+		    "Running",
+		    "Walking",
+		    "Other",
+		    "Unknown"
+		]
+	    }
+	},
+	
+	{
+            "name": "individual_id",
+            "type": "string",
+	    "format": "default",
+	    "description": "Individual animal unique identifier within this project.",
+	    "example": "RD213",
+	    "constraints": {
+                "required": false
+            }
+        },
+	
+        {
+            "name": "comments",
+            "type": "string",
+            "format": "default",
+	    "constraints": {
+		"required": false
+            }
+        },
+
+	{
+	    "name": "_id",
+	    "type": "integer",
+	    "description": "Internal attribute of data management system: ID of this observation.",
+	    "constraints": {
+		"required": false
+            }
+	}
+	
+    ],
+
+    "missingValues": [ "", "NaN", "nan" ],
+    
+    "foreignKeys": [
+        {
+            "fields": "deployment_id",
+            "reference": {
+		"resource": "deployments",
+		"fields": "deployment_id"
+            }
+        }
+    ]
+}
