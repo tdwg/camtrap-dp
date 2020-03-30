@@ -1,0 +1,2 @@
+# camtrap-package-schemas
+
