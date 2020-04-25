@@ -3,7 +3,7 @@
 	
 	{
             "name": "observation_id",
-            "type": "string",
+            "type": "integer",
 	    "format": "default",
 	    "description": "Unique identifier of the observation in this table.",
 	    "example": "1",
@@ -107,30 +107,18 @@
         },
 		
 	{
-            "name": "classified_by",
+            "name": "observation_type",
             "type": "string",
             "format": "default",
-	    "description": "Classification type.",
-	    "example": "Human",
+	    "description": "Type of observation.",
+	    "example": "Animal",
 	    "constraints": {
 		"required": false,
 		"enum": [
                     "Human",
-                    "Machine"
+                    "Animal",
+		    "Vehicle"
 		]
-            }
-        },
-
-	{
-            "name": "uncertainty",
-            "type": "number",
-            "format": "default",
-	    "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
-	    "example": "0.95",
-	    "constraints": {
-		"required": false,
-		"minimum": 0,
-		"maximum": 1
             }
         },
 
@@ -155,9 +143,22 @@
 		"required": false
             }
         },
-	
+
 	{
-	    "name": "species_count",
+            "name": "uncertainty",
+            "type": "number",
+            "format": "default",
+	    "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
+	    "example": "0.95",
+	    "constraints": {
+		"required": false,
+		"minimum": 0,
+		"maximum": 1
+            }
+        },
+
+	{
+	    "name": "count",
             "type": "integer",
             "format": "default",
 	    "description": "Number of individuals identified (optionally of given age, sex and behaviour; see below). Interpretation depends on the value of `sequence_based` field.",
@@ -169,7 +170,7 @@
         },
 
 	{
-	    "name": "species_count_new",
+	    "name": "count_new",
             "type": "integer",
             "format": "default",
 	    "description": "Number of `NEW` individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
