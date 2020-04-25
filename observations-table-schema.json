@@ -97,7 +97,7 @@
 	
 	{
             "name": "sequence_id",
-            "type": "string",
+            "type": "integer",
 	    "format": "default",
 	    "description": "Unique identifier of sequence of files considered as one independent observation in this table. Sequence can be a series of pictures taken one by one or the 'event' with a pre-defined maximum time-interval between sub-sequent observations which are considered as one independent observation (see a package-level metadata for a definition of event).",
 	    "example": "1",
