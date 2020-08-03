@@ -16,12 +16,12 @@
                     "format": "default"
                 },
 		"url": {
-		    "description": "A web address for this organisation.",
+		    "description": "A web address for this organization.",
                     "type": "string",
                     "format": "uri"
                 },
                 "email": {
-		    "description": "Organisation contact email.",
+		    "description": "Organization contact email.",
                     "type": "string",
 		    "format": "email"
                 }
