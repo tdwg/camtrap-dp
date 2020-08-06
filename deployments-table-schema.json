@@ -109,7 +109,7 @@
 	{
             "name": "cam_timestamp",
             "type": "boolean",
-	    "description": "A flag indicating if a datatime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
+	    "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
 	    "example": "true",
 	    "constraints": {
 		"required": false
