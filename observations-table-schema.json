@@ -191,8 +191,9 @@
 		"required": false,
 		"enum": [
                     "Adult",
+		    "Subadult",
                     "Juvenile",
-		    "Unknown"
+		    "Undefined"
 		]
 
             }
@@ -209,7 +210,7 @@
 		"enum": [
                     "Female",
                     "Male",
-		    "Unknown"
+		    "Undefined"
 		]
 
             }
@@ -231,7 +232,7 @@
 		    "Running",
 		    "Walking",
 		    "Other",
-		    "Unknown"
+		    "Undefined"
 		]
 	    }
 	},
