@@ -6,7 +6,7 @@
     "definitions": {
 	
         "organization": {
-	    "description": "Basic informations about an organization related to this data package.",
+	    "description": "Basic information about an organization related to this data package.",
 	    "type": "object",
             "required": [ "name", "url"],
             "properties": {
@@ -16,12 +16,12 @@
                     "format": "default"
                 },
 		"url": {
-		    "description": "A web address for this organisation.",
+		    "description": "A web address for this organization.",
                     "type": "string",
                     "format": "uri"
                 },
                 "email": {
-		    "description": "Organisation contact email.",
+		    "description": "Organization contact email.",
                     "type": "string",
 		    "format": "email"
                 }
@@ -69,7 +69,7 @@
 		    "required": [ "remote", "public" ],
 		    "properties": {
 			"remote": {
-			    "description": "Indicates if multimedia files are stored remotely (e.g. in a cloud) or are part of this data package.In the second case, in the `observations.csv` table, paths relative to the location of `datapackage.json` file are provided.",
+			    "description": "Indicates if multimedia files are stored remotely (e.g. in a cloud) or are part of this data package. In the second case, in the `observations.csv` table, paths relative to the location of `datapackage.json` file are provided.",
 			    "type": "boolean"
 			},
 			"public": {
@@ -130,7 +130,7 @@
 			    ]
 			},
 			"sensor_method": {
-			    "description": "Method of trigerring a camera.",
+			    "description": "Method of triggering a camera.",
 			    "type": "string",
 			    "format": "array",
 			    "enum": [
@@ -162,7 +162,7 @@
 			    ]
 			},
 			"event_interval": {
-			    "description": "Maximum interval between sub-sequent observations which are considered as one independent observationi.e. an event. Specified in seconds.",
+			    "description": "Maximum interval between sub-sequent observations which are considered as one independent observation i.e. an event. Specified in seconds.",
 			    "type": "integer"    
 			},
 			"methods": {
@@ -200,12 +200,12 @@
 		    "required": [ "from_date", "to_date" ],
 		    "properties": {
 			"from_date": {
-			    "description": "Date specified in in ISO8601 format YYYY-MM-DD.",
+			    "description": "Date specified in ISO8601 format YYYY-MM-DD.",
 			    "type": "string",
 			    "format": "date"
 			},
 			"to_date": {
-			    "description": "Date specified in in ISO8601 format YYYY-MM-DD.",
+			    "description": "Date specified in ISO8601 format YYYY-MM-DD.",
 			    "type": "string",
 			    "format": "date"
 			}

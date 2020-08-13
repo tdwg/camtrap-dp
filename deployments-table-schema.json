@@ -109,7 +109,7 @@
 	{
             "name": "cam_timestamp",
             "type": "boolean",
-	    "description": "A flag indicating if a datatime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
+	    "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
 	    "example": "true",
 	    "constraints": {
 		"required": false
@@ -155,7 +155,7 @@
             "name": "bait_use",
             "type": "string",
             "format": "default",
-	    "description": "Type of bait (if any) that was used with camera. If other, more info can be prvided in the `comments` field.",
+	    "description": "Type of bait (if any) that was used with camera. If other, more info can be provided in the `comments` field.",
 	    "example": "",
 	    "constraints": {
 		"required": false,
@@ -195,7 +195,7 @@
             "name": "feature_type",
             "type": "string",
             "format": "default",
-	    "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be prvided in the `comments` field.",
+	    "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
 	    "example": "",
 	    "constraints": {
 		"required": false,
