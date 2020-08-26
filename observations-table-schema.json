@@ -173,7 +173,7 @@
 	    "name": "count_new",
             "type": "integer",
             "format": "default",
-	    "description": "Number of `NEW` individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
+	    "description": "Number of 'NEW' individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
 	    "example": "2",
 	    "constraints": {
 		"required": false,
