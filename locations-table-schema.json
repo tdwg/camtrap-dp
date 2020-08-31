@@ -1,97 +1,91 @@
 {
-    "fields": [
-	
-        {
-            "name": "location_id",
-            "type": "string",
-	    "format": "default",
-	    "description": "A unique identifier of location within a project.",
-	    "example": "L01",
-	    "constraints": {
-                "required": true,
-		"unique": true
-            }
-        },
-
-	{
-            "name": "longitude",
-            "type": "number",	    
-	    "format": "default",
-            "description": "Longitude in degrees (wgs84).",
-            "example": "23.84995",
-            "constraints": {
-                "required": true,
-		"minimum": -180,
-		"maximum": 180
-            }
-        },
-	
-        {
-            "name": "latitude",
-	    "type": "number",
-	    "format": "default",
-            "description": "Latitude in degrees (wgs84).",
-            "example": "52.70442",
-            "constraints": {
-                "required": true,
-		"minimum": -90,
-		"maximum": 90
-            }
-        },
-
-	{
-            "name": "country",
-            "type": "string",
-            "format": "default",
-	    "description": "Name of a country.",
-	    "example": "Poland",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "timezone",
-            "type": "string",
-            "format": "default",
-	    "description": "Timezone in a standard TZ database format. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List.",
-	    "example": "Europe/Warsaw",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "habitat",
-            "type": "string",
-            "format": "default",
-	    "description": "Short characterization of the habitat.",
-	    "example": "Mixed temperate low-land forest",
-	    "constraints": {
-		"required": false
-            }
-        },
-	
-        {
-            "name": "comments",
-            "type": "string",
-            "format": "default",
-	    "constraints": {
-		"required": false,
-		"pattern": "[^,;]"
-            }
-        },
-
-	{
-	    "name": "_id",
-	    "type": "integer",
-	    "description": "Internal attribute of data management system: ID of this location.",
-	    "constraints": {
-		"required": false
-            }
-	}
-	
-    ],
-    
-    "missingValues": [ "", "NaN", "nan" ]
+  "fields": [
+    {
+      "name": "location_id",
+      "type": "string",
+      "format": "default",
+      "description": "A unique identifier of location within a project.",
+      "example": "L01",
+      "constraints": {
+        "required": true,
+        "unique": true
+      }
+    },
+    {
+      "name": "longitude",
+      "type": "number",
+      "format": "default",
+      "description": "Longitude in degrees (wgs84).",
+      "example": "23.84995",
+      "constraints": {
+        "required": true,
+        "minimum": -180,
+        "maximum": 180
+      }
+    },
+    {
+      "name": "latitude",
+      "type": "number",
+      "format": "default",
+      "description": "Latitude in degrees (wgs84).",
+      "example": "52.70442",
+      "constraints": {
+        "required": true,
+        "minimum": -90,
+        "maximum": 90
+      }
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "format": "default",
+      "description": "Name of a country.",
+      "example": "Poland",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "timezone",
+      "type": "string",
+      "format": "default",
+      "description": "Timezone in a standard TZ database format. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List.",
+      "example": "Europe/Warsaw",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "habitat",
+      "type": "string",
+      "format": "default",
+      "description": "Short characterization of the habitat.",
+      "example": "Mixed temperate low-land forest",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "comments",
+      "type": "string",
+      "format": "default",
+      "constraints": {
+        "required": false,
+        "pattern": "[^,;]"
+      }
+    },
+    {
+      "name": "_id",
+      "type": "integer",
+      "description": "Internal attribute of data management system: ID of this location.",
+      "constraints": {
+        "required": false
+      }
+    }
+  ],
+  "missingValues": [
+    "",
+    "NaN",
+    "nan"
+  ]
 }
