@@ -60,7 +60,7 @@
       "name": "start",
       "type": "datetime",
       "format": "any",
-      "description": "Deployment start date-time as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
+      "description": "Date and time when the deployment started, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
@@ -70,7 +70,7 @@
       "name": "end",
       "type": "datetime",
       "format": "any",
-      "description": "Deployment end date-time as an  ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
+      "description": "Date and time when the deployment ended, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
