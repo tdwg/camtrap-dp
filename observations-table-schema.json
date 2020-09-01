@@ -2,9 +2,9 @@
   "fields": [
     {
       "name": "observation_id",
-      "type": "integer",
+      "type": "string",
       "format": "default",
-      "description": "Unique identifier of the observation in this table.",
+      "description": "A unique identifier of an observation within a project.",
       "example": "1",
       "constraints": {
         "required": true,
@@ -15,62 +15,37 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "description": "Reference (foreign key) to the `deployments.csv` table.",
+      "description": "The unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
       "example": "L01-D01",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "file_name",
+      "name": "event_id",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file which is a source of this observation.",
-      "example": "IMG0001.jpg",
+      "description": "The unique identifier of the event (collection of multimedia files) that is the source of this observation. Foreign key to `media:event_id`.",
+      "example": "E01",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "file_mimetype",
+      "name": "media_id",
       "type": "string",
       "format": "default",
-      "default": "image/jpeg",
-      "description": "Mimetype of a multimedia file which is a source of this observation.",
-      "example": "image/jpeg",
+      "description": "The unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Use only for file-based observations.",
+      "example": "M01",
       "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "file_location",
-      "type": "string",
-      "format": "uri",
-      "description": "Url or a relative path to a multimedia file which is a source of this observation. Additional information on how to access this file is provided in a package-level metadata.",
-      "example": [
-        "https://trapper.org/storage/resource/media/259024/file/",
-        "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
-        "project/collection/deployment_id/IMG0001.jpg"
-      ],
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "date_recorded",
-      "type": "datetime",
-      "format": "any",
-      "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
-      "example": "2020-03-24T11:21:46Z",
-      "constraints": {
-        "required": true
+        "required": false
       }
     },
     {
       "name": "is_empty",
       "type": "boolean",
       "default": "false",
-      "description": "A flag indicating if file is empty i.e. not providing an observation.",
+      "description": "A flag indicating if an event or file is empty i.e. not providing an observation.",
       "example": "true",
       "constraints": {
         "required": true
@@ -80,20 +55,10 @@
       "name": "sequence_based",
       "type": "boolean",
       "default": "false",
-      "description": "A flag indicating if classifications were made per sequence of files or for each single file.",
+      "description": "A flag indicating if classifications were made per event or for each single file.",
       "example": "false",
       "constraints": {
         "required": true
-      }
-    },
-    {
-      "name": "sequence_id",
-      "type": "integer",
-      "format": "default",
-      "description": "Unique identifier of sequence of files considered as one independent observation in this table. Sequence can be a series of pictures taken one by one or the 'event' with a pre-defined maximum time-interval between sub-sequent observations which are considered as one independent observation (see a package-level metadata for a definition of event).",
-      "example": "1",
-      "constraints": {
-        "required": false
       }
     },
     {
@@ -255,6 +220,20 @@
       "reference": {
         "resource": "deployments",
         "fields": "deployment_id"
+      }
+    },
+    {
+      "fields": "event_id",
+      "reference": {
+        "resource": "media",
+        "fields": "event_id"
+      }
+    },
+    {
+      "fields": "media_id",
+      "reference": {
+        "resource": "media",
+        "fields": "media_id"
       }
     }
   ]
