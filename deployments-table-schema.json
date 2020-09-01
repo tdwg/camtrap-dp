@@ -1,253 +1,235 @@
 {
-    "fields": [
-	
-        {
-            "name": "deployment_id",
-            "type": "string",
-	    "format": "default",
-	    "title": "Deployment ID",
-	    "description": "A unique identifier of deployment within a project. By convention this is a combination of `location_id` and `deployment_code` joined by a `-` character, but it can any string which is unique within a project.",
-	    "example": "L01-D01",
-	    "constraints": {
-                "required": true,
-		"unique": true
-            }
-        },
-
-        {
-            "name": "location_id",
-            "type": "string",
-	    "format": "default",
-	    "description": "Reference (foreign key) to the `locations.csv` table.",
-	    "example": "L01",
-	    "constraints": {
-                "required": true
-            }
-        },
-	
-	{
-            "name": "deployment_code",
-            "type": "string",
-            "format": "default",
-	    "description": "Code which in combination with `location_id` gives a unique identifier of deployment within a project.",
-	    "example": "D01",
-	    "constraints": {
-                "required": true
-            }
-        },
-
-	{
-            "name": "longitude",
-            "type": "number",	    
-	    "format": "default",
-            "description": "",
-            "example": "23.84995",
-            "constraints": {
-                "required": true,
-		"minimum": -180,
-		"maximum": 180
-            }
-        },
-	
-        {
-            "name": "latitude",
-	    "type": "number",
-	    "format": "default",
-            "description": "",
-            "example": "52.70442",
-            "constraints": {
-                "required": true,
-		"minimum": -90,
-		"maximum": 90
-            }
-        },
-
-        {
-            "name": "start",
-	    "type": "datetime",
-	    "format": "any",
-            "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
-            "example": "2020-03-24T11:21:46Z",
-            "constraints": {
-                "required": true
-            }
-        },
-
-	{
-            "name": "end",
-	    "type": "datetime",
-	    "format": "any",
-            "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
-            "example": "2020-03-24T11:21:46Z",
-            "constraints": {
-                "required": true
-            }
-        },
-
-	{
-            "name": "cam_id",
-            "type": "string",
-            "format": "default",
-	    "description": "A unique identifier of a camera amongst all cameras used in a project. This can be e.g. a camera device serial number.",
-	    "example": "P800HG08192031",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "cam_model",
-            "type": "string",
-            "format": "default",
-	    "description": "Manufacturer and model of camera provided in this format: `manufacturer-model`.",
-	    "example": "Reconyx-PC800",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "cam_timestamp",
-            "type": "boolean",
-	    "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
-	    "example": "true",
-	    "constraints": {
-		"required": false
-            }
-        },
-	
-	{
-            "name": "cam_interval",
-            "type": "integer",
-	    "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
-	    "example": "0",
-	    "constraints": {
-		"required": false,
-		"minimum": 0
-            }
-        },
-
-	{
-            "name": "cam_height",
-            "type": "integer",
-	    "description": "An approximate height at which a camera was deployed. Specified in centimeters.",
-	    "example": "100",
-	    "constraints": {
-		"required": false,
-		"minimum": 0
-            }
-        },
-
-	{
-            "name": "cam_angle",
-            "type": "integer",
-            "format": "default",
-	    "description": "An approximate angle used to deploy a camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
-	    "example": "180",
-	    "constraints": {
-		"required": false,
-		"minimum": 0,
-		"maximum": 180
-            }
-        },
-	
-	{
-            "name": "bait_use",
-            "type": "string",
-            "format": "default",
-	    "description": "Type of bait (if any) that was used with camera. If other, more info can be provided in the `comments` field.",
-	    "example": "",
-	    "constraints": {
-		"required": false,
-		"enum": [
-                    "None",
-                    "Scent",
-                    "Food",
-                    "Visual",
-                    "Acoustic"
-		]
-            }
-        },
-
-	{
-            "name": "session",
-            "type": "string",
-            "format": "default",
-	    "description": "Camera trap deployments can be grouped into sessions (sampling 'events'). Common sessions could be seasons (wet and dry), months, years or other types of logical groupings when field sampling occurs.",
-	    "example": "",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "array",
-            "type": "string",
-            "format": "default",
-	    "description": "A name for a logical grouping of deployments into (spatial) arrays. This could be for thematic or logistical reasons.",
-	    "example": "",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-            "name": "feature_type",
-            "type": "string",
-            "format": "default",
-	    "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
-	    "example": "",
-	    "constraints": {
-		"required": false,
-		"enum": [
-		    "None",
-		    "Road paved",
-		    "Road dirt",
-		    "Trail hiking",
-		    "Trail game",
-		    "Road underpass",
-		    "Road overpass",
-		    "Road bridge",
-		    "Culvert",
-		    "Burrow",
-		    "Nest site",
-		    "Carcass",
-		    "Water source",
-		    "Fruiting tree",
-		    "Other"
-		]
-            }
-        },
-
-        {
-            "name": "comments",
-            "type": "string",
-            "format": "default",
-	    "constraints": {
-		"required": false
-            }
-        },
-
-	{
-	    "name": "_id",
-	    "type": "integer",
-	    "description": "Internal attribute of data management system: ID of this deployment.",
-	    "constraints": {
-		"required": false
-            }
-	}
-	
-    ],
-
-    "missingValues": [ "", "NaN", "nan" ],
-    
-    "foreignKeys": [
-        {
-            "fields": "location_id",
-            "reference": {
-		"resource": "locations",
-		"fields": "location_id"
-            }
-        }
-    ]
+  "fields": [
+    {
+      "name": "deployment_id",
+      "type": "string",
+      "format": "default",
+      "title": "Deployment ID",
+      "description": "A unique identifier of deployment within a project. By convention this is a combination of `location_id` and `deployment_code` joined by a `-` character, but it can any string which is unique within a project.",
+      "example": "L01-D01",
+      "constraints": {
+        "required": true,
+        "unique": true
+      }
+    },
+    {
+      "name": "location_id",
+      "type": "string",
+      "format": "default",
+      "description": "Reference (foreign key) to the `locations.csv` table.",
+      "example": "L01",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "deployment_code",
+      "type": "string",
+      "format": "default",
+      "description": "Code which in combination with `location_id` gives a unique identifier of deployment within a project.",
+      "example": "D01",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "longitude",
+      "type": "number",
+      "format": "default",
+      "description": "",
+      "example": "23.84995",
+      "constraints": {
+        "required": true,
+        "minimum": -180,
+        "maximum": 180
+      }
+    },
+    {
+      "name": "latitude",
+      "type": "number",
+      "format": "default",
+      "description": "",
+      "example": "52.70442",
+      "constraints": {
+        "required": true,
+        "minimum": -90,
+        "maximum": 90
+      }
+    },
+    {
+      "name": "start",
+      "type": "datetime",
+      "format": "any",
+      "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "end",
+      "type": "datetime",
+      "format": "any",
+      "description": "An ISO8601 format string e.g. `YYYY-MM-DDThh:mm:ssZ` in UTC time. See https://en.wikipedia.org/wiki/ISO_8601.",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "cam_id",
+      "type": "string",
+      "format": "default",
+      "description": "A unique identifier of a camera amongst all cameras used in a project. This can be e.g. a camera device serial number.",
+      "example": "P800HG08192031",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "cam_model",
+      "type": "string",
+      "format": "default",
+      "description": "Manufacturer and model of camera provided in this format: `manufacturer-model`.",
+      "example": "Reconyx-PC800",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "cam_timestamp",
+      "type": "boolean",
+      "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
+      "example": "true",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "cam_interval",
+      "type": "integer",
+      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
+      "example": "0",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "cam_height",
+      "type": "integer",
+      "description": "An approximate height at which a camera was deployed. Specified in centimeters.",
+      "example": "100",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      }
+    },
+    {
+      "name": "cam_angle",
+      "type": "integer",
+      "format": "default",
+      "description": "An approximate angle used to deploy a camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
+      "example": "180",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 180
+      }
+    },
+    {
+      "name": "bait_use",
+      "type": "string",
+      "format": "default",
+      "description": "Type of bait (if any) that was used with camera. If other, more info can be provided in the `comments` field.",
+      "example": "",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "None",
+          "Scent",
+          "Food",
+          "Visual",
+          "Acoustic"
+        ]
+      }
+    },
+    {
+      "name": "session",
+      "type": "string",
+      "format": "default",
+      "description": "Camera trap deployments can be grouped into sessions (sampling 'events'). Common sessions could be seasons (wet and dry), months, years or other types of logical groupings when field sampling occurs.",
+      "example": "",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "array",
+      "type": "string",
+      "format": "default",
+      "description": "A name for a logical grouping of deployments into (spatial) arrays. This could be for thematic or logistical reasons.",
+      "example": "",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "feature_type",
+      "type": "string",
+      "format": "default",
+      "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
+      "example": "",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "None",
+          "Road paved",
+          "Road dirt",
+          "Trail hiking",
+          "Trail game",
+          "Road underpass",
+          "Road overpass",
+          "Road bridge",
+          "Culvert",
+          "Burrow",
+          "Nest site",
+          "Carcass",
+          "Water source",
+          "Fruiting tree",
+          "Other"
+        ]
+      }
+    },
+    {
+      "name": "comments",
+      "type": "string",
+      "format": "default",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "_id",
+      "type": "integer",
+      "description": "Internal attribute of data management system: ID of this deployment.",
+      "constraints": {
+        "required": false
+      }
+    }
+  ],
+  "missingValues": [
+    "",
+    "NaN",
+    "nan"
+  ],
+  "foreignKeys": [
+    {
+      "fields": "location_id",
+      "reference": {
+        "resource": "locations",
+        "fields": "location_id"
+      }
+    }
+  ]
 }
