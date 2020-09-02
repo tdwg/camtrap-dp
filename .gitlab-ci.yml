@@ -1,0 +1,24 @@
+image: python:3.7-slim-buster
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - pip install -U pip
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip install --ignore-installed -r ./tests/requirements.txt
+
+stages:
+  - tests
+
+Tests:
+  stage: tests
+  script:
+    - python ./tests/validate_schemas.py
