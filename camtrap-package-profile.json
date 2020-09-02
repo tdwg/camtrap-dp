@@ -8,12 +8,12 @@
       "description": "Basic information about an organization related to this data package.",
       "type": "object",
       "required": [
-        "name",
+        "title",
         "url"
       ],
       "properties": {
-        "name": {
-          "description": "Organization name.",
+        "title": {
+          "description": "Organization title.",
           "type": "string",
           "format": "default"
         },
@@ -33,20 +33,24 @@
       "description": "",
       "type": "object",
       "required": [
-        "species_latin",
-        "species_common"
+        "scientific_name"
       ],
       "properties": {
-        "species_latin": {
+        "scientific_name": {
           "description": "Species scientific name.",
           "type": "string",
           "format": "default"
         },
-        "species_common": {
-          "description": "Species common name.",
+        "vernacular_name": {
+          "description": "Species common name (preferably in English).",
           "type": "string",
           "format": "default"
         },
+	"taxon_id": {
+	  "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
+	  "type": "string",
+	  "format": "default"
+	},
         "count": {
           "description": "Number of observations of given species.",
           "type": "integer"
@@ -62,9 +66,9 @@
       "required": [
         "multimedia_access",
         "project",
-        "spatial_coverage",
-        "temporal_coverage",
-        "taxonomic_coverage"
+        "spatial",
+        "temporal",
+        "taxonomic"
       ],
       "properties": {
         "multimedia_access": {
@@ -106,8 +110,7 @@
           "description": "",
           "type": "object",
           "required": [
-            "acronym",
-            "name",
+            "title",
             "sampling_design",
             "sensor_method",
             "animal_types",
@@ -115,13 +118,13 @@
             "event_interval"
           ],
           "properties": {
-            "acronym": {
-              "description": "Short and human-readable identifier of this project.",
+            "title": {
+              "description": "Title of this project.",
               "type": "string",
               "format": "default"
             },
-            "name": {
-              "description": "Name of this project.",
+	    "acronym": {
+              "description": "Short and human-readable identifier of this project.",
               "type": "string",
               "format": "default"
             },
@@ -171,7 +174,7 @@
               ]
             },
             "event_interval": {
-              "description": "Maximum interval between sub-sequent observations which are considered as one independent observation i.e. an event. Specified in seconds.",
+              "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single independent event/occasion and be assigned the same `event_id`.",
               "type": "integer"
             },
             "methods": {
@@ -196,11 +199,11 @@
             }
           }
         },
-        "spatial_coverage": {
+        "spatial": {
           "description": "Spatial coverage for this data package specified as GeoJSON.",
           "$ref": "http://json.schemastore.org/geojson.json"
         },
-        "temporal_coverage": {
+        "temporal": {
           "description": "Temporal coverage for this data package. It is calculated based on `deployments.csv` table.",
           "type": "object",
           "required": [
@@ -220,15 +223,20 @@
             }
           }
         },
-        "taxonomic_coverage": {
-          "description": "Taxonomic coverage for this data package. It is based on a set of unique values from `species_name_latin` field in `observations.csv` table.",
+        "taxonomic": {
+          "description": "Taxonomic coverage for this data package. It is based on a set of unique values from `scientific_name` field in `observations.csv` table.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/species"
           }
         },
-        "_platform_name": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform name.",
+        "taxon_id_reference": {
+          "description": "Url to a taxonomy reference list/website/database/publication which provides `taxon_id` for taxonomic coverage.",
+          "type": "string",
+          "format": "uri"
+        },	
+        "_platform_title": {
+          "description": "Internal attribute of data management system or data packages catalogue: platform title.",
           "type": "string",
           "format": "default"
         },
