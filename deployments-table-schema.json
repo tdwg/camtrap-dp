@@ -216,7 +216,7 @@
       "name": "tags",
       "type": "array",
       "format": "default",
-      "description": "Extra tags grouping deployments (data is a valid JSON array).",
+      "description": "User defined tags associated with the deployment, as a valid JSON array.",
       "example": "[ \"Control\", \"Treatment\" ]",
       "constraints": {
         "required": false
