@@ -13,7 +13,7 @@
       ],
       "properties": {
         "title": {
-          "description": "Organization title.",
+          "description": "Organization name.",
           "type": "string",
           "format": "default"
         },
