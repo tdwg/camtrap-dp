@@ -237,7 +237,7 @@
           "format": "uri"
         },
         "_platform_title": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform title.",
+          "description": "Internal attribute of data management system or data packages catalogue: platform name.",
           "type": "string",
           "format": "default"
         },
