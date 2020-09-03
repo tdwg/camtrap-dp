@@ -231,7 +231,8 @@
           }
         },
         "taxon_id_reference": {
-          "description": "Url to a taxonomy reference list/website/database/publication which provides `taxon_id` for taxonomic coverage.",
+          "description": "Url of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
+          "example": "http://www.catalogueoflife.org/annual-checklist/2019/",
           "type": "string",
           "format": "uri"
         },
