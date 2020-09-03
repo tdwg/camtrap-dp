@@ -45,7 +45,7 @@
       "name": "observation_type",
       "type": "string",
       "format": "default",
-      "description": "Type of observation. All categories in this vocabulary have to be understandable from AI point of view. `Undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `Undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
       "example": "Animal",
       "constraints": {
         "required": true,
@@ -177,18 +177,6 @@
       }
     },
     {
-      "name": "classification_confidence",
-      "type": "number",
-      "format": "default",
-      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
-      "example": "0.95",
-      "constraints": {
-        "required": false,
-        "minimum": 0,
-        "maximum": 1
-      }
-    },
-    {
       "name": "classified_by",
       "type": "string",
       "format": "default",
@@ -202,7 +190,19 @@
       }
     },
     {
-      "name": "classified_at",
+      "name": "classification_confidence",
+      "type": "number",
+      "format": "default",
+      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
+      "example": "0.95",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    {
+      "name": "classification_date",
       "type": "datetime",
       "format": "any",
       "description": "Date and time when this classification was made, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",

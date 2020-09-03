@@ -59,7 +59,7 @@
       "name": "file_name",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. This field is optional and supports cases where filename is not a part of url provided in `file_path`.",
+      "description": "Name of a multimedia file. This field is optional and supports cases where the file name is not a part of url provided in `file_path`.",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -79,7 +79,7 @@
       "name": "exif_data",
       "type": "object",
       "format": "default",
-      "description": "Optional EXIF data which is valid JSON.",
+      "description": "EXIF data of the file, as a valid JSON object.",
       "constraints": {
         "required": false
       }

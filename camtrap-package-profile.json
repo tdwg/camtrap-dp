@@ -33,7 +33,8 @@
       "description": "",
       "type": "object",
       "required": [
-        "scientific_name"
+        "scientific_name",
+	"taxon_id"
       ],
       "properties": {
         "scientific_name": {

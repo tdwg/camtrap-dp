@@ -213,16 +213,6 @@
       }
     },
     {
-      "name": "tags",
-      "type": "array",
-      "format": "default",
-      "description": "User defined tags associated with the deployment, as a valid JSON array.",
-      "example": "[ \"Control\", \"Treatment\" ]",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "setup_by",
       "type": "string",
       "format": "default",
@@ -231,6 +221,16 @@
         "Charles Robert Darwin",
         "2ef60d48-fd67-4bac-9569-49a03b0ef096"
       ],
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "tags",
+      "type": "array",
+      "format": "default",
+      "description": "User defined tags associated with the deployment, as a valid JSON array.",
+      "example": "[ \"Control\", \"Treatment\" ]",
       "constraints": {
         "required": false
       }
