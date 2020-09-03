@@ -40,7 +40,7 @@
       "constraints": {
         "required": false
       }
-    },      
+    },
     {
       "name": "observation_type",
       "type": "string",
@@ -50,10 +50,10 @@
       "constraints": {
         "required": true,
         "enum": [
-	  "Animal",
-	  "Empty",
+          "Animal",
+          "Empty",
           "Human",
-	  "Undefined",
+          "Undefined",
           "Vehicle"
         ]
       }
@@ -169,11 +169,11 @@
       "description": "Classification method.",
       "example": "Human",
       "constraints": {
-	"required": false,
-	"enum": [
-	  "Human",
-	  "Machine"
-	]
+        "required": false,
+        "enum": [
+          "Human",
+          "Machine"
+        ]
       }
     },
     {
@@ -194,11 +194,11 @@
       "format": "default",
       "description": "Name or a unique identifier of a person or AI algorithm that classified this observation.",
       "example": [
-	"John Coltrane",
-	"Megadetector"
+        "John Coltrane",
+        "Megadetector"
       ],
       "constraints": {
-	"required": false
+        "required": false
       }
     },
     {

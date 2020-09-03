@@ -46,11 +46,11 @@
           "type": "string",
           "format": "default"
         },
-	"taxon_id": {
-	  "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
-	  "type": "string",
-	  "format": "default"
-	},
+        "taxon_id": {
+          "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
+          "type": "string",
+          "format": "default"
+        },
         "count": {
           "description": "Number of observations of given species.",
           "type": "integer"
@@ -123,7 +123,7 @@
               "type": "string",
               "format": "default"
             },
-	    "acronym": {
+            "acronym": {
               "description": "Short and human-readable identifier of this project.",
               "type": "string",
               "format": "default"
@@ -234,7 +234,7 @@
           "description": "Url to a taxonomy reference list/website/database/publication which provides `taxon_id` for taxonomic coverage.",
           "type": "string",
           "format": "uri"
-        },	
+        },
         "_platform_title": {
           "description": "Internal attribute of data management system or data packages catalogue: platform title.",
           "type": "string",

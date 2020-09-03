@@ -151,7 +151,7 @@
           "Food",
           "Visual",
           "Acoustic",
-	  "Other"
+          "Other"
         ]
       }
     },
@@ -228,8 +228,8 @@
       "format": "default",
       "description": "Name or a unique identifier of a person who setup a camera within a project.",
       "example": [
-	"Charles Robert Darwin",
-	"2ef60d48-fd67-4bac-9569-49a03b0ef096"
+        "Charles Robert Darwin",
+        "2ef60d48-fd67-4bac-9569-49a03b0ef096"
       ],
       "constraints": {
         "required": false
