@@ -226,7 +226,7 @@
       "name": "setup_by",
       "type": "string",
       "format": "default",
-      "description": "Name or a unique identifier of a person who setup a camera within a project.",
+      "description": "Name or a unique identifier of the person who set up the camera for this deployment.",
       "example": [
         "Charles Robert Darwin",
         "2ef60d48-fd67-4bac-9569-49a03b0ef096"
