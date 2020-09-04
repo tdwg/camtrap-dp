@@ -42,42 +42,24 @@
       }
     },
     {
-      "name": "is_empty",
-      "type": "boolean",
-      "default": "false",
-      "description": "A flag indicating if an event or file is empty i.e. not providing an observation.",
-      "example": "true",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "sequence_based",
-      "type": "boolean",
-      "default": "false",
-      "description": "A flag indicating if classifications were made per event or for each single file.",
-      "example": "false",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
       "name": "observation_type",
       "type": "string",
       "format": "default",
-      "description": "Type of observation.",
+      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `Undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
       "example": "Animal",
       "constraints": {
-        "required": false,
+        "required": true,
         "enum": [
-          "Human",
           "Animal",
+          "Empty",
+          "Human",
+          "Undefined",
           "Vehicle"
         ]
       }
     },
     {
-      "name": "species_latin",
+      "name": "scientific_name",
       "type": "string",
       "format": "default",
       "description": "A scientific name of identified species.",
@@ -87,25 +69,13 @@
       }
     },
     {
-      "name": "species_common",
+      "name": "vernacular_name",
       "type": "string",
       "format": "default",
-      "description": "A common name of identified species.",
+      "description": "A common name of identified species (preferably in English).",
       "example": "Wolf",
       "constraints": {
         "required": false
-      }
-    },
-    {
-      "name": "uncertainty",
-      "type": "number",
-      "format": "default",
-      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
-      "example": "0.95",
-      "constraints": {
-        "required": false,
-        "minimum": 0,
-        "maximum": 1
       }
     },
     {
@@ -190,6 +160,55 @@
       "example": "RD213",
       "constraints": {
         "required": false
+      }
+    },
+    {
+      "name": "classification_method",
+      "type": "string",
+      "format": "default",
+      "description": "Classification method.",
+      "example": "Human",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "Human",
+          "Machine"
+        ]
+      }
+    },
+    {
+      "name": "classified_by",
+      "type": "string",
+      "format": "default",
+      "description": "Name or a unique identifier of a person or AI algorithm that classified this observation.",
+      "example": [
+        "John Coltrane",
+        "Megadetector"
+      ],
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "classification_date",
+      "type": "datetime",
+      "format": "any",
+      "description": "Date and time when this classification was made, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "classification_confidence",
+      "type": "number",
+      "format": "default",
+      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
+      "example": "0.95",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
       }
     },
     {

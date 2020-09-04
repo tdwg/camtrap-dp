@@ -25,7 +25,7 @@
       "name": "event_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of an event within a project. Events are what project researchers or software have defined as independent occasions, containing one or more multimedia files (e.g. a single video or a sequence of consecutive images).",
+      "description": "A unique identifier of an event within a project. Events contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `event_interval` in the package metadata.",
       "example": "E01",
       "constraints": {
         "required": true
@@ -42,38 +42,46 @@
       }
     },
     {
-      "name": "file_name",
+      "name": "file_path",
       "type": "string",
-      "format": "default",
-      "description": "Name of a multimedia file.",
-      "example": "IMG0001.jpg",
+      "format": "uri",
+      "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this package. Additional information on how to access this file is provided in a package-level metadata.",
+      "example": [
+        "https://trapper.org/storage/resource/media/259024/file/",
+        "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
+        "DEP0001/IMG0001.jpg"
+      ],
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "file_mimetype",
+      "name": "file_name",
       "type": "string",
       "format": "default",
-      "default": "image/jpeg",
-      "description": "Mimetype of a multimedia file.",
+      "description": "Name of a multimedia file. This field is optional and supports cases where the file name is not a part of url provided in `file_path`.",
+      "example": "IMG0001.jpg",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "file_mediatype",
+      "type": "string",
+      "format": "default",
+      "description": "Mediatype of a multimedia file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "file_location",
-      "type": "string",
-      "format": "uri",
-      "description": "Url or a relative path to a multimedia file. Additional information on how to access this file is provided in a package-level metadata.",
-      "example": [
-        "https://trapper.org/storage/resource/media/259024/file/",
-        "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
-        "project/collection/deployment_id/IMG0001.jpg"
-      ],
+      "name": "exif_data",
+      "type": "object",
+      "format": "default",
+      "description": "EXIF data of the file, as a valid JSON object.",
       "constraints": {
-        "required": true
+        "required": false
       }
     }
   ],
