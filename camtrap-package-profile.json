@@ -34,7 +34,7 @@
       "type": "object",
       "required": [
         "scientific_name",
-	"taxon_id"
+        "taxon_id"
       ],
       "properties": {
         "scientific_name": {
@@ -208,17 +208,17 @@
           "description": "Temporal coverage for this data package. It is calculated based on `deployments.csv` table.",
           "type": "object",
           "required": [
-            "from_date",
-            "to_date"
+            "start",
+            "end"
           ],
           "properties": {
-            "from_date": {
               "description": "Date specified in ISO8601 format YYYY-MM-DD.",
+            "start": {
               "type": "string",
               "format": "date"
             },
-            "to_date": {
               "description": "Date specified in ISO8601 format YYYY-MM-DD.",
+            "end": {
               "type": "string",
               "format": "date"
             }
