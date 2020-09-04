@@ -205,20 +205,20 @@
           "$ref": "http://json.schemastore.org/geojson.json"
         },
         "temporal": {
-          "description": "Temporal coverage for this data package. It is calculated based on `deployments.csv` table.",
+          "description": "Temporal coverage for this data package, based on the included deployments",
           "type": "object",
           "required": [
             "start",
             "end"
           ],
           "properties": {
-              "description": "Date specified in ISO8601 format YYYY-MM-DD.",
             "start": {
+              "description": "Start date of the first deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
               "type": "string",
               "format": "date"
             },
-              "description": "Date specified in ISO8601 format YYYY-MM-DD.",
             "end": {
+              "description": "Start date of the last deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
               "type": "string",
               "format": "date"
             }
