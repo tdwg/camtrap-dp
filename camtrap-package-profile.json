@@ -33,10 +33,15 @@
       "description": "",
       "type": "object",
       "required": [
-        "scientific_name",
-        "taxon_id"
+        "taxon_id",
+        "scientific_name"
       ],
       "properties": {
+        "taxon_id": {
+          "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
+          "type": "string",
+          "format": "default"
+        },
         "scientific_name": {
           "description": "Species scientific name.",
           "type": "string",
@@ -44,11 +49,6 @@
         },
         "vernacular_name": {
           "description": "Species common name (preferably in English).",
-          "type": "string",
-          "format": "default"
-        },
-        "taxon_id": {
-          "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
           "type": "string",
           "format": "default"
         },
