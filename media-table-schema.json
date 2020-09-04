@@ -49,7 +49,7 @@
       "example": [
         "https://trapper.org/storage/resource/media/259024/file/",
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
-        "deployment_id/IMG0001.jpg"
+        "DEP0001/IMG0001.jpg"
       ],
       "constraints": {
         "required": true
