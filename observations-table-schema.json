@@ -190,6 +190,16 @@
       }
     },
     {
+      "name": "classification_date",
+      "type": "datetime",
+      "format": "any",
+      "description": "Date and time when this classification was made, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "classification_confidence",
       "type": "number",
       "format": "default",
@@ -199,16 +209,6 @@
         "required": false,
         "minimum": 0,
         "maximum": 1
-      }
-    },
-    {
-      "name": "classification_date",
-      "type": "datetime",
-      "format": "any",
-      "description": "Date and time when this classification was made, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
-      "example": "2020-03-24T11:21:46Z",
-      "constraints": {
-        "required": false
       }
     },
     {
