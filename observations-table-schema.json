@@ -22,10 +22,10 @@
       }
     },
     {
-      "name": "event_id",
+      "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the event (collection of multimedia files) that is the source of this observation. Foreign key to `media:event_id`.",
+      "description": "The unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `media:sequence_id`.",
       "example": "E01",
       "constraints": {
         "required": true
@@ -45,7 +45,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "any",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`). For file-based observations this is the `timestamp` of the associated multimedia file (in `media_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `event_id`).",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`). For file-based observations this is the `timestamp` of the associated multimedia file (in `media_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequence_id`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
@@ -252,10 +252,10 @@
       }
     },
     {
-      "fields": "event_id",
+      "fields": "sequence_id",
       "reference": {
         "resource": "media",
-        "fields": "event_id"
+        "fields": "sequence_id"
       }
     },
     {

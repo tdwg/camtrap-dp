@@ -172,7 +172,7 @@
       "name": "session",
       "type": "string",
       "format": "default",
-      "description": "Camera trap deployments can be grouped into sessions (sampling 'events'). Common sessions could be seasons (wet and dry), months, years or other types of logical groupings when field sampling occurs.",
+      "description": "Camera trap deployments can be grouped into sessions. Common sessions could be seasons (wet and dry), months, years or other types of logical groupings when field sampling occurs.",
       "example": "",
       "constraints": {
         "required": false
