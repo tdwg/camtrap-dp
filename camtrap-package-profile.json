@@ -10,7 +10,7 @@
       "required": [
         "title",
         "url"
-      ],      
+      ],
       "properties": {
         "title": {
           "description": "Organization name.",
