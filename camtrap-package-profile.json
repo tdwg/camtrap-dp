@@ -171,7 +171,8 @@
                 "Scent",
                 "Food",
                 "Visual",
-                "Acoustic"
+                "Acoustic",
+                "Other"
               ]
             },
             "event_interval": {
