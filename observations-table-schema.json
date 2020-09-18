@@ -42,6 +42,16 @@
       }
     },
     {
+      "name": "timestamp",
+      "type": "datetime",
+      "format": "any",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`). For file-based observations this is the `timestamp` of the associated multimedia file (in `media_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `event_id`).",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
       "name": "observation_type",
       "type": "string",
       "format": "default",
