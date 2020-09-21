@@ -22,10 +22,10 @@
       }
     },
     {
-      "name": "event_id",
+      "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of an event within a project. Events contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `event_interval` in the package metadata.",
+      "description": "A unique identifier of a sequence within a project. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
       "example": "E01",
       "constraints": {
         "required": true
