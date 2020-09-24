@@ -60,11 +60,11 @@
       "constraints": {
         "required": true,
         "enum": [
-          "Animal",
-          "Empty",
-          "Human",
-          "Undefined",
-          "Vehicle"
+          "animal",
+          "empty",
+          "human",
+          "undefined",
+          "vehicle"
         ]
       }
     },
@@ -119,11 +119,11 @@
       "constraints": {
         "required": false,
         "enum": [
-          "Adult",
-          "Subadult",
-          "Juvenile",
-          "Offspring",
-          "Undefined"
+          "adult",
+          "subadult",
+          "juvenile",
+          "offspring",
+          "undefined"
         ]
       }
     },
@@ -136,9 +136,9 @@
       "constraints": {
         "required": false,
         "enum": [
-          "Female",
-          "Male",
-          "Undefined"
+          "female",
+          "male",
+          "undefined"
         ]
       }
     },
@@ -151,14 +151,14 @@
       "constraints": {
         "required": false,
         "enum": [
-          "Grazing",
-          "Browsing",
-          "Rooting",
-          "Vigilance",
-          "Running",
-          "Walking",
-          "Other",
-          "Undefined"
+          "grazing",
+          "browsing",
+          "rooting",
+          "vigilance",
+          "running",
+          "walking",
+          "other",
+          "undefined"
         ]
       }
     },
@@ -181,8 +181,8 @@
       "constraints": {
         "required": false,
         "enum": [
-          "Human",
-          "Machine"
+          "human",
+          "machine"
         ]
       }
     },
