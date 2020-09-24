@@ -135,12 +135,12 @@
               "type": "string",
               "format": "array",
               "enum": [
-                "Simple random",
-                "Systematic random",
-                "Clustered (random arrays)",
-                "Experimental",
-                "Targeted",
-                "Ad-hoc (opportunistic)"
+                "simple random",
+                "systematic random",
+                "clustered (random arrays)",
+                "experimental",
+                "targeted",
+                "ad-hoc (opportunistic)"
               ]
             },
             "sensor_method": {
@@ -148,9 +148,9 @@
               "type": "string",
               "format": "array",
               "enum": [
-                "Motion detection",
-                "Timelapse",
-                "Both"
+                "motion detection",
+                "timelapse",
+                "both"
               ]
             },
             "animal_types": {
@@ -158,9 +158,9 @@
               "type": "string",
               "format": "array",
               "enum": [
-                "Unmarked",
-                "Marked",
-                "Both"
+                "unmarked",
+                "marked",
+                "both"
               ]
             },
             "bait_use": {
@@ -168,12 +168,12 @@
               "format": "default",
               "description": "Type of bait (if any) that was used with cameras.",
               "enum": [
-                "None",
-                "Scent",
-                "Food",
-                "Visual",
-                "Acoustic",
-                "Other"
+                "none",
+                "scent",
+                "food",
+                "visual",
+                "acoustic",
+                "other"
               ]
             },
             "classification_level": {

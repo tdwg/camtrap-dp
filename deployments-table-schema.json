@@ -159,12 +159,12 @@
       "constraints": {
         "required": false,
         "enum": [
-          "None",
-          "Scent",
-          "Food",
-          "Visual",
-          "Acoustic",
-          "Other"
+          "none",
+          "scent",
+          "food",
+          "visual",
+          "acoustic",
+          "other"
         ]
       }
     },
@@ -197,21 +197,21 @@
       "constraints": {
         "required": false,
         "enum": [
-          "None",
-          "Road paved",
-          "Road dirt",
-          "Trail hiking",
-          "Trail game",
-          "Road underpass",
-          "Road overpass",
-          "Road bridge",
-          "Culvert",
-          "Burrow",
-          "Nest site",
-          "Carcass",
-          "Water source",
-          "Fruiting tree",
-          "Other"
+          "none",
+          "road paved",
+          "road dirt",
+          "trail hiking",
+          "trail game",
+          "road underpass",
+          "road overpass",
+          "road bridge",
+          "culvert",
+          "burrow",
+          "nest site",
+          "carcass",
+          "water source",
+          "fruiting tree",
+          "other"
         ]
       }
     },
