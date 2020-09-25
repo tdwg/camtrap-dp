@@ -257,5 +257,6 @@
     "",
     "NaN",
     "nan"
-  ]
+  ],
+  "primaryKey": "deployment_id"
 }

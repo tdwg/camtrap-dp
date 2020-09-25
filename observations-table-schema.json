@@ -243,6 +243,7 @@
     "NaN",
     "nan"
   ],
+  "primaryKey": "observation_id",
   "foreignKeys": [
     {
       "fields": "deployment_id",
