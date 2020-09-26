@@ -90,6 +90,7 @@
     "NaN",
     "nan"
   ],
+  "primaryKey": "media_id",
   "foreignKeys": [
     {
       "fields": "deployment_id",
