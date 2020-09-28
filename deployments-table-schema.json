@@ -90,7 +90,7 @@
       }
     },
     {
-      "name": "cam_id",
+      "name": "camera_id",
       "type": "string",
       "format": "default",
       "description": "A unique identifier of a camera amongst all cameras used in a project. This can be e.g. a camera device serial number.",
@@ -100,7 +100,7 @@
       }
     },
     {
-      "name": "cam_model",
+      "name": "camera_model",
       "type": "string",
       "format": "default",
       "description": "Manufacturer and model of camera provided in this format: `manufacturer-model`.",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "name": "cam_timestamp",
+      "name": "camera_timestamp",
       "type": "boolean",
       "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
       "example": "true",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "name": "cam_interval",
+      "name": "camera_interval",
       "type": "integer",
       "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
       "example": "0",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "name": "cam_height",
+      "name": "camera_height",
       "type": "integer",
       "description": "An approximate height at which a camera was deployed. Specified in centimeters.",
       "example": "100",
@@ -139,7 +139,7 @@
       }
     },
     {
-      "name": "cam_angle",
+      "name": "camera_angle",
       "type": "integer",
       "format": "default",
       "description": "An approximate angle used to deploy a camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
