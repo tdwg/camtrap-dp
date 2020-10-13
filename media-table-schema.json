@@ -34,7 +34,7 @@
     {
       "name": "timestamp",
       "type": "datetime",
-      "format": "any",
+      "format": "default",
       "description": "Date and time when the multimedia file was recorded, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
