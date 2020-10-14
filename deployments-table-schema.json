@@ -240,8 +240,7 @@
       "type": "string",
       "format": "default",
       "constraints": {
-        "required": false,
-        "pattern": "[^,;]"
+        "required": false
       }
     },
     {
