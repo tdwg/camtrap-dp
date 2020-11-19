@@ -35,7 +35,7 @@
       "name": "media_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Use only for file-based observations.",
+      "description": "The unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Include but leave empty for sequence-based observations.",
       "example": "M01",
       "constraints": {
         "required": false
