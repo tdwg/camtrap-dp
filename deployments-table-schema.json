@@ -227,10 +227,10 @@
     },
     {
       "name": "tags",
-      "type": "array",
+      "type": "string",
       "format": "default",
-      "description": "User defined tags associated with the deployment, as a valid JSON array.",
-      "example": "[ \"Control\", \"Treatment\" ]",
+      "description": "User defined tags associated with the deployment, as a pipe (`|`) separated list.",
+      "example": "Outsite NP | Forest edge",
       "constraints": {
         "required": false
       }
