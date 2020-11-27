@@ -89,6 +89,15 @@
       }
     },
     {
+      "name": "is_domesticated",
+      "type": "boolean",
+      "description": "A flag indicating if an observed animal is domesticated.",
+      "example": "false",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "count",
       "type": "integer",
       "format": "default",
