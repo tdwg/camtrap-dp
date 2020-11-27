@@ -230,7 +230,7 @@
               "format": "date"
             },
             "end": {
-              "description": "Start date of the last deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
+              "description": "End date of the last deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
               "type": "string",
               "format": "date"
             }
