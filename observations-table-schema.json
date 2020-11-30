@@ -155,20 +155,10 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of identified individuals.",
+      "description": "Dominant behaviour of identified individuals, ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking, other, undefined)",
       "example": "Vigilance",
       "constraints": {
-        "required": false,
-        "enum": [
-          "grazing",
-          "browsing",
-          "rooting",
-          "vigilance",
-          "running",
-          "walking",
-          "other",
-          "undefined"
-        ]
+        "required": false
       }
     },
     {
