@@ -145,36 +145,46 @@
             },
             "sensor_method": {
               "description": "Method of triggering a camera.",
-              "type": "string",
-              "format": "array",
-              "enum": [
-                "motion detection",
-                "timelapse",
-                "both"
-              ]
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "motion detection",
+                  "timelapse"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "animal_types": {
               "description": "Type of animal species in this study. 'Marked' animals are individually-recognizable.",
-              "type": "string",
-              "format": "array",
-              "enum": [
-                "unmarked",
-                "marked",
-                "both"
-              ]
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "unmarked",
+                  "marked"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "bait_use": {
-              "type": "string",
-              "format": "default",
+              "type": "array",
               "description": "Type of bait (if any) that was used with cameras.",
-              "enum": [
-                "none",
-                "scent",
-                "food",
-                "visual",
-                "acoustic",
-                "other"
-              ]
+              "items": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "scent",
+                  "food",
+                  "visual",
+                  "acoustic",
+                  "other"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "classification_level": {
               "type": "string",
@@ -182,10 +192,9 @@
               "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
               "enum": [
                 "sequence",
-                "media",
-                "both"
+                "media"
               ]
-            },            
+            },
             "sequence_interval": {
               "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequence_id`.",
               "type": "integer"
