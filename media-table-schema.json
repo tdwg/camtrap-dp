@@ -59,7 +59,7 @@
       "name": "file_name",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. This field is optional and supports cases where the file name is not a part of url provided in `file_path`.",
+      "description": "Name of a multimedia file. When this field is included, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
