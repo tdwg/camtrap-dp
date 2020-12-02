@@ -1,10 +1,10 @@
-# camtrap-package-schemas
+# camtrap-dp
 
 Specifications to standardize camera trap data as a [Data Package](https://frictionlessdata.io/data-package/). A camtrap data package consists of:
 
 file | definition | specs
 --- | --- | ---
-`datapackage.json` | Metadata regarding the data package and camera trap project. | [camtrap-package-profile.json](camtrap-package-profile.json)
+`datapackage.json` | Metadata regarding the data package and camera trap project. | [camtrap-dp-profile.json](camtrap-dp-profile.json)
 `deployments.csv` | Table with camera trap deployments. Includes `deployment_id`, start, end, location and camera setup. | [deployments-table-schema.json](deployments-table-schema.json)
 `media.csv` | Table with media files (images/videos) captured by camera traps. Associated with deployments (`deployment_id`) and organized in events (`event_id`). Includes timestamp and file location. | [media-table-schema.json](media-table-schema.json)
 `observations.csv` | Table with camera trap observations. Associated with deployments (`deployment_id`) and based on one or more media files (`event_id` and optionally `media_id`), covering an event start/end time interval. Observations can contain species (with multiple observations for groups of certain count, age, sex, behaviour and/or individuals) or not (empty, setup/pickup). | [observations-table-schema.json](observations-table-schema.json)
