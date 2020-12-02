@@ -4,7 +4,7 @@
       "name": "observation_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of an observation within a project.",
+      "description": "Unique identifier of the observation within a project.",
       "example": "1",
       "constraints": {
         "required": true,
@@ -15,7 +15,7 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
       "example": "L01-D01",
       "constraints": {
         "required": true
@@ -25,7 +25,7 @@
       "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `media:sequence_id`.",
+      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `media:sequence_id`.",
       "example": "E01",
       "constraints": {
         "required": true
@@ -35,7 +35,7 @@
       "name": "media_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Include but leave empty for sequence-based observations.",
+      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Include but leave empty for sequence-based observations.",
       "example": "M01",
       "constraints": {
         "required": false
@@ -71,7 +71,7 @@
     {
       "name": "camera_method",
       "type": "string",
-      "description": "Method of triggering the camera.",
+      "description": "Method of triggering the camera for this observation.",
       "example": "motion detection",
       "constraints": {
         "required": false,
@@ -94,7 +94,7 @@
       "name": "scientific_name",
       "type": "string",
       "format": "default",
-      "description": "A scientific name of identified species.",
+      "description": "Scientific name of the observed individual(s).",
       "example": "Canis lupus",
       "constraints": {
         "required": false
@@ -104,7 +104,7 @@
       "name": "vernacular_name",
       "type": "string",
       "format": "default",
-      "description": "A common name of identified species (preferably in English).",
+      "description": "Common name of the observed individual(s), preferably in English.",
       "example": "Wolf",
       "constraints": {
         "required": false
@@ -113,7 +113,7 @@
     {
       "name": "is_domesticated",
       "type": "boolean",
-      "description": "`true` if an observed animal is domesticated.",
+      "description": "`true` if the observed individual(s) are domesticated.",
       "example": "false",
       "constraints": {
         "required": false
@@ -123,7 +123,7 @@
       "name": "count",
       "type": "integer",
       "format": "default",
-      "description": "Number of individuals identified (optionally of given age, sex and behaviour; see below). Interpretation depends on the value of `sequence_based` field.",
+      "description": "Number of observed individuals (optionally of given age, sex and behaviour: see below).",
       "example": "5",
       "constraints": {
         "required": false,
@@ -134,7 +134,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of 'NEW' individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
+      "description": "Number of 'NEW' individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour: see below).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -145,7 +145,7 @@
       "name": "age",
       "type": "string",
       "format": "default",
-      "description": "Age of identified individuals",
+      "description": "Age of observed individual(s)",
       "example": "Adult",
       "constraints": {
         "required": false,
@@ -162,7 +162,7 @@
       "name": "sex",
       "type": "string",
       "format": "default",
-      "description": "Sex of identified individuals",
+      "description": "Sex of observed individual(s)",
       "example": "Female",
       "constraints": {
         "required": false,
@@ -177,7 +177,7 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of identified individuals, ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking)",
+      "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking).",
       "example": "vigilance",
       "constraints": {
         "required": false
@@ -187,7 +187,7 @@
       "name": "individual_id",
       "type": "string",
       "format": "default",
-      "description": "Individual animal unique identifier within this project.",
+      "description": "Unique identifier of the observed individual within this project.",
       "example": "RD213",
       "constraints": {
         "required": false
@@ -211,7 +211,7 @@
       "name": "classified_by",
       "type": "string",
       "format": "default",
-      "description": "Name or a unique identifier of a person or AI algorithm that classified this observation.",
+      "description": "Name or unique identifier of the person or AI algorithm that classified this observation.",
       "example": [
         "John Coltrane",
         "Megadetector"
@@ -234,7 +234,7 @@
       "name": "classification_confidence",
       "type": "number",
       "format": "default",
-      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
+      "description": "Accuracy confidence of the classification. Specified as probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
       "example": "0.95",
       "constraints": {
         "required": false,
