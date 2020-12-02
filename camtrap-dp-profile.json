@@ -150,7 +150,7 @@
                 "type": "string",
                 "enum": [
                   "motion detection",
-                  "timelapse"
+                  "time lapse"
                 ]
               },
               "uniqueItems": true,
