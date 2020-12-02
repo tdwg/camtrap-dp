@@ -112,7 +112,7 @@
     {
       "name": "camera_timestamp",
       "type": "boolean",
-      "description": "A flag indicating if datetime settings in the camera were set up properly and in consequence all recorded files have proper timestamps.",
+      "description": "`true` if datetime settings in the camera were set up properly and in consequence all recorded multimedia files have proper timestamps.",
       "example": "true",
       "constraints": {
         "required": false
