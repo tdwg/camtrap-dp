@@ -93,7 +93,7 @@
       "name": "camera_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of the camera amongst all cameras used in a project. This can be e.g. the camera device serial number.",
+      "description": "A unique identifier of the camera used for this deployment. This can be e.g. the camera device serial number.",
       "example": "P800HG08192031",
       "constraints": {
         "required": false
@@ -103,7 +103,7 @@
       "name": "camera_model",
       "type": "string",
       "format": "default",
-      "description": "Manufacturer and model of camera provided in this format: `manufacturer-model`.",
+      "description": "Manufacturer and model of the camera provided in this format: `manufacturer-model`.",
       "example": "Reconyx-PC800",
       "constraints": {
         "required": false
@@ -112,7 +112,7 @@
     {
       "name": "camera_timestamp",
       "type": "boolean",
-      "description": "A flag indicating if a datetime settings in the camera trap were set up properly and in consequence all recorded files have proper timestamps.",
+      "description": "A flag indicating if datetime settings in the camera were set up properly and in consequence all recorded files have proper timestamps.",
       "example": "true",
       "constraints": {
         "required": false
@@ -142,7 +142,7 @@
       "name": "camera_angle",
       "type": "integer",
       "format": "default",
-      "description": "An approximate angle used to deploy the camera. Specified in degrees e.g. 0 or 180 for the camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
+      "description": "An approximate angle used to deploy the camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
       "example": "180",
       "constraints": {
         "required": false,
@@ -154,7 +154,7 @@
       "name": "bait_use",
       "type": "string",
       "format": "default",
-      "description": "Type of bait (if any) that was used with camera. If other, more info can be provided in the `comments` field.",
+      "description": "Type of bait (if any) that was used for this deployment. If other, more info can be provided in the `comments` field.",
       "example": "",
       "constraints": {
         "required": false,
