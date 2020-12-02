@@ -121,12 +121,12 @@
           ],
           "properties": {
             "title": {
-              "description": "Title of this project.",
+              "description": "Title of the project.",
               "type": "string",
               "format": "default"
             },
             "acronym": {
-              "description": "Short and human-readable identifier of this project.",
+              "description": "Short and human-readable identifier of the project.",
               "type": "string",
               "format": "default"
             },
@@ -205,7 +205,7 @@
               "format": "default"
             },
             "references": {
-              "description": "List of references related to this project.",
+              "description": "List of references related to the project.",
               "type": "array",
               "items": {
                 "url": {
@@ -216,7 +216,7 @@
               }
             },
             "_id": {
-              "description": "Internal attribute of data management system or data packages catalogue: ID of this project.",
+              "description": "Internal attribute of data management system or data packages catalogue: ID of the project.",
               "type": "integer"
             }
           }

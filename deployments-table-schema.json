@@ -5,7 +5,7 @@
       "type": "string",
       "format": "default",
       "title": "Deployment ID",
-      "description": "A unique identifier of a deployment within a project.",
+      "description": "Unique identifier (within a project) of the deployment.",
       "example": "L01-D01",
       "constraints": {
         "required": true,
@@ -16,7 +16,7 @@
       "name": "location_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a sampling location within a project.",
+      "description": "Unique identifier (within a project) of the sampling location for this deployment.",
       "example": "L01",
       "constraints": {
         "required": false
@@ -80,7 +80,7 @@
       "name": "setup_by",
       "type": "string",
       "format": "default",
-      "description": "Name or a unique identifier of the person who set up the camera for this deployment.",
+      "description": "Name or unique identifier of the person who set up the camera for this deployment.",
       "example": [
         "Charles Robert Darwin",
         "2ef60d48-fd67-4bac-9569-49a03b0ef096"
@@ -93,7 +93,7 @@
       "name": "camera_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of the camera used for this deployment. This can be e.g. the camera device serial number.",
+      "description": "Unique identifier (within a project) of the camera used for this deployment. This can be e.g. the camera device serial number.",
       "example": "P800HG08192031",
       "constraints": {
         "required": false

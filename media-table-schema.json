@@ -4,7 +4,7 @@
       "name": "media_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a multimedia file within a project.",
+      "description": "Unique identifier (within a project) of the multimedia file.",
       "example": "M01",
       "constraints": {
         "required": true,
@@ -15,7 +15,7 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
       "example": "L01-D01",
       "constraints": {
         "required": true
@@ -25,7 +25,7 @@
       "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a sequence within a project. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
+      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
       "example": "E01",
       "constraints": {
         "required": true
