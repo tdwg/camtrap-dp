@@ -134,7 +134,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of 'NEW' individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour: see below).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`media_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour: see below).",
       "example": "2",
       "constraints": {
         "required": false,
