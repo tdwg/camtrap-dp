@@ -74,7 +74,7 @@
       "description": "Method of triggering the camera.",
       "example": "motion detection",
       "constraints": {
-        "required": false
+        "required": false,
         "enum": [
           "motion detection",
           "time lapse"
