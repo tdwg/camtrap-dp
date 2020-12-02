@@ -69,6 +69,28 @@
       }
     },
     {
+      "name": "camera_method",
+      "type": "string",
+      "description": "Method of triggering the camera.",
+      "example": "motion detection",
+      "constraints": {
+        "required": false
+        "enum": [
+          "motion detection",
+          "time lapse"
+        ]
+      }
+    },
+    {
+      "name": "camera_setup",
+      "type": "boolean",
+      "description": "A flag indicating if the recorded observations are part of the camera setup process (setting-up, picking-up, camera maintanance etc).",
+      "example": "false",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "scientific_name",
       "type": "string",
       "format": "default",
