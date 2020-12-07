@@ -83,6 +83,15 @@
       "constraints": {
         "required": false
       }
+    },
+    {
+      "name": "_id",
+      "type": "string",
+      "format": "default",
+      "description": "Internal attribute of data management system: ID of this media.",
+      "constraints": {
+        "required": false
+      }
     }
   ],
   "missingValues": [

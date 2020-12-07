@@ -245,7 +245,8 @@
     },
     {
       "name": "_id",
-      "type": "integer",
+      "type": "string",
+      "format": "default",
       "description": "Internal attribute of data management system: ID of this deployment.",
       "constraints": {
         "required": false

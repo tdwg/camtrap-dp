@@ -69,7 +69,7 @@
       }
     },
     {
-      "name": "camera_method",
+      "name": "sensor_method",
       "type": "string",
       "description": "Method of triggering the camera for this observation.",
       "example": "motion detection",
@@ -252,7 +252,8 @@
     },
     {
       "name": "_id",
-      "type": "integer",
+      "type": "string",
+      "format": "default",
       "description": "Internal attribute of data management system: ID of this observation.",
       "constraints": {
         "required": false
