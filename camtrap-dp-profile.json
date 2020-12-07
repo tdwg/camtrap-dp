@@ -157,7 +157,7 @@
               "minItems": 1
             },
             "animal_types": {
-              "description": "Type of animal species in this study. 'Marked' animals are individually-recognizable.",
+              "description": "Type of observed animals. `marked` indicates specific animal individuals can be recognized.",
               "type": "array",
               "items": {
                 "type": "string",
