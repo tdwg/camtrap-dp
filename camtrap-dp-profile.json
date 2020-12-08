@@ -260,22 +260,22 @@
           "format": "uri"
         },
         "_platform_title": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform name.",
+          "description": "Internal attribute of data management or repository system: platform name.",
           "type": "string",
           "format": "default"
         },
         "_platform_url": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform url.",
+          "description": "Internal attribute of data management or repository system: platform URL.",
           "type": "string",
           "format": "uri"
         },
         "_platform_version": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform version.",
+          "description": "Internal attribute of data management or repository system: platform version.",
           "type": "string",
           "format": "default"
         },
         "_platform_package_id": {
-          "description": "Internal attribute of data management or repository system: package id.",
+          "description": "Internal attribute of data management or repository system: package ID.",
           "type": "string",
           "format": "default"
         }
