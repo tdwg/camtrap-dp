@@ -18,7 +18,7 @@
           "format": "default"
         },
         "url": {
-          "description": "A web address for this organization.",
+          "description": "Organization website.",
           "type": "string",
           "format": "uri"
         },
@@ -38,22 +38,22 @@
       ],
       "properties": {
         "taxon_id": {
-          "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
+          "description": "Taxon ID of the species according to a taxonomic reference list defined by `taxon_id_reference`.",
           "type": "string",
           "format": "default"
         },
         "scientific_name": {
-          "description": "Species scientific name.",
+          "description": "Scientific name of the species.",
           "type": "string",
           "format": "default"
         },
         "vernacular_name": {
-          "description": "Species common name (preferably in English).",
+          "description": "Common name of the species, preferably in English.",
           "type": "string",
           "format": "default"
         },
         "count": {
-          "description": "Number of observations of given species.",
+          "description": "Number of observations for that species in the data package.",
           "type": "integer"
         }
       }
@@ -85,7 +85,7 @@
               "type": "boolean"
             },
             "public": {
-              "description": "`true` if urls to multimedia files in `media.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
+              "description": "`true` if URLs to multimedia files in `media.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
               "type": "boolean"
             },
             "auth_type": {
@@ -209,7 +209,7 @@
               "type": "array",
               "items": {
                 "url": {
-                  "description": "Url to a reference.",
+                  "description": "URL to a reference.",
                   "type": "string",
                   "format": "uri"
                 }
@@ -254,7 +254,7 @@
           }
         },
         "taxon_id_reference": {
-          "description": "Url of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
+          "description": "URL of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
           "example": "http://www.catalogueoflife.org/annual-checklist/2019/",
           "type": "string",
           "format": "uri"
