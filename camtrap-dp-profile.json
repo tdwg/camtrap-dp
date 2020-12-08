@@ -133,7 +133,7 @@
             "sampling_design": {
               "description": "Type of a sampling layout.",
               "type": "string",
-              "format": "array",
+              "format": "default",
               "enum": [
                 "simple random",
                 "systematic random",
