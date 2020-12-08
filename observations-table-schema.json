@@ -71,6 +71,7 @@
     {
       "name": "sensor_method",
       "type": "string",
+      "format": "default",
       "description": "Method of triggering the camera for this observation.",
       "example": "motion detection",
       "constraints": {
@@ -84,6 +85,7 @@
     {
       "name": "camera_setup",
       "type": "boolean",
+      "format": "default",
       "description": "`true` if this observation is part of the camera setup process (camera deployment, pickup, maintenance).",
       "example": "false",
       "constraints": {
@@ -113,6 +115,7 @@
     {
       "name": "is_domesticated",
       "type": "boolean",
+      "format": "default",
       "description": "`true` if the observed individual(s) are domesticated.",
       "example": "false",
       "constraints": {
