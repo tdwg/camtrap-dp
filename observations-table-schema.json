@@ -5,7 +5,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the observation.",
-      "example": "1",
+      "example": "obs1",
       "constraints": {
         "required": true,
         "unique": true
@@ -16,7 +16,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
-      "example": "L01-D01",
+      "example": "dep1",
       "constraints": {
         "required": true
       }
@@ -26,7 +26,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `media:sequence_id`.",
-      "example": "E01",
+      "example": "seq1",
       "constraints": {
         "required": true
       }
@@ -36,7 +36,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Include but leave empty for sequence-based observations.",
-      "example": "M01",
+      "example": "m1",
       "constraints": {
         "required": false
       }
@@ -56,7 +56,7 @@
       "type": "string",
       "format": "default",
       "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
-      "example": "Animal",
+      "example": "animal",
       "constraints": {
         "required": true,
         "enum": [
@@ -149,7 +149,7 @@
       "type": "string",
       "format": "default",
       "description": "Age of observed individual(s)",
-      "example": "Adult",
+      "example": "adult",
       "constraints": {
         "required": false,
         "enum": [
@@ -166,7 +166,7 @@
       "type": "string",
       "format": "default",
       "description": "Sex of observed individual(s)",
-      "example": "Female",
+      "example": "female",
       "constraints": {
         "required": false,
         "enum": [
@@ -201,7 +201,7 @@
       "type": "string",
       "format": "default",
       "description": "Classification method.",
-      "example": "Human",
+      "example": "human",
       "constraints": {
         "required": false,
         "enum": [
@@ -216,7 +216,7 @@
       "format": "default",
       "description": "Name or unique identifier of the person or AI algorithm that classified this observation.",
       "example": [
-        "John Coltrane",
+        "Jakub Bubnicki",
         "Megadetector"
       ],
       "constraints": {
@@ -228,7 +228,7 @@
       "type": "datetime",
       "format": "default",
       "description": "Date and time when this classification was made, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
-      "example": "2020-03-24T11:21:46Z",
+      "example": "2020-08-22T10:25:19Z",
       "constraints": {
         "required": false
       }
@@ -249,6 +249,8 @@
       "name": "comments",
       "type": "string",
       "format": "default",
+      "description": "Comments or notes about the observation.",
+      "example": "",
       "constraints": {
         "required": false
       }
@@ -258,6 +260,7 @@
       "type": "string",
       "format": "default",
       "description": "Internal attribute of data management system: ID of this observation.",
+      "example": "",
       "constraints": {
         "required": false
       }

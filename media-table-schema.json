@@ -5,7 +5,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the multimedia file.",
-      "example": "M01",
+      "example": "m1",
       "constraints": {
         "required": true,
         "unique": true
@@ -16,7 +16,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
-      "example": "L01-D01",
+      "example": "dep1",
       "constraints": {
         "required": true
       }
@@ -26,7 +26,7 @@
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
-      "example": "E01",
+      "example": "seq1",
       "constraints": {
         "required": true
       }
@@ -80,6 +80,7 @@
       "type": "object",
       "format": "default",
       "description": "EXIF data of the file, as a valid JSON object.",
+      "example": "{ \"EXIF\": { \"ISO\": 200, \"Make\": \"RECONYX\"}",
       "constraints": {
         "required": false
       }
@@ -89,6 +90,7 @@
       "type": "string",
       "format": "default",
       "description": "Internal attribute of data management system: ID of this media.",
+      "example": "",
       "constraints": {
         "required": false
       }
