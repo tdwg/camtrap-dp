@@ -61,10 +61,11 @@
         "required": true,
         "enum": [
           "animal",
-          "empty",
           "human",
+          "vehicle",
+          "empty",
           "undefined",
-          "vehicle"
+          "unclassified"
         ]
       }
     },
