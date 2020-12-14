@@ -25,17 +25,17 @@
       "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `media:sequence_id`.",
+      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `multimedia:sequence_id`.",
       "example": "seq1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "media_id",
+      "name": "multimedia_id",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Include but leave empty for sequence-based observations.",
+      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `multimedia:multimedia_id`. Include but leave empty for sequence-based observations.",
       "example": "m1",
       "constraints": {
         "required": false
@@ -45,7 +45,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "default",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`). For file-based observations this is the `timestamp` of the associated multimedia file (in `media_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequence_id`).",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`). For file-based observations this is the `timestamp` of the associated multimedia file (in `multimedia_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequence_id`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
@@ -137,7 +137,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`media_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour: see below).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimedia_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour: see below).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -283,15 +283,15 @@
     {
       "fields": "sequence_id",
       "reference": {
-        "resource": "media",
+        "resource": "multimedia",
         "fields": "sequence_id"
       }
     },
     {
-      "fields": "media_id",
+      "fields": "multimedia_id",
       "reference": {
-        "resource": "media",
-        "fields": "media_id"
+        "resource": "multimedia",
+        "fields": "multimedia_id"
       }
     }
   ]

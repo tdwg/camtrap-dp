@@ -73,7 +73,7 @@
       ],
       "properties": {
         "multimedia_access": {
-          "description": "Information about the accessibilty of the multimedia files listed in `media.csv`.",
+          "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
           "required": [
             "remote",
@@ -81,11 +81,11 @@
           ],
           "properties": {
             "remote": {
-              "description": "`true` if multimedia files are stored remotely (e.g. in the cloud) and `false` if these are part of the data package. In the latter case, relative paths in `media.csv` start from the root of the data package.",
+              "description": "`true` if multimedia files are stored remotely (e.g. in the cloud) and `false` if these are part of the data package. In the latter case, relative paths in `multimedia.csv` start from the root of the data package.",
               "type": "boolean"
             },
             "public": {
-              "description": "`true` if URLs to multimedia files in `media.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
+              "description": "`true` if URLs to multimedia files in `multimedia.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
               "type": "boolean"
             },
             "auth_type": {
@@ -189,10 +189,10 @@
             "classification_level": {
               "type": "string",
               "format": "default",
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
+              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
               "enum": [
                 "sequence",
-                "media"
+                "multimedia"
               ]
             },
             "sequence_interval": {

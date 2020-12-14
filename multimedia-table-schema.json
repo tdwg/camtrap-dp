@@ -1,7 +1,7 @@
 {
   "fields": [
     {
-      "name": "media_id",
+      "name": "multimedia_id",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the multimedia file.",
@@ -59,7 +59,7 @@
       "name": "file_name",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. When this field is included, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
+      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -89,7 +89,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this media.",
+      "description": "Internal attribute of data management system: ID of this multimedia file.",
       "example": "",
       "constraints": {
         "required": false
@@ -101,7 +101,7 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "media_id",
+  "primaryKey": "multimedia_id",
   "foreignKeys": [
     {
       "fields": "deployment_id",
