@@ -17,7 +17,7 @@
           "type": "string",
           "format": "default"
         },
-        "url": {
+        "path": {
           "description": "Organization website.",
           "type": "string",
           "format": "uri"
@@ -264,7 +264,7 @@
           "type": "string",
           "format": "default"
         },
-        "_platform_url": {
+        "_platform_path": {
           "description": "Internal attribute of data management or repository system: platform URL.",
           "type": "string",
           "format": "uri"
