@@ -17,8 +17,8 @@
           "type": "string",
           "format": "default"
         },
-        "url": {
-          "description": "A web address for this organization.",
+        "path": {
+          "description": "Organization website.",
           "type": "string",
           "format": "uri"
         },
@@ -38,22 +38,22 @@
       ],
       "properties": {
         "taxon_id": {
-          "description": "Taxon ID according to a taxonomy reference list defined by `taxon_id_reference`.",
+          "description": "Taxon ID of the species according to a taxonomic reference list defined by `taxon_id_reference`.",
           "type": "string",
           "format": "default"
         },
         "scientific_name": {
-          "description": "Species scientific name.",
+          "description": "Scientific name of the species.",
           "type": "string",
           "format": "default"
         },
         "vernacular_name": {
-          "description": "Species common name (preferably in English).",
+          "description": "Common name of the species, preferably in English.",
           "type": "string",
           "format": "default"
         },
         "count": {
-          "description": "Number of observations of given species.",
+          "description": "Number of observations for that species in the data package.",
           "type": "integer"
         }
       }
@@ -73,7 +73,7 @@
       ],
       "properties": {
         "multimedia_access": {
-          "description": "Information about how to access multimedia files from the `observations.csv` table.",
+          "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
           "required": [
             "remote",
@@ -81,11 +81,11 @@
           ],
           "properties": {
             "remote": {
-              "description": "Indicates if multimedia files are stored remotely (e.g. in a cloud) or are part of this data package. In the second case, in the `observations.csv` table, paths relative to the location of `datapackage.json` file are provided.",
+              "description": "`true` if multimedia files are stored remotely (e.g. in the cloud) and `false` if these are part of the data package. In the latter case, relative paths in `multimedia.csv` start from the root of the data package.",
               "type": "boolean"
             },
             "public": {
-              "description": "Indicates if urls to multimedia files from the `observations.csv` table are publicly accessible. If not, then additional information about a required authentication process should be provided in the `auth_type` field.",
+              "description": "`true` if URLs to multimedia files in `multimedia.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
               "type": "boolean"
             },
             "auth_type": {
@@ -121,19 +121,19 @@
           ],
           "properties": {
             "title": {
-              "description": "Title of this project.",
+              "description": "Title of the project.",
               "type": "string",
               "format": "default"
             },
             "acronym": {
-              "description": "Short and human-readable identifier of this project.",
+              "description": "Short and human-readable identifier of the project.",
               "type": "string",
               "format": "default"
             },
             "sampling_design": {
               "description": "Type of a sampling layout.",
               "type": "string",
-              "format": "array",
+              "format": "default",
               "enum": [
                 "simple random",
                 "systematic random",
@@ -145,47 +145,56 @@
             },
             "sensor_method": {
               "description": "Method of triggering a camera.",
-              "type": "string",
-              "format": "array",
-              "enum": [
-                "motion detection",
-                "timelapse",
-                "both"
-              ]
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "motion detection",
+                  "time lapse"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "animal_types": {
-              "description": "Type of animal species in this study. 'Marked' animals are individually-recognizable.",
-              "type": "string",
-              "format": "array",
-              "enum": [
-                "unmarked",
-                "marked",
-                "both"
-              ]
+              "description": "Type of observed animals. `marked` indicates specific animal individuals can be recognized.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "unmarked",
+                  "marked"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "bait_use": {
-              "type": "string",
-              "format": "default",
+              "type": "array",
               "description": "Type of bait (if any) that was used with cameras.",
-              "enum": [
-                "none",
-                "scent",
-                "food",
-                "visual",
-                "acoustic",
-                "other"
-              ]
+              "items": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "scent",
+                  "food",
+                  "visual",
+                  "acoustic",
+                  "other"
+                ]
+              },
+              "uniqueItems": true,
+              "minItems": 1
             },
             "classification_level": {
               "type": "string",
               "format": "default",
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
+              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
               "enum": [
                 "sequence",
-                "media",
-                "both"
+                "multimedia"
               ]
-            },            
+            },
             "sequence_interval": {
               "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequence_id`.",
               "type": "integer"
@@ -196,19 +205,20 @@
               "format": "default"
             },
             "references": {
-              "description": "List of references related to this project.",
+              "description": "List of references related to the project.",
               "type": "array",
               "items": {
                 "url": {
-                  "description": "Url to a reference.",
+                  "description": "URL to a reference.",
                   "type": "string",
                   "format": "uri"
                 }
               }
             },
             "_id": {
-              "description": "Internal attribute of data management system or data packages catalogue: ID of this project.",
-              "type": "integer"
+              "description": "Internal attribute of data management system or data packages catalogue: ID of the project.",
+              "type": "string",
+              "format": "default"
             }
           }
         },
@@ -230,7 +240,7 @@
               "format": "date"
             },
             "end": {
-              "description": "Start date of the last deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
+              "description": "End date of the last (completed) deployment, as an ISO 8601 formatted string `YYYY-MM-DD`.",
               "type": "string",
               "format": "date"
             }
@@ -244,29 +254,30 @@
           }
         },
         "taxon_id_reference": {
-          "description": "Url of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
+          "description": "URL of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
           "example": "http://www.catalogueoflife.org/annual-checklist/2019/",
           "type": "string",
           "format": "uri"
         },
         "_platform_title": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform name.",
+          "description": "Internal attribute of data management or repository system: platform name.",
           "type": "string",
           "format": "default"
         },
-        "_platform_url": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform url.",
+        "_platform_path": {
+          "description": "Internal attribute of data management or repository system: platform URL.",
           "type": "string",
           "format": "uri"
         },
         "_platform_version": {
-          "description": "Internal attribute of data management system or data packages catalogue: platform version.",
+          "description": "Internal attribute of data management or repository system: platform version.",
           "type": "string",
           "format": "default"
         },
         "_platform_package_id": {
-          "description": "Internal attribute of data management system or data packages catalogue: package id.",
-          "type": "integer"
+          "description": "Internal attribute of data management or repository system: package ID.",
+          "type": "string",
+          "format": "default"
         }
       }
     }

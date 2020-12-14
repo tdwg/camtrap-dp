@@ -1,11 +1,11 @@
 {
   "fields": [
     {
-      "name": "media_id",
+      "name": "multimedia_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a multimedia file within a project.",
-      "example": "M01",
+      "description": "Unique identifier (within a project) of the multimedia file.",
+      "example": "m1",
       "constraints": {
         "required": true,
         "unique": true
@@ -15,8 +15,8 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
-      "example": "L01-D01",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "example": "dep1",
       "constraints": {
         "required": true
       }
@@ -25,8 +25,8 @@
       "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a sequence within a project. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
-      "example": "E01",
+      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
+      "example": "seq1",
       "constraints": {
         "required": true
       }
@@ -59,7 +59,7 @@
       "name": "file_name",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. This field is optional and supports cases where the file name is not a part of url provided in `file_path`.",
+      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -80,6 +80,17 @@
       "type": "object",
       "format": "default",
       "description": "EXIF data of the file, as a valid JSON object.",
+      "example": "{ \"EXIF\": { \"ISO\": 200, \"Make\": \"RECONYX\"}",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "_id",
+      "type": "string",
+      "format": "default",
+      "description": "Internal attribute of data management system: ID of this multimedia file.",
+      "example": "",
       "constraints": {
         "required": false
       }
@@ -90,7 +101,7 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "media_id",
+  "primaryKey": "multimedia_id",
   "foreignKeys": [
     {
       "fields": "deployment_id",

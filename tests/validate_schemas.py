@@ -14,13 +14,13 @@ handler.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
 logger.addHandler(handler)
 
 
-PACKAGE_PROFILE = "camtrap-package-profile.json"
-MEDIA_TABLE = "media-table-schema.json"
+PACKAGE_PROFILE = "camtrap-dp-profile.json"
+MULTIMEDIA_TABLE = "multimedia-table-schema.json"
 DEPLOYMENTS_TABLE = "deployments-table-schema.json"
 OBSERVATIONS_TABLE = "observations-table-schema.json"
 
 TABLES = [
-    MEDIA_TABLE,
+    MULTIMEDIA_TABLE,
     DEPLOYMENTS_TABLE,
     OBSERVATIONS_TABLE,
 ]

@@ -5,8 +5,8 @@
       "type": "string",
       "format": "default",
       "title": "Deployment ID",
-      "description": "A unique identifier of a deployment within a project.",
-      "example": "L01-D01",
+      "description": "Unique identifier (within a project) of the deployment.",
+      "example": "dep1",
       "constraints": {
         "required": true,
         "unique": true
@@ -16,8 +16,8 @@
       "name": "location_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a sampling location within a project.",
-      "example": "L01",
+      "description": "Unique identifier (within a project) of the sampling location for this deployment.",
+      "example": "loc1",
       "constraints": {
         "required": false
       }
@@ -61,7 +61,7 @@
       "type": "datetime",
       "format": "default",
       "description": "Date and time when the deployment started, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
-      "example": "2020-03-24T11:21:46Z",
+      "example": "2020-03-01T22:00:00Z",
       "constraints": {
         "required": true
       }
@@ -71,7 +71,7 @@
       "type": "datetime",
       "format": "default",
       "description": "Date and time when the deployment ended, as an ISO 8601 formatted string in UTC (e.g. `YYYY-MM-DDThh:mm:ssZ`).",
-      "example": "2020-03-24T11:21:46Z",
+      "example": "2020-04-01T22:00:00Z",
       "constraints": {
         "required": true
       }
@@ -80,9 +80,9 @@
       "name": "setup_by",
       "type": "string",
       "format": "default",
-      "description": "Name or a unique identifier of the person who set up the camera for this deployment.",
+      "description": "Name or unique identifier of the person who set up the camera for this deployment.",
       "example": [
-        "Charles Robert Darwin",
+        "Jim Casaer",
         "2ef60d48-fd67-4bac-9569-49a03b0ef096"
       ],
       "constraints": {
@@ -93,7 +93,7 @@
       "name": "camera_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of a camera amongst all cameras used in a project. This can be e.g. a camera device serial number.",
+      "description": "Unique identifier (within a project) of the camera used for this deployment. This can be e.g. the camera device serial number.",
       "example": "P800HG08192031",
       "constraints": {
         "required": false
@@ -103,7 +103,7 @@
       "name": "camera_model",
       "type": "string",
       "format": "default",
-      "description": "Manufacturer and model of camera provided in this format: `manufacturer-model`.",
+      "description": "Manufacturer and model of the camera provided in this format: `manufacturer-model`.",
       "example": "Reconyx-PC800",
       "constraints": {
         "required": false
@@ -112,7 +112,7 @@
     {
       "name": "camera_timestamp",
       "type": "boolean",
-      "description": "A flag indicating if a datetime settings in a camera trap were set up properly and in consequence all recorded files have proper timestamps.",
+      "description": "`true` if datetime settings in the camera were set up properly and in consequence all recorded multimedia files have proper timestamps.",
       "example": "true",
       "constraints": {
         "required": false
@@ -122,7 +122,7 @@
       "name": "camera_interval",
       "type": "integer",
       "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
-      "example": "0",
+      "example": "120",
       "constraints": {
         "required": false,
         "minimum": 0
@@ -131,7 +131,7 @@
     {
       "name": "camera_height",
       "type": "integer",
-      "description": "An approximate height at which a camera was deployed. Specified in centimeters.",
+      "description": "An approximate height at which the camera was deployed. Specified in centimeters.",
       "example": "100",
       "constraints": {
         "required": false,
@@ -142,7 +142,7 @@
       "name": "camera_angle",
       "type": "integer",
       "format": "default",
-      "description": "An approximate angle used to deploy a camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
+      "description": "An approximate angle used to deploy the camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
       "example": "180",
       "constraints": {
         "required": false,
@@ -154,8 +154,8 @@
       "name": "bait_use",
       "type": "string",
       "format": "default",
-      "description": "Type of bait (if any) that was used with camera. If other, more info can be provided in the `comments` field.",
-      "example": "",
+      "description": "Type of bait (if any) that was used for this deployment. If other, more info can be provided in the `comments` field.",
+      "example": "food",
       "constraints": {
         "required": false,
         "enum": [
@@ -239,14 +239,18 @@
       "name": "comments",
       "type": "string",
       "format": "default",
+      "description": "Comments or notes about the deployment.",
+      "example": "",
       "constraints": {
         "required": false
       }
     },
     {
       "name": "_id",
-      "type": "integer",
+      "type": "string",
+      "format": "default",
       "description": "Internal attribute of data management system: ID of this deployment.",
+      "example": "",
       "constraints": {
         "required": false
       }
