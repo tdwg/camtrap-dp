@@ -126,7 +126,7 @@
       "name": "count",
       "type": "integer",
       "format": "default",
-      "description": "Number of observed individuals (optionally of given age, sex and behaviour: see below).",
+      "description": "Number of observed individuals (optionally of given age, sex and behaviour).",
       "example": "5",
       "constraints": {
         "required": false,
@@ -137,7 +137,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`media_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour: see below).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`media_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -180,7 +180,7 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking).",
+      "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be expressed as as a pipe (|) separated list.",
       "example": "vigilance",
       "constraints": {
         "required": false
