@@ -114,16 +114,6 @@
       }
     },
     {
-      "name": "is_domesticated",
-      "type": "boolean",
-      "format": "default",
-      "description": "`true` if the observed individual(s) are domesticated.",
-      "example": "false",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "count",
       "type": "integer",
       "format": "default",
