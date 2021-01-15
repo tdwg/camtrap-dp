@@ -86,6 +86,16 @@
       }
     },
     {
+      "name": "comments",
+      "type": "string",
+      "format": "default",
+      "description": "Comments or notes about the multimedia file.",
+      "example": "marked as favourite",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "_id",
       "type": "string",
       "format": "default",
