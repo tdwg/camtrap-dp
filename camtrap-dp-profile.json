@@ -108,7 +108,7 @@
           }
         },
         "project": {
-          "description": "",
+          "description": "Camera trap project that generated the data in this data package.",
           "type": "object",
           "required": [
             "title",
