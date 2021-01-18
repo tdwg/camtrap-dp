@@ -130,6 +130,11 @@
               "type": "string",
               "format": "default"
             },
+            "description": {
+              "description": "Description of the project, ideally expressed in Markdown format. To describe the data package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
+              "type": "string",
+              "format": "default"
+            },            
             "sampling_design": {
               "description": "Type of a sampling layout.",
               "type": "string",
