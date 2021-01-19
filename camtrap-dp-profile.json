@@ -136,16 +136,16 @@
               "format": "default"
             },            
             "sampling_design": {
-              "description": "Type of a sampling layout.",
+              "description": "Type of a sampling design/layout. The values are based on Wearn & Glover-Kapfer (2017, <https://doi.org/10.13140/RG.2.2.23409.17767>), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
               "type": "string",
               "format": "default",
               "enum": [
                 "simple random",
                 "systematic random",
-                "clustered (random arrays)",
+                "clustered random",
                 "experimental",
                 "targeted",
-                "ad-hoc (opportunistic)"
+                "opportunistic"
               ]
             },
             "sensor_method": {
