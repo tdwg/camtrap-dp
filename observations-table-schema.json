@@ -4,8 +4,8 @@
       "name": "observation_id",
       "type": "string",
       "format": "default",
-      "description": "A unique identifier of an observation within a project.",
-      "example": "1",
+      "description": "Unique identifier (within a project) of the observation.",
+      "example": "obs1",
       "constraints": {
         "required": true,
         "unique": true
@@ -15,48 +15,38 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
-      "example": "L01-D01",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "example": "dep1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "event_id",
+      "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the event (collection of multimedia files) that is the source of this observation. Foreign key to `media:event_id`.",
-      "example": "E01",
+      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `multimedia:sequence_id`.",
+      "example": "seq1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "media_id",
+      "name": "multimedia_id",
       "type": "string",
       "format": "default",
-      "description": "The unique identifier of the multimedia file that is the source of this observation. Foreign key to `media:media_id`. Use only for file-based observations.",
-      "example": "M01",
+      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `multimedia:multimedia_id`. Include but leave empty for sequence-based observations.",
+      "example": "m1",
       "constraints": {
         "required": false
       }
     },
     {
-      "name": "is_empty",
-      "type": "boolean",
-      "default": "false",
-      "description": "A flag indicating if an event or file is empty i.e. not providing an observation.",
-      "example": "true",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "sequence_based",
-      "type": "boolean",
-      "default": "false",
-      "description": "A flag indicating if classifications were made per event or for each single file.",
-      "example": "false",
+      "name": "timestamp",
+      "type": "datetime",
+      "format": "default",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated multimedia file (in `multimedia_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequence_id`).",
+      "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
       }
@@ -65,54 +55,69 @@
       "name": "observation_type",
       "type": "string",
       "format": "default",
-      "description": "Type of observation.",
-      "example": "Animal",
+      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "example": "animal",
       "constraints": {
-        "required": false,
+        "required": true,
         "enum": [
-          "Human",
-          "Animal",
-          "Vehicle"
+          "animal",
+          "human",
+          "vehicle",
+          "empty",
+          "undefined",
+          "unclassified"
         ]
       }
     },
     {
-      "name": "species_latin",
+      "name": "sensor_method",
       "type": "string",
       "format": "default",
-      "description": "A scientific name of identified species.",
+      "description": "Method of triggering the camera for this observation.",
+      "example": "motion detection",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "motion detection",
+          "time lapse"
+        ]
+      }
+    },
+    {
+      "name": "camera_setup",
+      "type": "boolean",
+      "format": "default",
+      "description": "`true` if this observation is part of the camera setup process (camera deployment, pickup, maintenance).",
+      "example": "false",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "scientific_name",
+      "type": "string",
+      "format": "default",
+      "description": "Scientific name of the observed individual(s).",
       "example": "Canis lupus",
       "constraints": {
         "required": false
       }
     },
     {
-      "name": "species_common",
+      "name": "vernacular_name",
       "type": "string",
       "format": "default",
-      "description": "A common name of identified species.",
-      "example": "Wolf",
+      "description": "Common name of the observed individual(s), preferably in English.",
+      "example": "wolf",
       "constraints": {
         "required": false
-      }
-    },
-    {
-      "name": "uncertainty",
-      "type": "number",
-      "format": "default",
-      "description": "How accurate is this classification? Specified as probability (provide an approximate value for human classifications).",
-      "example": "0.95",
-      "constraints": {
-        "required": false,
-        "minimum": 0,
-        "maximum": 1
       }
     },
     {
       "name": "count",
       "type": "integer",
       "format": "default",
-      "description": "Number of individuals identified (optionally of given age, sex and behaviour; see below). Interpretation depends on the value of `sequence_based` field.",
+      "description": "Number of observed individuals (optionally of given age, sex and behaviour).",
       "example": "5",
       "constraints": {
         "required": false,
@@ -123,7 +128,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of 'NEW' individuals identified for this file taking into account the entire sequence (optionally of given age, sex and behaviour; see below).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimedia_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -134,16 +139,16 @@
       "name": "age",
       "type": "string",
       "format": "default",
-      "description": "Age of identified individuals",
-      "example": "Adult",
+      "description": "Age of observed individual(s)",
+      "example": "adult",
       "constraints": {
         "required": false,
         "enum": [
-          "Adult",
-          "Subadult",
-          "Juvenile",
-          "Offspring",
-          "Undefined"
+          "adult",
+          "subadult",
+          "juvenile",
+          "offspring",
+          "undefined"
         ]
       }
     },
@@ -151,14 +156,14 @@
       "name": "sex",
       "type": "string",
       "format": "default",
-      "description": "Sex of identified individuals",
-      "example": "Female",
+      "description": "Sex of observed individual(s)",
+      "example": "female",
       "constraints": {
         "required": false,
         "enum": [
-          "Female",
-          "Male",
-          "Undefined"
+          "female",
+          "male",
+          "undefined"
         ]
       }
     },
@@ -166,44 +171,87 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of identified individuals.",
-      "example": "Vigilance",
+      "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be expressed as as a pipe (|) separated list.",
+      "example": "vigilance",
       "constraints": {
-        "required": false,
-        "enum": [
-          "Grazing",
-          "Browsing",
-          "Rooting",
-          "Vigilance",
-          "Running",
-          "Walking",
-          "Other",
-          "Undefined"
-        ]
+        "required": false
       }
     },
     {
       "name": "individual_id",
       "type": "string",
       "format": "default",
-      "description": "Individual animal unique identifier within this project.",
+      "description": "Unique identifier (within a project) of the observed individual.",
       "example": "RD213",
       "constraints": {
         "required": false
       }
     },
     {
+      "name": "classification_method",
+      "type": "string",
+      "format": "default",
+      "description": "Classification method.",
+      "example": "human",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "human",
+          "machine"
+        ]
+      }
+    },
+    {
+      "name": "classified_by",
+      "type": "string",
+      "format": "default",
+      "description": "Name or unique identifier of the person or AI algorithm that classified this observation.",
+      "example": [
+        "Jakub Bubnicki",
+        "Megadetector"
+      ],
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "classification_timestamp",
+      "type": "datetime",
+      "format": "default",
+      "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "example": "2020-08-22T10:25:19Z",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "classification_confidence",
+      "type": "number",
+      "format": "default",
+      "description": "Accuracy confidence of the classification. Specified as probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
+      "example": "0.95",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    {
       "name": "comments",
       "type": "string",
       "format": "default",
+      "description": "Comments or notes about the observation.",
+      "example": "",
       "constraints": {
         "required": false
       }
     },
     {
       "name": "_id",
-      "type": "integer",
+      "type": "string",
+      "format": "default",
       "description": "Internal attribute of data management system: ID of this observation.",
+      "example": "",
       "constraints": {
         "required": false
       }
@@ -214,6 +262,7 @@
     "NaN",
     "nan"
   ],
+  "primaryKey": "observation_id",
   "foreignKeys": [
     {
       "fields": "deployment_id",
@@ -223,17 +272,17 @@
       }
     },
     {
-      "fields": "event_id",
+      "fields": "sequence_id",
       "reference": {
-        "resource": "media",
-        "fields": "event_id"
+        "resource": "multimedia",
+        "fields": "sequence_id"
       }
     },
     {
-      "fields": "media_id",
+      "fields": "multimedia_id",
       "reference": {
-        "resource": "media",
-        "fields": "media_id"
+        "resource": "multimedia",
+        "fields": "multimedia_id"
       }
     }
   ]
