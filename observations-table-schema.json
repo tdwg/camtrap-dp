@@ -215,10 +215,10 @@
       }
     },
     {
-      "name": "classification_date",
+      "name": "classification_timestamp",
       "type": "datetime",
       "format": "default",
-      "description": "Date and time when this classification was made, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-08-22T10:25:19Z",
       "constraints": {
         "required": false
