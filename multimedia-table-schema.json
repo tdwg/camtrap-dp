@@ -1,0 +1,124 @@
+{
+  "fields": [
+    {
+      "name": "multimedia_id",
+      "type": "string",
+      "format": "default",
+      "description": "Unique identifier (within a project) of the multimedia file.",
+      "example": "m1",
+      "constraints": {
+        "required": true,
+        "unique": true
+      }
+    },
+    {
+      "name": "deployment_id",
+      "type": "string",
+      "format": "default",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "example": "dep1",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "sequence_id",
+      "type": "string",
+      "format": "default",
+      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
+      "example": "seq1",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": "datetime",
+      "format": "default",
+      "description": "Date and time when the multimedia file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "example": "2020-03-24T11:21:46Z",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "file_path",
+      "type": "string",
+      "format": "uri",
+      "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this package. Additional information on how to access this file is provided in a package-level metadata.",
+      "example": [
+        "https://trapper.org/storage/resource/media/259024/file/",
+        "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
+        "DEP0001/IMG0001.jpg"
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "file_name",
+      "type": "string",
+      "format": "default",
+      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
+      "example": "IMG0001.jpg",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "file_mediatype",
+      "type": "string",
+      "format": "default",
+      "description": "Mediatype of a multimedia file.",
+      "example": "image/jpeg",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "exif_data",
+      "type": "object",
+      "format": "default",
+      "description": "EXIF data of the file, as a valid JSON object.",
+      "example": "{ \"EXIF\": { \"ISO\": 200, \"Make\": \"RECONYX\"}",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "comments",
+      "type": "string",
+      "format": "default",
+      "description": "Comments or notes about the multimedia file.",
+      "example": "marked as favourite",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "_id",
+      "type": "string",
+      "format": "default",
+      "description": "Internal attribute of data management system: ID of this multimedia file.",
+      "example": "",
+      "constraints": {
+        "required": false
+      }
+    }
+  ],
+  "missingValues": [
+    "",
+    "NaN",
+    "nan"
+  ],
+  "primaryKey": "multimedia_id",
+  "foreignKeys": [
+    {
+      "fields": "deployment_id",
+      "reference": {
+        "resource": "deployments",
+        "fields": "deployment_id"
+      }
+    }
+  ]
+}
