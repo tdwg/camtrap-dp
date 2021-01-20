@@ -108,7 +108,7 @@
       "type": "string",
       "format": "default",
       "description": "Common name of the observed individual(s), preferably in English.",
-      "example": "Wolf",
+      "example": "wolf",
       "constraints": {
         "required": false
       }
