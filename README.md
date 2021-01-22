@@ -7,7 +7,7 @@ file | definition | specification
 `datapackage.json` | Metadata regarding the data package and camera trap project. | [camtrap-dp-profile.json](camtrap-dp-profile.json)
 `deployments.csv` | Table with camera trap deployments. Includes `deployment_id`, start, end, location and camera setup information. | [deployments-table-schema.json](deployments-table-schema.json)
 `multimedia.csv` | Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deployment_id`) and organized in sequences (`sequence_id`). Includes timestamp and file path. | [multimedia-table-schema.json](multimedia-table-schema.json)
-`observations.csv` | Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, empty, human) or animal observations (`observation_type` = `animal`), the latter optionally split by count, age, sex, behaviour and/or individual. | [observations-table-schema.json](observations-table-schema.json)
+`observations.csv` | Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, empty) or one or more animal observations (`observation_type` = `animal`) of a certain species, count, age, sex, behaviour and/or individual. | [observations-table-schema.json](observations-table-schema.json)
 
 The specifications build upon existing standards:
 
@@ -17,3 +17,7 @@ The specifications build upon existing standards:
 ## Contribute
 
 You can contribute by watching this repository and participating in the [issue discussions](https://gitlab.com/oscf/camtrap-dp/-/issues).
+
+## Recommended citation
+
+> Camtrap DP Development Team (2021) Camera Trap Data Package https://gitlab.com/oscf/camtrap-dp
