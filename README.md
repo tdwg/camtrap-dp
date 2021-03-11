@@ -16,8 +16,8 @@ The specifications build upon existing standards:
 
 ## Contribute
 
-You can contribute by watching this repository and participating in the [issue discussions](https://gitlab.com/oscf/camtrap-dp/-/issues).
+You can contribute by watching this repository and participating in the [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2021) Camera Trap Data Package https://gitlab.com/oscf/camtrap-dp
+> Camtrap DP Development Team (2021) Camera Trap Data Package https://github.com/tdwg/camtrap-dp
