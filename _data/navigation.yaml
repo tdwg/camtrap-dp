@@ -1,0 +1,6 @@
+# Links listed below will be included in your site's navbar (navigation at the top)
+
+- text: Home
+  href: /
+- text: GitHub
+  href: https://github.com/tdwg/camtrap-dp
