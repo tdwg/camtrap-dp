@@ -20,4 +20,4 @@ You can contribute by watching this repository and participating in the [issue d
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2021) Camera Trap Data Package https://github.com/tdwg/camtrap-dp
+> Camtrap DP Development Team (2021) Camera Trap Data Package <https://github.com/tdwg/camtrap-dp>
