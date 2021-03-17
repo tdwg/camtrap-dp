@@ -22,8 +22,8 @@ Metadata are defined in a `datapackage.json` file. It follows the [Tabular Data 
 - [`multimedia_access`](#multimedia_access)
 - [`organizations`](#organizations)
 - [`project`](#project)
-- [`spatial`](#spatial): from Dublin Core
-- [`temporal`](#temporal): from Dublin Core
+- [`spatial`](#spatial)
+- [`temporal`](#temporal)
 - [`taxonomic`](#taxonomic)
 - [`taxon_id_reference`](#taxon_id_reference)
 - [`_platform_title`](#_platform_title)
