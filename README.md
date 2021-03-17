@@ -13,6 +13,18 @@ File | Description | Documentation
 
 See [website](http://tdwg.github.io/camtrap-dp).
 
+## Example
+
+[Example Camtrap DP](https://github.com/tdwg/dwc-for-biologging/tree/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw)
+
+## Validation
+
+By building upon Frictionless Data specifications, a Camtrap DP can be validated with:
+
+```shell
+pip install frictionless
+frictionless validate path/to/your/datapackage.json
+```
 
 ## Contribute
 
