@@ -1,0 +1,64 @@
+---
+layout: base
+---
+
+<div class="row">
+  <div class="col">
+
+    {{ content }}
+
+    {% assign profile_file = "camtrap-dp-profile" %}
+    {% assign properties = site.data[profile_file].allOf[1].properties %}
+
+    <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
+
+    {% for raw_property in properties %}
+      {% assign property_name = raw_property[0] %}
+      {% assign property = raw_property[1] %}
+      
+      <h2 id="{{ property_name | downcase | url_encode }}">{{ property_name }}</h2>
+
+      {{ property.description | markdownify }}
+
+      {% if property.properties %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Definition</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <colgroup>
+            <col width="20%">
+            <col width="70%">
+            <col width="10%">
+          </colgroup>
+            {% for raw_field in property.properties %}
+              {% assign field_name = raw_field[0] %}
+              {% assign field = raw_field[1] %}
+
+              <tr>
+                <td id="{{ field_name | downcase | url_encode }}">
+                  <a href="#{{ field_name | downcase | url_encode }}"><code>{{ field_name }}</code></a>
+                </td>
+                <td>
+                  {{ field.description | markdownify }}
+                  {% if field.constraints.enum %}
+                    <ul>
+                    {% for item in field.constraints.enum %}
+                      <li><code>{{ item }}</code></li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                </td>
+                <td>{{ field.type }}</td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
