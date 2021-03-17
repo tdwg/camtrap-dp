@@ -232,7 +232,7 @@
           "$ref": "http://json.schemastore.org/geojson.json"
         },
         "temporal": {
-          "description": "Temporal coverage for this data package, based on the included deployments",
+          "description": "Temporal coverage for this data package, based on the included deployments.",
           "type": "object",
           "required": [
             "start",
