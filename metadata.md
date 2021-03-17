@@ -5,17 +5,17 @@ description:
 permalink: /metadata/
 ---
 
-Metadata are defined in a `datapackage.json` file. It follows the [Tabular Data Package specs](https://specs.frictionlessdata.io/tabular-data-package/#specification) and includes default Data Package properties and specific Camtrap DP properties (defined below). For a full example, see this [datapackage.json](https://github.com/tdwg/dwc-for-biologging/blob/master/derived/camtrap-dp/data/raw/datapackage.json).
+Metadata in Camtrap DP are defined in a `datapackage.json` file. It follows the [Tabular Data Package](https://specs.frictionlessdata.io/tabular-data-package/#specification) specifications and includes default **Data Package properties** and specific **Camtrap DP properties**. The latter are presented below in human-readable form. For a full example, see [this `datapackage.json`](https://raw.githubusercontent.com/tdwg/dwc-for-biologging/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw/datapackage.json).
 
 ## Data Package properties
 
 - [`name`](https://specs.frictionlessdata.io/data-package/#name)
 - [`id`](https://specs.frictionlessdata.io/data-package/#id)
 - [`created`](https://specs.frictionlessdata.io/data-package/#created)
-- [`profile`](https://specs.frictionlessdata.io/data-package/#profile): `tabular-data-package`
+- [`profile`](https://specs.frictionlessdata.io/data-package/#profile)
 - [`sources`](https://specs.frictionlessdata.io/data-package/#sources)
 - [`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)
-- [`resources`](https://specs.frictionlessdata.io/data-package/#required-properties): three [Tabular Data Resources](https://specs.frictionlessdata.io/tabular-data-resource/), see [Tables](../tables/).
+- [`resources`](https://specs.frictionlessdata.io/data-package/#required-properties): the data files, see [Data](../data/)
 
 ## Camtrap DP properties
 
