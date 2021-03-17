@@ -45,9 +45,9 @@ layout: base
                 </td>
                 <td>
                   {{ field.description | markdownify }}
-                  {% if field.constraints.enum %}
+                  {% if field.enum %}
                     <ul>
-                    {% for item in field.constraints.enum %}
+                    {% for item in field.enum %}
                       <li><code>{{ item }}</code></li>
                     {% endfor %}
                     </ul>
