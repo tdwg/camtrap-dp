@@ -16,7 +16,7 @@ See [website](http://tdwg.github.io/camtrap-dp).
 
 ## Contribute
 
-You can contribute by watching the repository and participating in the [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
+You can contribute by watching [the repository](https://github.com/tdwg/camtrap-dp) and participating in the [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
 ## Recommended citation
 
