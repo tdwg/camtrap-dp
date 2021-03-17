@@ -33,7 +33,7 @@ frictionless validate path/to/your/datapackage.json
 
 ## Contribute
 
-You can contribute by watching [the repository](https://github.com/tdwg/camtrap-dp) and participating in the [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
+Want to get involved in the development of Camtrap DP? Watch [the repository](https://github.com/tdwg/camtrap-dp) to get notifications and participate in [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
 ## Recommended citation
 
