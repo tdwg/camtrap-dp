@@ -1,5 +1,5 @@
 ---
-layout: metadata
+layout: profile
 title: Metadata
 description: 
 permalink: /metadata/
