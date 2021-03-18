@@ -12,15 +12,15 @@ layout: base
 
     <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
-    {% for raw_property in properties %}
-      {% assign property_name = raw_property[0] %}
-      {% assign property = raw_property[1] %}
+    {% for p1_raw in properties %}
+      {% assign p1_name = p1_raw[0] %}
+      {% assign p1 = p1_raw[1] %}
       
-      <h2 id="{{ property_name | downcase | url_encode }}">{{ property_name }}</h2>
+      <h2 id="{{ p1_name | downcase | url_encode }}">{{ p1_name }}</h2>
 
-      {{ property.description | markdownify }}
+      {{ p1.description | markdownify }}
 
-      {% if property.properties %}
+      {% if p1.properties %}
       <table>
         <thead>
           <tr>
@@ -35,25 +35,25 @@ layout: base
             <col width="70%">
             <col width="10%">
           </colgroup>
-            {% for raw_field in property.properties %}
-              {% assign field_name = raw_field[0] %}
-              {% assign field = raw_field[1] %}
+            {% for p2_raw in p1.properties %}
+              {% assign p2_name = p2_raw[0] %}
+              {% assign p2 = p2_raw[1] %}
 
               <tr>
-                <td id="{{ field_name | downcase | url_encode }}">
-                  <a href="#{{ field_name | downcase | url_encode }}"><code>{{ field_name }}</code></a>
+                <td id="{{ p2_name | downcase | url_encode }}">
+                  <a href="#{{ p2_name | downcase | url_encode }}"><code>{{ p2_name }}</code></a>
                 </td>
                 <td>
-                  {{ field.description | markdownify }}
-                  {% if field.enum %}
+                  {{ p2.description | markdownify }}
+                  {% if p2.enum %}
                     <ul>
-                    {% for item in field.enum %}
+                    {% for item in p2.enum %}
                       <li><code>{{ item }}</code></li>
                     {% endfor %}
                     </ul>
                   {% endif %}
                 </td>
-                <td>{{ field.type }}</td>
+                <td>{{ p2.type }}</td>
               </tr>
             {% endfor %}
         </tbody>
