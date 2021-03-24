@@ -1,0 +1,65 @@
+---
+layout: base
+---
+
+<div class="row">
+  <div class="col">
+
+    {{ content }}
+
+    {% for table_schema_file in site.data["_tables"] %}
+      {% assign table_schema = site.data[table_schema_file] %}
+
+      <h2 id="{{ table_schema.title | downcase | url_encode }}">{{ table_schema.title }}</h2>
+
+      <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
+
+      {{ table_schema.description | markdownify }}
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Definition</th>
+            <th>Type</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <colgroup>
+            <col width="20%">
+            <col width="50%">
+            <col width="10%">
+            <col width="20%">
+          </colgroup>
+          {% for field in table_schema.fields %}
+            <tr>
+              <td id="{{ field.name | downcase | url_encode }}">
+                <a href="#{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
+                {% if field.constraints.required %}*{% endif %}
+              </td>
+              <td>
+                {{ field.description | markdownify }}
+                {% if field.constraints.enum %}
+                  <ul>
+                  {% for item in field.constraints.enum %}
+                    <li><code>{{ item }}</code></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              </td>
+              <td>{{ field.type }}</td>
+              <td>
+                {% if field.example %}
+                  {% for example in field.example %}
+                  <p><code>{{ example }}</code></p>
+                  {% endfor %}
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+  </div>
+</div>

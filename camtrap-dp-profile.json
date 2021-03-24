@@ -228,11 +228,11 @@
           }
         },
         "spatial": {
-          "description": "Spatial coverage for this data package specified as GeoJSON.",
+          "description": "Spatial coverage for this data package specified as GeoJSON. Term borrowed from [Dublin Core](http://purl.org/dc/terms/spatial).",
           "$ref": "http://json.schemastore.org/geojson.json"
         },
         "temporal": {
-          "description": "Temporal coverage for this data package, based on the included deployments",
+          "description": "Temporal coverage for this data package, based on the included deployments. Term borrowed from [Dublin Core](http://purl.org/dc/terms/temporal).",
           "type": "object",
           "required": [
             "start",
