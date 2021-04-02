@@ -1,23 +1,38 @@
-# Camera Trap Data Package (Camtrap DP)
+---
+background: /assets/home.jpg
+permalink: /
+---
 
-**Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange standard for camera trap data. A Camtrap DP is a [Frictionless Data Package](https://frictionlessdata.io/data-package/) that consists of:
+# Camera Trap Data Package
 
-file | definition | specification
---- | --- | ---
-`datapackage.json` | Metadata regarding the data package and camera trap project. | [camtrap-dp-profile.json](camtrap-dp-profile.json)
-`deployments.csv` | Table with camera trap deployments. Includes `deployment_id`, start, end, location and camera setup information. | [deployments-table-schema.json](deployments-table-schema.json)
-`multimedia.csv` | Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deployment_id`) and organized in sequences (`sequence_id`). Includes timestamp and file path. | [multimedia-table-schema.json](multimedia-table-schema.json)
-`observations.csv` | Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, empty) or one or more animal observations (`observation_type` = `animal`) of a certain species, count, age, sex, behaviour and/or individual. | [observations-table-schema.json](observations-table-schema.json)
+**Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data. A Camtrap DP is a [Frictionless Data Package](https://frictionlessdata.io/data-package/) that consists of:
 
-The specifications build upon existing standards:
+File | Description
+--- | ---
+`datapackage.json`{: .d-inline-block style="width:150px;"} | [Metadata](https://tdwg.github.io/camtrap-dp/metadata/) regarding the data package and camera trap project.
+`deployments.csv` | Table with camera trap [deployments](https://tdwg.github.io/camtrap-dp/data/#deployments).
+`multimedia.csv` | Table with [multimedia](https://tdwg.github.io/camtrap-dp/data/#multimedia) files captured by the camera traps.
+`observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the multimedia files.
 
-- `camtrap-package-profile.json`: an extension of [Tabular Data Package](https://specs.frictionlessdata.io/tabular-data-package/), itself a [Data Package](https://specs.frictionlessdata.io/data-package/).
-- `deployments-table-schema.json`, `multimedia-table-schema.json`, `observations-table-schema.json`: [Table Schemas](https://specs.frictionlessdata.io/table-schema/) describing the fields, contraints and requirements for a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/).
+## Example
+
+[Example Camtrap DP](https://github.com/tdwg/dwc-for-biologging/tree/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw)
+
+## Validation
+
+By building upon Frictionless Data specifications, a Camtrap DP can be validated with:
+
+```shell
+pip install frictionless
+frictionless validate path/to/your/datapackage.json
+```
 
 ## Contribute
 
-You can contribute by watching this repository and participating in the [issue discussions](https://gitlab.com/oscf/camtrap-dp/-/issues).
+Want to get involved in the development of Camtrap DP? Watch [the repository](https://github.com/tdwg/camtrap-dp) to get notifications and participate in [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2021) Camera Trap Data Package https://gitlab.com/oscf/camtrap-dp
+> Camtrap DP Development Team (2021) Camera Trap Data Package <https://github.com/tdwg/camtrap-dp>
+
+Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).

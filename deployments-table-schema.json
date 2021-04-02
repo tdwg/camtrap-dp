@@ -1,4 +1,6 @@
 {
+  "title": "Deployments",
+  "description": "Table with camera trap deployments. Includes `deployment_id`, start, end, location and camera setup information.",
   "fields": [
     {
       "name": "deployment_id",
