@@ -6,7 +6,6 @@
       "name": "deployment_id",
       "type": "string",
       "format": "default",
-      "title": "Deployment ID",
       "description": "Unique identifier (within a project) of the deployment.",
       "example": "dep1",
       "constraints": {
