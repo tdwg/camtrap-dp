@@ -14,6 +14,8 @@ File | Description
 `multimedia.csv` | Table with [multimedia](https://tdwg.github.io/camtrap-dp/data/#multimedia) files captured by the camera traps.
 `observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the multimedia files.
 
+See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
+
 ## Example
 
 [Example Camtrap DP](https://github.com/tdwg/dwc-for-biologging/tree/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw)
