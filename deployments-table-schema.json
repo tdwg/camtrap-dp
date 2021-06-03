@@ -60,7 +60,7 @@
     {
       "name": "start",
       "type": "datetime",
-      "format": "default",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the deployment started, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-01T22:00:00Z",
       "constraints": {
@@ -70,7 +70,7 @@
     {
       "name": "end",
       "type": "datetime",
-      "format": "default",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the deployment ended, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-04-01T22:00:00Z",
       "constraints": {
