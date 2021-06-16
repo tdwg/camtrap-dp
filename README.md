@@ -22,7 +22,13 @@ See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
 
 ## Validation
 
-By building upon Frictionless Data specifications, a Camtrap DP can be validated with:
+A Camtrap DP `datapackage.json` file should have:
+
+```json
+"profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.3/camtrap-dp-profile.json"
+```
+
+You can validate it against the Frictionless Data Package and Camtrap DP specifications with:
 
 ```shell
 pip install frictionless
