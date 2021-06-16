@@ -51,10 +51,6 @@
           "description": "Common name of the species, preferably in English.",
           "type": "string",
           "format": "default"
-        },
-        "count": {
-          "description": "Number of observations for that species in the data package.",
-          "type": "integer"
         }
       }
     }
