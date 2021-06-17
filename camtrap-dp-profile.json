@@ -47,10 +47,27 @@
           "type": "string",
           "format": "default"
         },
-        "vernacular_name": {
-          "description": "Common name of the species, preferably in English.",
-          "type": "string",
-          "format": "default"
+        "vernacular_names": {
+          "description": "Common or vernacular names of the species.",
+          "type": "object",
+          "format": "default",
+          "required": [
+            "name",
+            "language"
+          ],
+          "properties": {
+            "name": {
+              "description": "Common or vernacular name of the species.",
+              "type": "string",
+              "format": "default"
+            },
+            "language": {
+              "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
+              "type": "string",
+              "format": "default",
+              "pattern": "^[a-z]{2}$"
+            }
+          }
         }
       }
     }
