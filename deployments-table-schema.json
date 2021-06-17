@@ -111,15 +111,6 @@
       }
     },
     {
-      "name": "camera_timestamp",
-      "type": "boolean",
-      "description": "`true` if datetime settings in the camera were set up properly and in consequence all recorded multimedia files have proper timestamps.",
-      "example": "true",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "camera_interval",
       "type": "integer",
       "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
@@ -143,12 +134,21 @@
       "name": "camera_angle",
       "type": "integer",
       "format": "default",
-      "description": "An approximate angle used to deploy the camera. Specified in degrees e.g. 0 or 180 for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
+      "description": "An approximate angle used to deploy the camera. Specified in degrees (e.g. 0 or 180) for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
       "example": "180",
       "constraints": {
         "required": false,
         "minimum": 0,
         "maximum": 180
+      }
+    },
+    {
+      "name": "timestamp_issues",
+      "type": "boolean",
+      "description": "`true` if timestamps for this deployment in `multimedia.csv` and `observations.csv` are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "example": "false",
+      "constraints": {
+        "required": false
       }
     },
     {
