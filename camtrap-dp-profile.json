@@ -167,7 +167,7 @@
               "type": "string"
             },
             "references": {
-              "description": "List of references related to the project.",
+              "description": "List of references related to the project (e.g. references cited in the project description).",
               "type": "array",
               "items": {
                 "description": "Reference.",
