@@ -3,78 +3,6 @@
   "title": "Camera Trap Data Package Profile",
   "description": "This is the profile of standardized camera trap data package.",
   "type": "object",
-  "definitions": {
-    "organization": {
-      "description": "Basic information about an organization related to this data package.",
-      "type": "object",
-      "required": [
-        "title",
-        "path"
-      ],
-      "properties": {
-        "title": {
-          "description": "Organization name.",
-          "type": "string",
-          "format": "default"
-        },
-        "path": {
-          "description": "Organization website.",
-          "type": "string",
-          "format": "uri"
-        },
-        "email": {
-          "description": "Organization contact email.",
-          "type": "string",
-          "format": "email"
-        }
-      }
-    },
-    "taxa": {
-      "description": "",
-      "type": "object",
-      "required": [
-        "taxon_id",
-        "scientific_name"
-      ],
-      "properties": {
-        "taxon_id": {
-          "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
-          "type": "string",
-          "format": "default"
-        },
-        "scientific_name": {
-          "description": "Scientific name of the taxon.",
-          "type": "string",
-          "format": "default"
-        },
-        "vernacular_names": {
-          "description": "Common or vernacular names of the taxon.",
-          "type": "array",
-          "format": "default",
-          "items": {
-            "type": "object",
-            "required": [
-              "name",
-              "language"
-            ],
-            "properties": {
-              "name": {
-                "description": "Common or vernacular name of the taxon.",
-                "type": "string",
-                "format": "default"
-              },
-              "language": {
-                "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
-                "type": "string",
-                "format": "default",
-                "pattern": "^[a-z]{2}$"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "allOf": [
     {
       "$ref": "https://frictionlessdata.io/schemas/data-package.json"
@@ -120,7 +48,29 @@
           "description": "List of organizations related to this data package.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/organization"
+            "description": "Basic information about an organization related to this data package.",
+            "type": "object",
+            "required": [
+              "title",
+              "path"
+            ],
+            "properties": {
+              "title": {
+                "description": "Organization name.",
+                "type": "string",
+                "format": "default"
+              },
+              "path": {
+                "description": "Organization website.",
+                "type": "string",
+                "format": "uri"
+              },
+              "email": {
+                "description": "Organization contact email.",
+                "type": "string",
+                "format": "email"
+              }
+            }
           }
         },
         "project": {
@@ -271,7 +221,49 @@
           "description": "Taxonomic coverage for this data package. It is based on a set of unique values from `scientific_name` field in `observations.csv` table.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/taxa"
+            "description": "Taxa",
+            "type": "object",
+            "required": [
+              "taxon_id",
+              "scientific_name"
+            ],
+            "properties": {
+              "taxon_id": {
+                "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
+                "type": "string",
+                "format": "default"
+              },
+              "scientific_name": {
+                "description": "Scientific name of the taxon.",
+                "type": "string",
+                "format": "default"
+              },
+              "vernacular_names": {
+                "description": "Common or vernacular names of the taxon.",
+                "type": "array",
+                "format": "default",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "language"
+                  ],
+                  "properties": {
+                    "name": {
+                      "description": "Common or vernacular name of the taxon.",
+                      "type": "string",
+                      "format": "default"
+                    },
+                    "language": {
+                      "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
+                      "type": "string",
+                      "format": "default",
+                      "pattern": "^[a-z]{2}$"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "taxon_id_reference": {
