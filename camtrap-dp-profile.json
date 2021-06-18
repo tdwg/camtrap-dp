@@ -48,7 +48,6 @@
           "description": "List of organizations related to this data package.",
           "type": "array",
           "items": {
-            "description": "Basic information about an organization related to this data package.",
             "type": "object",
             "required": [
               "title",
@@ -221,7 +220,6 @@
           "description": "Taxonomic coverage for this data package. It is based on a set of unique values from `scientific_name` field in `observations.csv` table.",
           "type": "array",
           "items": {
-            "description": "Taxa",
             "type": "object",
             "required": [
               "taxon_id",
