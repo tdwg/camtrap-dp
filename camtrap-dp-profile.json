@@ -213,10 +213,19 @@
               "description": "List of references related to the project.",
               "type": "array",
               "items": {
-                "url": {
-                  "description": "URL to a reference.",
-                  "type": "string",
-                  "format": "uri"
+                "description": "Reference.",
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "description": "Title of a reference.",
+                    "type": "string",
+                    "format": "default"
+                  },
+                  "url": {
+                    "description": "URL to a reference.",
+                    "type": "string",
+                    "format": "uri"
+                  }
                 }
               }
             },
