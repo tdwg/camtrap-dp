@@ -1,6 +1,6 @@
 {
   "title": "Observations",
-  "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, empty) or one or more animal observations (`observation_type` = `animal`) of a certain species, count, age, sex, behaviour and/or individual.",
+  "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, empty) or one or more animal observations (`observation_type` = `animal`) of a certain taxon, count, age, sex, behaviour and/or individual.",
   "fields": [
     {
       "name": "observation_id",
@@ -106,11 +106,11 @@
       }
     },
     {
-      "name": "vernacular_name",
+      "name": "taxon_id",
       "type": "string",
       "format": "default",
-      "description": "Common name of the observed individual(s), preferably in English.",
-      "example": "wolf",
+      "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the package metadata.",
+      "example": "QLXL",
       "constraints": {
         "required": false
       }
