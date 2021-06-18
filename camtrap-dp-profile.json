@@ -29,7 +29,7 @@
         }
       }
     },
-    "species": {
+    "taxa": {
       "description": "",
       "type": "object",
       "required": [
@@ -38,19 +38,39 @@
       ],
       "properties": {
         "taxon_id": {
-          "description": "Taxon ID of the species according to a taxonomic reference list defined by `taxon_id_reference`.",
+          "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
           "type": "string",
           "format": "default"
         },
         "scientific_name": {
-          "description": "Scientific name of the species.",
+          "description": "Scientific name of the taxon.",
           "type": "string",
           "format": "default"
         },
-        "vernacular_name": {
-          "description": "Common name of the species, preferably in English.",
-          "type": "string",
-          "format": "default"
+        "vernacular_names": {
+          "description": "Common or vernacular names of the taxon.",
+          "type": "array",
+          "format": "default",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "language"
+            ],
+            "properties": {
+              "name": {
+                "description": "Common or vernacular name of the taxon.",
+                "type": "string",
+                "format": "default"
+              },
+              "language": {
+                "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
+                "type": "string",
+                "format": "default",
+                "pattern": "^[a-z]{2}$"
+              }
+            }
+          }
         }
       }
     }
@@ -251,7 +271,7 @@
           "description": "Taxonomic coverage for this data package. It is based on a set of unique values from `scientific_name` field in `observations.csv` table.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/species"
+            "$ref": "#/definitions/taxa"
           }
         },
         "taxon_id_reference": {
