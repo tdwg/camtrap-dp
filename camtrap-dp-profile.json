@@ -13,7 +13,8 @@
         "project",
         "spatial",
         "temporal",
-        "taxonomic"
+        "taxonomic",
+        "taxon_id_reference"
       ],
       "properties": {
         "multimedia_access": {
