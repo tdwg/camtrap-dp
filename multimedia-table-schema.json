@@ -46,7 +46,7 @@
     {
       "name": "file_path",
       "type": "string",
-      "format": "uri",
+      "format": "default",
       "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this package. Additional information on how to access this file is provided in a package-level metadata.",
       "example": [
         "https://trapper.org/storage/resource/media/259024/file/",
@@ -54,7 +54,8 @@
         "DEP0001/IMG0001.jpg"
       ],
       "constraints": {
-        "required": true
+        "required": true,
+        "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
       }
     },
     {
