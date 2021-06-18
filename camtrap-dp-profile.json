@@ -170,11 +170,10 @@
               "description": "List of references related to the project (e.g. references cited in the project description).",
               "type": "array",
               "items": {
-                "description": "Reference.",
                 "type": "object",
                 "properties": {
                   "title": {
-                    "description": "Title of a reference.",
+                    "description": "Reference.",
                     "type": "string",
                     "format": "default"
                   },
