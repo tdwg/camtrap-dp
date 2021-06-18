@@ -35,7 +35,6 @@
             "auth_type": {
               "description": "Type of authentication required to get access to multimedia files.",
               "type": "string",
-              "format": "default",
               "enum": [
                 "basic",
                 "token",
@@ -56,8 +55,7 @@
             "properties": {
               "title": {
                 "description": "Organization name.",
-                "type": "string",
-                "format": "default"
+                "type": "string"
               },
               "path": {
                 "description": "Organization website.",
@@ -87,23 +85,19 @@
           "properties": {
             "title": {
               "description": "Title of the project.",
-              "type": "string",
-              "format": "default"
+              "type": "string"
             },
             "acronym": {
               "description": "Short and human-readable identifier of the project.",
-              "type": "string",
-              "format": "default"
+              "type": "string"
             },
             "description": {
               "description": "Description of the project, ideally expressed in Markdown format. To describe the data package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
-              "type": "string",
-              "format": "default"
+              "type": "string"
             },            
             "sampling_design": {
               "description": "Type of a sampling design/layout. The values are based on Wearn & Glover-Kapfer (2017, <https://doi.org/10.13140/RG.2.2.23409.17767>), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
               "type": "string",
-              "format": "default",
               "enum": [
                 "simple random",
                 "systematic random",
@@ -158,7 +152,6 @@
             },
             "classification_level": {
               "type": "string",
-              "format": "default",
               "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
               "enum": [
                 "sequence",
@@ -171,8 +164,7 @@
             },
             "methods": {
               "description": "Description of the methodology used to collect and process data.",
-              "type": "string",
-              "format": "default"
+              "type": "string"
             },
             "references": {
               "description": "List of references related to the project.",
@@ -187,8 +179,7 @@
             },
             "_id": {
               "description": "Internal attribute of data management system or data packages catalogue: ID of the project.",
-              "type": "string",
-              "format": "default"
+              "type": "string"
             }
           }
         },
@@ -228,18 +219,15 @@
             "properties": {
               "taxon_id": {
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
-                "type": "string",
-                "format": "default"
+                "type": "string"
               },
               "scientific_name": {
                 "description": "Scientific name of the taxon.",
-                "type": "string",
-                "format": "default"
+                "type": "string"
               },
               "vernacular_names": {
                 "description": "Common or vernacular names of the taxon.",
                 "type": "array",
-                "format": "default",
                 "items": {
                   "type": "object",
                   "required": [
@@ -249,13 +237,11 @@
                   "properties": {
                     "name": {
                       "description": "Common or vernacular name of the taxon.",
-                      "type": "string",
-                      "format": "default"
+                      "type": "string"
                     },
                     "language": {
                       "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
                       "type": "string",
-                      "format": "default",
                       "pattern": "^[a-z]{2}$"
                     }
                   }
@@ -272,8 +258,7 @@
         },
         "_platform_title": {
           "description": "Internal attribute of data management or repository system: platform name.",
-          "type": "string",
-          "format": "default"
+          "type": "string"
         },
         "_platform_path": {
           "description": "Internal attribute of data management or repository system: platform URL.",
@@ -282,13 +267,11 @@
         },
         "_platform_version": {
           "description": "Internal attribute of data management or repository system: platform version.",
-          "type": "string",
-          "format": "default"
+          "type": "string"
         },
         "_platform_package_id": {
           "description": "Internal attribute of data management or repository system: package ID.",
-          "type": "string",
-          "format": "default"
+          "type": "string"
         }
       }
     }
