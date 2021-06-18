@@ -177,8 +177,8 @@
                     "type": "string",
                     "format": "default"
                   },
-                  "url": {
-                    "description": "URL to a reference.",
+                  "path": {
+                    "description": "DOI, URL or other persistent identifier for the reference.",
                     "type": "string",
                     "format": "uri"
                   }
