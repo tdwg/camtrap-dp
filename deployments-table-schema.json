@@ -231,7 +231,7 @@
       "type": "string",
       "format": "default",
       "description": "User defined tags associated with the deployment, as a pipe (`|`) separated list.",
-      "example": "Outsite NP | Forest edge",
+      "example": "Outside NP | Forest edge",
       "constraints": {
         "required": false
       }
