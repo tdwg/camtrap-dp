@@ -122,9 +122,9 @@
     },
     {
       "name": "camera_height",
-      "type": "integer",
-      "description": "An approximate height at which the camera was deployed. Specified in centimeters.",
-      "example": "100",
+      "type": "number",
+      "description": "An approximate height at which the camera was deployed. Specified in meters.",
+      "example": "1.2",
       "constraints": {
         "required": false,
         "minimum": 0
