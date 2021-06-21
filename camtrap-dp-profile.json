@@ -17,7 +17,7 @@
       ],
       "properties": {
         "multimedia_access": {
-          "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
+          "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
           "required": [
             "remote",
