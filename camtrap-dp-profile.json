@@ -133,23 +133,6 @@
               "uniqueItems": true,
               "minItems": 1
             },
-            "bait_use": {
-              "type": "array",
-              "description": "Type of bait (if any) that was used with cameras.",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "none",
-                  "scent",
-                  "food",
-                  "visual",
-                  "acoustic",
-                  "other"
-                ]
-              },
-              "uniqueItems": true,
-              "minItems": 1
-            },
             "classification_level": {
               "type": "string",
               "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
