@@ -9,6 +9,7 @@
     },
     {
       "required": [
+        "created",
         "multimedia_access",
         "project",
         "spatial",
