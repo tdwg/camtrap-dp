@@ -162,10 +162,6 @@
               "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequence_id`.",
               "type": "integer"
             },
-            "methods": {
-              "description": "Description of the methodology used to collect and process data.",
-              "type": "string"
-            },
             "references": {
               "description": "List of references related to the project (e.g. references cited in the project description). References ideally include a DOI.",
               "type": "array",
