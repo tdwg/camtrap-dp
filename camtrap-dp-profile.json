@@ -9,6 +9,7 @@
     },
     {
       "required": [
+        "profile",
         "multimedia_access",
         "project",
         "spatial",
@@ -16,6 +17,9 @@
         "taxonomic"
       ],
       "properties": {
+        "profile": {
+          "format": "uri"
+        },
         "multimedia_access": {
           "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
