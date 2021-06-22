@@ -9,6 +9,7 @@
     },
     {
       "required": [
+        "created",
         "contributors",
         "multimedia_access",
         "project",
