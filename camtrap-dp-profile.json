@@ -246,22 +246,28 @@
           "type": "string",
           "format": "uri"
         },
-        "_platform_title": {
-          "description": "Internal attribute of data management or repository system: platform name.",
-          "type": "string"
-        },
-        "_platform_path": {
-          "description": "Internal attribute of data management or repository system: platform URL.",
-          "type": "string",
-          "format": "uri"
-        },
-        "_platform_version": {
-          "description": "Internal attribute of data management or repository system: platform version.",
-          "type": "string"
-        },
-        "_platform_package_id": {
-          "description": "Internal attribute of data management or repository system: package ID.",
-          "type": "string"
+        "platform": {
+          "description": "Data management or repository system used to generate this data package.",
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Platform name.",
+              "type": "string"
+            },
+            "path": {
+              "description": "Platform website.",
+              "type": "string",
+              "format": "uri"
+            },
+            "version": {
+              "description": "Platform version.",
+              "type": "string"
+            },
+            "package_id": {
+              "description": "Data package ID assigned by the platform.",
+              "type": "string"
+            }
+          }
         }
       }
     }
