@@ -250,7 +250,7 @@
               "type": "string"
             },
             "package_id": {
-              "description": "Package ID assigned by the platform",
+              "description": "Data package ID assigned by the platform.",
               "type": "string"
             }
           }
