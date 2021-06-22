@@ -233,17 +233,15 @@
           "format": "uri"
         },
         "platform": {
-          "description": "Internal properties of data management or repository system used to generate this data package.",
+          "description": "Data management or repository system used to generate this data package.",
           "type": "object",
-          "required": [
-          ],
           "properties": {
             "title": {
               "description": "Platform name.",
               "type": "string"
             },
             "path": {
-              "description": "Platform URL.",
+              "description": "Platform website.",
               "type": "string",
               "format": "uri"
             },
@@ -252,7 +250,7 @@
               "type": "string"
             },
             "package_id": {
-              "description": "Package ID.",
+              "description": "Package ID assigned by the platform",
               "type": "string"
             }
           }
