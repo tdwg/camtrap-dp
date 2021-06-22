@@ -19,7 +19,7 @@
       ],
       "properties": {
         "multimedia_access": {
-          "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
+          "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
           "required": [
             "remote",
@@ -71,6 +71,14 @@
               }
             }
           }
+        },
+        "rights_holder": {
+          "description": "Person or organization owning or managing rights over this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/rightsHolder).",
+          "type": "string"
+        },
+        "bibliographic_citation": {
+          "description": "Bibliographic/recommended citation for this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/bibliographicCitation).",
+          "type": "string"
         },
         "project": {
           "description": "Camera trap project that generated the data in this data package.",
