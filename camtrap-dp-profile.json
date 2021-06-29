@@ -23,6 +23,21 @@
         "profile": {
           "format": "uri"
         },
+        "resources": {
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "properties": {
+              "name": {
+                "enum": [
+                  "deployments",
+                  "multimedia",
+                  "observations"
+                ]
+              }
+            }
+          }
+        },
         "multimedia_access": {
           "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
