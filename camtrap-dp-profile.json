@@ -221,26 +221,15 @@
                 "type": "string"
               },
               "vernacular_names": {
-                "description": "Common or vernacular names of the taxon.",
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "name",
-                    "language"
-                  ],
-                  "properties": {
-                    "name": {
-                      "description": "Common or vernacular name of the taxon.",
-                      "type": "string"
-                    },
-                    "language": {
-                      "description": "Language of the vernacular name, as an ISO 639-1 code (e.g. `en` for English).",
-                      "type": "string",
-                      "pattern": "^[a-z]{2}$"
-                    }
+                "description": "Common or vernacular names of the taxon, as `language_code: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+                "type": "object",
+                "patternProperties": {
+                  "^[a-z]{2}$": {
+                    "description": "Common or vernacular name of the taxon in that language.",
+                    "type": "string"
                   }
-                }
+                },
+                "additionalProperties": false
               }
             }
           }
