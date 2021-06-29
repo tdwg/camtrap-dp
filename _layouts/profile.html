@@ -8,15 +8,19 @@ layout: base
     {{ content }}
 
     {% assign profile_file = "camtrap-dp-profile" %}
-    {% assign properties = site.data[profile_file].allOf[1].properties %}
+    {% assign properties1 = site.data[profile_file].allOf[1].properties %}
+    {% assign required1 = site.data[profile_file].allOf[1].required %}
 
     <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
-    {% for p1_raw in properties %}
+    {% for p1_raw in properties1 %}
       {% assign p1_name = p1_raw[0] %}
       {% assign p1 = p1_raw[1] %}
       
-      <h2 id="{{ p1_name | downcase | url_encode }}">{{ p1_name }}</h2>
+      <h2 id="{{ p1_name | downcase | url_encode }}">
+        {{ p1_name }}
+        {% if required1 contains p1_name %}*{% endif %}
+      </h2>
 
       {{ p1.description | markdownify }}
 
