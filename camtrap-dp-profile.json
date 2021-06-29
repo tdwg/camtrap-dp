@@ -9,6 +9,7 @@
     },
     {
       "required": [
+        "profile",
         "created",
         "contributors",
         "multimedia_access",
@@ -19,6 +20,9 @@
         "taxon_id_reference"
       ],
       "properties": {
+        "profile": {
+          "format": "uri"
+        },
         "multimedia_access": {
           "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
