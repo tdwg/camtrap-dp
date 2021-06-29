@@ -13,23 +13,24 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 
 - [`name`](https://specs.frictionlessdata.io/data-package/#name)
 - [`id`](https://specs.frictionlessdata.io/data-package/#id)
-- [`created`](https://specs.frictionlessdata.io/data-package/#created)
-- [`profile`](https://specs.frictionlessdata.io/data-package/#profile)
+- [`profile`](https://specs.frictionlessdata.io/data-package/#profile)*
+- [`created`](https://specs.frictionlessdata.io/data-package/#created)*
+- [`licenses`](https://specs.frictionlessdata.io/data-package/#licenses)
 - [`sources`](https://specs.frictionlessdata.io/data-package/#sources)
-- [`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)
-- [`resources`](https://specs.frictionlessdata.io/data-package/#required-properties): the data files, see [Data](../data/)
+- [`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)*
+- [`resources`](https://specs.frictionlessdata.io/data-package/#required-properties)*: the data files, see [Data](../data/).
 
 ## Camtrap DP properties
 
-- [`multimedia_access`](#multimedia_access)
+- [`multimedia_access`](#multimedia_access)*
 - [`organizations`](#organizations)
-- [`project`](#project)
-- [`spatial`](#spatial)
-- [`temporal`](#temporal)
-- [`taxonomic`](#taxonomic)
-- [`taxon_id_reference`](#taxon_id_reference)
-- [`_platform_title`](#_platform_title)
-- [`_platform_path`](#_platform_path)
-- [`_platform_package_id`](#_platform_package_id)
+- [`rights_holder`](#rights_holder)
+- [`bibliographic_citation`](#bibliographic_citation)
+- [`project`](#project)*
+- [`spatial`](#spatial)*
+- [`temporal`](#temporal)*
+- [`taxonomic`](#taxonomic)*
+- [`taxon_id_reference`](#taxon_id_reference)*
+- [`platform`](#_platform)
 
 ---
