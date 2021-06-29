@@ -10,6 +10,8 @@
     {
       "required": [
         "profile",
+        "created",
+        "contributors",
         "multimedia_access",
         "project",
         "spatial",
@@ -21,7 +23,7 @@
           "format": "uri"
         },
         "multimedia_access": {
-          "description": "Information about the accessibilty of the multimedia files listed in `multimedia.csv`.",
+          "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
           "type": "object",
           "required": [
             "remote",
@@ -74,6 +76,14 @@
             }
           }
         },
+        "rights_holder": {
+          "description": "Person or organization owning or managing rights over this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/rightsHolder).",
+          "type": "string"
+        },
+        "bibliographic_citation": {
+          "description": "Bibliographic/recommended citation for this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/bibliographicCitation).",
+          "type": "string"
+        },
         "project": {
           "description": "Camera trap project that generated the data in this data package.",
           "type": "object",
@@ -98,6 +108,11 @@
             "description": {
               "description": "Description of the project, ideally expressed in Markdown format. To describe the data package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
               "type": "string"
+            },
+            "path": {
+              "description": "Project website.",
+              "type": "string",
+              "format": "uri"
             },
             "sampling_design": {
               "description": "Type of a sampling design/layout. The values are based on Wearn & Glover-Kapfer (2017, <https://doi.org/10.13140/RG.2.2.23409.17767>), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
@@ -235,22 +250,28 @@
           "type": "string",
           "format": "uri"
         },
-        "_platform_title": {
-          "description": "Internal attribute of data management or repository system: platform name.",
-          "type": "string"
-        },
-        "_platform_path": {
-          "description": "Internal attribute of data management or repository system: platform URL.",
-          "type": "string",
-          "format": "uri"
-        },
-        "_platform_version": {
-          "description": "Internal attribute of data management or repository system: platform version.",
-          "type": "string"
-        },
-        "_platform_package_id": {
-          "description": "Internal attribute of data management or repository system: package ID.",
-          "type": "string"
+        "platform": {
+          "description": "Data management or repository system used to generate this data package.",
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Platform name.",
+              "type": "string"
+            },
+            "path": {
+              "description": "Platform website.",
+              "type": "string",
+              "format": "uri"
+            },
+            "version": {
+              "description": "Platform version.",
+              "type": "string"
+            },
+            "package_id": {
+              "description": "Data package ID assigned by the platform.",
+              "type": "string"
+            }
+          }
         }
       }
     }
