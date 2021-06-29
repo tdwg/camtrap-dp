@@ -25,6 +25,16 @@ layout: base
       {{ p1.description | markdownify }}
 
       {% if p1.properties %}
+        {% assign properties2 = p1.properties %}
+        {% assign required2 = p1.required %}
+      {% elsif p1.items.properties %}
+        {% assign properties2 = p1.items.properties %}
+        {% assign required2 = p1.items.required %}
+      {% else %}
+        {% assign properties2 = false %}
+      {% endif %}
+
+      {% if properties2 %}
       <table>
         <thead>
           <tr>
@@ -39,13 +49,14 @@ layout: base
             <col width="70%">
             <col width="10%">
           </colgroup>
-            {% for p2_raw in p1.properties %}
+            {% for p2_raw in properties2 %}
               {% assign p2_name = p2_raw[0] %}
               {% assign p2 = p2_raw[1] %}
 
               <tr>
                 <td id="{{ p2_name | downcase | url_encode }}">
                   <a href="#{{ p2_name | downcase | url_encode }}"><code>{{ p2_name }}</code></a>
+                  {% if required2 contains p2_name %}*{% endif %}
                 </td>
                 <td>
                   {{ p2.description | markdownify }}
