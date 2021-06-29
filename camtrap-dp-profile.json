@@ -203,7 +203,7 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage for this data package. It is based on the set of unique `scientific_name` values in `observations.csv` table.",
+          "description": "List of taxa as the taxonomic coverage for this data package. Based on the unique `scientific_name` values in `observations.csv` table.",
           "type": "array",
           "items": {
             "type": "object",
