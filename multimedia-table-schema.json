@@ -27,7 +27,7 @@
       "name": "sequence_id",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the package metadata.",
+      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the data package metadata.",
       "example": "seq1",
       "constraints": {
         "required": true
@@ -47,7 +47,7 @@
       "name": "file_path",
       "type": "string",
       "format": "default",
-      "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this package. Additional information on how to access this file is provided in a package-level metadata.",
+      "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this data package. Additional information on how to access this file is provided in a package-level metadata.",
       "example": [
         "https://trapper.org/storage/resource/media/259024/file/",
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",

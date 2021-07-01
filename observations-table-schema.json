@@ -109,7 +109,7 @@
       "name": "taxon_id",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the package metadata.",
+      "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the data package metadata.",
       "example": "QLXL",
       "constraints": {
         "required": false
