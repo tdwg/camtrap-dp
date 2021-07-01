@@ -93,7 +93,6 @@
             "sampling_design",
             "sensor_method",
             "animal_types",
-            "bait_use",
             "classification_level",
             "sequence_interval"
           ],
