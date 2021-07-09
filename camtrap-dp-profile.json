@@ -16,8 +16,7 @@
         "project",
         "spatial",
         "temporal",
-        "taxonomic",
-        "taxon_id_reference"
+        "taxonomic"
       ],
       "properties": {
         "profile": {
@@ -223,12 +222,19 @@
             "type": "object",
             "required": [
               "taxon_id",
+              "taxon_id_reference",
               "scientific_name"
             ],
             "properties": {
               "taxon_id": {
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
                 "type": "string"
+              },
+              "taxon_id_reference": {
+                "description": "URL of the source (reference list) of the `taxon_id`.",
+                "example": "https://www.catalogueoflife.org",
+                "type": "string",
+                "format": "uri"
               },
               "scientific_name": {
                 "description": "Scientific name of the taxon.",
@@ -247,12 +253,6 @@
               }
             }
           }
-        },
-        "taxon_id_reference": {
-          "description": "URL of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
-          "example": "http://www.catalogueoflife.org/annual-checklist/2019/",
-          "type": "string",
-          "format": "uri"
         },
         "platform": {
           "description": "Data management or repository system used to generate this data package.",
