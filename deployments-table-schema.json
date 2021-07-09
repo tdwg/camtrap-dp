@@ -113,7 +113,7 @@
     {
       "name": "camera_interval",
       "type": "integer",
-      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
+      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Expressed in seconds.",
       "example": "120",
       "constraints": {
         "required": false,
