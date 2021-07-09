@@ -123,7 +123,7 @@
     {
       "name": "camera_height",
       "type": "number",
-      "description": "An approximate height at which the camera was deployed. Specified in meters.",
+      "description": "Height at which the camera was deployed. Expressed in meters.",
       "example": "1.2",
       "constraints": {
         "required": false,
