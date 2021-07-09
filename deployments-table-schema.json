@@ -131,15 +131,20 @@
       }
     },
     {
-      "name": "camera_angle",
+      "name": "camera_tilt",
       "type": "integer",
       "format": "default",
-      "description": "An approximate angle used to deploy the camera. Specified in degrees (e.g. 0 or 180) for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
-      "example": "180",
+      "description": "Angle at which the camera was deployed in the vertical plane. Expressed in degrees, with -90 facing down, 0 horizontal and 90 facing up.",
+      "example": "-90",
+      "constraints": {
+        "required": false,
+        "minimum": -90,
+        "maximum": 90
+      }
+    },
       "constraints": {
         "required": false,
         "minimum": 0,
-        "maximum": 180
       }
     },
     {
