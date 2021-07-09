@@ -183,7 +183,7 @@
       "name": "array",
       "type": "string",
       "format": "default",
-      "description": "Spatial deployment group. Common arrays are grids, arrays, clusters or other logical grouping where sampling occurred. For groupings without context, use `tags`.",
+      "description": "Spatial deployment group. Common arrays are grids, arrays, clusters or other logical groupings where sampling occurred. For groupings without context, use `tags`.",
       "example": "grid A1",
       "constraints": {
         "required": false
