@@ -240,6 +240,20 @@
                 "description": "Scientific name of the taxon.",
                 "type": "string"
               },
+              "taxon_rank": {
+                "description": "Taxonomic rank of the scientific name.",
+                "type": "string",
+                "enum": [
+                  "kingdom",
+                  "phylum",
+                  "class",
+                  "order",
+                  "family",
+                  "genus",
+                  "species",
+                  "subspecies"
+                ]
+              },
               "vernacular_names": {
                 "description": "Common or vernacular names of the taxon, as `language_code: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
                 "type": "object",
