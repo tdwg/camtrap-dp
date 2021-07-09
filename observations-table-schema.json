@@ -57,7 +57,7 @@
       "name": "observation_type",
       "type": "string",
       "format": "default",
-      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `undefined` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
       "example": "animal",
       "constraints": {
         "required": true,
@@ -65,8 +65,8 @@
           "animal",
           "human",
           "vehicle",
-          "undefined",
           "blank",
+          "unknown",
           "unclassified"
         ]
       }
@@ -150,7 +150,7 @@
           "subadult",
           "juvenile",
           "offspring",
-          "undefined"
+          "unknown"
         ]
       }
     },
@@ -165,7 +165,7 @@
         "enum": [
           "female",
           "male",
-          "undefined"
+          "unknown"
         ]
       }
     },
