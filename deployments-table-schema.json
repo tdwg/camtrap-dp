@@ -105,7 +105,7 @@
       "name": "camera_id",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the camera used for this deployment. This can be e.g. the camera device serial number.",
+      "description": "Unique identifier (within a project) of the camera used for this deployment (e.g. the camera device serial number).",
       "example": "P800HG08192031",
       "constraints": {
         "required": false
