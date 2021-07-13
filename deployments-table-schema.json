@@ -58,10 +58,10 @@
       }
     },
     {
-      "name": "coordinate_uncertainty_in_meters",
+      "name": "coordinate_uncertainty",
       "type": "integer",
       "format": "default",
-      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. E.g. [111 meters](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) for coordinates that were rounded to 3 decimals to conceal the precise location of an active camera. Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters).",
+      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates were [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera. Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters).",
       "example": "111",
       "constraints": {
         "required": false,
