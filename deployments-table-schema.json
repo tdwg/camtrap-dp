@@ -185,8 +185,8 @@
       "name": "session",
       "type": "string",
       "format": "default",
-      "description": "Camera trap deployments can be grouped into sessions. Common sessions could be seasons (wet and dry), months, years or other types of logical groupings when field sampling occurs.",
-      "example": "",
+      "description": "Temporal deployment group. Common sessions are seasons (wet and dry), months, years or other logical groupings when sampling occurred. For groupings without context, use `tags`.",
+      "example": "winter 2020",
       "constraints": {
         "required": false
       }
@@ -195,8 +195,8 @@
       "name": "array",
       "type": "string",
       "format": "default",
-      "description": "A name for a logical grouping of deployments into (spatial) arrays. This could be for thematic or logistical reasons.",
-      "example": "",
+      "description": "Spatial deployment group. Common arrays are grids, arrays, clusters or other logical groupings where sampling occurred. For groupings without context, use `tags`.",
+      "example": "grid A1",
       "constraints": {
         "required": false
       }
