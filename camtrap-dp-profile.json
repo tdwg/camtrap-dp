@@ -228,6 +228,7 @@
             "properties": {
               "taxon_id": {
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
+                "example": "QLXL",
                 "type": "string"
               },
               "taxon_id_reference": {
@@ -238,10 +239,12 @@
               },
               "scientific_name": {
                 "description": "Scientific name of the taxon.",
+                "example": "Canis lupus",
                 "type": "string"
               },
               "taxon_rank": {
                 "description": "Taxonomic rank of the scientific name.",
+                "example": "species",
                 "type": "string",
                 "enum": [
                   "kingdom",
@@ -256,6 +259,7 @@
               },
               "vernacular_names": {
                 "description": "Common or vernacular names of the taxon, as `language_code: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+                "example": "{'en': 'wolf', 'fr': 'loup gris'}",
                 "type": "object",
                 "patternProperties": {
                   "^[a-z]{2}$": {
