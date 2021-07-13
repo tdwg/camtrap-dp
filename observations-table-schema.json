@@ -230,7 +230,7 @@
       "name": "classification_confidence",
       "type": "number",
       "format": "default",
-      "description": "Accuracy confidence of the classification. Specified as probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
+      "description": "Accuracy confidence of the classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
       "example": "0.95",
       "constraints": {
         "required": false,

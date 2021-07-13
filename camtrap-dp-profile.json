@@ -193,7 +193,7 @@
           }
         },
         "spatial": {
-          "description": "Spatial coverage for this data package specified as GeoJSON. Term borrowed from [Dublin Core](http://purl.org/dc/terms/spatial).",
+          "description": "Spatial coverage for this data package expressed as GeoJSON. Term borrowed from [Dublin Core](http://purl.org/dc/terms/spatial).",
           "$ref": "http://json.schemastore.org/geojson.json"
         },
         "temporal": {

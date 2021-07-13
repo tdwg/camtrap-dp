@@ -113,7 +113,7 @@
     {
       "name": "camera_interval",
       "type": "integer",
-      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Specified in seconds.",
+      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Expressed in seconds.",
       "example": "120",
       "constraints": {
         "required": false,
@@ -123,7 +123,7 @@
     {
       "name": "camera_height",
       "type": "number",
-      "description": "An approximate height at which the camera was deployed. Specified in meters.",
+      "description": "Height at which the camera was deployed. Expressed in meters.",
       "example": "1.2",
       "constraints": {
         "required": false,
@@ -131,15 +131,27 @@
       }
     },
     {
-      "name": "camera_angle",
+      "name": "camera_tilt",
       "type": "integer",
       "format": "default",
-      "description": "An approximate angle used to deploy the camera. Specified in degrees (e.g. 0 or 180) for a camera deployed in parallel to the ground and 90 for a perpendicular deployment.",
-      "example": "180",
+      "description": "Angle at which the camera was deployed in the vertical plane. Expressed in degrees, with -90 facing down, 0 horizontal and 90 facing up.",
+      "example": "-90",
+      "constraints": {
+        "required": false,
+        "minimum": -90,
+        "maximum": 90
+      }
+    },
+    {
+      "name": "camera_heading",
+      "type": "integer",
+      "format": "default",
+      "description": "Angle at which the camera was deployed in the horizontal plane. Expressed in decimal degrees clockwise from north, with values ranging from 0 to 360: 0 = north, 90 = east, 180 = south, 270 = west.",
+      "example": "225",
       "constraints": {
         "required": false,
         "minimum": 0,
-        "maximum": 180
+        "maximum": 360
       }
     },
     {
