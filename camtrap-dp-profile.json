@@ -12,7 +12,6 @@
         "profile",
         "created",
         "contributors",
-        "multimedia_access",
         "project",
         "spatial",
         "temporal",
@@ -22,33 +21,6 @@
       "properties": {
         "profile": {
           "format": "uri"
-        },
-        "multimedia_access": {
-          "description": "Information about the accessibility of the multimedia files listed in `multimedia.csv`.",
-          "type": "object",
-          "required": [
-            "remote",
-            "public"
-          ],
-          "properties": {
-            "remote": {
-              "description": "`true` if multimedia files are stored remotely (e.g. in the cloud) and `false` if these are part of the data package. In the latter case, relative paths in `multimedia.csv` start from the root of the data package.",
-              "type": "boolean"
-            },
-            "public": {
-              "description": "`true` if URLs to multimedia files in `multimedia.csv` are publicly accessible. Additional information about the required authentication process should be provided in the `auth_type` field if `false`.",
-              "type": "boolean"
-            },
-            "auth_type": {
-              "description": "Type of authentication required to get access to multimedia files.",
-              "type": "string",
-              "enum": [
-                "basic",
-                "token",
-                "ldap"
-              ]
-            }
-          }
         },
         "organizations": {
           "description": "List of organizations related to this data package.",
