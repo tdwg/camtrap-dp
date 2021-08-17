@@ -96,21 +96,21 @@
       }
     },
     {
-      "name": "scientific_name",
-      "type": "string",
-      "format": "default",
-      "description": "Scientific name of the observed individual(s).",
-      "example": "Canis lupus",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "taxon_id",
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the `scientific_name` issued by the `taxon_id_reference` in the package metadata.",
       "example": "QLXL",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "scientific_name",
+      "type": "string",
+      "format": "default",
+      "description": "Scientific name of the observed individual(s).",
+      "example": "Canis lupus",
       "constraints": {
         "required": false
       }
