@@ -89,11 +89,21 @@
       }
     },
     {
+      "name": "favourite",
+      "type": "boolean",
+      "format": "default",
+      "description": "`true` if multimedia file is deemed of interest, e.g. an exemplar photo of an individual.",
+      "example": "true",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "comments",
       "type": "string",
       "format": "default",
       "description": "Comments or notes about the multimedia file.",
-      "example": "marked as favourite",
+      "example": "corrupted file",
       "constraints": {
         "required": false
       }

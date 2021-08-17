@@ -96,21 +96,21 @@
       }
     },
     {
-      "name": "scientific_name",
-      "type": "string",
-      "format": "default",
-      "description": "Scientific name of the observed individual(s).",
-      "example": "Canis lupus",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "taxon_id",
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the data package metadata.",
       "example": "QLXL",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
+      "name": "scientific_name",
+      "type": "string",
+      "format": "default",
+      "description": "Scientific name of the observed individual(s).",
+      "example": "Canis lupus",
       "constraints": {
         "required": false
       }
@@ -230,7 +230,7 @@
       "name": "classification_confidence",
       "type": "number",
       "format": "default",
-      "description": "Accuracy confidence of the classification. Specified as probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
+      "description": "Accuracy confidence of the classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
       "example": "0.95",
       "constraints": {
         "required": false,
