@@ -16,8 +16,7 @@
         "project",
         "spatial",
         "temporal",
-        "taxonomic",
-        "taxon_id_reference"
+        "taxonomic"
       ],
       "properties": {
         "profile": {
@@ -223,19 +222,44 @@
             "type": "object",
             "required": [
               "taxon_id",
+              "taxon_id_reference",
               "scientific_name"
             ],
             "properties": {
               "taxon_id": {
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
+                "example": "QLXL",
                 "type": "string"
+              },
+              "taxon_id_reference": {
+                "description": "URL of the source (reference list) of the `taxon_id`.",
+                "example": "https://www.catalogueoflife.org",
+                "type": "string",
+                "format": "uri"
               },
               "scientific_name": {
                 "description": "Scientific name of the taxon.",
+                "example": "Canis lupus",
                 "type": "string"
+              },
+              "taxon_rank": {
+                "description": "Taxonomic rank of the scientific name.",
+                "example": "species",
+                "type": "string",
+                "enum": [
+                  "kingdom",
+                  "phylum",
+                  "class",
+                  "order",
+                  "family",
+                  "genus",
+                  "species",
+                  "subspecies"
+                ]
               },
               "vernacular_names": {
                 "description": "Common or vernacular names of the taxon, as `language_code: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+                "example": "{'en': 'wolf', 'fr': 'loup gris'}",
                 "type": "object",
                 "patternProperties": {
                   "^[a-z]{2}$": {
@@ -247,12 +271,6 @@
               }
             }
           }
-        },
-        "taxon_id_reference": {
-          "description": "URL of the source (reference list) of the `taxon_id`s in taxonomic coverage.",
-          "example": "http://www.catalogueoflife.org/annual-checklist/2019/",
-          "type": "string",
-          "format": "uri"
         },
         "platform": {
           "description": "Data management or repository system used to generate this data package.",
