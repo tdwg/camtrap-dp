@@ -62,7 +62,7 @@
       "type": "integer",
       "format": "default",
       "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates are [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera. Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters).",
-      "example": "111",
+      "example": "100",
       "constraints": {
         "required": false,
         "minimum": 1
