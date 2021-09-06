@@ -18,11 +18,10 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 - [`licenses`](https://specs.frictionlessdata.io/data-package/#licenses)
 - [`sources`](https://specs.frictionlessdata.io/data-package/#sources)
 - [`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)*
-- [`resources`](https://specs.frictionlessdata.io/data-package/#required-properties)*: the data files, see [Data](../data/).
+- [`resources`](#resources)*: the data files, see [Data](../data/).
 
 ## Camtrap DP properties
 
-- [`multimedia_access`](#multimedia_access)*
 - [`organizations`](#organizations)
 - [`rights_holder`](#rights_holder)
 - [`bibliographic_citation`](#bibliographic_citation)
@@ -30,7 +29,6 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 - [`spatial`](#spatial)*
 - [`temporal`](#temporal)*
 - [`taxonomic`](#taxonomic)*
-- [`taxon_id_reference`](#taxon_id_reference)*
 - [`platform`](#_platform)
 
 ---
