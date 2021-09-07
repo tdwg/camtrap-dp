@@ -8,6 +8,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the observation.",
       "example": "obs1",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "constraints": {
         "required": true,
         "unique": true
@@ -101,6 +102,7 @@
       "format": "default",
       "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the data package metadata.",
       "example": "QLXL",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/taxonID",
       "constraints": {
         "required": false
       }
@@ -111,6 +113,7 @@
       "format": "default",
       "description": "Scientific name of the observed individual(s).",
       "example": "Canis lupus",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/scientificName",
       "constraints": {
         "required": false
       }
@@ -121,6 +124,7 @@
       "format": "default",
       "description": "Number of observed individuals (optionally of given age, sex and behaviour).",
       "example": "5",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/individualCount",
       "constraints": {
         "required": false,
         "minimum": 1
@@ -143,6 +147,7 @@
       "format": "default",
       "description": "Age of observed individual(s)",
       "example": "adult",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/lifeStage",
       "constraints": {
         "required": false,
         "enum": [
@@ -160,6 +165,7 @@
       "format": "default",
       "description": "Sex of observed individual(s)",
       "example": "female",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/sex",
       "constraints": {
         "required": false,
         "enum": [
@@ -175,6 +181,7 @@
       "format": "default",
       "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be expressed as as a pipe (`|`) separated list.",
       "example": "vigilance",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/behavior",
       "constraints": {
         "required": false
       }
@@ -185,6 +192,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the observed individual.",
       "example": "RD213",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/organismID",
       "constraints": {
         "required": false
       }
@@ -212,6 +220,7 @@
         "Jakub Bubnicki",
         "Megadetector"
       ],
+      "rdfType": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "constraints": {
         "required": false
       }
@@ -222,6 +231,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-08-22T10:25:19Z",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/dateIdentified",
       "constraints": {
         "required": false
       }
@@ -244,6 +254,7 @@
       "format": "default",
       "description": "Comments or notes about the observation.",
       "example": "",
+      "rdfType": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
       "constraints": {
         "required": false
       }
