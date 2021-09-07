@@ -56,6 +56,9 @@ layout: base
                     {% endfor %}
                   </ul>
                 {% endif %}
+                {% if field.rdfType %}
+                  <a class="small text-muted" href="{{ field.rdfType }}">{{ field.rdfType }}</a>
+                {% endif %}
               </td>
               <td>{{ field.type }}</td>
               <td>

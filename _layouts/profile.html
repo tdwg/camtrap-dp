@@ -67,6 +67,9 @@ layout: base
                     {% endfor %}
                     </ul>
                   {% endif %}
+                  {% if p2.rdfType %}
+                    <a class="small text-muted" href="{{ p2.rdfType }}">{{ p2.rdfType }}</a>
+                  {% endif %}
                 </td>
                 <td>{{ p2.type }}</td>
               </tr>
