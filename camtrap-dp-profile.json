@@ -167,11 +167,13 @@
         },
         "spatial": {
           "description": "Spatial coverage for this data package expressed as GeoJSON. Term borrowed from [Dublin Core](http://purl.org/dc/terms/spatial).",
-          "$ref": "http://json.schemastore.org/geojson.json"
+          "$ref": "http://json.schemastore.org/geojson.json",
+          "rdfType": "http://purl.org/dc/terms/spatial"
         },
         "temporal": {
           "description": "Temporal coverage for this data package, based on the included deployments. Term borrowed from [Dublin Core](http://purl.org/dc/terms/temporal).",
           "type": "object",
+          "rdfType": "http://purl.org/dc/terms/temporal",
           "required": [
             "start",
             "end"
