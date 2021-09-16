@@ -153,8 +153,8 @@
     }
   ],
   "temporal": {
-    "start": "2020-06-03",
-    "end": "2020-06-03"
+    "start": "2019-10-09",
+    "end": "2021-03-28"
   },
   "spatial": {
     "type": "Feature",
@@ -204,39 +204,75 @@
       }
     },
     {
-      "taxon_id": "3F6VX",
+      "taxon_id": "DGPL",
       "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Gallinula chloropus",
+      "scientific_name": "Anas strepera",
       "vernacular_names": {
-        "en": "common moorhen",
-        "nl": "waterhoen"
+        "en": "gadwall",
+        "nl": "krakeend"
       }
     },
     {
-      "taxon_id": "6RRQT",
+      "taxon_id": "32FH",
       "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Myocastor coypus",
+      "scientific_name": "Ardea",
       "vernacular_names": {
-        "en": "coypu",
-        "nl": "beverrat"
+        "en": "great herons",
+        "nl": "reigers"
       }
     },
     {
-      "taxon_id": "49JSC",
+      "taxon_id": "GCHS",
       "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Ondatra zibethicus",
+      "scientific_name": "Ardea cinerea",
       "vernacular_names": {
-        "en": "muskrat",
-        "nl": "muskusrat"
+        "en": "grey heron",
+        "nl": "blauwe reiger"
       }
     },
     {
-      "taxon_id": "4RM67",
+      "taxon_id": "RQPW",
       "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Rattus norvegicus",
+      "scientific_name": "Castor fiber",
       "vernacular_names": {
-        "en": "brown rat",
-        "nl": "bruine rat"
+        "en": "Eurasian beaver",
+        "nl": "bever"
+      }
+    },
+    {
+      "taxon_id": "6MB3T",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
+      "scientific_name": "Homo sapiens",
+      "vernacular_names": {
+        "en": "human",
+        "nl": "mens"
+      }
+    },
+    {
+      "taxon_id": "3Y9VW",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
+      "scientific_name": "Martes foina",
+      "vernacular_names": {
+        "en": "beech marten",
+        "nl": "steenmarter"
+      }
+    },
+    {
+      "taxon_id": "44QYC",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
+      "scientific_name": "Mustela putorius",
+      "vernacular_names": {
+        "en": "European polecat",
+        "nl": "bunzing"
+      }
+    },
+    {
+      "taxon_id": "5BSG3",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
+      "scientific_name": "Vulpes vulpes",
+      "vernacular_names": {
+        "en": "red fox",
+        "nl": "vos"
       }
     }
   ],
