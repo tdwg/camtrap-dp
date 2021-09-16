@@ -32,6 +32,20 @@
                   "multimedia",
                   "observations"
                 ]
+              },
+              "schema": {
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "enum": [
+                      "deployments",
+                      "multimedia",
+                      "observations"
+                    ]
+                  }
+                }
               }
             }
           }

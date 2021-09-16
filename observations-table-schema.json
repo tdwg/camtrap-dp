@@ -1,4 +1,5 @@
 {
+  "name": "observations",
   "title": "Observations",
   "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observation_type` = `animal`) of a certain taxon, count, age, sex, behaviour and/or individual.",
   "fields": [
