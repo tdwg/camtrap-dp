@@ -18,7 +18,7 @@ See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
 
 ## Example
 
-[Example Camtrap DP](https://github.com/tdwg/dwc-for-biologging/tree/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw)
+[Example Camtrap DP](example)
 
 ## Validation
 
