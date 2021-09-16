@@ -1,0 +1,5 @@
+deployment_id,location_id,location_name,longitude,latitude,start,end,setup_by,camera_id,camera_model,camera_interval,camera_height,bait_use,feature_type,tags,comments
+3b94f935-020f-49d8-bd59-1736f8a266c4,9a72bd3a-2243-4ced-af9f-34df32483e55,B_ML_val 03_De Val,3.551,51.275,2020-06-03T20:19:10Z,2020-07-03T20:57:38Z,Jan Lodewijkx,,,0,1,,,boven de stroom,
+6b1199ac-e6e4-4eb4-a625-6ee8f9db09f1,91d9abdd-da56-49a0-8c07-fa6305f39d6c,B_ML_val 05_molenkreek,3.567,51.283,2020-06-03T20:10:18Z,2020-06-24T22:34:13Z,Jan Lodewijkx,,,0,1,,,boven de stroom,
+9e84c750-e8fa-4502-ae12-cc6c75532f5a,56128022-6061-4b59-b15a-65da16115780,B_ML_val 06_Oostpolderkreek,3.591,51.266,2020-06-03T20:04:33Z,2020-06-07T00:26:51Z,Jan Lodewijkx,,,0,1,,,boven de stroom,
+fff2f46e-8163-453c-9044-61fb77587f5d,7c989f1e-4fcb-4584-ae47-cdcdc6e34d06,B_ML_val 07_Sint-Anna,3.634,51.279,2020-06-03T21:12:52Z,2020-06-08T00:14:41Z,Jan Lodewijkx,,,0,1,,,boven de stroom,
