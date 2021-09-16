@@ -196,6 +196,7 @@
   "taxonomic": [
     {
       "taxon_id": "DGP6",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
       "scientific_name": "Anas platyrhynchos",
       "vernacular_names": {
         "en": "mallard",
@@ -204,6 +205,7 @@
     },
     {
       "taxon_id": "3F6VX",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
       "scientific_name": "Gallinula chloropus",
       "vernacular_names": {
         "en": "common moorhen",
@@ -212,6 +214,7 @@
     },
     {
       "taxon_id": "6RRQT",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
       "scientific_name": "Myocastor coypus",
       "vernacular_names": {
         "en": "coypu",
@@ -220,6 +223,7 @@
     },
     {
       "taxon_id": "49JSC",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
       "scientific_name": "Ondatra zibethicus",
       "vernacular_names": {
         "en": "muskrat",
@@ -228,6 +232,7 @@
     },
     {
       "taxon_id": "4RM67",
+      "taxon_id_reference": "https://www.catalogueoflife.org",
       "scientific_name": "Rattus norvegicus",
       "vernacular_names": {
         "en": "brown rat",
@@ -235,7 +240,6 @@
       }
     }
   ],
-  "taxon_id_reference": "https://www.catalogueoflife.org",
   "platform": {
     "title": "Agouti",
     "path": "https://agouti.eu",
