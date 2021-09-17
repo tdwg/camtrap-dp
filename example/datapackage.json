@@ -2,7 +2,7 @@
   "name": "mica-muskrat-and-coypu-20210707160815",
   "id": "https://doi.org/10.5281/zenodo.4893244",
   "created": "2021-07-07T16:08:15Z",
-  "profile": "camtrap-dp-profile.json",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/camtrap-dp-profile.json",
   "sources": [
     {
       "title": "Agouti",
@@ -291,7 +291,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/deployments-table-schema.json"
     },
     {
       "name": "multimedia",
@@ -302,7 +302,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "multimedia-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/multimedia-table-schema.json"
     },
     {
       "name": "observations",
@@ -313,7 +313,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/observations-table-schema.json"
     }
   ]
 }
