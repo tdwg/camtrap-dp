@@ -1,10 +1,10 @@
 {
   "name": "deployments",
   "title": "Deployments",
-  "description": "Table with camera trap deployments. Includes `deployment_id`, start, end, location and camera setup information.",
+  "description": "Table with camera trap deployments. Includes `deploymentID`, start, end, location and camera setup information.",
   "fields": [
     {
-      "name": "deployment_id",
+      "name": "deploymentID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the deployment.",
@@ -15,7 +15,7 @@
       }
     },
     {
-      "name": "location_id",
+      "name": "locationID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the sampling location for this deployment.",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "name": "location_name",
+      "name": "locationName",
       "type": "string",
       "format": "default",
       "description": "Name given to the sampling location.",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "name": "coordinate_uncertainty",
+      "name": "coordinateUncertainty",
       "type": "integer",
       "format": "default",
       "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates are [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera. Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters).",
@@ -90,7 +90,7 @@
       }
     },
     {
-      "name": "setup_by",
+      "name": "setupBy",
       "type": "string",
       "format": "default",
       "description": "Name or unique identifier of the person who set up the camera for this deployment.",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "name": "camera_id",
+      "name": "cameraID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the camera used for this deployment (e.g. the camera device serial number).",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "name": "camera_model",
+      "name": "cameraModel",
       "type": "string",
       "format": "default",
       "description": "Manufacturer and model of the camera provided in this format: `manufacturer-model`.",
@@ -123,7 +123,7 @@
       }
     },
     {
-      "name": "camera_interval",
+      "name": "cameraInterval",
       "type": "integer",
       "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Expressed in seconds.",
       "example": "120",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "name": "camera_height",
+      "name": "cameraHeight",
       "type": "number",
       "description": "Height at which the camera was deployed. Expressed in meters.",
       "example": "1.2",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "name": "camera_tilt",
+      "name": "cameraTilt",
       "type": "integer",
       "format": "default",
       "description": "Angle at which the camera was deployed in the vertical plane. Expressed in degrees, with -90 facing down, 0 horizontal and 90 facing up.",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "name": "camera_heading",
+      "name": "cameraHeading",
       "type": "integer",
       "format": "default",
       "description": "Angle at which the camera was deployed in the horizontal plane. Expressed in decimal degrees clockwise from north, with values ranging from 0 to 360: 0 = north, 90 = east, 180 = south, 270 = west.",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "name": "timestamp_issues",
+      "name": "timestampIssues",
       "type": "boolean",
       "description": "`true` if timestamps for this deployment in `multimedia.csv` and `observations.csv` are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "example": "false",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "name": "bait_use",
+      "name": "baitUse",
       "type": "string",
       "format": "default",
       "description": "Type of bait (if any) that was used for this deployment. If other, more info can be provided in the `comments` field.",
@@ -214,7 +214,7 @@
       }
     },
     {
-      "name": "feature_type",
+      "name": "featureType",
       "type": "string",
       "format": "default",
       "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
@@ -286,5 +286,5 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "deployment_id"
+  "primaryKey": "deploymentID"
 }

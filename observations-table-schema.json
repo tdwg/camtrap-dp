@@ -1,10 +1,10 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observation_type` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
+  "description": "Table with observations based on the multimedia files. Associated with deployments (`deploymentID`), sequences (`sequenceID`) and optionally individual multimedia files (`multimediaID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
   "fields": [
     {
-      "name": "observation_id",
+      "name": "observationID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the observation.",
@@ -15,30 +15,30 @@
       }
     },
     {
-      "name": "deployment_id",
+      "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "sequence_id",
+      "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequence_interval`) that is the source of this observation. Foreign key to `multimedia:sequence_id`.",
+      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `multimedia:sequenceID`.",
       "example": "seq1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "multimedia_id",
+      "name": "multimediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `multimedia:multimedia_id`. Include but leave empty for sequence-based observations.",
+      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `multimedia:multimediaID`. Include but leave empty for sequence-based observations.",
       "example": "m1",
       "constraints": {
         "required": false
@@ -48,14 +48,14 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated multimedia file (in `multimedia_id`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequence_id`).",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated multimedia file (in `multimediaID`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequenceID`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "observation_type",
+      "name": "observationType",
       "type": "string",
       "format": "default",
       "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "name": "sensor_method",
+      "name": "sensorMethod",
       "type": "string",
       "format": "default",
       "description": "Method of triggering the camera for this observation.",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "name": "camera_setup",
+      "name": "cameraSetup",
       "type": "boolean",
       "format": "default",
       "description": "`true` if this observation is part of the camera setup process (camera deployment, pickup, maintenance).",
@@ -97,17 +97,17 @@
       }
     },
     {
-      "name": "taxon_id",
+      "name": "taxonID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the `scientific_name` according to the taxonomic reference list defined by `taxon_id_reference` in the data package metadata.",
+      "description": "Unique identifier of the `scientificName` according to the taxonomic reference list defined by `taxonIDReference` in the data package metadata.",
       "example": "QLXL",
       "constraints": {
         "required": false
       }
     },
     {
-      "name": "scientific_name",
+      "name": "scientificName",
       "type": "string",
       "format": "default",
       "description": "Scientific name of the observed individual(s).",
@@ -128,10 +128,10 @@
       }
     },
     {
-      "name": "count_new",
+      "name": "countNew",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimedia_id`) taking into account the entire sequence (`sequence_id`) (optionally of given life stage, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimediaID`) taking into account the entire sequence (`sequenceID`) (optionally of given life stage, sex and behaviour).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -181,7 +181,7 @@
       }
     },
     {
-      "name": "individual_id",
+      "name": "individualID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the observed individual.",
@@ -191,7 +191,7 @@
       }
     },
     {
-      "name": "classification_method",
+      "name": "classificationMethod",
       "type": "string",
       "format": "default",
       "description": "Classification method.",
@@ -205,7 +205,7 @@
       }
     },
     {
-      "name": "classified_by",
+      "name": "classifiedBy",
       "type": "string",
       "format": "default",
       "description": "Name or unique identifier of the person or AI algorithm that classified this observation.",
@@ -218,7 +218,7 @@
       }
     },
     {
-      "name": "classification_timestamp",
+      "name": "classificationTimestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
@@ -228,7 +228,7 @@
       }
     },
     {
-      "name": "classification_confidence",
+      "name": "classificationConfidence",
       "type": "number",
       "format": "default",
       "description": "Accuracy confidence of the classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
@@ -265,27 +265,27 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "observation_id",
+  "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "deployment_id",
+      "fields": "deploymentID",
       "reference": {
         "resource": "deployments",
-        "fields": "deployment_id"
+        "fields": "deploymentID"
       }
     },
     {
-      "fields": "sequence_id",
+      "fields": "sequenceID",
       "reference": {
         "resource": "multimedia",
-        "fields": "sequence_id"
+        "fields": "sequenceID"
       }
     },
     {
-      "fields": "multimedia_id",
+      "fields": "multimediaID",
       "reference": {
         "resource": "multimedia",
-        "fields": "multimedia_id"
+        "fields": "multimediaID"
       }
     }
   ]

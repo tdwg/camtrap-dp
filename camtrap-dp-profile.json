@@ -77,11 +77,11 @@
             }
           }
         },
-        "rights_holder": {
+        "rightsHolder": {
           "description": "Person or organization owning or managing rights over this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/rightsHolder).",
           "type": "string"
         },
-        "bibliographic_citation": {
+        "bibliographicCitation": {
           "description": "Bibliographic/recommended citation for this data package. Term borrowed from [Dublin Core](http://purl.org/dc/terms/bibliographicCitation).",
           "type": "string"
         },
@@ -90,11 +90,11 @@
           "type": "object",
           "required": [
             "title",
-            "sampling_design",
-            "sensor_method",
-            "animal_types",
-            "classification_level",
-            "sequence_interval"
+            "samplingDesign",
+            "sensorMethod",
+            "animalTypes",
+            "classificationLevel",
+            "sequenceInterval"
           ],
           "properties": {
             "title": {
@@ -114,7 +114,7 @@
               "type": "string",
               "format": "uri"
             },
-            "sampling_design": {
+            "samplingDesign": {
               "description": "Type of a sampling design/layout. The values are based on Wearn & Glover-Kapfer (2017, <https://doi.org/10.13140/RG.2.2.23409.17767>), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
               "type": "string",
               "enum": [
@@ -126,7 +126,7 @@
                 "opportunistic"
               ]
             },
-            "sensor_method": {
+            "sensorMethod": {
               "description": "Method of triggering a camera.",
               "type": "array",
               "items": {
@@ -139,7 +139,7 @@
               "uniqueItems": true,
               "minItems": 1
             },
-            "animal_types": {
+            "animalTypes": {
               "description": "Type of observed animals. `marked` indicates specific animal individuals can be recognized.",
               "type": "array",
               "items": {
@@ -152,7 +152,7 @@
               "uniqueItems": true,
               "minItems": 1
             },
-            "classification_level": {
+            "classificationLevel": {
               "type": "string",
               "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
               "enum": [
@@ -160,8 +160,8 @@
                 "multimedia"
               ]
             },
-            "sequence_interval": {
-              "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequence_id`.",
+            "sequenceInterval": {
+              "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequenceID`.",
               "type": "integer"
             },
             "references": {
@@ -202,33 +202,33 @@
           }
         },
         "taxonomic": {
-          "description": "List of taxa as the taxonomic coverage for this data package. Based on the unique `scientific_name` values in `observations.csv` table.",
+          "description": "List of taxa as the taxonomic coverage for this data package. Based on the unique `scientificName` values in `observations.csv` table.",
           "type": "array",
           "items": {
             "type": "object",
             "required": [
-              "taxon_id",
-              "taxon_id_reference",
-              "scientific_name"
+              "taxonID",
+              "taxonIDReference",
+              "scientificName"
             ],
             "properties": {
-              "taxon_id": {
-                "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxon_id_reference`.",
+              "taxonID": {
+                "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxonIDReference`.",
                 "example": "QLXL",
                 "type": "string"
               },
-              "taxon_id_reference": {
-                "description": "URL of the source (reference list) of the `taxon_id`.",
+              "taxonIDReference": {
+                "description": "URL of the source (reference list) of the `taxonID`.",
                 "example": "https://www.catalogueoflife.org",
                 "type": "string",
                 "format": "uri"
               },
-              "scientific_name": {
+              "scientificName": {
                 "description": "Scientific name of the taxon.",
                 "example": "Canis lupus",
                 "type": "string"
               },
-              "taxon_rank": {
+              "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",
                 "example": "species",
                 "type": "string",
@@ -243,8 +243,8 @@
                   "subspecies"
                 ]
               },
-              "vernacular_names": {
-                "description": "Common or vernacular names of the taxon, as `language_code: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+              "vernacularNames": {
+                "description": "Common or vernacular names of the taxon, as `languageCode: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
                 "example": "{'en': 'wolf', 'fr': 'loup gris'}",
                 "type": "object",
                 "patternProperties": {
@@ -275,7 +275,7 @@
               "description": "Platform version.",
               "type": "string"
             },
-            "package_id": {
+            "packageID": {
               "description": "Data package ID assigned by the platform.",
               "type": "string"
             }

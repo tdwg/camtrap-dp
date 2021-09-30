@@ -1,10 +1,10 @@
 {
   "name": "multimedia",
   "title": "Multimedia",
-  "description": "Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deployment_id`) and organized in sequences (`sequence_id`). Includes timestamp and file path.",
+  "description": "Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
   "fields": [
     {
-      "name": "multimedia_id",
+      "name": "multimediaID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier (within a project) of the multimedia file.",
@@ -15,20 +15,20 @@
       }
     },
     {
-      "name": "deployment_id",
+      "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deployment_id`.",
+      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "sequence_id",
+      "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequence_interval` in the data package metadata.",
+      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the data package metadata.",
       "example": "seq1",
       "constraints": {
         "required": true
@@ -45,7 +45,7 @@
       }
     },
     {
-      "name": "file_path",
+      "name": "filePath",
       "type": "string",
       "format": "default",
       "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this data package.",
@@ -60,17 +60,17 @@
       }
     },
     {
-      "name": "file_name",
+      "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `file_name` (second).",
+      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
       }
     },
     {
-      "name": "file_mediatype",
+      "name": "fileMediatype",
       "type": "string",
       "format": "default",
       "description": "Mediatype of a multimedia file.",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "name": "exif_data",
+      "name": "exifData",
       "type": "object",
       "format": "default",
       "description": "EXIF data of the file, as a valid JSON object.",
@@ -125,13 +125,13 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "multimedia_id",
+  "primaryKey": "multimediaID",
   "foreignKeys": [
     {
-      "fields": "deployment_id",
+      "fields": "deploymentID",
       "reference": {
         "resource": "deployments",
-        "fields": "deployment_id"
+        "fields": "deploymentID"
       }
     }
   ]
