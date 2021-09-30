@@ -1,6 +1,6 @@
 {
   "title": "Observations",
-  "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observation_type` = `animal`) of a certain taxon, count, age, sex, behaviour and/or individual.",
+  "description": "Table with observations based on the multimedia files. Associated with deployments (`deployment_id`), sequences (`sequence_id`) and optionally individual multimedia files (`multimedia_id`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observation_type` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
   "fields": [
     {
       "name": "observation_id",
@@ -119,7 +119,7 @@
       "name": "count",
       "type": "integer",
       "format": "default",
-      "description": "Number of observed individuals (optionally of given age, sex and behaviour).",
+      "description": "Number of observed individuals (optionally of given life stage, sex and behaviour).",
       "example": "5",
       "constraints": {
         "required": false,
@@ -130,7 +130,7 @@
       "name": "count_new",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimedia_id`) taking into account the entire sequence (`sequence_id`) (optionally of given age, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimedia_id`) taking into account the entire sequence (`sequence_id`) (optionally of given life stage, sex and behaviour).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -138,10 +138,10 @@
       }
     },
     {
-      "name": "age",
+      "name": "life_stage",
       "type": "string",
       "format": "default",
-      "description": "Age of observed individual(s)",
+      "description": "Age class or life stage of observed individual(s). Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/lifeStage).",
       "example": "adult",
       "constraints": {
         "required": false,
