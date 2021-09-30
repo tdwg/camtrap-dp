@@ -1,4 +1,5 @@
 {
+  "name": "multimedia",
   "title": "Multimedia",
   "description": "Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
   "fields": [

@@ -1,5 +1,4 @@
 GEM
-  remote: https://rubygems.org/
   specs:
     activesupport (6.0.3.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -258,11 +257,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-feed
-  jekyll-remote-theme
-  jekyll-sitemap
-  minima (~> 2.0)
-  tzinfo-data
 
 BUNDLED WITH
-   2.1.4
+   2.2.28
