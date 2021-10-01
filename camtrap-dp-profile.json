@@ -126,7 +126,7 @@
                 "opportunistic"
               ]
             },
-            "sensorMethod": {
+            "captureMethod": {
               "description": "Method(s) used to capture media files.",
               "type": "array",
               "items": {
