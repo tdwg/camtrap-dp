@@ -1,4 +1,4 @@
-deployment_id,location_id,location_name,longitude,latitude,start,end,setup_by,camera_id,camera_model,camera_interval,camera_height,bait_use,feature_type,tags,comments
+deploymentID,locationID,locationName,longitude,latitude,start,end,setupBy,cameraID,cameraModel,cameraInterval,cameraHeight,baitUse,featureType,tags,comments
 29b7d356-4bb4-4ec4-b792-2af5cc32efa8,2df5259b-b4b4-4f43-8cf7-effcced06d6f,B_DL_val 5_beek kleine vijver,5.655,51.181,2020-07-29T05:29:41Z,2020-08-08T04:20:40Z,Danny Van der beeck,,,0,0.7,,,boven de stroom,van 29/07/2020 tot 08/08/2020 120 foto's
 577b543a-2cf1-4b23-b6d2-cda7e2eac372,ff1535c0-6b5d-44be-b3ef-c4d4204dad74,B_DL_val 3_dikke boom,5.659,51.184,2020-06-19T21:00:00Z,2020-06-28T23:33:22Z,Danny Van der beeck,,,0,0.8,,,linkeroever,van 19/06/2020 tot 29/06/2020 63 foto's
 62c200a9-0e03-4495-bcd8-032944f6f5a1,ce943ced-1bcf-4140-9a2e-e8ee5e8c10e6,B_DM_val 4_'t WAD,4.013,50.699,2021-03-27T20:38:18Z,2021-04-18T21:25:00Z,Davy,,,0,1,,,,

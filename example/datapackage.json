@@ -13,21 +13,17 @@
   "project": {
     "title": "MICA - Muskrat and Coypu",
     "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
-    "sampling_design": "targeted",
-    "sensor_method": [
+    "samplingDesign": "targeted",
+    "sensorMethod": [
       "motion detection",
       "time lapse"
     ],
-    "animal_types": [
+    "animalTypes": [
       "unmarked"
     ],
-    "classification_level": "sequence",
-    "sequence_interval": 120,
+    "classificationLevel": "sequence",
+    "sequenceInterval": 120,
     "_id": "86cabc14-d475-4439-98a7-e7b590bed60e"
-  },
-  "multimedia_access": {
-    "public": true,
-    "remote": true
   },
   "organizations": [
     {
@@ -195,82 +191,82 @@
   },
   "taxonomic": [
     {
-      "taxon_id": "DGP6",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Anas platyrhynchos",
-      "vernacular_names": {
+      "taxonID": "DGP6",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Anas platyrhynchos",
+      "vernacularNames": {
         "en": "mallard",
         "nl": "wilde eend"
       }
     },
     {
-      "taxon_id": "DGPL",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Anas strepera",
-      "vernacular_names": {
+      "taxonID": "DGPL",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Anas strepera",
+      "vernacularNames": {
         "en": "gadwall",
         "nl": "krakeend"
       }
     },
     {
-      "taxon_id": "32FH",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Ardea",
-      "vernacular_names": {
+      "taxonID": "32FH",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Ardea",
+      "vernacularNames": {
         "en": "great herons",
         "nl": "reigers"
       }
     },
     {
-      "taxon_id": "GCHS",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Ardea cinerea",
-      "vernacular_names": {
+      "taxonID": "GCHS",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Ardea cinerea",
+      "vernacularNames": {
         "en": "grey heron",
         "nl": "blauwe reiger"
       }
     },
     {
-      "taxon_id": "RQPW",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Castor fiber",
-      "vernacular_names": {
+      "taxonID": "RQPW",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Castor fiber",
+      "vernacularNames": {
         "en": "Eurasian beaver",
         "nl": "bever"
       }
     },
     {
-      "taxon_id": "6MB3T",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Homo sapiens",
-      "vernacular_names": {
+      "taxonID": "6MB3T",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Homo sapiens",
+      "vernacularNames": {
         "en": "human",
         "nl": "mens"
       }
     },
     {
-      "taxon_id": "3Y9VW",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Martes foina",
-      "vernacular_names": {
+      "taxonID": "3Y9VW",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Martes foina",
+      "vernacularNames": {
         "en": "beech marten",
         "nl": "steenmarter"
       }
     },
     {
-      "taxon_id": "44QYC",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Mustela putorius",
-      "vernacular_names": {
+      "taxonID": "44QYC",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Mustela putorius",
+      "vernacularNames": {
         "en": "European polecat",
         "nl": "bunzing"
       }
     },
     {
-      "taxon_id": "5BSG3",
-      "taxon_id_reference": "https://www.catalogueoflife.org",
-      "scientific_name": "Vulpes vulpes",
-      "vernacular_names": {
+      "taxonID": "5BSG3",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Vulpes vulpes",
+      "vernacularNames": {
         "en": "red fox",
         "nl": "vos"
       }
@@ -279,7 +275,7 @@
   "platform": {
     "title": "Agouti",
     "path": "https://agouti.eu",
-    "package_id": "3bdce07e-f0b1-4566-948a-e1f0a0d0a214"
+    "packageID": "3bdce07e-f0b1-4566-948a-e1f0a0d0a214"
   },
   "resources": [
     {
@@ -289,16 +285,16 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/deployments-table-schema.json"
     },
     {
-      "name": "multimedia",
-      "path": "multimedia.csv",
+      "name": "media",
+      "path": "media.csv",
       "profile": "tabular-data-resource",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/multimedia-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/media-table-schema.json"
     },
     {
       "name": "observations",
@@ -307,7 +303,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/observations-table-schema.json"
     }
   ]
 }

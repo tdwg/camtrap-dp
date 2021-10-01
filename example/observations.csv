@@ -1,4 +1,4 @@
-observation_id,deployment_id,sequence_id,multimedia_id,timestamp,observation_type,sensor_method,camera_setup,scientific_name,taxon_id,count,age,sex,behaviour,individual_id,classification_method,classified_by,classification_timestamp,classification_confidence,comments
+observationID,deploymentID,sequenceID,mediaID,timestamp,observationType,sensorMethod,cameraSetup,scientificName,taxonID,count,lifeStage,sex,behaviour,individualID,classificationMethod,classifiedBy,classificationTimestamp,classificationConfidence,comments
 ef2f7140-ae97-4b44-8309-ab1ffbc02879,29b7d356-4bb4-4ec4-b792-2af5cc32efa8,8f5ffbf2-52c4-4dd2-b502-d93a8aa64640,,2020-07-29T05:29:41Z,unknown,motion detection,FALSE,,,,,,,,human,,,,
 68686a75-ad44-4676-b45e-2b85f60e4d11,29b7d356-4bb4-4ec4-b792-2af5cc32efa8,1d98da96-c3ce-4479-9b97-8883cd33724f,,2020-07-29T05:38:55Z,blank,motion detection,FALSE,,,,,,,,human,,,,
 3d065f23-426a-449b-8693-f3c6b2ac9c7a,29b7d356-4bb4-4ec4-b792-2af5cc32efa8,89b807ca-697f-4452-8349-b235622c94fa,,2020-07-29T05:46:48Z,animal,motion detection,FALSE,Anas strepera,DGPL,4,subadult,unknown,,,human,Danny Van der beeck,2020-08-17T06:57:28Z,,
