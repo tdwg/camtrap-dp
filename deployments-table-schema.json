@@ -169,7 +169,7 @@
     {
       "name": "timestampIssues",
       "type": "boolean",
-      "description": "`true` if timestamps for this deployment in `multimedia.csv` and `observations.csv` are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "description": "`true` if timestamps for this deployment in `media.csv` and `observations.csv` are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "example": "false",
       "constraints": {
         "required": false
