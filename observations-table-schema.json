@@ -73,20 +73,6 @@
       }
     },
     {
-      "name": "sensorMethod",
-      "type": "string",
-      "format": "default",
-      "description": "Method of triggering the camera for this observation.",
-      "example": "motion detection",
-      "constraints": {
-        "required": false,
-        "enum": [
-          "motion detection",
-          "time lapse"
-        ]
-      }
-    },
-    {
       "name": "cameraSetup",
       "type": "boolean",
       "format": "default",

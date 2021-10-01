@@ -35,6 +35,20 @@
       }
     },
     {
+      "name": "sensorMethod",
+      "type": "string",
+      "format": "default",
+      "description": "Method used to capture this media file.",
+      "example": "motion detection",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "motion detection",
+          "time lapse"
+        ]
+      }
+    },
+    {
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
