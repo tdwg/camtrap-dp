@@ -14,7 +14,7 @@ File | Description
 `multimedia.csv` | Table with [multimedia](https://tdwg.github.io/camtrap-dp/data/#multimedia) files captured by the camera traps.
 `observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the multimedia files.
 
-See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
+See the [website](https://tdwg.github.io/camtrap-dp/) for documentation.
 
 ## Example
 
@@ -22,13 +22,30 @@ See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
 
 ## Validation
 
-A Camtrap DP `datapackage.json` file should have:
+To allow validation, the `datapackage.json` of your dataset should reference the used version of Camtrap DP, both in `profile` and resource `schema`:
 
 ```json
-"profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.3/camtrap-dp-profile.json"
+{
+   "name": "...",
+   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/camtrap-dp-profile.json",
+   "resources": [
+      {
+         "name": "deployments",
+         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/deployments-table-schema.json"
+      },
+      {
+         "name": "media",
+         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/media-table-schema.json"
+      },
+      {
+         "name": "observations",
+         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/observations-table-schema.json"
+      }
+   ]
+}
 ```
 
-You can validate it against the Frictionless Data Package and Camtrap DP specifications with:
+You can validate your dataset against the Camtrap DP (and Frictionless Data Package) specifications with:
 
 ```shell
 pip install frictionless
