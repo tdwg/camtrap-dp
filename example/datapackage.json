@@ -10,27 +10,6 @@
       "email": "agouti@wur.nl"
     }
   ],
-  "project": {
-    "title": "MICA - Muskrat and Coypu",
-    "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
-    "samplingDesign": "targeted",
-    "sensorMethod": [
-      "motion detection",
-      "time lapse"
-    ],
-    "animalTypes": [
-      "unmarked"
-    ],
-    "classificationLevel": "sequence",
-    "sequenceInterval": 120,
-    "_id": "86cabc14-d475-4439-98a7-e7b590bed60e"
-  },
-  "organizations": [
-    {
-      "title": "Research Institute for Nature and Forest (INBO)",
-      "path": "https://inbo.be"
-    }
-  ],
   "contributors": [
     {
       "title": "Abel De Boer",
@@ -148,9 +127,26 @@
       "organization": "Wageningen University"
     }
   ],
-  "temporal": {
-    "start": "2019-10-09",
-    "end": "2021-03-28"
+  "organizations": [
+    {
+      "title": "Research Institute for Nature and Forest (INBO)",
+      "path": "https://inbo.be"
+    }
+  ],
+  "project": {
+    "title": "MICA - Muskrat and Coypu",
+    "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
+    "samplingDesign": "targeted",
+    "captureMethod": [
+      "motion detection",
+      "time lapse"
+    ],
+    "animalTypes": [
+      "unmarked"
+    ],
+    "classificationLevel": "sequence",
+    "sequenceInterval": 120,
+    "_id": "86cabc14-d475-4439-98a7-e7b590bed60e"
   },
   "spatial": {
     "type": "Feature",
@@ -188,6 +184,10 @@
         ]
       ]
     }
+  },
+  "temporal": {
+    "start": "2019-10-09",
+    "end": "2021-03-28"
   },
   "taxonomic": [
     {
