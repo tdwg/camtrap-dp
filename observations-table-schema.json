@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations based on the multimedia files. Associated with deployments (`deploymentID`), sequences (`sequenceID`) and optionally individual multimedia files (`multimediaID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
+  "description": "Table with observations based on the media files. Associated with deployments (`deploymentID`), sequences (`sequenceID`) and optionally individual media files (`mediaID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
   "fields": [
     {
       "name": "observationID",
@@ -28,17 +28,17 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `multimedia:sequenceID`.",
+      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `media:sequenceID`.",
       "example": "seq1",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "multimediaID",
+      "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the multimedia file that is the source of this observation. Foreign key to `multimedia:multimediaID`. Include but leave empty for sequence-based observations.",
+      "description": "Unique identifier of the media file that is the source of this observation. Foreign key to `media:mediaID`. Include but leave empty for sequence-based observations.",
       "example": "m1",
       "constraints": {
         "required": false
@@ -48,7 +48,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated multimedia file (in `multimediaID`), for sequence-based observations the `timestamp` of the first multimedia file in the associated sequence (in `sequenceID`).",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `timestamp` of the first media file in the associated sequence (in `sequenceID`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
@@ -131,7 +131,7 @@
       "name": "countNew",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated multimedia file (`multimediaID`) taking into account the entire sequence (`sequenceID`) (optionally of given life stage, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire sequence (`sequenceID`) (optionally of given life stage, sex and behaviour).",
       "example": "2",
       "constraints": {
         "required": false,
@@ -277,15 +277,15 @@
     {
       "fields": "sequenceID",
       "reference": {
-        "resource": "multimedia",
+        "resource": "media",
         "fields": "sequenceID"
       }
     },
     {
-      "fields": "multimediaID",
+      "fields": "mediaID",
       "reference": {
-        "resource": "multimedia",
-        "fields": "multimediaID"
+        "resource": "media",
+        "fields": "mediaID"
       }
     }
   ]

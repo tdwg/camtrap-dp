@@ -11,8 +11,8 @@ File | Description
 --- | ---
 `datapackage.json`{: .d-inline-block style="width:150px;"} | [Metadata](https://tdwg.github.io/camtrap-dp/metadata/) regarding the data package and camera trap project.
 `deployments.csv` | Table with camera trap [deployments](https://tdwg.github.io/camtrap-dp/data/#deployments).
-`multimedia.csv` | Table with [multimedia](https://tdwg.github.io/camtrap-dp/data/#multimedia) files captured by the camera traps.
-`observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the multimedia files.
+`media.csv` | Table with [media](https://tdwg.github.io/camtrap-dp/data/#media) files captured by the camera traps.
+`observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the media files.
 
 See [website](https://tdwg.github.io/camtrap-dp/) for documentation.
 
