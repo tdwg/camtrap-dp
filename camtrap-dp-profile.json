@@ -126,8 +126,8 @@
                 "opportunistic"
               ]
             },
-            "sensorMethod": {
-              "description": "Method of triggering a camera.",
+            "captureMethod": {
+              "description": "Method(s) used to capture media files.",
               "type": "array",
               "items": {
                 "type": "string",
