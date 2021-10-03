@@ -1,8 +1,8 @@
 {
   "name": "mica-muskrat-and-coypu-20210707160815",
   "id": "https://doi.org/10.5281/zenodo.4893244",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/camtrap-dp-profile.json",
   "created": "2021-07-07T16:08:15Z",
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.5/camtrap-dp-profile.json",
   "sources": [
     {
       "title": "Agouti",
