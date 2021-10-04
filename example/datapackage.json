@@ -1,0 +1,309 @@
+{
+  "name": "mica-muskrat-and-coypu-20210707160815",
+  "id": "https://doi.org/10.5281/zenodo.4893244",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/camtrap-dp-profile.json",
+  "created": "2021-07-07T16:08:15Z",
+  "sources": [
+    {
+      "title": "Agouti",
+      "path": "https://www.agouti.eu",
+      "email": "agouti@wur.nl"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Abel De Boer",
+      "email": "adeboer@wetterskipfryslan.nl",
+      "role": "contributor"
+    },
+    {
+      "title": "Axel Neukermans",
+      "email": "axel.neukermans@inbo.be",
+      "role": "author",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Björn Matthies",
+      "email": "bjoern.matthies@lwk-niedersachsen.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Brecht Neukermans",
+      "email": "brecht.neukermans@inbo.be",
+      "role": "author",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Claudia Maistrelli",
+      "email": "claudia.maistrelli@tiho-hannover.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Danny Van der beeck",
+      "email": "daniel.vanderbeeck@gmail.com",
+      "role": "contributor"
+    },
+    {
+      "title": "Dan Slootmaekers",
+      "email": "d.slootmaekers@vmm.be",
+      "role": "contributor"
+    },
+    {
+      "title": "Dennis Donckers",
+      "email": "dennis.donckers2@telenet.be",
+      "role": "contributor"
+    },
+    {
+      "title": "Emma Cartuyvels",
+      "email": "emma.cartuyvels@inbo.be",
+      "role": "author",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Frank Huysentruyt",
+      "email": "frank.huysentruyt@inbo.be",
+      "role": "contributor",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Friederike Gethöffer",
+      "email": "friederike.gethoeffer@tiho-hannover.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Heiko Fritz",
+      "email": "foersterheiko@gmx.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Jan Lodewijkx",
+      "email": "j.lodewijkx@vmm.be",
+      "role": "contributor"
+    },
+    {
+      "title": "Jim Casaer",
+      "email": "jim.casaer@inbo.be",
+      "role": "maintainer",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Kurt Schamp",
+      "email": "kurt.schamp@inbo.be",
+      "role": "contributor"
+    },
+    {
+      "title": "Lilja Fromme",
+      "email": "lilja.fromme@tiho-hannover.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Lydia Liebgott",
+      "email": "lydia.liebgott@tiho-hannover.de",
+      "role": "contributor"
+    },
+    {
+      "title": "Peter Desmet",
+      "email": "peter.desmet@inbo.be",
+      "path": "https://orcid.org/0000-0002-8442-8025",
+      "role": "maintainer",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Tim Adriaens",
+      "email": "tim.adriaens@inbo.be",
+      "role": "contributor",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Yasmine Verzelen",
+      "email": "yasmine.verzelen@inbo.be",
+      "role": "contributor",
+      "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Yorick Liefting",
+      "email": "yorick.liefting@wur.nl",
+      "role": "maintainer",
+      "organization": "Wageningen University"
+    }
+  ],
+  "organizations": [
+    {
+      "title": "Research Institute for Nature and Forest (INBO)",
+      "path": "https://inbo.be"
+    }
+  ],
+  "project": {
+    "title": "MICA - Muskrat and Coypu",
+    "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
+    "samplingDesign": "targeted",
+    "captureMethod": [
+      "motion detection",
+      "time lapse"
+    ],
+    "animalTypes": [
+      "unmarked"
+    ],
+    "classificationLevel": "sequence",
+    "sequenceInterval": 120,
+    "_id": "86cabc14-d475-4439-98a7-e7b590bed60e"
+  },
+  "spatial": {
+    "type": "Feature",
+    "bbox": [
+      3.51755,
+      50.69905,
+      7.0243,
+      53.27052
+    ],
+    "properties": {},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            3.51755,
+            50.69905
+          ],
+          [
+            7.0243,
+            50.69905
+          ],
+          [
+            7.0243,
+            53.27052
+          ],
+          [
+            3.51755,
+            53.27052
+          ],
+          [
+            3.51755,
+            50.69905
+          ]
+        ]
+      ]
+    }
+  },
+  "temporal": {
+    "start": "2019-10-09",
+    "end": "2021-03-28"
+  },
+  "taxonomic": [
+    {
+      "taxonID": "DGP6",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Anas platyrhynchos",
+      "vernacularNames": {
+        "en": "mallard",
+        "nl": "wilde eend"
+      }
+    },
+    {
+      "taxonID": "DGPL",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Anas strepera",
+      "vernacularNames": {
+        "en": "gadwall",
+        "nl": "krakeend"
+      }
+    },
+    {
+      "taxonID": "32FH",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Ardea",
+      "vernacularNames": {
+        "en": "great herons",
+        "nl": "reigers"
+      }
+    },
+    {
+      "taxonID": "GCHS",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Ardea cinerea",
+      "vernacularNames": {
+        "en": "grey heron",
+        "nl": "blauwe reiger"
+      }
+    },
+    {
+      "taxonID": "RQPW",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Castor fiber",
+      "vernacularNames": {
+        "en": "Eurasian beaver",
+        "nl": "bever"
+      }
+    },
+    {
+      "taxonID": "6MB3T",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Homo sapiens",
+      "vernacularNames": {
+        "en": "human",
+        "nl": "mens"
+      }
+    },
+    {
+      "taxonID": "3Y9VW",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Martes foina",
+      "vernacularNames": {
+        "en": "beech marten",
+        "nl": "steenmarter"
+      }
+    },
+    {
+      "taxonID": "44QYC",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Mustela putorius",
+      "vernacularNames": {
+        "en": "European polecat",
+        "nl": "bunzing"
+      }
+    },
+    {
+      "taxonID": "5BSG3",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Vulpes vulpes",
+      "vernacularNames": {
+        "en": "red fox",
+        "nl": "vos"
+      }
+    }
+  ],
+  "platform": {
+    "title": "Agouti",
+    "path": "https://agouti.eu",
+    "packageID": "3bdce07e-f0b1-4566-948a-e1f0a0d0a214"
+  },
+  "resources": [
+    {
+      "name": "deployments",
+      "path": "deployments.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/deployments-table-schema.json"
+    },
+    {
+      "name": "media",
+      "path": "media.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/media-table-schema.json"
+    },
+    {
+      "name": "observations",
+      "path": "observations.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/observations-table-schema.json"
+    }
+  ]
+}
