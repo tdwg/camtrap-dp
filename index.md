@@ -19,8 +19,6 @@ File | Description
 `media.csv` | Table with [media](https://tdwg.github.io/camtrap-dp/data/#media) files captured by the camera traps.
 `observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the media files.
 
-Camtrap DP is endorsed the camera trap data management systems [Agouti](https://www.agouti.eu/), [eMammal](https://emammal.si.edu/), [TRAPPER](https://doi.org/10.1111/2041-210X.12571), [Wildlife Insights](https://www.wildlifeinsights.org/) and already available as an export format in some of these.
-
 ## Example
 
 [Example dataset](https://github.com/tdwg/camtrap-dp/tree/main/example) following Camtrap DP specifications.
@@ -66,3 +64,5 @@ Questions? Suggestions? Contribute to the development of Camtrap DP by watching 
 > Camtrap DP Development Team (2021) Camera Trap Data Package <https://github.com/tdwg/camtrap-dp>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).
+
+Camtrap DP is endorsed the camera trap data management systems [Agouti](https://www.agouti.eu/), [eMammal](https://emammal.si.edu/), [TRAPPER](https://doi.org/10.1111/2041-210X.12571), [Wildlife Insights](https://www.wildlifeinsights.org/) and already available as an export format in some of these.
