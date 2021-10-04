@@ -91,7 +91,7 @@
           "required": [
             "title",
             "samplingDesign",
-            "sensorMethod",
+            "captureMethod",
             "animalTypes",
             "classificationLevel",
             "sequenceInterval"

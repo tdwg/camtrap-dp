@@ -125,7 +125,7 @@
       }
     },
     {
-      "name": "life_stage",
+      "name": "lifeStage",
       "type": "string",
       "format": "default",
       "description": "Age class or life stage of observed individual(s). Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/lifeStage).",
