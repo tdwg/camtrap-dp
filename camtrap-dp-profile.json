@@ -97,12 +97,16 @@
             "sequenceInterval"
           ],
           "properties": {
+            "id": {
+              "description": "Unique identifier of the project.",
+              "type": "string"
+            },
             "title": {
               "description": "Title of the project.",
               "type": "string"
             },
             "acronym": {
-              "description": "Short and human-readable identifier of the project.",
+              "description": "Project acronym.",
               "type": "string"
             },
             "description": {
@@ -170,10 +174,6 @@
               "items": {
                 "type": "string"
               }
-            },
-            "_id": {
-              "description": "Internal attribute of data management system or data packages catalogue: ID of the project.",
-              "type": "string"
             }
           }
         },
