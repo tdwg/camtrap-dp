@@ -1,9 +1,12 @@
 import json
 import logging
 import sys
+from pathlib import Path
 
 from tableschema import Schema, TableSchemaException
 
+THIS_SCRIPT_PATH = Path(__file__).parent
+DATA_DIR_PATH = THIS_SCRIPT_PATH / ".." / "_data"
 
 # initialize logger
 logger = logging.getLogger()
@@ -14,10 +17,10 @@ handler.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
 logger.addHandler(handler)
 
 
-PACKAGE_PROFILE = "camtrap-dp-profile.json"
-MEDIA_TABLE = "media-table-schema.json"
-DEPLOYMENTS_TABLE = "deployments-table-schema.json"
-OBSERVATIONS_TABLE = "observations-table-schema.json"
+PACKAGE_PROFILE = DATA_DIR_PATH / "camtrap-dp-profile.json"
+MEDIA_TABLE = DATA_DIR_PATH / "media-table-schema.json"
+DEPLOYMENTS_TABLE = DATA_DIR_PATH / "deployments-table-schema.json"
+OBSERVATIONS_TABLE = DATA_DIR_PATH / "observations-table-schema.json"
 
 TABLES = [
     MEDIA_TABLE,
