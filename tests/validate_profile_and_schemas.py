@@ -2,6 +2,7 @@
 import json
 import sys
 from pathlib import Path
+from typing import List
 
 from frictionless import Schema  # type: ignore
 
@@ -33,6 +34,15 @@ def validate_schema(file_path: Path) -> bool:
     return s.metadata_valid
 
 
+def get_schema_metadata_error_messages(file_path: Path) -> List[str]:
+    """Return a list of error messages for the table schema at file_path
+
+    Undefined behaviour if the table schema is valid
+    """
+    s = Schema(descriptor=file_path)
+    return [err.message for err in s.metadata_errors]
+
+
 if __name__ == "__main__":
     encountered_errors = False
 
@@ -52,7 +62,9 @@ if __name__ == "__main__":
             if validate_schema(table):
                 print("✔︎ valid Table Schema")
             else:
-                print("✕ valid Table Schema")
+                print("✕ valid Table Schema, errors:")
+                for err in get_schema_metadata_error_messages(table):
+                    print(f"\t - {err}")
                 encountered_errors = True
         else:
             print("✕ valid JSON")
