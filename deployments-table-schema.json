@@ -275,6 +275,7 @@
       "format": "default",
       "description": "Comments or notes about the deployment.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventRemarks",
       "constraints": {
         "required": false
       }
