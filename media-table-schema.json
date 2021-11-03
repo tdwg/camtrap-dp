@@ -1,13 +1,13 @@
 {
-  "name": "multimedia",
-  "title": "Multimedia",
-  "description": "Table with multimedia files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
+  "name": "media",
+  "title": "Media",
+  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
   "fields": [
     {
-      "name": "multimediaID",
+      "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the multimedia file.",
+      "description": "Unique identifier (within a project) of the media file.",
       "example": "m1",
       "constraints": {
         "required": true,
@@ -29,7 +29,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence this multimedia file belongs to. Sequences contain one or more multimedia files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the data package metadata.",
+      "description": "Unique identifier (within a project) of the sequence this media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the data package metadata.",
       "example": "seq1",
       "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -37,10 +37,24 @@
       }
     },
     {
+      "name": "captureMethod",
+      "type": "string",
+      "format": "default",
+      "description": "Method used to capture this media file.",
+      "example": "motion detection",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "motion detection",
+          "time lapse"
+        ]
+      }
+    },
+    {
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time when the multimedia file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
@@ -50,7 +64,7 @@
       "name": "filePath",
       "type": "string",
       "format": "default",
-      "description": "Url or relative path to the multimedia file, respectively for externally hosted files or files that are part of this data package.",
+      "description": "Url or relative path to the media file, respectively for externally hosted files or files that are part of this data package.",
       "example": [
         "https://trapper.org/storage/resource/media/259024/file/",
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
@@ -65,7 +79,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of a multimedia file. When this field is included, one should be able to sort multimedia chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of a media file. When this field is included, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -75,7 +89,7 @@
       "name": "fileMediatype",
       "type": "string",
       "format": "default",
-      "description": "Mediatype of a multimedia file.",
+      "description": "Mediatype of a media file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
@@ -95,7 +109,7 @@
       "name": "favourite",
       "type": "boolean",
       "format": "default",
-      "description": "`true` if multimedia file is deemed of interest, e.g. an exemplar photo of an individual.",
+      "description": "`true` if media file is deemed of interest, e.g. an exemplar photo of an individual.",
       "example": "true",
       "constraints": {
         "required": false
@@ -105,7 +119,7 @@
       "name": "comments",
       "type": "string",
       "format": "default",
-      "description": "Comments or notes about the multimedia file.",
+      "description": "Comments or notes about the media file.",
       "example": "corrupted file",
       "constraints": {
         "required": false
@@ -115,7 +129,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this multimedia file.",
+      "description": "Internal attribute of data management system: ID of this media file.",
       "example": "",
       "constraints": {
         "required": false
@@ -127,7 +141,7 @@
     "NaN",
     "nan"
   ],
-  "primaryKey": "multimediaID",
+  "primaryKey": "mediaID",
   "foreignKeys": [
     {
       "fields": "deploymentID",

@@ -29,7 +29,7 @@
               "name": {
                 "enum": [
                   "deployments",
-                  "multimedia",
+                  "media",
                   "observations"
                 ]
               },
@@ -41,7 +41,7 @@
                   "name": {
                     "enum": [
                       "deployments",
-                      "multimedia",
+                      "media",
                       "observations"
                     ]
                   }
@@ -93,7 +93,7 @@
           "required": [
             "title",
             "samplingDesign",
-            "sensorMethod",
+            "captureMethod",
             "animalTypes",
             "classificationLevel",
             "sequenceInterval"
@@ -128,8 +128,8 @@
                 "opportunistic"
               ]
             },
-            "sensorMethod": {
-              "description": "Method of triggering a camera.",
+            "captureMethod": {
+              "description": "Method(s) used to capture media files.",
               "type": "array",
               "items": {
                 "type": "string",
@@ -156,14 +156,14 @@
             },
             "classificationLevel": {
               "type": "string",
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple multimedia files can be part of one sequence); `multimedia`: classifications are available for each single multimedia file.",
+              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
               "enum": [
                 "sequence",
-                "multimedia"
+                "media"
               ]
             },
             "sequenceInterval": {
-              "description": "Maximum number of seconds between timestamps of successive multimedia files to be considered part of a single sequence and be assigned the same `sequenceID`.",
+              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `sequenceID`.",
               "type": "integer"
             },
             "references": {
