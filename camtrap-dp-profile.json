@@ -80,12 +80,12 @@
         "rightsHolder": {
           "description": "Person or organization owning or managing rights over this data package.",
           "type": "string",
-          "rdfType": "http://purl.org/dc/terms/rightsHolder"
+          "skos:exactMatch": "http://purl.org/dc/terms/rightsHolder"
         },
         "bibliographicCitation": {
           "description": "Bibliographic/recommended citation for this data package.",
           "type": "string",
-          "rdfType": "http://purl.org/dc/terms/bibliographicCitation"
+          "skos:exactMatch": "http://purl.org/dc/terms/bibliographicCitation"
         },
         "project": {
           "description": "Camera trap project that generated the data in this data package.",
@@ -182,12 +182,12 @@
         "spatial": {
           "description": "Spatial coverage for this data package expressed as GeoJSON. Term borrowed from [Dublin Core](http://purl.org/dc/terms/spatial).",
           "$ref": "http://json.schemastore.org/geojson.json",
-          "rdfType": "http://purl.org/dc/terms/spatial"
+          "skos:exactMatch": "http://purl.org/dc/terms/spatial"
         },
         "temporal": {
           "description": "Temporal coverage for this data package, based on the included deployments. Term borrowed from [Dublin Core](http://purl.org/dc/terms/temporal).",
           "type": "object",
-          "rdfType": "http://purl.org/dc/terms/temporal",
+          "skos:exactMatch": "http://purl.org/dc/terms/temporal",
           "required": [
             "start",
             "end"
@@ -220,7 +220,7 @@
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxonIDReference`.",
                 "example": "QLXL",
                 "type": "string",
-                "rdfType": "http://rs.tdwg.org/dwc/terms/taxonID"
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID"
               },
               "taxonIDReference": {
                 "description": "URL of the source (reference list) of the `taxonID`.",
@@ -232,13 +232,13 @@
                 "description": "Scientific name of the taxon.",
                 "example": "Canis lupus",
                 "type": "string",
-                "rdfType": "http://rs.tdwg.org/dwc/terms/scientificName"
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName"
               },
               "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",
                 "example": "species",
                 "type": "string",
-                "rdfType": "http://rs.tdwg.org/dwc/terms/taxonRank",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonRank",
                 "enum": [
                   "kingdom",
                   "phylum",
@@ -258,7 +258,7 @@
                   "^[a-z]{2}$": {
                     "description": "Common or vernacular name of the taxon in that language.",
                     "type": "string",
-                    "rdfType": "http://rs.tdwg.org/dwc/terms/vernacularName"
+                    "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/vernacularName"
                   }
                 },
                 "additionalProperties": false
