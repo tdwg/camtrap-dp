@@ -149,7 +149,7 @@
       "name": "lifeStage",
       "type": "string",
       "format": "default",
-      "description": "Age class or life stage of observed individual(s). Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/lifeStage).",
+      "description": "Age class or life stage of observed individual(s).",
       "example": "adult",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/lifeStage",
       "constraints": {
