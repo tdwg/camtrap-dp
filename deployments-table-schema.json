@@ -9,6 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the deployment.",
       "example": "dep1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true,
         "unique": true

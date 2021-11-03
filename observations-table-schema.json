@@ -21,6 +21,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -31,6 +32,7 @@
       "format": "default",
       "description": "Unique identifier of the sequence (collection of multimedia files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `multimedia:sequenceID`.",
       "example": "seq1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
