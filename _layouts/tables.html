@@ -56,6 +56,13 @@ layout: base
                     {% endfor %}
                   </ul>
                 {% endif %}
+                {% if field['skos:exactMatch'] %}
+                  <span class="small text-muted">Same as <a href="{{ field['skos:exactMatch'] }}">{{ field['skos:exactMatch'] }}</a></span>
+                {% elsif field['skos:narrowMatch'] %}
+                  <span class="small text-muted">Narrower than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></span>
+                {% elsif field['skos:broadMatch'] %}
+                  <span class="small text-muted">Broader than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
+                {% endif %}
               </td>
               <td>{{ field.type }}</td>
               <td>

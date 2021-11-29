@@ -9,6 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the deployment.",
       "example": "dep1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true,
         "unique": true
@@ -20,6 +21,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the sampling location for this deployment.",
       "example": "loc1",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locationID",
       "constraints": {
         "required": false
       }
@@ -30,6 +32,7 @@
       "format": "default",
       "description": "Name given to the sampling location.",
       "example": "Białowieża MRI 01",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locality",
       "constraints": {
         "required": false
       }
@@ -40,6 +43,7 @@
       "format": "default",
       "description": "Longitude of the sampling location in decimal degrees, using the WGS84 datum.",
       "example": "23.84995",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
       "constraints": {
         "required": true,
         "minimum": -180,
@@ -52,6 +56,7 @@
       "format": "default",
       "description": "Latitude of the sampling location in decimal degrees, using the WGS84 datum.",
       "example": "52.70442",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
       "constraints": {
         "required": true,
         "minimum": -90,
@@ -62,8 +67,9 @@
       "name": "coordinateUncertainty",
       "type": "integer",
       "format": "default",
-      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates are [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera. Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters).",
+      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates are [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera.",
       "example": "100",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
       "constraints": {
         "required": false,
         "minimum": 1
@@ -75,6 +81,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the deployment started, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-01T22:00:00Z",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
       }
@@ -85,6 +92,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the deployment ended, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-04-01T22:00:00Z",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
       }
@@ -246,6 +254,7 @@
       "format": "default",
       "description": "Short characterization of the habitat.",
       "example": "Mixed temperate low-land forest",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/habitat",
       "constraints": {
         "required": false
       }
@@ -266,6 +275,7 @@
       "format": "default",
       "description": "Comments or notes about the deployment.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventRemarks",
       "constraints": {
         "required": false
       }

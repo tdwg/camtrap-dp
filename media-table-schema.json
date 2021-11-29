@@ -20,6 +20,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -30,6 +31,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the sequence this media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the data package metadata.",
       "example": "seq1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
