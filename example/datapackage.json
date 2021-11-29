@@ -134,6 +134,7 @@
     }
   ],
   "project": {
+    "id": "86cabc14-d475-4439-98a7-e7b590bed60e",
     "title": "MICA - Muskrat and Coypu",
     "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
     "samplingDesign": "targeted",
@@ -145,8 +146,7 @@
       "unmarked"
     ],
     "classificationLevel": "sequence",
-    "sequenceInterval": 120,
-    "_id": "86cabc14-d475-4439-98a7-e7b590bed60e"
+    "sequenceInterval": 120
   },
   "spatial": {
     "type": "Feature",
