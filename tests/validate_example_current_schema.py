@@ -4,7 +4,7 @@ import os
 
 from pathlib import Path
 from httpserver import ServeDirectoryWithHTTP
-from tests.helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH
+from helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH
 
 CURRENT_PACKAGE_PROFILE_PATH = Path(__file__).parent / ".." / "camtrap-dp-profile.json"
 DATA_PATH = Path(__file__).parent / ".." / "_data"

@@ -1,7 +1,7 @@
 import json
 import os
 
-from tests.helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH
+from helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH
 
 if __name__ == "__main__":
     # Frictionless loads resource relative to the current directory, (and not to the descriptor)
