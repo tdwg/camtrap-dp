@@ -21,9 +21,15 @@ def validate_package_print_and_exit(descriptor_data: dict) -> None:
                 pprint(err)
 
         for task in report.tasks:
-            if task.error:
+            if len(task.errors) != 0:
                 print(f"Errors for resource {task.resource['name']}:")
-                for task_err in task.errors:
+
+                if len(task.errors) == 1:
+                    errors_to_print = [task.error]  # Weird frictionless API design: must use .error if only one error...
+                else:
+                    errors_to_print = task.errors
+
+                for task_err in errors_to_print:
                     pprint(task_err)
 
         sys.exit(1)
