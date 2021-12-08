@@ -9,6 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the observation.",
       "example": "obs1",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "constraints": {
         "required": true,
         "unique": true
@@ -20,6 +21,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -30,6 +32,7 @@
       "format": "default",
       "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `media:sequenceID`.",
       "example": "seq1",
+      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -50,6 +53,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `timestamp` of the first media file in the associated sequence (in `sequenceID`).",
       "example": "2020-03-24T11:21:46Z",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
       }
@@ -88,6 +92,7 @@
       "format": "default",
       "description": "Unique identifier of the `scientificName` according to the taxonomic reference list defined by `taxonIDReference` in the data package metadata.",
       "example": "QLXL",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
       "constraints": {
         "required": false
       }
@@ -98,6 +103,7 @@
       "format": "default",
       "description": "Scientific name of the observed individual(s).",
       "example": "Canis lupus",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
       "constraints": {
         "required": false
       }
@@ -108,6 +114,7 @@
       "format": "default",
       "description": "Number of observed individuals (optionally of given life stage, sex and behaviour).",
       "example": "5",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/individualCount",
       "constraints": {
         "required": false,
         "minimum": 1
@@ -128,8 +135,9 @@
       "name": "lifeStage",
       "type": "string",
       "format": "default",
-      "description": "Age class or life stage of observed individual(s). Term borrowed from [Darwin Core](http://rs.tdwg.org/dwc/terms/lifeStage).",
+      "description": "Age class or life stage of observed individual(s).",
       "example": "adult",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/lifeStage",
       "constraints": {
         "required": false,
         "enum": [
@@ -147,6 +155,7 @@
       "format": "default",
       "description": "Sex of observed individual(s)",
       "example": "female",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/sex",
       "constraints": {
         "required": false,
         "enum": [
@@ -162,6 +171,7 @@
       "format": "default",
       "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be expressed as as a pipe (`|`) separated list.",
       "example": "vigilance",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/behavior",
       "constraints": {
         "required": false
       }
@@ -172,6 +182,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the observed individual.",
       "example": "RD213",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/organismID",
       "constraints": {
         "required": false
       }
@@ -199,6 +210,7 @@
         "Jakub Bubnicki",
         "Megadetector"
       ],
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "constraints": {
         "required": false
       }
@@ -209,6 +221,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-08-22T10:25:19Z",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
       "constraints": {
         "required": false
       }
@@ -231,6 +244,7 @@
       "format": "default",
       "description": "Comments or notes about the observation.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
       "constraints": {
         "required": false
       }
