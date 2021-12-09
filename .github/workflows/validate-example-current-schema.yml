@@ -1,4 +1,4 @@
-name: Validate example with current schemas
+name: Validate example against current schemas
 
 on: push
 
