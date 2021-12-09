@@ -5,7 +5,8 @@ from pprint import pprint
 from frictionless import validate_package  # type: ignore
 
 THIS_SCRIPT_PATH = Path(__file__).parent
-EXAMPLE_DESCRIPTOR_PATH = THIS_SCRIPT_PATH / ".." / "example" / "datapackage.json"
+REPOSITORY_ROOT_PATH = THIS_SCRIPT_PATH / ".."
+EXAMPLE_DESCRIPTOR_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
 
 
 def validate_package_print_and_exit(descriptor_data: dict) -> None:

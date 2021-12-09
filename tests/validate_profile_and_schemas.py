@@ -1,4 +1,4 @@
-# This script validate the Camtrap-dp standard itself (in ./_data) is valid (regarding JSON and Frictionless definitions)
+# This script validate the Camtrap-dp standard itself is valid (regarding JSON and Frictionless definitions)
 import json
 import sys
 from pathlib import Path
@@ -6,16 +6,17 @@ from typing import List
 
 from frictionless import Schema  # type: ignore
 
+from helpers import REPOSITORY_ROOT_PATH
+
 THIS_SCRIPT_PATH = Path(__file__).parent
-DATA_DIR_PATH = THIS_SCRIPT_PATH / ".." / "_data"
 
 
-PACKAGE_PROFILE = DATA_DIR_PATH / "camtrap-dp-profile.json"
+PACKAGE_PROFILE = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
 
 TABLES = [
-    DATA_DIR_PATH / "media-table-schema.json",
-    DATA_DIR_PATH / "deployments-table-schema.json",
-    DATA_DIR_PATH / "observations-table-schema.json",
+    REPOSITORY_ROOT_PATH / "media-table-schema.json",
+    REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
+    REPOSITORY_ROOT_PATH / "observations-table-schema.json",
 ]
 
 

@@ -4,15 +4,14 @@ import os
 
 from pathlib import Path
 from httpserver import ServeDirectoryWithHTTP
-from helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH
+from helpers import validate_package_print_and_exit, EXAMPLE_DESCRIPTOR_PATH, REPOSITORY_ROOT_PATH
 
 CURRENT_PACKAGE_PROFILE_PATH = Path(__file__).parent / ".." / "camtrap-dp-profile.json"
-DATA_PATH = Path(__file__).parent / ".." / "_data"
 
 RESOURCES_TO_PATCH = [
-    {'resource_name': 'deployments', 'current_schema_path': (DATA_PATH / 'deployments-table-schema.json')},
-    {'resource_name': 'media', 'current_schema_path': DATA_PATH / 'media-table-schema.json'},
-    {'resource_name': 'observations', 'current_schema_path': DATA_PATH / 'observations-table-schema.json'}
+    {'resource_name': 'deployments', 'current_schema_path': (REPOSITORY_ROOT_PATH / 'deployments-table-schema.json')},
+    {'resource_name': 'media', 'current_schema_path': REPOSITORY_ROOT_PATH / 'media-table-schema.json'},
+    {'resource_name': 'observations', 'current_schema_path': REPOSITORY_ROOT_PATH / 'observations-table-schema.json'}
 ]
 
 if __name__ == "__main__":
