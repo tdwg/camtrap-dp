@@ -3,7 +3,7 @@ name: Validate example against current schemas
 on: push
 
 jobs:
-  build:
+  validate-example-current-schema:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
