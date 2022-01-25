@@ -129,7 +129,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this media file.",
+      "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
       "constraints": {
         "required": false

@@ -284,7 +284,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this deployment.",
+      "description": "Unique identifier of the deployment as assigned by the data management system.",
       "example": "",
       "constraints": {
         "required": false
