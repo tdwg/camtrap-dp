@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Camera Trap Data Package",
   "description": "Data exchange format for camera trap data. https://tdwg.github.io/camtrap-dp/",
+  "version": "0.1.6",
   "type": "object",
   "allOf": [
     {
@@ -47,7 +48,7 @@
           "items": {
             "properties": {
               "name": {
-                "description": "Identifier for the resource. Only names are allowed: `deployments`, `media` and `observations` (see [Data](../data/)).",
+                "description": "Identifier for the resource. Allowed names are `deployments`, `media` and `observations` (see [Data](../data/)).",
                 "enum": [
                   "deployments",
                   "media",
