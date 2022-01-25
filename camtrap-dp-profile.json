@@ -23,6 +23,7 @@
           "format": "uri"
         },
         "licenses": {
+          "description": "[Licenses](https://specs.frictionlessdata.io/data-package/#licenses) under which the Data Package is published. If provided, requires at least a license for the content of the Data Package and one for the media files referenced in `media.csv` (see `scope`).",
           "minItems": 2,
           "items": {
             "required": [
@@ -30,6 +31,7 @@
             ],
             "properties": {
               "scope": {
+                "description": "Scope of the license. `data` for the license under which the content of the Data Package is provided, `media` for the license under which the media files referenced in `media.csv` are provided.",
                 "enum": [
                   "data",
                   "media"
