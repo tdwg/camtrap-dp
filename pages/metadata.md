@@ -13,9 +13,9 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 
 - [`name`](https://specs.frictionlessdata.io/data-package/#name)
 - [`id`](https://specs.frictionlessdata.io/data-package/#id)
-- [`profile`](https://specs.frictionlessdata.io/data-package/#profile)*
+- [`profile`](#profile)*
 - [`created`](https://specs.frictionlessdata.io/data-package/#created)*
-- [`licenses`](https://specs.frictionlessdata.io/data-package/#licenses)
+- [`licenses`](#licenses)
 - [`sources`](https://specs.frictionlessdata.io/data-package/#sources)
 - [`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)*
 - [`resources`](#resources)*: the data files, see [Data](../data/).
