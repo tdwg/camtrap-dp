@@ -25,12 +25,21 @@
           "minItems": 3,
           "maxItems": 3,
           "items": {
+            "required": [
+              "schema",
+              "profile"
+            ],
             "properties": {
               "name": {
                 "enum": [
                   "deployments",
                   "media",
                   "observations"
+                ]
+              },
+              "profile": {
+                "enum": [
+                  "tabular-data-resource"
                 ]
               },
               "schema": {
