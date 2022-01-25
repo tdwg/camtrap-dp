@@ -21,6 +21,21 @@
         "profile": {
           "format": "uri"
         },
+        "licenses": {
+          "items": {
+            "required": [
+              "scope"
+            ],
+            "properties": {
+              "scope": {
+                "enum": [
+                  "data",
+                  "media"
+                ] 
+              }
+            }
+          }
+        },
         "resources": {
           "minItems": 3,
           "maxItems": 3,
