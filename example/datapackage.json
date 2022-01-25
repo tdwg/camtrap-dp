@@ -3,6 +3,16 @@
   "id": "https://doi.org/10.5281/zenodo.4893244",
   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.6/camtrap-dp-profile.json",
   "created": "2021-07-07T16:08:15Z",
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "scope": "data"
+    },
+    {
+      "path": "http://creativecommons.org/licenses/by/4.0/",
+      "scope": "media"
+    }
+  ],
   "sources": [
     {
       "title": "Agouti",

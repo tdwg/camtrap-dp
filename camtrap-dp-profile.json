@@ -19,14 +19,35 @@
       ],
       "properties": {
         "profile": {
+          "description": "URL of the used Camtrap DP Profile version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/camtrap-dp-profile.json`).",
           "format": "uri"
         },
+        "licenses": {
+          "description": "[Licenses](https://specs.frictionlessdata.io/data-package/#licenses) under which the Data Package is published. If provided, requires at least a license for the content of the Data Package and one for the media files referenced in `media.csv` (see `scope`).",
+          "minItems": 2,
+          "items": {
+            "required": [
+              "scope"
+            ],
+            "properties": {
+              "scope": {
+                "description": "Scope of the license. `data` for the license under which the content of the Data Package is provided, `media` for the license under which the media files referenced in `media.csv` are provided.",
+                "enum": [
+                  "data",
+                  "media"
+                ] 
+              }
+            }
+          }
+        },
         "resources": {
+          "description": "An `array` of Tabular Data Resource objects, each compliant with the [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) specification.",
           "minItems": 3,
           "maxItems": 3,
           "items": {
             "properties": {
               "name": {
+                "description": "Identifier for the resource. Allowed names are `deployments`, `media` and `observations` (see [Data](../data/)).",
                 "enum": [
                   "deployments",
                   "media",
@@ -34,6 +55,7 @@
                 ]
               },
               "schema": {
+                "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
                 "required": [
                   "name"
                 ],
