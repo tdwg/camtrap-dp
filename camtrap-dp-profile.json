@@ -38,9 +38,7 @@
                 ]
               },
               "profile": {
-                "enum": [
-                  "tabular-data-resource"
-                ]
+                "const": "tabular-data-resource"
               },
               "schema": {
                 "required": [
