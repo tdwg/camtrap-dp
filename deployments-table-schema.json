@@ -226,7 +226,7 @@
       "type": "string",
       "format": "default",
       "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
-      "example": "",
+      "example": "culvert",
       "constraints": {
         "required": false,
         "enum": [
