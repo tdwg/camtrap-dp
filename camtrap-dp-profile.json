@@ -34,7 +34,7 @@
                 "description": "Scope of the license. `data` for the license under which the content of the Data Package is provided, `media` for the license under which the media files referenced in `media.csv` are provided.",
                 "enum": [
                   "data",
-                  "media"
+                  "linked media"
                 ] 
               }
             }
