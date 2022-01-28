@@ -31,7 +31,7 @@
             ],
             "properties": {
               "scope": {
-                "description": "Scope of the license. `data` for the license under which the content of the Data Package is provided, `media` for the license under which the media files referenced in `media.csv` are provided.",
+                "description": "Scope of the license. `data` applies to the content of the Data Package (`datapackage.json` and related CSV files), `media` applies to the media files (locally or externally hosted) referenced via `filePath` in the `media` resource.",
                 "enum": [
                   "data",
                   "media"
