@@ -18,7 +18,7 @@
       "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
+      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
       "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -29,7 +29,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence this media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the data package metadata.",
+      "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
       "example": "seq1",
       "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -40,7 +40,7 @@
       "name": "captureMethod",
       "type": "string",
       "format": "default",
-      "description": "Method used to capture this media file.",
+      "description": "Method used to capture the media file.",
       "example": "motion detection",
       "constraints": {
         "required": false,
@@ -64,7 +64,7 @@
       "name": "filePath",
       "type": "string",
       "format": "default",
-      "description": "Url or relative path to the media file, respectively for externally hosted files or files that are part of this data package.",
+      "description": "URL or relative path to the media file, respectively for externally hosted files or files that are part of the Data Package.",
       "example": [
         "https://trapper.org/storage/resource/media/259024/file/",
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
@@ -79,7 +79,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of a media file. When this field is included, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of a media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -129,7 +129,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this media file.",
+      "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
       "constraints": {
         "required": false

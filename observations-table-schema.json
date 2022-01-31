@@ -19,7 +19,7 @@
       "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment this observation belongs to. Foreign key to `deployment:deploymentID`.",
+      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
       "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -30,7 +30,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of this observation. Foreign key to `media:sequenceID`.",
+      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of the observation. Foreign key to `media:sequenceID`.",
       "example": "seq1",
       "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -41,7 +41,7 @@
       "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the media file that is the source of this observation. Foreign key to `media:mediaID`. Include but leave empty for sequence-based observations.",
+      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media:mediaID`. Leave empty for sequence-based observations.",
       "example": "m1",
       "constraints": {
         "required": false
@@ -80,7 +80,7 @@
       "name": "cameraSetup",
       "type": "boolean",
       "format": "default",
-      "description": "`true` if this observation is part of the camera setup process (camera deployment, pickup, maintenance).",
+      "description": "`true` if the observation is part of the camera setup process (camera deployment, pickup, maintenance).",
       "example": "false",
       "constraints": {
         "required": false
@@ -90,7 +90,7 @@
       "name": "taxonID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the `scientificName` according to the taxonomic reference list defined by `taxonIDReference` in the data package metadata.",
+      "description": "Unique identifier of the `scientificName` according to the taxonomic reference list defined by `taxonIDReference` in the Data Package metadata.",
       "example": "QLXL",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
       "constraints": {
@@ -205,7 +205,7 @@
       "name": "classifiedBy",
       "type": "string",
       "format": "default",
-      "description": "Name or unique identifier of the person or AI algorithm that classified this observation.",
+      "description": "Name or unique identifier of the person or AI algorithm that classified the observation.",
       "example": [
         "Jakub Bubnicki",
         "Megadetector"
@@ -253,7 +253,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this observation.",
+      "description": "Unique identifier of the observation as assigned by the data management system.",
       "example": "",
       "constraints": {
         "required": false

@@ -19,7 +19,7 @@
       "name": "locationID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sampling location for this deployment.",
+      "description": "Unique identifier (within a project) of the sampling location for the deployment.",
       "example": "loc1",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locationID",
       "constraints": {
@@ -101,7 +101,7 @@
       "name": "setupBy",
       "type": "string",
       "format": "default",
-      "description": "Name or unique identifier of the person who set up the camera for this deployment.",
+      "description": "Name or unique identifier of the person who set up the camera for the deployment.",
       "example": [
         "Jim Casaer",
         "2ef60d48-fd67-4bac-9569-49a03b0ef096"
@@ -114,7 +114,7 @@
       "name": "cameraID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the camera used for this deployment (e.g. the camera device serial number).",
+      "description": "Unique identifier (within a project) of the camera used for the deployment (e.g. the camera device serial number).",
       "example": "P800HG08192031",
       "constraints": {
         "required": false
@@ -124,7 +124,7 @@
       "name": "cameraModel",
       "type": "string",
       "format": "default",
-      "description": "Manufacturer and model of the camera provided in this format: `manufacturer-model`.",
+      "description": "Manufacturer and model of the camera provided in the format `manufacturer-model`.",
       "example": "Reconyx-PC800",
       "constraints": {
         "required": false
@@ -177,7 +177,7 @@
     {
       "name": "timestampIssues",
       "type": "boolean",
-      "description": "`true` if timestamps for this deployment in `media.csv` and `observations.csv` are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "description": "`true` if timestamps in `media.csv` and `observations.csv` for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "example": "false",
       "constraints": {
         "required": false
@@ -187,7 +187,7 @@
       "name": "baitUse",
       "type": "string",
       "format": "default",
-      "description": "Type of bait (if any) that was used for this deployment. If other, more info can be provided in the `comments` field.",
+      "description": "Type of bait (if any) that was used for the deployment. If other, more info can be provided in the `comments` field.",
       "example": "food",
       "constraints": {
         "required": false,
@@ -226,7 +226,7 @@
       "type": "string",
       "format": "default",
       "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
-      "example": "",
+      "example": "culvert",
       "constraints": {
         "required": false,
         "enum": [
@@ -284,7 +284,7 @@
       "name": "_id",
       "type": "string",
       "format": "default",
-      "description": "Internal attribute of data management system: ID of this deployment.",
+      "description": "Unique identifier of the deployment as assigned by the data management system.",
       "example": "",
       "constraints": {
         "required": false
