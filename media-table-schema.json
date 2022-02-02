@@ -9,6 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the media file.",
       "example": "m1",
+      "skos:narrowMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
         "required": true,
         "unique": true
@@ -42,6 +43,7 @@
       "format": "default",
       "description": "Method used to capture the media file.",
       "example": "motion detection",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
       "constraints": {
         "required": false,
         "enum": [
@@ -56,6 +58,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
+      "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "constraints": {
         "required": true
       }
@@ -70,6 +73,7 @@
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
         "DEP0001/IMG0001.jpg"
       ],
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/accessURI",
       "constraints": {
         "required": true,
         "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
@@ -131,6 +135,7 @@
       "format": "default",
       "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
       "constraints": {
         "required": false
       }

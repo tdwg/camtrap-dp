@@ -126,6 +126,7 @@
       "format": "default",
       "description": "Manufacturer and model of the camera provided in the format `manufacturer-model`.",
       "example": "Reconyx-PC800",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/captureDevice",
       "constraints": {
         "required": false
       }
@@ -265,6 +266,7 @@
       "format": "default",
       "description": "User defined tags associated with the deployment, as a pipe (`|`) separated list.",
       "example": "Outside NP | Forest edge",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
         "required": false
       }
