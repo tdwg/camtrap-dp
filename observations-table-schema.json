@@ -43,6 +43,7 @@
       "format": "default",
       "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media:mediaID`. Leave empty for sequence-based observations.",
       "example": "m1",
+      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
         "required": false
       }
