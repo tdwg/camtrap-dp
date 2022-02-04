@@ -9,7 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the deployment.",
       "example": "dep1",
-      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true,
         "unique": true
@@ -126,7 +126,7 @@
       "format": "default",
       "description": "Manufacturer and model of the camera provided in the format `manufacturer-model`.",
       "example": "Reconyx-PC800",
-      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/captureDevice",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/captureDevice",
       "constraints": {
         "required": false
       }
@@ -266,7 +266,7 @@
       "format": "default",
       "description": "User defined tags associated with the deployment, as a pipe (`|`) separated list.",
       "example": "Outside NP | Forest edge",
-      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/tag",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
         "required": false
       }

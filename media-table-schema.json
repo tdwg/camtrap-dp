@@ -9,7 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the media file.",
       "example": "m1",
-      "skos:narrowMatch": "http://purl.org/dc/terms/identifier",
+      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
         "required": true,
         "unique": true
@@ -21,7 +21,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
-      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -32,7 +32,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
       "example": "seq1",
-      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -43,7 +43,7 @@
       "format": "default",
       "description": "Method used to capture the media file.",
       "example": "motion detection",
-      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
       "constraints": {
         "required": false,
         "enum": [
@@ -73,7 +73,7 @@
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
         "DEP0001/IMG0001.jpg"
       ],
-      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/accessURI",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/accessURI",
       "constraints": {
         "required": true,
         "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
