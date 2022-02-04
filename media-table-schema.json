@@ -83,7 +83,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of a media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of the media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -93,7 +93,7 @@
       "name": "fileMediatype",
       "type": "string",
       "format": "default",
-      "description": "Mediatype of a media file.",
+      "description": "Mediatype of the file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
