@@ -125,6 +125,7 @@
       "format": "default",
       "description": "Comments or notes about the media file.",
       "example": "corrupted file",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
       "constraints": {
         "required": false
       }
@@ -135,7 +136,6 @@
       "format": "default",
       "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
-      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
       "constraints": {
         "required": false
       }
