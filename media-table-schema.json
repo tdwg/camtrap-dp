@@ -9,6 +9,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the media file.",
       "example": "m1",
+      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
         "required": true,
         "unique": true
@@ -20,7 +21,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
       "example": "dep1",
-      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -31,7 +32,7 @@
       "format": "default",
       "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
       "example": "seq1",
-      "skos:narrowMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
@@ -42,6 +43,7 @@
       "format": "default",
       "description": "Method used to capture the media file.",
       "example": "motion detection",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
       "constraints": {
         "required": false,
         "enum": [
@@ -56,6 +58,7 @@
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
+      "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "constraints": {
         "required": true
       }
@@ -70,6 +73,7 @@
         "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
         "DEP0001/IMG0001.jpg"
       ],
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/accessURI",
       "constraints": {
         "required": true,
         "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
@@ -79,7 +83,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of a media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of the media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -89,7 +93,7 @@
       "name": "fileMediatype",
       "type": "string",
       "format": "default",
-      "description": "Mediatype of a media file.",
+      "description": "Mediatype of the file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
@@ -121,6 +125,7 @@
       "format": "default",
       "description": "Comments or notes about the media file.",
       "example": "corrupted file",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
       "constraints": {
         "required": false
       }
@@ -131,6 +136,7 @@
       "format": "default",
       "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/providerManagedID",
       "constraints": {
         "required": false
       }

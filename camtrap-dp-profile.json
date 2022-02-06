@@ -100,9 +100,9 @@
           }
         },
         "rightsHolder": {
-          "description": "Person or organization owning or managing rights over the Data Package.",
+          "description": "Person or organization owning the rights over the Data Package.",
           "type": "string",
-          "skos:exactMatch": "http://purl.org/dc/terms/rightsHolder"
+          "skos:exactMatch": "http://ns.adobe.com/xap/1.0/rights/Owner"
         },
         "bibliographicCitation": {
           "description": "Bibliographic/recommended citation for the Data Package.",
