@@ -136,6 +136,7 @@
       "format": "default",
       "description": "Unique identifier of the media file as assigned by the data management system.",
       "example": "",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/providerManagedID",
       "constraints": {
         "required": false
       }
