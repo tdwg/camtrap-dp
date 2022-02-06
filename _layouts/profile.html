@@ -16,8 +16,9 @@ layout: base
     {% for p1_raw in properties1 %}
       {% assign p1_name = p1_raw[0] %}
       {% assign p1 = p1_raw[1] %}
+      {% assign p1_id = p1_name | downcase | url_encode %}
       
-      <h2 id="{{ p1_name | downcase | url_encode }}">
+      <h2 id="{{ p1_id }}">
         {{ p1_name }}
         {% if required1 contains p1_name %}*{% endif %}
       </h2>
@@ -60,10 +61,11 @@ layout: base
             {% for p2_raw in properties2 %}
               {% assign p2_name = p2_raw[0] %}
               {% assign p2 = p2_raw[1] %}
+              {% assign p2_id = p2_name | downcase | url_encode %}
 
               <tr>
-                <td id="{{ p2_name | downcase | url_encode }}">
-                  <a href="#{{ p2_name | downcase | url_encode }}"><code>{{ p2_name }}</code></a>
+                <td id="{{ p1_id }}.{{ p2_id }}">
+                  <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
                   {% if required2 contains p2_name %}*{% endif %}
                 </td>
                 <td>

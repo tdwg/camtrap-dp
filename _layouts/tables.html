@@ -9,8 +9,9 @@ layout: base
 
     {% for table_schema_file in site.data["_tables"] %}
       {% assign table_schema = site.data[table_schema_file] %}
+      {% assign table_schema_id = table_schema.title | downcase | url_encode %}
 
-      <h2 id="{{ table_schema.title | downcase | url_encode }}">{{ table_schema.title }}</h2>
+      <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
 
       <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
 
@@ -34,8 +35,8 @@ layout: base
           </colgroup>
           {% for field in table_schema.fields %}
             <tr>
-              <td id="{{ field.name | downcase | url_encode }}">
-                <a href="#{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
+              <td id="{{ table_schema_id }}.{{ field.name | downcase | url_encode }}">
+                <a href="#{{ table_schema_id }}.{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
                 {% if field.constraints.required %}*{% endif %}
               </td>
               <td>
