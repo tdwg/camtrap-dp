@@ -176,6 +176,17 @@
       }
     },
     {
+      "name": "detectionDistance",
+      "type": "number",
+      "format": "default",
+      "description": "Furthest distance at which the camera detected a human during setup.",
+      "example": "9.5",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      }
+    },
+    {
       "name": "timestampIssues",
       "type": "boolean",
       "description": "`true` if timestamps in `media.csv` and `observations.csv` for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
