@@ -179,7 +179,7 @@
       "type": "number",
       "format": "default",
       "description": "Furthest distance at which the camera detected a human during setup.",
-      "example": "4.3",
+      "example": "9.5",
       "constraints": {
         "required": false,
         "minimum": 0
