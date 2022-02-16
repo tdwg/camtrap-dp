@@ -36,7 +36,7 @@
             ],
             "properties": {
               "scope": {
-                "description": "Scope of the license. `data` for the license under which the content of the Data Package is provided, `media` for the license under which the media files referenced in `media.csv` are provided.",
+                "description": "Scope of the license. `data` applies to the content of the Data Package (`datapackage.json` and related CSV files), `media` applies to the media files (locally or externally hosted) referenced via `filePath` in the `media` resource.",
                 "enum": [
                   "data",
                   "media"
@@ -79,7 +79,7 @@
           }
         },
         "organizations": {
-          "description": "List of organizations related to this data package.",
+          "description": "List of organizations related to the Data Package.",
           "type": "array",
           "items": {
             "type": "object",
@@ -106,17 +106,17 @@
           }
         },
         "rightsHolder": {
-          "description": "Person or organization owning or managing rights over this data package.",
+          "description": "Person or organization owning the rights over the Data Package.",
           "type": "string",
-          "skos:exactMatch": "http://purl.org/dc/terms/rightsHolder"
+          "skos:exactMatch": "http://ns.adobe.com/xap/1.0/rights/Owner"
         },
         "bibliographicCitation": {
-          "description": "Bibliographic/recommended citation for this data package.",
+          "description": "Bibliographic/recommended citation for the Data Package.",
           "type": "string",
           "skos:exactMatch": "http://purl.org/dc/terms/bibliographicCitation"
         },
         "project": {
-          "description": "Camera trap project that generated the data in this data package.",
+          "description": "Camera trap project that generated the data in the Data Package.",
           "type": "object",
           "required": [
             "title",
@@ -140,7 +140,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally expressed in Markdown format. To describe the data package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
+              "description": "Description of the project, ideally expressed in Markdown format. To describe the Data Package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
               "type": "string"
             },
             "path": {
@@ -208,12 +208,12 @@
           }
         },
         "spatial": {
-          "description": "Spatial coverage for this data package expressed as GeoJSON.",
+          "description": "Spatial coverage for the Data Package expressed as GeoJSON.",
           "$ref": "http://json.schemastore.org/geojson.json",
           "skos:exactMatch": "http://purl.org/dc/terms/spatial"
         },
         "temporal": {
-          "description": "Temporal coverage for this data package, based on the included deployments.",
+          "description": "Temporal coverage for the Data Package, based on the included deployments.",
           "type": "object",
           "skos:exactMatch": "http://purl.org/dc/terms/temporal",
           "required": [
@@ -234,7 +234,7 @@
           }
         },
         "taxonomic": {
-          "description": "List of taxa as the taxonomic coverage for this data package. Based on the unique `scientificName` values in `observations.csv` table.",
+          "description": "List of taxa as the taxonomic coverage for the Data Package. Based on the unique `scientificName` values in `observations.csv` table.",
           "type": "array",
           "items": {
             "type": "object",
@@ -295,7 +295,7 @@
           }
         },
         "platform": {
-          "description": "Data management or repository system used to generate this data package.",
+          "description": "Data management or repository system used to generate the Data Package.",
           "type": "object",
           "properties": {
             "title": {
@@ -312,7 +312,7 @@
               "type": "string"
             },
             "packageID": {
-              "description": "Data package ID assigned by the platform.",
+              "description": "Data Package ID assigned by the platform.",
               "type": "string"
             }
           }
