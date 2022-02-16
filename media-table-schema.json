@@ -1,7 +1,7 @@
 {
   "name": "media",
   "title": "Media",
-  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
+  "description": "Table with media files associated with a deployment (`deploymentID`). Media files can be captured by the camera trap (images/videos) or created afterwards by grouping files (sequences).",
   "fields": [
     {
       "name": "mediaID",
@@ -16,22 +16,22 @@
       }
     },
     {
-      "name": "deploymentID",
+      "name": "parentMediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
-      "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "description": "Unique identifier of the sequence the media file belongs to. Internal foreign key to `media:mediaID`. Optional. Empty for sequences themselves.",
+      "example": "seq1",
+      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
-        "required": true
+        "required": false
       }
     },
     {
-      "name": "sequenceID",
+      "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
-      "example": "seq1",
+      "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployment:deploymentID`.",
+      "example": "dep1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
@@ -41,24 +41,35 @@
       "name": "captureMethod",
       "type": "string",
       "format": "default",
-      "description": "Method used to capture the media file.",
+      "description": "Method used to capture or create the media file.",
       "example": "motion detection",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
       "constraints": {
         "required": false,
         "enum": [
           "motion detection",
-          "time lapse"
+          "time lapse",
+          "sequence"
         ]
       }
     },
     {
-      "name": "timestamp",
+      "name": "start",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time when the media file recording started, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "end",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "description": "Date and time when the media file recorded ended, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
       }
@@ -75,7 +86,7 @@
       ],
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/accessURI",
       "constraints": {
-        "required": true,
+        "required": false,
         "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
       }
     },
@@ -96,7 +107,7 @@
       "description": "Mediatype of the file.",
       "example": "image/jpeg",
       "constraints": {
-        "required": true
+        "required": false
       }
     },
     {
@@ -154,6 +165,13 @@
       "reference": {
         "resource": "deployments",
         "fields": "deploymentID"
+      }
+    },
+    {
+      "fields": "parentMediaID",
+      "reference": {
+        "resource": "media",
+        "fields": "mediaID"
       }
     }
   ]
