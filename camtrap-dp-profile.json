@@ -45,6 +45,10 @@
           "minItems": 3,
           "maxItems": 3,
           "items": {
+            "required": [
+              "schema",
+              "profile"
+            ],
             "properties": {
               "name": {
                 "description": "Identifier for the resource. Allowed names are `deployments`, `media` and `observations` (see [Data](../data/)).",
@@ -53,6 +57,9 @@
                   "media",
                   "observations"
                 ]
+              },
+              "profile": {
+                "const": "tabular-data-resource"
               },
               "schema": {
                 "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
