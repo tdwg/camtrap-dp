@@ -38,7 +38,7 @@
       }
     },
     {
-      "name": "captureMethod",
+      "name": "creationMethod",
       "type": "string",
       "format": "default",
       "description": "Method used to capture or create the media file.",
@@ -54,22 +54,12 @@
       }
     },
     {
-      "name": "start",
+      "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time when the media file recording started, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). Start timestamp for videos and sequences.",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "end",
-      "type": "datetime",
-      "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time when the media file recorded ended, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "example": "2020-03-24T11:21:46Z",
       "constraints": {
         "required": true
       }
