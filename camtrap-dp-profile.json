@@ -3,6 +3,11 @@
   "title": "Camera Trap Data Package",
   "description": "Data exchange format for camera trap data. https://tdwg.github.io/camtrap-dp/",
   "type": "object",
+  "$defs": {
+    "version": {
+      "pattern": "0\\.1\\.7"
+    }
+  },  
   "allOf": [
     {
       "$ref": "https://frictionlessdata.io/schemas/data-package.json"
@@ -63,6 +68,7 @@
               },
               "schema": {
                 "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
+                "$ref": "#$defs/version",
                 "required": [
                   "name"
                 ],
