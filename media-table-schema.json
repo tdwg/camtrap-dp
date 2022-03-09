@@ -27,17 +27,6 @@
       }
     },
     {
-      "name": "sequenceID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
-      "example": "seq1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
       "name": "captureMethod",
       "type": "string",
       "format": "default",

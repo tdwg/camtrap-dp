@@ -47,8 +47,8 @@
         },
         "resources": {
           "description": "An `array` of Tabular Data Resource objects, each compliant with the [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) specification.",
-          "minItems": 3,
-          "maxItems": 3,
+          "minItems": 4,
+          "maxItems": 4,
           "items": {
             "required": [
               "schema",
@@ -60,6 +60,7 @@
                 "enum": [
                   "deployments",
                   "media",
+                  "observationunits",
                   "observations"
                 ]
               },
@@ -77,6 +78,7 @@
                     "enum": [
                       "deployments",
                       "media",
+                      "observationunits",
                       "observations"
                     ]
                   }

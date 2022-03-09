@@ -307,6 +307,15 @@
       "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/media-table-schema.json"
     },
     {
+      "name": "observationunits",
+      "path": "observationunits.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/observationunits-table-schema.json"
+    },
+    {
       "name": "observations",
       "path": "observations.csv",
       "profile": "tabular-data-resource",
