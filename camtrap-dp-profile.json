@@ -60,7 +60,7 @@
                 "enum": [
                   "deployments",
                   "media",
-                  "observationunits",
+                  "mediagroups",
                   "observations"
                 ]
               },
@@ -78,7 +78,7 @@
                     "enum": [
                       "deployments",
                       "media",
-                      "observationunits",
+                      "mediagroups",
                       "observations"
                     ]
                   }

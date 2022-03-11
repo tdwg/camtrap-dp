@@ -4,6 +4,7 @@ title: Data
 description: >
   [Deployments](#deployments){: .btn .btn-primary }
   [Media](#media){: .btn .btn-primary }
+  [Media groups](#mediagroups){: .btn .btn-primary }
   [Observations](#observations){: .btn .btn-primary }
 permalink: /data/
 ---

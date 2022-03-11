@@ -27,6 +27,17 @@
       }
     },
     {
+      "name": "eventID",
+      "type": "string",
+      "format": "default",
+      "description": "",
+      "example": "",
+      "skos:broadMatch": "",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "captureMethod",
       "type": "string",
       "format": "default",

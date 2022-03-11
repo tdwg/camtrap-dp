@@ -1,15 +1,15 @@
 {
-  "name": "observationunits",
-  "title": "Observation units",
-  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in sequences (`sequenceID`). Includes timestamp and file path.",
+  "name": "mediagroups",
+  "title": "Media groups",
+  "description": "",
   "fields": [
     {
-      "name": "observationUnitID",
+      "name": "mediaGroupID",
       "type": "string",
       "format": "default",
-      "description": "...",
-      "example": "...",
-      "skos:broadMatch": "...",
+      "description": "",
+      "example": "",
+      "skos:broadMatch": "",
       "constraints": {
         "required": true
       }
@@ -18,9 +18,9 @@
       "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "...",
-      "example": "...",
-      "skos:broadMatch": "...",
+      "description": "",
+      "example": "",
+      "skos:broadMatch": "",
       "constraints": {
         "required": true
       }

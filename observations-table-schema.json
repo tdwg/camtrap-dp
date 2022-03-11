@@ -16,12 +16,12 @@
       }
     },
     {
-      "name": "observationUnitID",
+      "name": "mediaGroupID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of the observation. Foreign key to `media:sequenceID`.",
-      "example": "seq1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "description": "",
+      "example": "",
+      "skos:broadMatch": "",
       "constraints": {
         "required": true
       }
@@ -236,10 +236,10 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "observationUnitID",
+      "fields": "mediaGroupID",
       "reference": {
-        "resource": "observationunits",
-        "fields": "observationUnitID"
+        "resource": "mediagroups",
+        "fields": "mediaGroupID"
       }
     }
   ]
