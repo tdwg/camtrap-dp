@@ -55,6 +55,17 @@
       }
     },
     {
+      "name": "eventID",
+      "type": "string",
+      "format": "default",
+      "description": "",
+      "example": "",
+      "skos:broadMatch": "",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
       "name": "taxonID",
       "type": "string",
       "format": "default",
