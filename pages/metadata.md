@@ -29,6 +29,6 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 - [`spatial`](#spatial)*
 - [`temporal`](#temporal)*
 - [`taxonomic`](#taxonomic)*
-- [`platform`](#_platform)
+- [`platform`](#platform)
 
 ---
