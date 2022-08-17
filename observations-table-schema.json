@@ -16,17 +16,6 @@
       }
     },
     {
-      "name": "deploymentID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
-      "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
       "name": "sequenceID",
       "type": "string",
       "format": "default",
@@ -268,13 +257,6 @@
   ],
   "primaryKey": "observationID",
   "foreignKeys": [
-    {
-      "fields": "deploymentID",
-      "reference": {
-        "resource": "deployments",
-        "fields": "deploymentID"
-      }
-    },
     {
       "fields": "sequenceID",
       "reference": {
