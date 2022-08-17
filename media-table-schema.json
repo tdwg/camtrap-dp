@@ -16,22 +16,22 @@
       }
     },
     {
-      "name": "deploymentID",
+      "name": "eventID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployment:deploymentID`.",
-      "example": "dep1",
+      "description": "Unique identifier (within a project) of an event. An event is the unit at which observations are made. An event can be media file-based (`eventID` = `mediaID` is acceptable) or sequence-based (`eventID` groups media files). The file-based approach is recommended, since users can always aggregate data into larger events, but not smaller ones.",
+      "example": "event1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
       }
     },
     {
-      "name": "sequenceID",
+      "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `sequenceInterval` in the Data Package metadata.",
-      "example": "seq1",
+      "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
+      "example": "dep1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true

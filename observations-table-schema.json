@@ -16,25 +16,14 @@
       }
     },
     {
-      "name": "sequenceID",
+      "name": "eventID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of the observation. Foreign key to `media:sequenceID`.",
-      "example": "seq1",
+      "description": "Unique identifier (within a project) of an event. An event is the unit at which observations are made. Foreign key to `media.eventID`.",
+      "example": "event1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
-      }
-    },
-    {
-      "name": "mediaID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media:mediaID`. Leave empty for sequence-based observations.",
-      "example": "m1",
-      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
-      "constraints": {
-        "required": false
       }
     },
     {
@@ -247,17 +236,10 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "sequenceID",
+      "fields": "eventID",
       "reference": {
         "resource": "media",
-        "fields": "sequenceID"
-      }
-    },
-    {
-      "fields": "mediaID",
-      "reference": {
-        "resource": "media",
-        "fields": "mediaID"
+        "fields": "eventID"
       }
     }
   ]
