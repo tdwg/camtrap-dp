@@ -280,6 +280,7 @@
                   "class",
                   "order",
                   "family",
+                  "subfamily",
                   "genus",
                   "species",
                   "subspecies"
