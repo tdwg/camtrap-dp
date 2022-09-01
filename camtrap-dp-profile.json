@@ -328,7 +328,7 @@
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/genus"
               },
               "vernacularNames": {
-                "description": "Common or vernacular names of the taxon, as `languageCode: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
                 "example": "{'en': 'wolf', 'fr': 'loup gris'}",
                 "type": "object",
                 "patternProperties": {
