@@ -285,8 +285,44 @@
                   "subspecies"
                 ]
               },
+              "kingdom": {
+                "description": "Kingdom in which the taxon is classified.",
+                "example": "Animalia",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/kingdom"
+              },
+              "phylum": {
+                "description": "Phylum or division in which the taxon is classified",
+                "example": "Chordata",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/phylum"
+              },
+              "class": {
+                "description": "Class in which the taxon is classified.",
+                "example": "Mammalia",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/class"
+              },
+              "order": {
+                "description": "Order in which the taxon is classified.",
+                "example": "Carnivora",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/order"
+              },
+              "family": {
+                "description": "Family in which the taxon is classified.",
+                "example": "Canidae",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/family"
+              },
+              "genus": {
+                "description": "Genus in which the taxon is classified.",
+                "example": "Canis",
+                "type": "string",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/genus"
+              },
               "vernacularNames": {
-                "description": "Common or vernacular names of the taxon, as `languageCode: name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
+                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
                 "example": "{'en': 'wolf', 'fr': 'loup gris'}",
                 "type": "object",
                 "patternProperties": {
