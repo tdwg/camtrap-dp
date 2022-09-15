@@ -280,7 +280,6 @@
                   "class",
                   "order",
                   "family",
-                  "subfamily",
                   "genus",
                   "species",
                   "subspecies"
@@ -315,12 +314,6 @@
                 "example": "Canidae",
                 "type": "string",
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/family"
-              },
-              "subfamily": {
-                "description": "Subfamily in which the taxon is classified.",
-                "example": "",
-                "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/subfamily"
               },
               "genus": {
                 "description": "Genus in which the taxon is classified.",
