@@ -104,7 +104,7 @@
       "type": "object",
       "format": "default",
       "description": "EXIF data of the file, as a valid JSON object.",
-      "example": "{ \"EXIF\": { \"ISO\": 200, \"Make\": \"RECONYX\"}",
+      "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}",
       "constraints": {
         "required": false
       }
