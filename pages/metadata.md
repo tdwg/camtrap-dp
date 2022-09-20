@@ -23,8 +23,8 @@ For a full example, see [this `datapackage.json`](https://raw.githubusercontent.
 ## Camtrap DP properties
 
 - [`organizations`](#organizations)
-- [`rightsHolder`](#rightsHolder)
-- [`bibliographicCitation`](#bibliographicCitation)
+- [`rightsHolder`](#rightsholder)
+- [`bibliographicCitation`](#bibliographiccitation)
 - [`project`](#project)*
 - [`spatial`](#spatial)*
 - [`temporal`](#temporal)*
