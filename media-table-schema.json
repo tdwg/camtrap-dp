@@ -68,11 +68,7 @@
       "type": "string",
       "format": "default",
       "description": "URL or relative path to the media file, respectively for externally hosted files or files that are part of the Data Package.",
-      "example": [
-        "https://trapper.org/storage/resource/media/259024/file/",
-        "gs://wildlife_insights/Project/Images/CT-011/IMG0001.jpg",
-        "DEP0001/IMG0001.jpg"
-      ],
+      "example": "https://trapper.org/storage/resource/media/259024/file/",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/accessURI",
       "constraints": {
         "required": true,

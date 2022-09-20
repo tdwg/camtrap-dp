@@ -204,10 +204,7 @@
       "type": "string",
       "format": "default",
       "description": "Name or unique identifier of the person or AI algorithm that classified the observation.",
-      "example": [
-        "Jakub Bubnicki",
-        "Megadetector"
-      ],
+      "example": "Megadetector",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "constraints": {
         "required": false

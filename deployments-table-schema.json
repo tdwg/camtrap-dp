@@ -102,10 +102,7 @@
       "type": "string",
       "format": "default",
       "description": "Name or unique identifier of the person who set up the camera for the deployment.",
-      "example": [
-        "Jim Casaer",
-        "2ef60d48-fd67-4bac-9569-49a03b0ef096"
-      ],
+      "example": "Jim Casaer",
       "constraints": {
         "required": false
       }
