@@ -204,13 +204,6 @@
             "sequenceInterval": {
               "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `sequenceID`.",
               "type": "integer"
-            },
-            "references": {
-              "description": "List of references related to the project (e.g. references cited in the project description). References ideally include a DOI.",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
             }
           }
         },
@@ -335,6 +328,13 @@
                 "additionalProperties": false
               }
             }
+          }
+        },
+        "references": {
+          "description": "List of references related to the Data Package (e.g. references cited in the project description). References ideally include a DOI.",
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
         "platform": {
