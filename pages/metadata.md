@@ -15,8 +15,7 @@ Property | From | Comment
 [`id`](https://specs.frictionlessdata.io/data-package/#id) | Data Package
 [`created`](https://specs.frictionlessdata.io/data-package/#created)* | Data Package | Required in Camtrap DP.
 [`title`](https://specs.frictionlessdata.io/data-package/#title) | Data Package
-[`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)* | Data Package | Required in Camtrap DP.
-[`organizations`](#organizations) | Camtrap DP
+[`contributors`](https://specs.frictionlessdata.io/data-package/#contributors)* | Data Package | Required in Camtrap DP. Can include people and organizations.
 [`description`](https://specs.frictionlessdata.io/data-package/#description) | Data Package
 [`version`](https://specs.frictionlessdata.io/data-package/#version) | Data Package
 [`keywords`](https://specs.frictionlessdata.io/data-package/#keywords) | Data Package
