@@ -7,7 +7,6 @@ permalink: /metadata/
 
 Metadata in Camtrap DP are expressed in a `datapackage.json` file. It follows the [Data Package](https://specs.frictionlessdata.io/data-package/#specification) specifications and includes generic **Data Package properties** and specific **Camtrap DP properties**. Properties indicated with `*` are required (i.e. cannot be empty).
 
-For a full example, see [this `datapackage.json`](https://raw.githubusercontent.com/tdwg/dwc-for-biologging/403f57db105982dc05b70f3cf66fd2b5591798db/derived/camtrap-dp/data/raw/datapackage.json).
 Property | From | Comment
 --- | --- | ---
 [`resources`](https://specs.frictionlessdata.io/data-package/#resources)* | Data Package | Additional requirements [below](#resources).
