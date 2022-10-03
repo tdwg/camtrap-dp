@@ -115,6 +115,7 @@
     "classificationLevel": "sequence",
     "sequenceInterval": 120
   },
+  "coordinatePrecision": 0.001,
   "spatial": {
     "type": "Feature",
     "bbox": [
