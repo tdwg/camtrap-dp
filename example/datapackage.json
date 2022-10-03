@@ -1,25 +1,38 @@
 {
-  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
-  "id": "1df9727c-dde9-498a-824e-cc4f19436117",
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.2/camtrap-dp-profile.json",
-  "created": "2022-09-09T10:42:25Z",
-  "licenses": [
+  "resources": [
     {
-      "name": "CC0-1.0",
-      "scope": "data"
+      "name": "deployments",
+      "path": "deployments.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/deployments-table-schema.json"
     },
     {
-      "path": "http://creativecommons.org/licenses/by/4.0/",
-      "scope": "media"
-    }
-  ],
-  "sources": [
+      "name": "media",
+      "path": "media.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/media-table-schema.json"
+    },
     {
-      "title": "Agouti",
-      "path": "https://www.agouti.eu",
-      "email": "agouti@wur.nl"
+      "name": "observations",
+      "path": "observations.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/observations-table-schema.json"
     }
   ],
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/camtrap-dp-profile.json",
+  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
+  "id": "1df9727c-dde9-498a-824e-cc4f19436117",
+  "created": "2022-09-09T10:42:25Z",
+  "title": "Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany",
   "contributors": [
     {
       "title": "Axel Neukermans",
@@ -53,6 +66,41 @@
       "path": "https://inbo.be"
     }
   ],
+  "description": "MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany is an occurrence dataset published by the Research Institute of Nature and Forest (INBO). It is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. This dataset is a sample of the original dataset and serves as an example of a Camtrap Trap Data Package (Camtrap DP).",
+  "version": "1.0",
+  "keywords": [
+    "camera traps",
+    "public awareness campaign",
+    "flood protection",
+    "flood control",
+    "damage prevention",
+    "animal damage",
+    "pest control",
+    "invasive alien species",
+    "muskrat",
+    "coypu"
+  ],
+  "image": "",
+  "homepage": "",
+  "sources": [
+    {
+      "title": "Agouti",
+      "path": "https://www.agouti.eu",
+      "email": "agouti@wur.nl"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "scope": "data"
+    },
+    {
+      "path": "http://creativecommons.org/licenses/by/4.0/",
+      "scope": "media"
+    }
+  ],
+  "rightsHolder": "INBO",
+  "bibliographicCitation": "Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0. Research Institute for Nature and Forest (INBO). Dataset. https://github.com/tdwg/camtrap-dp/tree/main/example",
   "project": {
     "id": "86cabc14-d475-4439-98a7-e7b590bed60e",
     "title": "MICA - Management of Invasive Coypu and muskrAt in Europe",
@@ -210,38 +258,10 @@
       }
     }
   ],
+  "references": [],
   "platform": {
     "title": "Agouti",
     "path": "https://agouti.eu",
     "packageID": "3bdce07e-f0b1-4566-948a-e1f0a0d0a214"
-  },
-  "resources": [
-    {
-      "name": "deployments",
-      "path": "deployments.csv",
-      "profile": "tabular-data-resource",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/deployments-table-schema.json"
-    },
-    {
-      "name": "media",
-      "path": "media.csv",
-      "profile": "tabular-data-resource",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/media-table-schema.json"
-    },
-    {
-      "name": "observations",
-      "path": "observations.csv",
-      "profile": "tabular-data-resource",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/observations-table-schema.json"
-    }
-  ]
+  }
 }
