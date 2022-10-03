@@ -144,9 +144,7 @@
         "enum": [
           "adult",
           "subadult",
-          "juvenile",
-          "offspring",
-          "unknown"
+          "juvenile"
         ]
       }
     },
@@ -161,8 +159,7 @@
         "required": false,
         "enum": [
           "female",
-          "male",
-          "unknown"
+          "male"
         ]
       }
     },
