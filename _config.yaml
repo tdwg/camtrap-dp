@@ -32,7 +32,7 @@ github_username: tdwg/camtrap-dp
 
 # THEME SETTINGS
 theme: minima
-remote_theme: peterdesmet/petridish
+remote_theme: peterdesmet/petridish@2.0
 colors:
   links: "#ca6500"  # TDWG orange
   banner: "#617694" # TDWG blue
