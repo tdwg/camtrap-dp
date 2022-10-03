@@ -1,8 +1,8 @@
 {
-  "name": "mica-muskrat-and-coypu-20210707160815",
-  "id": "https://doi.org/10.5281/zenodo.4893244",
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/camtrap-dp-profile.json",
-  "created": "2021-07-07T16:08:15Z",
+  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
+  "id": "1df9727c-dde9-498a-824e-cc4f19436117",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.2/camtrap-dp-profile.json",
+  "created": "2022-09-09T10:42:25Z",
   "licenses": [
     {
       "name": "CC0-1.0",
@@ -22,45 +22,15 @@
   ],
   "contributors": [
     {
-      "title": "Abel De Boer",
-      "email": "adeboer@wetterskipfryslan.nl",
-      "role": "contributor"
-    },
-    {
       "title": "Axel Neukermans",
       "email": "axel.neukermans@inbo.be",
+      "path": "https://orcid.org/0000-0003-0272-9180",
       "role": "author",
       "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Björn Matthies",
-      "email": "bjoern.matthies@lwk-niedersachsen.de",
-      "role": "contributor"
-    },
-    {
-      "title": "Brecht Neukermans",
-      "email": "brecht.neukermans@inbo.be",
-      "role": "author",
-      "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Claudia Maistrelli",
-      "email": "claudia.maistrelli@tiho-hannover.de",
-      "role": "contributor"
     },
     {
       "title": "Danny Van der beeck",
       "email": "daniel.vanderbeeck@gmail.com",
-      "role": "contributor"
-    },
-    {
-      "title": "Dan Slootmaekers",
-      "email": "d.slootmaekers@vmm.be",
-      "role": "contributor"
-    },
-    {
-      "title": "Dennis Donckers",
-      "email": "dennis.donckers2@telenet.be",
       "role": "contributor"
     },
     {
@@ -70,71 +40,11 @@
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
-      "title": "Frank Huysentruyt",
-      "email": "frank.huysentruyt@inbo.be",
-      "role": "contributor",
-      "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Friederike Gethöffer",
-      "email": "friederike.gethoeffer@tiho-hannover.de",
-      "role": "contributor"
-    },
-    {
-      "title": "Heiko Fritz",
-      "email": "foersterheiko@gmx.de",
-      "role": "contributor"
-    },
-    {
-      "title": "Jan Lodewijkx",
-      "email": "j.lodewijkx@vmm.be",
-      "role": "contributor"
-    },
-    {
-      "title": "Jim Casaer",
-      "email": "jim.casaer@inbo.be",
-      "role": "maintainer",
-      "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Kurt Schamp",
-      "email": "kurt.schamp@inbo.be",
-      "role": "contributor"
-    },
-    {
-      "title": "Lilja Fromme",
-      "email": "lilja.fromme@tiho-hannover.de",
-      "role": "contributor"
-    },
-    {
-      "title": "Lydia Liebgott",
-      "email": "lydia.liebgott@tiho-hannover.de",
-      "role": "contributor"
-    },
-    {
       "title": "Peter Desmet",
       "email": "peter.desmet@inbo.be",
       "path": "https://orcid.org/0000-0002-8442-8025",
       "role": "maintainer",
       "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Tim Adriaens",
-      "email": "tim.adriaens@inbo.be",
-      "role": "contributor",
-      "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Yasmine Verzelen",
-      "email": "yasmine.verzelen@inbo.be",
-      "role": "contributor",
-      "organization": "Research Institute for Nature and Forest (INBO)"
-    },
-    {
-      "title": "Yorick Liefting",
-      "email": "yorick.liefting@wur.nl",
-      "role": "maintainer",
-      "organization": "Wageningen University"
     }
   ],
   "organizations": [
@@ -145,8 +55,8 @@
   ],
   "project": {
     "id": "86cabc14-d475-4439-98a7-e7b590bed60e",
-    "title": "MICA - Muskrat and Coypu",
-    "description": "This project is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. Camera traps were located in areas where the presence of muskrat and/or coypu was suspected.",
+    "title": "MICA - Management of Invasive Coypu and muskrAt in Europe",
+    "description": "Invasive alien species such as the coypu and muskrat pose a major threat to biodiversity and cost millions of euros annually. By feeding on rushes and reeds, these animals cause serious damage to the environment in which they live and endangered species suffer from habitat loss. The disappearance of reeds and digging in dikes represents a safety risk for humans in the lowland areas. With the LIFE project MICA (https://lifemica.eu), the partners from the participating countries want to develop a transnational plan for the management of coypu and muskrat populations in Europe and aim to reduce their population. The objective of an effective population control of coypu and muskrat is to protect lowlands from flooding, to prevent crop damage and loss of biodiversity. The objective of the project is to serve as a pilot and demonstration project in which ‘best practices’ are tested and new techniques are developed for a more efficient control of muskrat and coypu populations. By involving organisations from Belgium, Germany and the Netherlands, the project also promotes international cooperation and knowledge exchange in the field of muskrat and coypu management.",
     "samplingDesign": "targeted",
     "captureMethod": [
       "motion detection",
@@ -161,10 +71,10 @@
   "spatial": {
     "type": "Feature",
     "bbox": [
-      3.51755,
+      4.01330,
       50.69905,
-      7.0243,
-      53.27052
+      5.65869,
+      51.49608
     ],
     "properties": {},
     "geometry": {
@@ -172,23 +82,23 @@
       "coordinates": [
         [
           [
-            3.51755,
+            4.01330,
             50.69905
           ],
           [
-            7.0243,
+            5.65869,
             50.69905
           ],
           [
-            7.0243,
-            53.27052
+            5.65869,
+            51.49608
           ],
           [
-            3.51755,
-            53.27052
+            4.01330,
+            51.49608
           ],
           [
-            3.51755,
+            4.01330,
             50.69905
           ]
         ]
@@ -196,8 +106,8 @@
     }
   },
   "temporal": {
-    "start": "2019-10-09",
-    "end": "2021-03-28"
+    "start": "2020-05-30",
+    "end": "2021-04-18"
   },
   "taxonomic": [
     {
@@ -213,6 +123,7 @@
       "taxonID": "DGPL",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Anas strepera",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "gadwall",
         "nl": "krakeend"
@@ -222,6 +133,7 @@
       "taxonID": "32FH",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Ardea",
+      "taxonRank": "genus",
       "vernacularNames": {
         "en": "great herons",
         "nl": "reigers"
@@ -231,6 +143,7 @@
       "taxonID": "GCHS",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Ardea cinerea",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "grey heron",
         "nl": "blauwe reiger"
@@ -240,6 +153,7 @@
       "taxonID": "RQPW",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Castor fiber",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "Eurasian beaver",
         "nl": "bever"
@@ -249,6 +163,7 @@
       "taxonID": "6MB3T",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Homo sapiens",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "human",
         "nl": "mens"
@@ -258,6 +173,7 @@
       "taxonID": "3Y9VW",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Martes foina",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "beech marten",
         "nl": "steenmarter"
@@ -267,15 +183,27 @@
       "taxonID": "44QYC",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Mustela putorius",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "European polecat",
         "nl": "bunzing"
       }
     },
     {
+      "taxonID": "4RM67",
+      "taxonIDReference": "https://www.catalogueoflife.org",
+      "scientificName": "Rattus norvegicus",
+      "taxonRank": "species",
+      "vernacularNames": {
+        "en": "brown rat",
+        "nl": "bruine rat"
+      }
+    },
+    {
       "taxonID": "5BSG3",
       "taxonIDReference": "https://www.catalogueoflife.org",
       "scientificName": "Vulpes vulpes",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "red fox",
         "nl": "vos"
@@ -295,7 +223,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/deployments-table-schema.json"
     },
     {
       "name": "media",
@@ -304,7 +232,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/media-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/media-table-schema.json"
     },
     {
       "name": "observations",
@@ -313,7 +241,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.1.7/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.3/observations-table-schema.json"
     }
   ]
 }
