@@ -102,7 +102,7 @@
             "title",
             "samplingDesign",
             "captureMethod",
-            "animalTypes",
+            "individualAnimals",
             "classificationLevel",
             "sequenceInterval"
           ],
@@ -153,18 +153,9 @@
               "uniqueItems": true,
               "minItems": 1
             },
-            "animalTypes": {
-              "description": "Type of observed animals. `marked` indicates specific animal individuals can be recognized.",
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "unmarked",
-                  "marked"
-                ]
-              },
-              "uniqueItems": true,
-              "minItems": 1
+            "individualAnimals": {
+              "description": "`true` if the project includes marked or recognizable individuals. See also `individualID` in observations.",
+              "type": "boolean"
             },
             "classificationLevel": {
               "type": "string",

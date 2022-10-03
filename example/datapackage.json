@@ -109,9 +109,7 @@
       "motion detection",
       "time lapse"
     ],
-    "animalTypes": [
-      "unmarked"
-    ],
+    "individualAnimals": false,
     "classificationLevel": "sequence",
     "sequenceInterval": 120
   },
