@@ -180,6 +180,12 @@
             }
           }
         },
+        "coordinatePrecision": {
+          "description": "Minimum precision of the `longitude` and `latitude` of the deployments (e.g. `0.001` for a minimum precision of 0.001 degree). Especially relevant when coordinates have been rounded to protect sensitive species.",
+          "example": 0.001,
+          "type": "number",
+          "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinatePrecision"
+        },
         "spatial": {
           "description": "Spatial coverage for the Data Package expressed as GeoJSON.",
           "$ref": "http://json.schemastore.org/geojson.json",

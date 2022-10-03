@@ -26,6 +26,7 @@ Property | From | Comment
 [`rightsHolder`](#rightsholder) | Camtrap DP
 [`bibliographicCitation`](#bibliographiccitation) | Camtrap DP
 [`project`](#project)* | Camtrap DP
+[`coordinatePrecision`](#coordinateprecision) | Camtrap DP
 [`spatial`](#spatial)* | Camtrap DP
 [`temporal`](#temporal)* | Camtrap DP
 [`taxonomic`](#taxonomic)* | Camtrap DP
