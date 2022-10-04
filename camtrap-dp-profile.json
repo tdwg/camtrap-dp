@@ -24,7 +24,7 @@
       ],
       "properties": {
         "resources": {
-          "description": "An `array` of Tabular Data Resource objects, each compliant with the [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) specification.",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`.",
           "minItems": 3,
           "maxItems": 3,
           "items": {
@@ -64,11 +64,44 @@
           }
         },
         "profile": {
-          "description": "URL of the used Camtrap DP Profile version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/camtrap-dp-profile.json`).",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#profile). Camtrap DP further requires this to be the URL of the used Camtrap DP Profile version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/camtrap-dp-profile.json`).",
           "format": "uri"
         },
+        "name": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#name)."
+        },
+        "id": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#id)."
+        },
+        "created": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#created). Camtrap DP makes this a required property."
+        },
+        "title": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title)."
+        },
+        "contributors": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property. Can include people and organizations."
+        },
+        "description": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description)."
+        },
+        "version": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#version)."
+        },
+        "keywords": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#keywords)."
+        },
+        "image": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#image)."
+        },
+        "homepage": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#homepage)."
+        },
+        "sources": {
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#sources)."
+        },
         "licenses": {
-          "description": "[Licenses](https://specs.frictionlessdata.io/data-package/#licenses) under which the Data Package is published. If provided, requires at least a license for the content of the Data Package and one for the media files referenced in `media.csv` (see `scope`).",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#licenses). If provided, Camtrap DP further requires at license for the content of the Data Package and one for the media files referenced in `media.csv` (see `scope`).",
           "minItems": 2,
           "items": {
             "required": [

@@ -1,96 +1,91 @@
 ---
-layout: base
+layout: default
 ---
 
-<div class="row">
-  <div class="col">
+{{ content }}
 
-    {{ content }}
+{% assign profile_file = "camtrap-dp-profile" %}
+{% assign properties1 = site.data[profile_file].allOf[1].properties %}
+{% assign required1 = site.data[profile_file].allOf[1].required %}
 
-    {% assign profile_file = "camtrap-dp-profile" %}
-    {% assign properties1 = site.data[profile_file].allOf[1].properties %}
-    {% assign required1 = site.data[profile_file].allOf[1].required %}
+<p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
-    <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
+{% for p1_raw in properties1 %}
+  {% assign p1_name = p1_raw[0] %}
+  {% assign p1 = p1_raw[1] %}
+  {% assign p1_id = p1_name | downcase | url_encode %}
+  
+  <h2 id="{{ p1_id }}">
+    {{ p1_name }}
+    {% if required1 contains p1_name %}*{% endif %}
+  </h2>
 
-    {% for p1_raw in properties1 %}
-      {% assign p1_name = p1_raw[0] %}
-      {% assign p1 = p1_raw[1] %}
-      {% assign p1_id = p1_name | downcase | url_encode %}
-      
-      <h2 id="{{ p1_id }}">
-        {{ p1_name }}
-        {% if required1 contains p1_name %}*{% endif %}
-      </h2>
+  {{ p1.description | markdownify }}
 
-      {{ p1.description | markdownify }}
+  {% if p1['skos:exactMatch'] %}
+    <p class="small text-muted">Same as <a href="{{ p1['skos:exactMatch'] }}">{{ p1['skos:exactMatch'] }}</a></p>
+  {% elsif p1['skos:narrowMatch'] %}
+    <p class="small text-muted">Narrower than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
+  {% elsif p1['skos:broadMatch'] %}
+    <p class="small text-muted">Broader than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
+  {% endif %}
 
-      {% if p1['skos:exactMatch'] %}
-        <p class="small text-muted">Same as <a href="{{ p1['skos:exactMatch'] }}">{{ p1['skos:exactMatch'] }}</a></p>
-      {% elsif p1['skos:narrowMatch'] %}
-        <p class="small text-muted">Narrower than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
-      {% elsif p1['skos:broadMatch'] %}
-        <p class="small text-muted">Broader than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
-      {% endif %}
+  {% if p1.properties %}
+    {% assign properties2 = p1.properties %}
+    {% assign required2 = p1.required %}
+  {% elsif p1.items.properties %}
+    {% assign properties2 = p1.items.properties %}
+    {% assign required2 = p1.items.required %}
+  {% else %}
+    {% assign properties2 = false %}
+  {% endif %}
 
-      {% if p1.properties %}
-        {% assign properties2 = p1.properties %}
-        {% assign required2 = p1.required %}
-      {% elsif p1.items.properties %}
-        {% assign properties2 = p1.items.properties %}
-        {% assign required2 = p1.items.required %}
-      {% else %}
-        {% assign properties2 = false %}
-      {% endif %}
+  {% if properties2 %}
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Definition</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <colgroup>
+        <col width="20%">
+        <col width="70%">
+        <col width="10%">
+      </colgroup>
+        {% for p2_raw in properties2 %}
+          {% assign p2_name = p2_raw[0] %}
+          {% assign p2 = p2_raw[1] %}
+          {% assign p2_id = p2_name | downcase | url_encode %}
 
-      {% if properties2 %}
-      <table>
-        <thead>
           <tr>
-            <th>Name</th>
-            <th>Definition</th>
-            <th>Type</th>
+            <td id="{{ p1_id }}.{{ p2_id }}">
+              <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
+              {% if required2 contains p2_name %}*{% endif %}
+            </td>
+            <td>
+              {{ p2.description | markdownify }}
+              {% if p2.enum %}
+                <ul>
+                {% for item in p2.enum %}
+                  <li><code>{{ item }}</code></li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+              {% if p2['skos:exactMatch'] %}
+                <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
+              {% elsif p2['skos:narrowMatch'] %}
+                <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
+              {% elsif p2['skos:broadMatch'] %}
+                <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
+              {% endif %}
+            </td>
+            <td>{{ p2.type }}</td>
           </tr>
-        </thead>
-        <tbody>
-          <colgroup>
-            <col width="20%">
-            <col width="70%">
-            <col width="10%">
-          </colgroup>
-            {% for p2_raw in properties2 %}
-              {% assign p2_name = p2_raw[0] %}
-              {% assign p2 = p2_raw[1] %}
-              {% assign p2_id = p2_name | downcase | url_encode %}
-
-              <tr>
-                <td id="{{ p1_id }}.{{ p2_id }}">
-                  <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
-                  {% if required2 contains p2_name %}*{% endif %}
-                </td>
-                <td>
-                  {{ p2.description | markdownify }}
-                  {% if p2.enum %}
-                    <ul>
-                    {% for item in p2.enum %}
-                      <li><code>{{ item }}</code></li>
-                    {% endfor %}
-                    </ul>
-                  {% endif %}
-                  {% if p2['skos:exactMatch'] %}
-                    <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
-                  {% elsif p2['skos:narrowMatch'] %}
-                    <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
-                  {% elsif p2['skos:broadMatch'] %}
-                    <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
-                  {% endif %}
-                </td>
-                <td>{{ p2.type }}</td>
-              </tr>
-            {% endfor %}
-        </tbody>
-      </table>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
+        {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+{% endfor %}
