@@ -67,11 +67,12 @@ layout: default
             </td>
             <td>
               {{ p2.description | markdownify }}
-              {% if p2.enum %}
+              {% if p2.const or p2.enum or p2.items.enum %}
+                <strong>Constraints</strong>
                 <ul>
-                {% for item in p2.enum %}
-                  <li><code>{{ item }}</code></li>
-                {% endfor %}
+                  {% if p2.const %}<li>const: <code>{{ p2.const }}</code></li>{% endif %}
+                  {% if p2.enum %}<li>enum: <code>{{ p2.enum | join: ", " }}</code></li>{% endif %}
+                  {% if p2.items.enum %}<li>enum: <code>{{ p2.items.enum | join: ", " }}</code></li>{% endif %}
                 </ul>
               {% endif %}
               {% if p2['skos:exactMatch'] %}
