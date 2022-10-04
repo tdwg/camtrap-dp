@@ -24,7 +24,7 @@
       ],
       "properties": {
         "resources": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`.",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`. See [Data](../data) for the requirements for those resources.",
           "minItems": 3,
           "maxItems": 3,
           "items": {
@@ -34,7 +34,7 @@
             ],
             "properties": {
               "name": {
-                "description": "Identifier for the resource. Allowed names are `deployments`, `media` and `observations` (see [Data](../data/)).",
+                "description": "Identifier of the resource.",
                 "enum": [
                   "deployments",
                   "media",
@@ -77,13 +77,13 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#created). Camtrap DP makes this a required property."
         },
         "title": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title)."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title). Not to be confused with the title of the project that originated the package (`package.project.title`)."
         },
         "contributors": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property. Can include people and organizations."
         },
         "description": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description)."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description). Not to be confused with the description of the project that originated the package (`package.project.description`)."
         },
         "version": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#version)."
@@ -101,7 +101,7 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#sources)."
         },
         "licenses": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#licenses). If provided, Camtrap DP further requires at license for the content of the Data Package and one for the media files referenced in `media.csv` (see `scope`).",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#licenses). If provided, Camtrap DP further requires at least a license for the content of the package and one for the media files.",
           "minItems": 2,
           "items": {
             "required": [
@@ -109,7 +109,7 @@
             ],
             "properties": {
               "scope": {
-                "description": "Scope of the license. `data` applies to the content of the Data Package (`datapackage.json` and related CSV files), `media` applies to the media files (locally or externally hosted) referenced via `filePath` in the `media` resource.",
+                "description": "Scope of the license. `data` applies to the content of the package and resources, `media` to the (locally or externally hosted) media files referenced in `media.filePath`.",
                 "enum": [
                   "data",
                   "media"
@@ -119,17 +119,17 @@
           }
         },
         "rightsHolder": {
-          "description": "Person or organization owning the rights over the Data Package.",
+          "description": "Person or organization owning the rights over the package.",
           "type": "string",
           "skos:exactMatch": "http://ns.adobe.com/xap/1.0/rights/Owner"
         },
         "bibliographicCitation": {
-          "description": "Bibliographic/recommended citation for the Data Package.",
-          "type": "string",
-          "skos:exactMatch": "http://purl.org/dc/terms/bibliographicCitation"
+          "description": "Bibliographic/recommended citation for the package.",
+          "skos:exactMatch": "http://purl.org/dc/terms/bibliographicCitation",
+          "type": "string"
         },
         "project": {
-          "description": "Camera trap project that generated the data in the Data Package.",
+          "description": "Camera trap project or study that originated the package.",
           "type": "object",
           "required": [
             "title",
@@ -145,7 +145,7 @@
               "type": "string"
             },
             "title": {
-              "description": "Title of the project.",
+              "description": "Title of the project. Not to be confused with the title of the package (`package.title`).",
               "type": "string"
             },
             "acronym": {
@@ -153,7 +153,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally expressed in Markdown format. To describe the Data Package itself, use <https://specs.frictionlessdata.io/data-package/#description>.",
+              "description": "Description of the project, ideally [Markdown](http://commonmark.org/) formatted. Not to be confused with the description of the package (`package.description`).",
               "type": "string"
             },
             "path": {
@@ -174,7 +174,7 @@
               ]
             },
             "captureMethod": {
-              "description": "Method(s) used to capture media files.",
+              "description": "Method(s) used to capture the media files.",
               "type": "array",
               "items": {
                 "type": "string",
@@ -187,38 +187,39 @@
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `individualID` in observations.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
               "type": "boolean"
             },
             "classificationLevel": {
+              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in the `observations` resource) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
               "type": "string",
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in `observations.csv` table) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
               "enum": [
                 "sequence",
                 "media"
               ]
             },
             "sequenceInterval": {
-              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `sequenceID`.",
+              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `media.sequenceID`.",
               "type": "integer"
             }
           }
         },
         "coordinatePrecision": {
-          "description": "Minimum precision of the `latitude` and `longitude` of the deployments (e.g. `0.001` for a minimum precision of 0.001 degree). Especially relevant when coordinates have been rounded to protect sensitive species.",
-          "example": 0.001,
+          "description": "Minimum precision of the `deployments.latitude` and `deployments.longitude` (e.g. `0.001` for a minimum precision of 0.001 degree). Especially relevant when coordinates are rounded to protect sensitive species.",
+          "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinatePrecision",
           "type": "number",
-          "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinatePrecision"
+          "example": 0.001
         },
         "spatial": {
-          "description": "Spatial coverage for the Data Package expressed as GeoJSON.",
-          "$ref": "http://json.schemastore.org/geojson.json",
-          "skos:exactMatch": "http://purl.org/dc/terms/spatial"
+          "description": "Spatial coverage of the package, expressed as GeoJSON.",
+          "skos:exactMatch": "http://purl.org/dc/terms/spatial",
+          "type": "object",
+          "$ref": "http://json.schemastore.org/geojson.json"
         },
         "temporal": {
-          "description": "Temporal coverage for the Data Package, based on the included deployments.",
-          "type": "object",
+          "description": "Temporal coverage of the package.",
           "skos:exactMatch": "http://purl.org/dc/terms/temporal",
+          "type": "object",
           "required": [
             "start",
             "end"
@@ -237,7 +238,7 @@
           }
         },
         "taxonomic": {
-          "description": "List of taxa as the taxonomic coverage for the Data Package. Based on the unique `scientificName` values in `observations.csv` table.",
+          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",
@@ -249,27 +250,26 @@
             "properties": {
               "taxonID": {
                 "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxonIDReference`.",
-                "example": "QLXL",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID"
+                "example": "QLXL"
               },
               "taxonIDReference": {
                 "description": "URL of the source (reference list) of the `taxonID`.",
-                "example": "https://www.catalogueoflife.org",
                 "type": "string",
-                "format": "uri"
+                "format": "uri",
+                "example": "https://www.catalogueoflife.org"
               },
               "scientificName": {
                 "description": "Scientific name of the taxon.",
-                "example": "Canis lupus",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName"
+                "example": "Canis lupus"
               },
               "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",
-                "example": "species",
-                "type": "string",
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonRank",
+                "type": "string",
                 "enum": [
                   "kingdom",
                   "phylum",
@@ -279,69 +279,70 @@
                   "genus",
                   "species",
                   "subspecies"
-                ]
+                ],
+                "example": "species"
               },
               "kingdom": {
                 "description": "Kingdom in which the taxon is classified.",
-                "example": "Animalia",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/kingdom",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/kingdom"
+                "example": "Animalia"
               },
               "phylum": {
                 "description": "Phylum or division in which the taxon is classified",
-                "example": "Chordata",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/phylum",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/phylum"
+                "example": "Chordata"
               },
               "class": {
                 "description": "Class in which the taxon is classified.",
-                "example": "Mammalia",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/class",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/class"
+                "example": "Mammalia"
               },
               "order": {
                 "description": "Order in which the taxon is classified.",
-                "example": "Carnivora",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/order",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/order"
+                "example": "Carnivora"
               },
               "family": {
                 "description": "Family in which the taxon is classified.",
-                "example": "Canidae",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/family",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/family"
+                "example": "Canidae"
               },
               "genus": {
                 "description": "Genus in which the taxon is classified.",
-                "example": "Canis",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/genus",
                 "type": "string",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/genus"
+                "example": "Canis"
               },
               "vernacularNames": {
-                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language code should follow ISO 639-1 (e.g. `en` for English).",
-                "example": "{'en': 'wolf', 'fr': 'loup gris'}",
+                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language codes should follow ISO 639-1 (e.g. `en` for English).",
                 "type": "object",
                 "patternProperties": {
                   "^[a-z]{2}$": {
                     "description": "Common or vernacular name of the taxon in that language.",
-                    "type": "string",
-                    "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/vernacularName"
+                    "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/vernacularName",
+                    "type": "string"                    
                   }
                 },
-                "additionalProperties": false
+                "additionalProperties": false,
+                "example": "{'en': 'wolf', 'fr': 'loup gris'}"
               }
             }
           }
         },
         "references": {
-          "description": "List of references related to the Data Package (e.g. references cited in the project description). References ideally include a DOI.",
+          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References ideally include a DOI.",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "platform": {
-          "description": "Data management or repository system used to generate the Data Package.",
+          "description": "Data management or repository system used to generate the package.",
           "type": "object",
           "properties": {
             "title": {
@@ -358,7 +359,7 @@
               "type": "string"
             },
             "packageID": {
-              "description": "Data Package ID assigned by the platform.",
+              "description": "Package ID assigned by the platform.",
               "type": "string"
             }
           }
