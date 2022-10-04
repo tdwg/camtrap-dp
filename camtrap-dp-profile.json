@@ -110,6 +110,7 @@
             "properties": {
               "scope": {
                 "description": "Scope of the license. `data` applies to the content of the package and resources, `media` to the (locally or externally hosted) media files referenced in `media.filePath`.",
+                "type": "string",
                 "enum": [
                   "data",
                   "media"
