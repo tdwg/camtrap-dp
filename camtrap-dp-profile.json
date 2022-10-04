@@ -98,7 +98,15 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#homepage)."
         },
         "sources": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#sources)."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#sources). Can include the data management platform from which the package was derived (e.g. Agouti, Trapper, Wildlife Insights).",
+          "items": {
+            "properties": {
+              "version": {
+                "description": "Version of the source.",
+                "type": "string"
+              }
+            }
+          }
         },
         "licenses": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#licenses). If provided, Camtrap DP further requires at least a license for the content of the package and one for the media files.",
@@ -340,29 +348,6 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
-        },
-        "platform": {
-          "description": "Data management or repository system used to generate the package.",
-          "type": "object",
-          "properties": {
-            "title": {
-              "description": "Platform name.",
-              "type": "string"
-            },
-            "path": {
-              "description": "Platform website.",
-              "type": "string",
-              "format": "uri"
-            },
-            "version": {
-              "description": "Platform version.",
-              "type": "string"
-            },
-            "packageID": {
-              "description": "Package ID assigned by the platform.",
-              "type": "string"
-            }
           }
         }
       }

@@ -85,7 +85,8 @@
     {
       "title": "Agouti",
       "path": "https://www.agouti.eu",
-      "email": "agouti@wur.nl"
+      "email": "agouti@wur.nl",
+      "version": "v3.16"
     }
   ],
   "licenses": [
@@ -256,10 +257,5 @@
       }
     }
   ],
-  "references": [],
-  "platform": {
-    "title": "Agouti",
-    "path": "https://agouti.eu",
-    "packageID": "3bdce07e-f0b1-4566-948a-e1f0a0d0a214"
-  }
+  "references": []
 }
