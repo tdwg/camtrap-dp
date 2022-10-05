@@ -16,8 +16,8 @@ layout: default
   
   <table>
     <colgroup>
-      <col width="20%">
-      <col width="50%">
+      <col width="30%">
+      <col width="60%">
       <col width="10%">
       <col width="20%">
     </colgroup>
@@ -31,7 +31,7 @@ layout: default
     </thead>
     <tbody>
       {% for field in table_schema.fields %}
-        <tr>
+        <tr class="text-break">
           <td id="{{ table_schema_id }}.{{ field.name | downcase | url_encode }}">
             <a href="#{{ table_schema_id }}.{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
             {% if field.constraints.required %}*{% endif %}

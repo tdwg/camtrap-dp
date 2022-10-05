@@ -43,8 +43,8 @@ layout: default
   {% if properties2 %}
   <table>
     <colgroup>
-      <col width="20%">
-      <col width="70%">
+      <col width="30%">
+      <col width="60%">
       <col width="10%">
     </colgroup>
     <thead>
@@ -60,7 +60,7 @@ layout: default
         {% assign p2 = p2_raw[1] %}
         {% assign p2_id = p2_name | downcase | url_encode %}
 
-        <tr>
+        <tr class="text-break">
           <td id="{{ p1_id }}.{{ p2_id }}">
             <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
             {% if required2 contains p2_name %}*{% endif %}
