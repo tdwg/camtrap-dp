@@ -5,7 +5,7 @@
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "0\\.3"
+      "pattern": "0\\.4"
     }
   },  
   "allOf": [
