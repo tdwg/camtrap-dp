@@ -338,6 +338,126 @@
             }
           }
         },
+        "relatedIdentifiers": {
+          "description": "Identifiers of resources related to the package (e.g. papers, project pages, derived datasets, APIs, etc.).",
+          "type": "array",
+          "items": {
+            "description": "Related identifier.",
+            "required": [
+              "relationType",
+              "relatedIdentifier",
+              "relatedIdentifierType"
+            ],
+            "properties": {
+              "relationType": {
+                "description": "Description of the relationship between the resource (the package) and the related resource.",
+                "skos:exactMatch": "https://schema.datacite.org/meta/kernel-4.4/include/datacite-relationType-v4.xsd",
+                "type": "string",
+                "enum": [
+                  "IsCitedBy",
+                  "Cites",
+                  "IsSupplementTo",
+                  "IsSupplementedBy",
+                  "IsContinuedBy",
+                  "Continues",
+                  "IsNewVersionOf",
+                  "IsPreviousVersionOf",
+                  "IsPartOf",
+                  "HasPart",
+                  "IsPublishedIn",
+                  "IsReferencedBy",
+                  "References",
+                  "IsDocumentedBy",
+                  "Documents",
+                  "IsCompiledBy",
+                  "Compiles",
+                  "IsVariantFormOf",
+                  "IsOriginalFormOf",
+                  "IsIdenticalTo",
+                  "HasMetadata",
+                  "IsMetadataFor",
+                  "Reviews",
+                  "IsReviewedBy",
+                  "IsDerivedFrom",
+                  "IsSourceOf",
+                  "Describes",
+                  "IsDescribedBy",
+                  "HasVersion",
+                  "IsVersionOf",
+                  "Requires",
+                  "IsRequiredBy",
+                  "Obsoletes",
+                  "IsObsoletedBy"
+                ]
+              },
+              "relatedIdentifier": {
+                "description": "Unique identifier of the related resource (e.g. a DOI or URL).",
+                "type": "string"
+              },
+              "resourceTypeGeneral": {
+                "description": "General type of the related resource.",
+                "skos:exactMatch": "https://schema.datacite.org/meta/kernel-4.4/include/datacite-resourceType-v4.xsd",
+                "type": "string",
+                "enum": [
+                  "Audiovisual",
+                  "Book",
+                  "BookChapter",
+                  "Collection",
+                  "ComputationalNotebook",
+                  "ConferencePaper",
+                  "ConferenceProceeding",
+                  "DataPaper",
+                  "Dataset",
+                  "Dissertation",
+                  "Event",
+                  "Image",
+                  "InteractiveResource",
+                  "Journal",
+                  "JournalArticle",
+                  "Model",
+                  "OutputManagementPlan",
+                  "PeerReview",
+                  "PhysicalObject",
+                  "Preprint",
+                  "Report",
+                  "Service",
+                  "Software",
+                  "Sound",
+                  "Standard",
+                  "Text",
+                  "Workflow",
+                  "Other"
+                ]
+              },
+              "relatedIdentifierType": {
+                "description": "Type of the `RelatedIdentifier`.",
+                "skos:exactMatch": "https://schema.datacite.org/meta/kernel-4.4/include/datacite-relatedIdentifierType-v4.xsd",
+                "type": "string",
+                "enum": [
+                  "ARK",
+                  "arXiv",
+                  "bibcode",
+                  "DOI",
+                  "EAN13",
+                  "EISSN",
+                  "Handle",
+                  "IGSN",
+                  "ISBN",
+                  "ISSN",
+                  "ISTC",
+                  "LISSN",
+                  "LSID",
+                  "PMID",
+                  "PURL",
+                  "UPC",
+                  "URL",
+                  "URN",
+                  "w3id"
+                ]
+              }
+            }
+          }
+        },
         "references": {
           "description": "List of references related to the package (e.g. references cited in `package.project.description`). References ideally include a DOI.",
           "type": "array",

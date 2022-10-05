@@ -256,5 +256,19 @@
       }
     }
   ],
+  "relatedIdentifiers": [
+    {
+      "relationType": "IsDerivedFrom",
+      "relatedIdentifier": "https://doi.org/10.5281/zenodo.5590881",
+      "resourceTypeGeneral": "Dataset",
+      "relatedIdentifierType": "DOI"
+    },
+    {
+      "relationType": "IsSupplementTo",
+      "relatedIdentifier": "https://inbo.github.io/camtraptor/",
+      "resourceTypeGeneral": "Software",
+      "relatedIdentifierType": "URL"
+    }
+  ],
   "references": []
 }
