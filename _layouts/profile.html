@@ -43,8 +43,8 @@ layout: default
   {% if properties2 %}
   <table>
     <colgroup>
-      <col width="30%">
-      <col width="60%">
+      <col width="25%">
+      <col width="65%">
       <col width="10%">
     </colgroup>
     <thead>
@@ -74,6 +74,11 @@ layout: default
                 {% if p2.enum %}<li>enum: <code>{{ p2.enum | join: ", " }}</code></li>{% endif %}
                 {% if p2.items.enum %}<li>enum: <code>{{ p2.items.enum | join: ", " }}</code></li>{% endif %}
               </ul>
+            {% endif %}
+            {% if p2.example and p2.example != "" %}
+              <p>
+                <strong>Example</strong>: <code>{{ p2.example }}</code>
+              </p>
             {% endif %}
             {% if p2['skos:exactMatch'] %}
               <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
