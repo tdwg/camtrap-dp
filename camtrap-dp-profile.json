@@ -127,11 +127,6 @@
             }
           }
         },
-        "rightsHolder": {
-          "description": "Person or organization owning the rights over the package.",
-          "type": "string",
-          "skos:exactMatch": "http://ns.adobe.com/xap/1.0/rights/Owner"
-        },
         "bibliographicCitation": {
           "description": "Bibliographic/recommended citation for the package.",
           "skos:exactMatch": "http://purl.org/dc/terms/bibliographicCitation",
