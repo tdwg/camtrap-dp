@@ -37,6 +37,7 @@ colors:
   links: "#ca6500"  # TDWG orange
   banner: "#617694" # TDWG blue
   footer: "#617694" # TDWG blue
+font_serif: false
 
 # BUILD SETTINGS
 markdown: kramdown
