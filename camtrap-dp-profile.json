@@ -209,7 +209,7 @@
           }
         },
         "coordinatePrecision": {
-          "description": "Minimum precision of the `deployments.latitude` and `deployments.longitude` (e.g. `0.001` for a minimum precision of 0.001 degree). Especially relevant when coordinates are rounded to protect sensitive species.",
+          "description": "Least precise coordinate precision of the `deployments.latitude` and `deployments.longitude` (least precise in case of mixed precision, e.g. `0.01` for coordinates of precision of 0.01 and 0.001 degree). Especially relevant when coordinates have been rounded to protect sensitive species.",
           "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinatePrecision",
           "type": "number",
           "example": 0.001
