@@ -41,19 +41,11 @@ layout: base
               </td>
               <td>
                 {{ field.description | markdownify }}
-                {% if field.constraints.enum %}
-                  <ul>
-                  {% for item in field.constraints.enum %}
-                    <li><code>{{ item }}</code></li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
                 {% if field.constraints %}
+                  <strong>Constraints</strong>
                   <ul>
                     {% for constraint in field.constraints %}
-                      {% if constraint[0] != 'required' and constraint[0] != 'enum' %}
-                        <li>{{ constraint[0] }}: <code>{{ constraint[1] }}</code></li>
-                      {% endif %}
+                      <li>{{ constraint[0] }}: <code>{{ constraint[1] | join: ", " }}</code></li>
                     {% endfor %}
                   </ul>
                 {% endif %}

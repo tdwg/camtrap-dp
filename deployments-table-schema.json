@@ -5,9 +5,9 @@
   "fields": [
     {
       "name": "deploymentID",
+      "description": "Unique (within the package) identifier of the deployment.",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the deployment.",
       "example": "dep1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -17,9 +17,9 @@
     },
     {
       "name": "locationID",
+      "description": "Unique (within the package) identifier of the sampling location for the deployment.",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the sampling location for the deployment.",
       "example": "loc1",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locationID",
       "constraints": {
@@ -67,7 +67,7 @@
       "name": "coordinateUncertainty",
       "type": "integer",
       "format": "default",
-      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Use for example when coordinates are [rounded](https://en.wikipedia.org/wiki/Decimal_degrees#Precision) to conceal the precise location of an active camera.",
+      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Especially relevant when coordinates are rounded to protect sensitive species.",
       "example": "100",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
       "constraints": {
@@ -101,7 +101,7 @@
       "name": "setupBy",
       "type": "string",
       "format": "default",
-      "description": "Name or unique identifier of the person who set up the camera for the deployment.",
+      "description": "Name or unique (within the package) identifier of the person who set up the camera for the deployment.",
       "example": "Jakub Bubnicki",
       "constraints": {
         "required": false
@@ -111,7 +111,7 @@
       "name": "cameraID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the camera used for the deployment (e.g. the camera device serial number).",
+      "description": "Unique (within the package) identifier of the camera used for the deployment (e.g. the camera device serial number).",
       "example": "P800HG08192031",
       "constraints": {
         "required": false
@@ -186,7 +186,7 @@
     {
       "name": "timestampIssues",
       "type": "boolean",
-      "description": "`true` if timestamps in `media.csv` and `observations.csv` for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "description": "`true` if timestamps in the `media` and `observations` resources for that deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "example": "false",
       "constraints": {
         "required": false
@@ -196,7 +196,7 @@
       "name": "baitUse",
       "type": "string",
       "format": "default",
-      "description": "Type of bait (if any) that was used for the deployment. If other, more info can be provided in the `comments` field.",
+      "description": "Type of bait (if any) that was used for the deployment. If other, more info can be provided in `comments`.",
       "example": "food",
       "constraints": {
         "required": false,
@@ -234,7 +234,7 @@
       "name": "featureType",
       "type": "string",
       "format": "default",
-      "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in the `comments` field.",
+      "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in `comments`.",
       "example": "culvert",
       "constraints": {
         "required": false,
