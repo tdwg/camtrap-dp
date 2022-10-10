@@ -42,6 +42,11 @@ layout: default
 
   {% if properties2 %}
   <table>
+    <colgroup>
+      <col width="25%">
+      <col width="65%">
+      <col width="10%">
+    </colgroup>
     <thead>
       <tr>
         <th>Name</th>
@@ -50,42 +55,42 @@ layout: default
       </tr>
     </thead>
     <tbody>
-      <colgroup>
-        <col width="20%">
-        <col width="70%">
-        <col width="10%">
-      </colgroup>
-        {% for p2_raw in properties2 %}
-          {% assign p2_name = p2_raw[0] %}
-          {% assign p2 = p2_raw[1] %}
-          {% assign p2_id = p2_name | downcase | url_encode %}
+      {% for p2_raw in properties2 %}
+        {% assign p2_name = p2_raw[0] %}
+        {% assign p2 = p2_raw[1] %}
+        {% assign p2_id = p2_name | downcase | url_encode %}
 
-          <tr>
-            <td id="{{ p1_id }}.{{ p2_id }}">
-              <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
-              {% if required2 contains p2_name %}*{% endif %}
-            </td>
-            <td>
-              {{ p2.description | markdownify }}
-              {% if p2.const or p2.enum or p2.items.enum %}
-                <strong>Constraints</strong>
-                <ul>
-                  {% if p2.const %}<li>const: <code>{{ p2.const }}</code></li>{% endif %}
-                  {% if p2.enum %}<li>enum: <code>{{ p2.enum | join: ", " }}</code></li>{% endif %}
-                  {% if p2.items.enum %}<li>enum: <code>{{ p2.items.enum | join: ", " }}</code></li>{% endif %}
-                </ul>
-              {% endif %}
-              {% if p2['skos:exactMatch'] %}
-                <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
-              {% elsif p2['skos:narrowMatch'] %}
-                <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
-              {% elsif p2['skos:broadMatch'] %}
-                <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
-              {% endif %}
-            </td>
-            <td>{{ p2.type }}</td>
-          </tr>
-        {% endfor %}
+        <tr class="text-break">
+          <td id="{{ p1_id }}.{{ p2_id }}">
+            <a href="#{{ p1_id }}.{{ p2_id }}"><code>{{ p2_name }}</code></a>
+            {% if required2 contains p2_name %}*{% endif %}
+          </td>
+          <td>
+            {{ p2.description | markdownify }}
+            {% if p2.const or p2.enum or p2.items.enum %}
+              <strong>Constraints</strong>
+              <ul>
+                {% if p2.const %}<li>const: <code>{{ p2.const }}</code></li>{% endif %}
+                {% if p2.enum %}<li>enum: <code>{{ p2.enum | join: ", " }}</code></li>{% endif %}
+                {% if p2.items.enum %}<li>enum: <code>{{ p2.items.enum | join: ", " }}</code></li>{% endif %}
+              </ul>
+            {% endif %}
+            {% if p2.example and p2.example != "" %}
+              <p>
+                <strong>Example</strong>: <code>{{ p2.example }}</code>
+              </p>
+            {% endif %}
+            {% if p2['skos:exactMatch'] %}
+              <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
+            {% elsif p2['skos:narrowMatch'] %}
+              <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
+            {% elsif p2['skos:broadMatch'] %}
+              <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
+            {% endif %}
+          </td>
+          <td>{{ p2.type }}</td>
+        </tr>
+      {% endfor %}
     </tbody>
   </table>
   {% endif %}

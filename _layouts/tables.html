@@ -1,74 +1,65 @@
 ---
-layout: base
+layout: default
 ---
 
-<div class="row">
-  <div class="col">
+{{ content }}
 
-    {{ content }}
+{% for table_schema_file in site.data["_tables"] %}
+  {% assign table_schema = site.data[table_schema_file] %}
+  {% assign table_schema_id = table_schema.title | downcase | url_encode %}
 
-    {% for table_schema_file in site.data["_tables"] %}
-      {% assign table_schema = site.data[table_schema_file] %}
-      {% assign table_schema_id = table_schema.title | downcase | url_encode %}
+  <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
 
-      <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
+  <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
 
-      <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
-
-      {{ table_schema.description | markdownify }}
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Definition</th>
-            <th>Type</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <colgroup>
-            <col width="20%">
-            <col width="50%">
-            <col width="10%">
-            <col width="20%">
-          </colgroup>
-          {% for field in table_schema.fields %}
-            <tr>
-              <td id="{{ table_schema_id }}.{{ field.name | downcase | url_encode }}">
-                <a href="#{{ table_schema_id }}.{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
-                {% if field.constraints.required %}*{% endif %}
-              </td>
-              <td>
-                {{ field.description | markdownify }}
-                {% if field.constraints %}
-                  <strong>Constraints</strong>
-                  <ul>
-                    {% for constraint in field.constraints %}
-                      <li>{{ constraint[0] }}: <code>{{ constraint[1] | join: ", " }}</code></li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-                {% if field['skos:exactMatch'] %}
-                  <span class="small text-muted">Same as <a href="{{ field['skos:exactMatch'] }}">{{ field['skos:exactMatch'] }}</a></span>
-                {% elsif field['skos:narrowMatch'] %}
-                  <span class="small text-muted">Narrower than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></span>
-                {% elsif field['skos:broadMatch'] %}
-                  <span class="small text-muted">Broader than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
-                {% endif %}
-              </td>
-              <td>{{ field.type }}</td>
-              <td>
-                {% if field.example %}
-                  {% for example in field.example %}
-                  <p><code>{{ example }}</code></p>
-                  {% endfor %}
-                {% endif %}
-              </td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    {% endfor %}
-  </div>
-</div>
+  {{ table_schema.description | markdownify }}
+  
+  <table>
+    <colgroup>
+      <col width="25%">
+      <col width="65%">
+      <col width="10%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Definition</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for field in table_schema.fields %}
+        <tr class="text-break">
+          <td id="{{ table_schema_id }}.{{ field.name | downcase | url_encode }}">
+            <a href="#{{ table_schema_id }}.{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
+            {% if field.constraints.required %}*{% endif %}
+          </td>
+          <td>
+            {{ field.description | markdownify }}
+            {% if field.constraints %}
+              <strong>Constraints</strong>
+              <ul>
+                {% for constraint in field.constraints %}
+                  <li>{{ constraint[0] }}: <code>{{ constraint[1] | join: ", " }}</code></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if field.example and field.example != "" %}
+              <p>
+                <strong>Example</strong>: <code>{{ field.example }}</code>
+              </p>
+            {% endif %}
+            {% if field['skos:exactMatch'] %}
+              <span class="small text-muted">Same as <a href="{{ field['skos:exactMatch'] }}">{{ field['skos:exactMatch'] }}</a></span>
+            {% elsif field['skos:narrowMatch'] %}
+              <span class="small text-muted">Narrower than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></span>
+            {% elsif field['skos:broadMatch'] %}
+              <span class="small text-muted">Broader than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
+            {% endif %}
+          </td>
+          <td>{{ field.type }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}
