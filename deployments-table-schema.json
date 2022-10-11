@@ -239,7 +239,6 @@
       "constraints": {
         "required": false,
         "enum": [
-          "none",
           "road paved",
           "road dirt",
           "trail hiking",
