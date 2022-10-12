@@ -7,7 +7,7 @@
       "name": "observationID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the observation.",
+      "description": "Unique identifier of the observation.",
       "example": "obs1",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "constraints": {
@@ -178,7 +178,7 @@
       "name": "individualID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the observed individual.",
+      "description": "Unique identifier of the observed individual.",
       "example": "RD213",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/organismID",
       "constraints": {

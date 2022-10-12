@@ -5,7 +5,7 @@
   "fields": [
     {
       "name": "deploymentID",
-      "description": "Unique (within the package) identifier of the deployment.",
+      "description": "Unique identifier of the deployment.",
       "type": "string",
       "format": "default",
       "example": "dep1",
@@ -17,7 +17,6 @@
     },
     {
       "name": "locationID",
-      "description": "Unique (within the package) identifier of the sampling location for the deployment.",
       "type": "string",
       "format": "default",
       "example": "loc1",
@@ -101,7 +100,7 @@
       "name": "setupBy",
       "type": "string",
       "format": "default",
-      "description": "Name or unique (within the package) identifier of the person who set up the camera for the deployment.",
+      "description": "Name or unique identifier of the person who set up the camera for the deployment.",
       "example": "Jakub Bubnicki",
       "constraints": {
         "required": false
@@ -111,7 +110,7 @@
       "name": "cameraID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the camera used for the deployment (e.g. the camera device serial number).",
+      "description": "Unique identifier of the camera used for the deployment (e.g. the camera device serial number).",
       "example": "P800HG08192031",
       "constraints": {
         "required": false

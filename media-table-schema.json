@@ -7,7 +7,7 @@
       "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the media file.",
+      "description": "Unique identifier of the media file.",
       "example": "m1",
       "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
@@ -30,7 +30,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.sequenceInterval`.",
+      "description": "Unique identifier of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.sequenceInterval`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
