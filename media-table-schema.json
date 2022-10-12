@@ -110,7 +110,7 @@
       "type": "boolean",
       "format": "default",
       "description": "`true` if media file is deemed of interest, e.g. an exemplar photo of an individual.",
-      "example": "true",
+      "example": true,
       "constraints": {
         "required": false
       }
