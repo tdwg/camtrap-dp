@@ -17,6 +17,7 @@
     },
     {
       "name": "locationID",
+      "description": "Unique identifier of the deployment location.",
       "type": "string",
       "format": "default",
       "example": "loc1",
@@ -29,7 +30,7 @@
       "name": "locationName",
       "type": "string",
       "format": "default",
-      "description": "Name given to the sampling location.",
+      "description": "Name given to the deployment location.",
       "example": "Białowieża MRI 01",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locality",
       "constraints": {
@@ -40,7 +41,7 @@
       "name": "longitude",
       "type": "number",
       "format": "default",
-      "description": "Longitude of the sampling location in decimal degrees, using the WGS84 datum.",
+      "description": "Longitude of the deployment location in decimal degrees, using the WGS84 datum.",
       "example": 23.84995,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
       "constraints": {
@@ -53,7 +54,7 @@
       "name": "latitude",
       "type": "number",
       "format": "default",
-      "description": "Latitude of the sampling location in decimal degrees, using the WGS84 datum.",
+      "description": "Latitude of the deployment location in decimal degrees, using the WGS84 datum.",
       "example": 52.70442,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
       "constraints": {
@@ -66,7 +67,7 @@
       "name": "coordinateUncertainty",
       "type": "integer",
       "format": "default",
-      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the location of the camera trap. Especially relevant when coordinates are rounded to protect sensitive species.",
+      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the deployment location. Especially relevant when coordinates are rounded to protect sensitive species.",
       "example": 100,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
       "constraints": {
@@ -259,7 +260,7 @@
       "name": "habitat",
       "type": "string",
       "format": "default",
-      "description": "Short characterization of the habitat.",
+      "description": "Short characterization of the habitat at the deployment location.",
       "example": "Mixed temperate low-land forest",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/habitat",
       "constraints": {
