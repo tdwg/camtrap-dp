@@ -79,7 +79,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of the media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of the media file. If provided, one should be able to sort media files chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -89,7 +89,7 @@
       "name": "fileMediatype",
       "type": "string",
       "format": "default",
-      "description": "Mediatype of the file.",
+      "description": "Mediatype of the media file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
@@ -99,7 +99,7 @@
       "name": "exifData",
       "type": "object",
       "format": "default",
-      "description": "EXIF data of the file, as a valid JSON object.",
+      "description": "EXIF data of the media file, as a valid JSON object.",
       "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}",
       "constraints": {
         "required": false
@@ -109,7 +109,7 @@
       "name": "favourite",
       "type": "boolean",
       "format": "default",
-      "description": "`true` if media file is deemed of interest, e.g. an exemplar photo of an individual.",
+      "description": "`true` if the media file is deemed of interest (e.g. an exemplar photo of an individual).",
       "example": true,
       "constraints": {
         "required": false
