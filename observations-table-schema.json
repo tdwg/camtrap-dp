@@ -52,7 +52,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `media.timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `media.timestamp` of the first media file in the associated sequence (in `sequenceID`).",
+      "description": "Date and time of the observation, formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `media.timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `media.timestamp` of the first media file in the associated sequence (in `sequenceID`).",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
@@ -167,7 +167,7 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be expressed as as a pipe (`|`) separated list.",
+      "description": "Dominant behaviour of the observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be formatted as a pipe (`|`) separated list.",
       "example": "vigilance",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/behavior",
       "constraints": {
@@ -214,7 +214,7 @@
       "name": "classificationTimestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the classification, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time of the classification, formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-08-22T10:25:19Z",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
       "constraints": {

@@ -157,7 +157,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally [Markdown](http://commonmark.org/) formatted. Not to be confused with the description of the package (`package.description`).",
+              "description": "Description of the project, ideally formatted as [Markdown](http://commonmark.org/). Not to be confused with the description of the package (`package.description`).",
               "type": "string"
             },
             "path": {
@@ -230,12 +230,12 @@
           ],
           "properties": {
             "start": {
-              "description": "Start date of the first deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "Start date of the first deployment, formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             },
             "end": {
-              "description": "End date of the last (completed) deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "End date of the last (completed) deployment, formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             }
