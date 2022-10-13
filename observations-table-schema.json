@@ -63,7 +63,7 @@
       "name": "observationType",
       "type": "string",
       "format": "default",
-      "description": "Type of observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "description": "Type of the observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
       "example": "animal",
       "constraints": {
         "required": true,
@@ -136,7 +136,7 @@
       "name": "lifeStage",
       "type": "string",
       "format": "default",
-      "description": "Age class or life stage of observed individual(s).",
+      "description": "Age class or life stage of the observed individual(s).",
       "example": "adult",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/lifeStage",
       "constraints": {
@@ -152,7 +152,7 @@
       "name": "sex",
       "type": "string",
       "format": "default",
-      "description": "Sex of observed individual(s)",
+      "description": "Sex of the observed individual(s)",
       "example": "female",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/sex",
       "constraints": {
