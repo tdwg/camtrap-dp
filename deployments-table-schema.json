@@ -101,7 +101,7 @@
       "name": "setupBy",
       "type": "string",
       "format": "default",
-      "description": "Name or unique identifier of the person who set up the camera for the deployment.",
+      "description": "Name or unique identifier of the person that deployed the camera.",
       "example": "Jakub Bubnicki",
       "constraints": {
         "required": false
@@ -186,7 +186,7 @@
     {
       "name": "timestampIssues",
       "type": "boolean",
-      "description": "`true` if timestamps in the `media` and `observations` resources for that deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "description": "`true` if timestamps in the `media` and `observations` resources for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "example": false,
       "constraints": {
         "required": false
