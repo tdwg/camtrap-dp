@@ -157,7 +157,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally formatted as [Markdown](http://commonmark.org/). Not to be confused with the description of the package (`package.description`).",
+              "description": "Description of the project. Preferably formatted as [Markdown](http://commonmark.org/). Not to be confused with the description of the package (`package.description`).",
               "type": "string"
             },
             "path": {
@@ -459,7 +459,7 @@
           }
         },
         "references": {
-          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References ideally include a DOI.",
+          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References preferably include a DOI.",
           "type": "array",
           "items": {
             "type": "string"

@@ -167,7 +167,7 @@
       "name": "behaviour",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of the observed individual(s), ideally expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be formatted as a pipe (`|`) separated list.",
+      "description": "Dominant behaviour of the observed individual(s), preferably expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). A combination of dominant (first) and additional behaviours can be formatted as a pipe (`|`) separated list.",
       "example": "vigilance",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/behavior",
       "constraints": {
