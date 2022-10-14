@@ -7,7 +7,7 @@
       "name": "observationID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the observation.",
+      "description": "Unique (within the package) identifier of the observation.",
       "example": "obs1",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "constraints": {
@@ -19,7 +19,7 @@
       "name": "deploymentID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployment:deploymentID`.",
+      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
       "example": "dep1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -30,7 +30,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `sequenceInterval`) that is the source of the observation. Foreign key to `media:sequenceID`.",
+      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `package.project.sequenceInterval`) that is the source of the observation. Foreign key to `media.sequenceID`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -41,7 +41,7 @@
       "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media:mediaID`. Leave empty for sequence-based observations.",
+      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media.mediaID`. Leave empty for sequence-based observations.",
       "example": "m1",
       "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
@@ -52,7 +52,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `timestamp` of the first media file in the associated sequence (in `sequenceID`).",
+      "description": "Date and time of the observation, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `media.timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `media.timestamp` of the first media file in the associated sequence (in `sequenceID`).",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
@@ -91,7 +91,7 @@
       "name": "taxonID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the `scientificName` according to the taxonomic reference list defined by `taxonIDReference` in the Data Package metadata.",
+      "description": "Unique identifier of the `scientificName` as defined in `package.taxonomic.taxonID` for that scientific name.",
       "example": "QLXL",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
       "constraints": {
@@ -144,9 +144,7 @@
         "enum": [
           "adult",
           "subadult",
-          "juvenile",
-          "offspring",
-          "unknown"
+          "juvenile"
         ]
       }
     },
@@ -161,8 +159,7 @@
         "required": false,
         "enum": [
           "female",
-          "male",
-          "unknown"
+          "male"
         ]
       }
     },
@@ -181,7 +178,7 @@
       "name": "individualID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier (within a project) of the observed individual.",
+      "description": "Unique (within the package) identifier of the observed individual.",
       "example": "RD213",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/organismID",
       "constraints": {
@@ -207,10 +204,7 @@
       "type": "string",
       "format": "default",
       "description": "Name or unique identifier of the person or AI algorithm that classified the observation.",
-      "example": [
-        "Jakub Bubnicki",
-        "Megadetector"
-      ],
+      "example": "MegaDetector V5",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "constraints": {
         "required": false
