@@ -203,20 +203,20 @@
       }
     },
     {
-      "name": "session",
+      "name": "temporalGroup",
       "type": "string",
       "format": "default",
-      "description": "Temporal deployment group. Common sessions are seasons (wet and dry), months, years or other logical groupings when sampling occurred. For groupings without context, use `tags`.",
+      "description": "Temporal deployment group(s), formatted as a pipe (`|`) separated list. Can be used for sessions, seasons, months, years, etc. Deployment groups without temporal/spatial context can be provided in `tags`.",
       "example": "winter 2020",
       "constraints": {
         "required": false
       }
     },
     {
-      "name": "array",
+      "name": "spatialGroup",
       "type": "string",
       "format": "default",
-      "description": "Spatial deployment group. Common arrays are grids, arrays, clusters or other logical groupings where sampling occurred. For groupings without context, use `tags`.",
+      "description": "Spatial deployment group(s), formatted as a pipe (`|`) separated list. Can be used for arrays, grids, clusters, etc. Deployment groups without temporal/spatial context can be provided in `tags`.",
       "example": "grid A1",
       "constraints": {
         "required": false
@@ -263,7 +263,7 @@
       "name": "tags",
       "type": "string",
       "format": "default",
-      "description": "Tag(s) associated with the deployment, formatted as a pipe (`|`) separated list. Can b`key:value` pairs). Format multiple values as a pipe (`|`) separated list.",
+      "description": "Tag(s) associated with the deployment, typically to facilitate analysis, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs.",
       "example": "forest edge | bait:food",
       "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
