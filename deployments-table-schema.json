@@ -203,26 +203,6 @@
       }
     },
     {
-      "name": "temporalGroup",
-      "type": "string",
-      "format": "default",
-      "description": "Temporal deployment group(s), formatted as a pipe (`|`) separated list. Can be used for sessions, seasons, months, years, etc. Deployment groups without temporal/spatial context can be provided in `tags`.",
-      "example": "winter 2020",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
-      "name": "spatialGroup",
-      "type": "string",
-      "format": "default",
-      "description": "Spatial deployment group(s), formatted as a pipe (`|`) separated list. Can be used for arrays, grids, clusters, etc. Deployment groups without temporal/spatial context can be provided in `tags`.",
-      "example": "grid A1",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
       "name": "featureType",
       "type": "string",
       "format": "default",
@@ -260,10 +240,20 @@
       }
     },
     {
+      "name": "deploymentGroup",
+      "type": "string",
+      "format": "default",
+      "description": "Deployment group(s) associated with the deployment, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs. Deployment groups can have a spatial (arrays, grids, clusters), temporal (sessions, seasons, months, years) or other context.",
+      "example": "season:winter 2020 | grid:A1",
+      "constraints": {
+        "required": false
+      }
+    },
+    {
       "name": "tags",
       "type": "string",
       "format": "default",
-      "description": "Tag(s) associated with the deployment, typically to facilitate analysis, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs.",
+      "description": "Tag(s) associated with the deployment, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs.",
       "example": "forest edge | bait:food",
       "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
