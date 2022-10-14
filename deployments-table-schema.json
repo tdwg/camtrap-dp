@@ -194,20 +194,12 @@
     },
     {
       "name": "baitUse",
-      "type": "string",
+      "type": "boolean",
       "format": "default",
-      "description": "Type of bait (if any) that was used for the deployment. If other, more info can be provided in `comments`.",
-      "example": "food",
+      "description": "`true` if bait was used for the deployment. More information can be provided in `tags` or `comments`.",
+      "example": true,
       "constraints": {
-        "required": false,
-        "enum": [
-          "none",
-          "scent",
-          "food",
-          "visual",
-          "acoustic",
-          "other"
-        ]
+        "required": false
       }
     },
     {
@@ -271,8 +263,8 @@
       "name": "tags",
       "type": "string",
       "format": "default",
-      "description": "User defined tags associated with the deployment, formatted as a pipe (`|`) separated list.",
-      "example": "Outside NP | Forest edge",
+      "description": "Tag(s) associated with the deployment, formatted as a pipe (`|`) separated list. Can b`key:value` pairs). Format multiple values as a pipe (`|`) separated list.",
+      "example": "forest edge | bait:food",
       "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
         "required": false
