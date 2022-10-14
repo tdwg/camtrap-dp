@@ -206,7 +206,7 @@
       "name": "featureType",
       "type": "string",
       "format": "default",
-      "description": "Type of feature (if any) that camera deployment is associated with. If other, more info can be provided in `comments`.",
+      "description": "Type of the feature (if any) associated with the deployment.",
       "example": "culvert",
       "constraints": {
         "required": false,
@@ -223,8 +223,7 @@
           "nest site",
           "carcass",
           "water source",
-          "fruiting tree",
-          "other"
+          "fruiting tree"
         ]
       }
     },
