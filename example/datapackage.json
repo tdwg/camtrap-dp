@@ -7,7 +7,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.5/deployments-table-schema.json"
     },
     {
       "name": "media",
@@ -16,7 +16,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/media-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.5/media-table-schema.json"
     },
     {
       "name": "observations",
@@ -25,10 +25,10 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.5/observations-table-schema.json"
     }
   ],
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/camtrap-dp-profile.json",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.5/camtrap-dp-profile.json",
   "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
   "id": "1df9727c-dde9-498a-824e-cc4f19436117",
   "created": "2022-09-09T10:42:25Z",
