@@ -56,7 +56,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the media file was recorded, formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time at which the media file was recorded. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "constraints": {
@@ -99,7 +99,7 @@
       "name": "exifData",
       "type": "object",
       "format": "default",
-      "description": "EXIF data of the media file, formatted as a valid JSON object.",
+      "description": "EXIF data of the media file. Formatted as a valid JSON object.",
       "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}",
       "constraints": {
         "required": false

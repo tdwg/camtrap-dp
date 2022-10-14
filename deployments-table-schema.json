@@ -79,7 +79,7 @@
       "name": "start",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the deployment was started, formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-01T22:00:00Z",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
@@ -90,7 +90,7 @@
       "name": "end",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the deployment was ended, formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-04-01T22:00:00Z",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
@@ -121,7 +121,7 @@
       "name": "cameraModel",
       "type": "string",
       "format": "default",
-      "description": "Manufacturer and model of the camera, formatted as `manufacturer-model`.",
+      "description": "Manufacturer and model of the camera. Formatted as `manufacturer-model`.",
       "example": "Reconyx-PC800",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/captureDevice",
       "constraints": {
@@ -242,7 +242,7 @@
       "name": "deploymentGroup",
       "type": "string",
       "format": "default",
-      "description": "Deployment group(s) associated with the deployment, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs. Deployment groups can have a spatial (arrays, grids, clusters), temporal (sessions, seasons, months, years) or other context.",
+      "description": "Deployment group(s) associated with the deployment. Deployment groups can have a spatial (arrays, grids, clusters), temporal (sessions, seasons, months, years) or other context. Formatted as a pipe (`|`) separated list for multiple values, with values preferably formatted as `key:value` pairs.",
       "example": "season:winter 2020 | grid:A1",
       "constraints": {
         "required": false
@@ -252,7 +252,7 @@
       "name": "tags",
       "type": "string",
       "format": "default",
-      "description": "Tag(s) associated with the deployment, formatted as a pipe (`|`) separated list. Values can be formatted as `key:value` pairs.",
+      "description": "Tag(s) associated with the deployment. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
       "example": "forest edge | bait:food",
       "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
       "constraints": {
