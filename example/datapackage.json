@@ -158,7 +158,7 @@
   "taxonomic": [
     {
       "taxonID": "DGP6",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas platyrhynchos",
       "vernacularNames": {
         "en": "mallard",
@@ -167,7 +167,7 @@
     },
     {
       "taxonID": "DGPL",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas strepera",
       "taxonRank": "species",
       "vernacularNames": {
@@ -177,7 +177,7 @@
     },
     {
       "taxonID": "32FH",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea",
       "taxonRank": "genus",
       "vernacularNames": {
@@ -187,7 +187,7 @@
     },
     {
       "taxonID": "GCHS",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea cinerea",
       "taxonRank": "species",
       "vernacularNames": {
@@ -197,7 +197,7 @@
     },
     {
       "taxonID": "RQPW",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Castor fiber",
       "taxonRank": "species",
       "vernacularNames": {
@@ -207,7 +207,7 @@
     },
     {
       "taxonID": "6MB3T",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Homo sapiens",
       "taxonRank": "species",
       "vernacularNames": {
@@ -217,7 +217,7 @@
     },
     {
       "taxonID": "3Y9VW",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Martes foina",
       "taxonRank": "species",
       "vernacularNames": {
@@ -227,7 +227,7 @@
     },
     {
       "taxonID": "44QYC",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Mustela putorius",
       "taxonRank": "species",
       "vernacularNames": {
@@ -237,7 +237,7 @@
     },
     {
       "taxonID": "4RM67",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Rattus norvegicus",
       "taxonRank": "species",
       "vernacularNames": {
@@ -247,7 +247,7 @@
     },
     {
       "taxonID": "5BSG3",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Vulpes vulpes",
       "taxonRank": "species",
       "vernacularNames": {
