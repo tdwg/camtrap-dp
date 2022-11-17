@@ -160,6 +160,7 @@
       "taxonID": "DGP6",
       "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas platyrhynchos",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "mallard",
         "nl": "wilde eend"
