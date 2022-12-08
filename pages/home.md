@@ -61,7 +61,7 @@ Questions? Suggestions? Contribute to the development of Camtrap DP by watching 
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2021) Camera Trap Data Package <https://github.com/tdwg/camtrap-dp>
+> Camtrap DP Development Team (2022) Camera Trap Data Package (Camtrap DP). <https://tdwg.github.io/camtrap-dp>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/), the [Mammal Research Institute Polish Academy of Sciences (MRI PAS)](https://ibs.bialowieza.pl/en/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).
 
