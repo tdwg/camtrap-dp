@@ -58,6 +58,12 @@ pip install frictionless
 frictionless validate path/to/your/datapackage.json
 ```
 
+## Implementations
+
+- [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
+- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
+- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+
 ## Contribute
 
 Questions? Suggestions? Contribute to the development of Camtrap DP by watching the [repository](https://github.com/tdwg/camtrap-dp) and participating in [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
