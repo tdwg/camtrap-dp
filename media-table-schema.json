@@ -7,7 +7,7 @@
       "name": "mediaID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the media file.",
+      "description": "Unique identifier of the media file.",
       "example": "m1",
       "skos:broadMatch": "http://purl.org/dc/terms/identifier",
       "constraints": {
@@ -30,7 +30,7 @@
       "name": "sequenceID",
       "type": "string",
       "format": "default",
-      "description": "Unique (within the package) identifier of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.sequenceInterval`.",
+      "description": "Unique identifier of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.sequenceInterval`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -56,7 +56,7 @@
       "name": "timestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time when the media file was recorded, as an ISO 8601 formatted string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time at which the media file was recorded. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "example": "2020-03-24T11:21:46Z",
       "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "constraints": {
@@ -79,7 +79,7 @@
       "name": "fileName",
       "type": "string",
       "format": "default",
-      "description": "Name of the media file. If provided, one should be able to sort media chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
+      "description": "Name of the media file. If provided, one should be able to sort media files chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "example": "IMG0001.jpg",
       "constraints": {
         "required": false
@@ -89,7 +89,7 @@
       "name": "fileMediatype",
       "type": "string",
       "format": "default",
-      "description": "Mediatype of the file.",
+      "description": "Mediatype of the media file.",
       "example": "image/jpeg",
       "constraints": {
         "required": true
@@ -99,7 +99,7 @@
       "name": "exifData",
       "type": "object",
       "format": "default",
-      "description": "EXIF data of the file, as a valid JSON object.",
+      "description": "EXIF data of the media file. Formatted as a valid JSON object.",
       "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}",
       "constraints": {
         "required": false
@@ -109,8 +109,8 @@
       "name": "favourite",
       "type": "boolean",
       "format": "default",
-      "description": "`true` if media file is deemed of interest, e.g. an exemplar photo of an individual.",
-      "example": "true",
+      "description": "`true` if the media file is deemed of interest (e.g. an exemplar image of an individual).",
+      "example": true,
       "constraints": {
         "required": false
       }

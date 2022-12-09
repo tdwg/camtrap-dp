@@ -5,7 +5,7 @@
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "0\\.4"
+      "pattern": "0\\.5"
     }
   },  
   "allOf": [
@@ -157,7 +157,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally [Markdown](http://commonmark.org/) formatted. Not to be confused with the description of the package (`package.description`).",
+              "description": "Description of the project. Preferably formatted as [Markdown](http://commonmark.org/). Not to be confused with the description of the package (`package.description`).",
               "type": "string"
             },
             "path": {
@@ -230,12 +230,12 @@
           ],
           "properties": {
             "start": {
-              "description": "Start date of the first deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "Start date of the first deployment. Formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             },
             "end": {
-              "description": "End date of the last (completed) deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "End date of the last (completed) deployment. Formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             }
@@ -459,7 +459,7 @@
           }
         },
         "references": {
-          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References ideally include a DOI.",
+          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References preferably include a DOI.",
           "type": "array",
           "items": {
             "type": "string"
