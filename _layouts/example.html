@@ -1,0 +1,115 @@
+---
+layout: base
+---
+
+<div class="row">
+  <div class="col">
+
+    {{ content }}
+
+    <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/example"><code>example dataset</code></a></p>
+
+    {% assign deployments = site.data.deployments %}
+    {% assign media = site.data.media %}
+    {% assign event_observations = site.data.observations %}
+
+    {% for dep in deployments %}
+      {% assign dep_id = dep.deploymentID %}  
+      <h2 id="{{ dep_id }}">Dep: {{ dep_id }}</h2>
+
+      <dl>
+        <dt>Location</dt>
+        <dd>
+          <code>{{ dep.locationName }}</code>
+          (<a href="https://www.google.com/maps/search/?api=1&query={{ dep.latitude }},{{ dep.longitude }}&zoom=12"><code>{{ dep.latitude }}, {{ dep.longitude }}</code></a>),
+          uncertainty: <code>{{ dep.coordinateUncertainty }}</code>m
+        <dd>
+        <dt>Duration</dt>
+        <dd>
+          <code>{{ dep.start }}</code> / <code>{{ dep.end }}</code>
+        </dd>
+        <dt>Camera setup</dt>
+        <dd>
+          interval: <code>{{ dep.cameraInterval }}</code>,
+          height: <code>{{ dep.cameraHeight }}</code>,
+          tilt: <code>{{ dep.cameraTilt }}</code>,
+          heading: <code>{{ dep.cameraHeading }}</code>
+        </dd>
+        <dt>Bait</dt>
+        <dd>
+          <code>{{ dep.baitUse }}</code>
+        </dd>
+      </dl>
+
+      {% assign dep_media = media | where: 'deploymentID', dep_id %}
+      {% assign dep_event_ids = dep_media | map: 'sequenceID' | uniq %}
+      {% for event_id in dep_event_ids %}
+        <h3 id="{{ event_id }}">Event: {{ event_id }}</h3>
+        {% assign event_media = dep_media | where: 'sequenceID', event_id %}
+        {% assign event_obs = event_observations | where: 'sequenceID', event_id %}
+        {% assign med_length = event_media | size %}
+        
+        <table class="table table-bordered table-sm">
+          <colgroup>
+            <col width="10%">
+            <col width="45%">
+            <col width="45%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Media file</th>
+              <th>Media observation</th>
+              <th>Event observation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for med in event_media %}
+              <tr>
+                <td>
+                  <a href="{{ med.filePath }}"><img src="{{ med.filePath }}" height="50" alt="{{ med.fileName }}" title="{{ med.timestamp }}"></a>
+                </td>
+                <td>
+                  {% for obs in event_obs %}
+                  <!-- TODO: take this info from media_obs %} -->
+                    <code>{{ obs.observationType }}</code>
+                    {% if obs.observationType == 'animal' %}
+                      <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
+                      <em>{{ obs.scientificName }}</em>
+                      {% if obs.lifeStage and obs.sex %}
+                        ({{ obs.lifeStage }}, {{ obs.sex }})
+                      {% elsif obs.lifeStage %}
+                        ({{ obs.lifeStage }})
+                      {% elsif obs.sex %}
+                        ({{ obs.sex }})
+                      {% endif %}
+                    {% endif %}
+                    <br>
+                  {% endfor %}
+                </td>
+                {% if forloop.first %}
+                <td rowspan="{{ med_length }}">
+                  {% for obs in event_obs %}
+                    <code>{{ obs.observationType }}</code>
+                    {% if obs.observationType == 'animal' %}
+                      <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
+                      <em>{{ obs.scientificName }}</em>
+                      {% if obs.lifeStage and obs.sex %}
+                        ({{ obs.lifeStage }}, {{ obs.sex }})
+                      {% elsif obs.lifeStage %}
+                        ({{ obs.lifeStage }})
+                      {% elsif obs.sex %}
+                        ({{ obs.sex }})
+                      {% endif %}
+                    {% endif %}
+                    <br>
+                  {% endfor %}
+                </td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
