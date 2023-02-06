@@ -27,7 +27,7 @@
       }
     },
     {
-      "name": "sequenceID",
+      "name": "eventID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the sequence the media file belongs to. Sequences contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.sequenceInterval`.",

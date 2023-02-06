@@ -1,4 +1,4 @@
-mediaID,deploymentID,sequenceID,captureMethod,timestamp,filePath,fileName,fileMediatype,exifData,favourite,comments,_id
+mediaID,deploymentID,eventID,captureMethod,timestamp,filePath,fileName,fileMediatype,exifData,favourite,comments,_id
 07840dcc-0d99-4ab4-973b-7e4a8e20b56d,00a2c20d-f038-490c-9b3f-7e32abfa0be7,4bb69c45-f6e5-4988-966a-6f7a8eac1117,motion detection,2020-05-30T04:57:37+02:00,https://multimedia.agouti.eu/assets/07840dcc-0d99-4ab4-973b-7e4a8e20b56d/file,20200709093328-RCNX0001.JPG,image/jpeg,,,,
 401386c7-cc7a-46e5-9160-48c6158624a3,00a2c20d-f038-490c-9b3f-7e32abfa0be7,4bb69c45-f6e5-4988-966a-6f7a8eac1117,motion detection,2020-05-30T04:57:40+02:00,https://multimedia.agouti.eu/assets/401386c7-cc7a-46e5-9160-48c6158624a3/file,20200709093328-RCNX0002.JPG,image/jpeg,,,,
 ca3ff293-89a4-425d-a853-5572837c5b83,00a2c20d-f038-490c-9b3f-7e32abfa0be7,4bb69c45-f6e5-4988-966a-6f7a8eac1117,motion detection,2020-05-30T04:57:40+02:00,https://multimedia.agouti.eu/assets/ca3ff293-89a4-425d-a853-5572837c5b83/file,20200709093328-RCNX0003.JPG,image/jpeg,,,,

@@ -16,45 +16,12 @@
       }
     },
     {
-      "name": "deploymentID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
-      "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "sequenceID",
+      "name": "eventID",
       "type": "string",
       "format": "default",
       "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `package.project.sequenceInterval`) that is the source of the observation. Foreign key to `media.sequenceID`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "mediaID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media.mediaID`. Leave empty for sequence-based observations.",
-      "example": "m1",
-      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
-      "name": "timestamp",
-      "type": "datetime",
-      "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `media.timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `media.timestamp` of the first media file in the associated sequence (in `sequenceID`).",
-      "example": "2020-03-24T11:21:46Z",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
       }
@@ -263,24 +230,10 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "deploymentID",
-      "reference": {
-        "resource": "deployments",
-        "fields": "deploymentID"
-      }
-    },
-    {
-      "fields": "sequenceID",
+      "fields": "eventID",
       "reference": {
         "resource": "media",
-        "fields": "sequenceID"
-      }
-    },
-    {
-      "fields": "mediaID",
-      "reference": {
-        "resource": "media",
-        "fields": "mediaID"
+        "fields": "eventID"
       }
     }
   ]
