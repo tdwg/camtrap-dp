@@ -29,9 +29,9 @@
     }
   ],
   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.5/camtrap-dp-profile.json",
-  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
-  "id": "1df9727c-dde9-498a-824e-cc4f19436117",
-  "created": "2022-09-09T10:42:25Z",
+  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20230206112303",
+  "id": "7cca70f5-ef8c-4f86-85fb-8f070937d7ab",
+  "created": "2023-02-06T11:23:03Z",
   "title": "Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany",
   "contributors": [
     {
@@ -86,7 +86,7 @@
       "title": "Agouti",
       "path": "https://www.agouti.eu",
       "email": "agouti@wur.nl",
-      "version": "v3.16"
+      "version": "v3.21"
     }
   ],
   "licenses": [
@@ -117,10 +117,10 @@
   "spatial": {
     "type": "Feature",
     "bbox": [
-      4.01330,
-      50.69905,
-      5.65869,
-      51.49608
+      4.013,
+      50.699,
+      5.659,
+      51.496
     ],
     "properties": {},
     "geometry": {
@@ -128,24 +128,24 @@
       "coordinates": [
         [
           [
-            4.01330,
-            50.69905
+            4.013,
+            50.699
           ],
           [
-            5.65869,
-            50.69905
+            5.659,
+            50.699
           ],
           [
-            5.65869,
-            51.49608
+            5.659,
+            51.496
           ],
           [
-            4.01330,
-            51.49608
+            4.013,
+            51.496
           ],
           [
-            4.01330,
-            50.69905
+            4.013,
+            50.699
           ]
         ]
       ]
@@ -197,13 +197,13 @@
       }
     },
     {
-      "taxonID": "RQPW",
+      "taxonID": "V2",
       "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
-      "scientificName": "Castor fiber",
-      "taxonRank": "species",
+      "scientificName": "Aves",
+      "taxonRank": "class",
       "vernacularNames": {
-        "en": "Eurasian beaver",
-        "nl": "bever"
+        "en": "bird sp.",
+        "nl": "vogel"
       }
     },
     {
