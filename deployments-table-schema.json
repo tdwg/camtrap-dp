@@ -38,19 +38,6 @@
       }
     },
     {
-      "name": "longitude",
-      "type": "number",
-      "format": "default",
-      "description": "Longitude of the deployment location in decimal degrees, using the WGS84 datum.",
-      "example": 23.84995,
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
-      "constraints": {
-        "required": true,
-        "minimum": -180,
-        "maximum": 180
-      }
-    },
-    {
       "name": "latitude",
       "type": "number",
       "format": "default",
@@ -61,6 +48,19 @@
         "required": true,
         "minimum": -90,
         "maximum": 90
+      }
+    },
+    {
+      "name": "longitude",
+      "type": "number",
+      "format": "default",
+      "description": "Longitude of the deployment location in decimal degrees, using the WGS84 datum.",
+      "example": 23.84995,
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+      "constraints": {
+        "required": true,
+        "minimum": -180,
+        "maximum": 180
       }
     },
     {
