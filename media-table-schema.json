@@ -98,7 +98,7 @@
       "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}"
     },
     {
-      "name": "favourite",
+      "name": "favorite",
       "description": "`true` if the media file is deemed of interest (e.g. an exemplar image of an individual).",
       "type": "boolean",
       "constraints": {
