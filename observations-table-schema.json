@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
+  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual.",
   "fields": [
     {
       "name": "observationID",
@@ -80,7 +80,7 @@
       "name": "count",
       "type": "integer",
       "format": "default",
-      "description": "Number of observed individuals (optionally of given life stage, sex and behaviour).",
+      "description": "Number of observed individuals (optionally of given life stage, sex and behavior).",
       "example": 5,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/individualCount",
       "constraints": {
@@ -92,7 +92,7 @@
       "name": "countNew",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behavior).",
       "example": 2,
       "constraints": {
         "required": false,
@@ -131,10 +131,10 @@
       }
     },
     {
-      "name": "behaviour",
+      "name": "behavior",
       "type": "string",
       "format": "default",
-      "description": "Dominant behaviour of the observed individual(s), preferably expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). Formatted as a pipe (`|`) separated list for multiple values, with the dominant behaviour listed first.",
+      "description": "Dominant behavior of the observed individual(s), preferably expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). Formatted as a pipe (`|`) separated list for multiple values, with the dominant behavior listed first.",
       "example": "vigilance",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/behavior",
       "constraints": {
