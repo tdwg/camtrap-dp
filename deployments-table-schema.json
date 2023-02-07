@@ -6,208 +6,193 @@
     {
       "name": "deploymentID",
       "description": "Unique identifier of the deployment.",
-      "type": "string",
-      "format": "default",
-      "example": "dep1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "type": "string",
       "constraints": {
         "required": true,
         "unique": true
-      }
+      },
+      "example": "dep1"
     },
     {
       "name": "locationID",
       "description": "Unique identifier of the deployment location.",
-      "type": "string",
-      "format": "default",
-      "example": "loc1",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locationID",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "loc1"
     },
     {
       "name": "locationName",
-      "type": "string",
-      "format": "default",
       "description": "Name given to the deployment location.",
-      "example": "Białowieża MRI 01",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locality",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "Białowieża MRI 01"
     },
     {
       "name": "latitude",
-      "type": "number",
-      "format": "default",
       "description": "Latitude of the deployment location in decimal degrees, using the WGS84 datum.",
-      "example": 52.70442,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
+      "type": "number",
       "constraints": {
         "required": true,
         "minimum": -90,
         "maximum": 90
-      }
+      },
+      "example": 52.70442
     },
     {
       "name": "longitude",
-      "type": "number",
-      "format": "default",
       "description": "Longitude of the deployment location in decimal degrees, using the WGS84 datum.",
-      "example": 23.84995,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+      "type": "number",
       "constraints": {
         "required": true,
         "minimum": -180,
         "maximum": 180
-      }
+      },
+      "example": 23.84995
     },
     {
       "name": "coordinateUncertainty",
-      "type": "integer",
-      "format": "default",
       "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the deployment location. Especially relevant when coordinates are rounded to protect sensitive species.",
-      "example": 100,
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
+      "type": "integer",
       "constraints": {
         "required": false,
         "minimum": 1
-      }
+      },
+      "example": 100
     },
     {
       "name": "start",
+      "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "example": "2020-03-01T22:00:00Z",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "2020-03-01T22:00:00Z"
     },
     {
       "name": "end",
+      "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "example": "2020-04-01T22:00:00Z",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "2020-04-01T22:00:00Z"
     },
     {
       "name": "setupBy",
-      "type": "string",
-      "format": "default",
       "description": "Name or unique identifier of the person that deployed the camera.",
-      "example": "Jakub Bubnicki",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "Jakub Bubnicki"
     },
     {
       "name": "cameraID",
-      "type": "string",
-      "format": "default",
       "description": "Unique identifier of the camera used for the deployment (e.g. the camera device serial number).",
-      "example": "P800HG08192031",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "P800HG08192031"
     },
     {
       "name": "cameraModel",
-      "type": "string",
-      "format": "default",
       "description": "Manufacturer and model of the camera. Formatted as `manufacturer-model`.",
-      "example": "Reconyx-PC800",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/captureDevice",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "Reconyx-PC800"
     },
     {
       "name": "cameraInterval",
-      "type": "integer",
       "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Expressed in seconds.",
-      "example": 120,
+      "type": "integer",
       "constraints": {
         "required": false,
         "minimum": 0
-      }
+      },
+      "example": 120
     },
     {
       "name": "cameraHeight",
-      "type": "number",
       "description": "Height at which the camera was deployed. Expressed in meters.",
-      "example": 1.2,
+      "type": "number",
       "constraints": {
         "required": false,
         "minimum": 0
-      }
+      },
+      "example": 1.2
     },
     {
       "name": "cameraTilt",
-      "type": "integer",
-      "format": "default",
       "description": "Angle at which the camera was deployed in the vertical plane. Expressed in degrees, with `-90` facing down, `0` horizontal and `90` facing up.",
-      "example": -90,
+      "type": "integer",
       "constraints": {
         "required": false,
         "minimum": -90,
         "maximum": 90
-      }
+      },
+      "example": -90
     },
     {
       "name": "cameraHeading",
-      "type": "integer",
-      "format": "default",
       "description": "Angle at which the camera was deployed in the horizontal plane. Expressed in decimal degrees clockwise from north, with values ranging from `0` to `360`: `0` = north, `90` = east, `180` = south, `270` = west.",
-      "example": 225,
+      "type": "integer",
       "constraints": {
         "required": false,
         "minimum": 0,
         "maximum": 360
-      }
+      },
+      "example": 225
     },
     {
       "name": "detectionDistance",
-      "type": "number",
-      "format": "default",
       "description": "Maximum distance at which the camera can reliably detect activity. Expressed in meters. Typically measured by having a human move in front of the camera.",
-      "example": 9.5,
+      "type": "number",
       "constraints": {
         "required": false,
         "minimum": 0
-      }
+      },
+      "example": 9.5
     },
     {
       "name": "timestampIssues",
-      "type": "boolean",
       "description": "`true` if timestamps in the `media` and `observations` resources for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
-      "example": false,
+      "type": "boolean",
       "constraints": {
         "required": false
-      }
+      },
+      "example": false
     },
     {
       "name": "baitUse",
-      "type": "boolean",
-      "format": "default",
       "description": "`true` if bait was used for the deployment. More information can be provided in `tags` or `comments`.",
-      "example": true,
+      "type": "boolean",
       "constraints": {
         "required": false
-      }
+      },
+      "example": true
     },
     {
       "name": "featureType",
-      "type": "string",
-      "format": "default",
       "description": "Type of the feature (if any) associated with the deployment.",
-      "example": "culvert",
+      "type": "string",
       "constraints": {
         "required": false,
         "enum": [
@@ -225,50 +210,47 @@
           "water source",
           "fruiting tree"
         ]
-      }
+      },
+      "example": "culvert"
     },
     {
       "name": "habitat",
-      "type": "string",
-      "format": "default",
       "description": "Short characterization of the habitat at the deployment location.",
-      "example": "Mixed temperate low-land forest",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/habitat",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "Mixed temperate low-land forest"
     },
     {
       "name": "deploymentGroup",
-      "type": "string",
-      "format": "default",
       "description": "Deployment group(s) associated with the deployment. Deployment groups can have a spatial (arrays, grids, clusters), temporal (sessions, seasons, months, years) or other context. Formatted as a pipe (`|`) separated list for multiple values, with values preferably formatted as `key:value` pairs.",
-      "example": "season:winter 2020 | grid:A1",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "season:winter 2020 | grid:A1"
     },
     {
       "name": "tags",
-      "type": "string",
-      "format": "default",
       "description": "Tag(s) associated with the deployment. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
-      "example": "forest edge | bait:food",
       "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "forest edge | bait:food"
     },
     {
       "name": "comments",
-      "type": "string",
-      "format": "default",
       "description": "Comments or notes about the deployment.",
-      "example": "",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventRemarks",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": ""
     }
   ],
   "missingValues": [
