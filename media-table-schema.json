@@ -21,7 +21,7 @@
       "format": "default",
       "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
       "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "constraints": {
         "required": true
       }
