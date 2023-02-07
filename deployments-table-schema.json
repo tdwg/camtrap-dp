@@ -269,16 +269,6 @@
       "constraints": {
         "required": false
       }
-    },
-    {
-      "name": "_id",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the deployment as assigned by the data management system.",
-      "example": "",
-      "constraints": {
-        "required": false
-      }
     }
   ],
   "missingValues": [
