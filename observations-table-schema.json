@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations based on the media files. Associated with deployments (`deploymentID`), sequences (`sequenceID`) and optionally individual media files (`mediaID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
+  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
   "fields": [
     {
       "name": "observationID",
@@ -19,7 +19,7 @@
       "name": "eventID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `package.project.sequenceInterval`) that is the source of the observation. Foreign key to `media.sequenceID`.",
+      "description": "Unique identifier of the event that was classified. Foreign key to `media.eventID`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
@@ -92,7 +92,7 @@
       "name": "countNew",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire sequence (`sequenceID`) (optionally of given life stage, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behaviour).",
       "example": 2,
       "constraints": {
         "required": false,

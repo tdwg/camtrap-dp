@@ -110,8 +110,8 @@
       "time lapse"
     ],
     "individualAnimals": false,
-    "classificationLevel": "sequence",
-    "sequenceInterval": 120
+    "classificationLevel": "event",
+    "eventInterval": 120
   },
   "coordinatePrecision": 0.001,
   "spatial": {
