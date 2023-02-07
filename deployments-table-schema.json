@@ -176,7 +176,7 @@
       "name": "detectionDistance",
       "type": "number",
       "format": "default",
-      "description": "Furthest distance at which the camera detected a human during setup.",
+      "description": "Furthest distance at which the camera detected a human during setup. Expressed in meters.",
       "example": 9.5,
       "constraints": {
         "required": false,
