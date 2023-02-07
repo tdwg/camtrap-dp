@@ -176,7 +176,7 @@
       "name": "detectionDistance",
       "type": "number",
       "format": "default",
-      "description": "Furthest distance at which the camera detected a human during setup. Expressed in meters.",
+      "description": "Maximum distance at which the camera can reliably detect activity. Expressed in meters. Typically measured by having a human move in front of the camera.",
       "example": 9.5,
       "constraints": {
         "required": false,
