@@ -18,6 +18,7 @@ logo: /assets/theme/images/tdwg-logo-short.svg
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 exclude:
   - README.md
   - Gemfile
