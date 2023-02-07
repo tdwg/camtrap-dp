@@ -80,7 +80,21 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title). Not to be confused with the title of the project that originated the package (`package.project.title`)."
         },
         "contributors": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property. Can include people and organizations."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property and restricts `role` values. Can include people and organizations.",
+          "items": {
+            "properties": {
+              "role": {
+                "description": "Role of the contributor. Defaults to `contributor`.",
+                "enum": [
+                  "contact",
+                  "principal investigator",
+                  "rightsholder",
+                  "publisher",
+                  "contributor"
+                ]
+              }
+            }
+          }
         },
         "description": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description). Not to be confused with the description of the project that originated the package (`package.project.description`)."
