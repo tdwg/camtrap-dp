@@ -142,7 +142,7 @@
     },
     {
       "name": "classificationMethod",
-      "description": "Classification method.",
+      "description": "Method (most recently) used to classify the observation.",
       "type": "string",
       "constraints": {
         "required": false,
@@ -155,7 +155,7 @@
     },
     {
       "name": "classifiedBy",
-      "description": "Name or unique identifier of the person or AI algorithm that classified the observation.",
+      "description": "Name or unique identifier of the person or AI algorithm that (most recently) classified the observation.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "type": "string",
       "constraints": {
@@ -165,7 +165,7 @@
     },
     {
       "name": "classificationTimestamp",
-      "description": "Date and time of the classification. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "description": "Date and time of the (most recent) classification. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
@@ -176,7 +176,7 @@
     },
     {
       "name": "classificationConfidence",
-      "description": "Accuracy confidence of the classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
+      "description": "Accuracy confidence of the (most recent) classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
       "type": "number",
       "constraints": {
         "required": false,
