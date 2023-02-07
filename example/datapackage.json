@@ -7,7 +7,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/deployments-table-schema.json"
     },
     {
       "name": "media",
@@ -16,7 +16,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/media-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/media-table-schema.json"
     },
     {
       "name": "observations",
@@ -25,39 +25,43 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/observations-table-schema.json"
     }
   ],
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.4/camtrap-dp-profile.json",
-  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20220909104225",
-  "id": "1df9727c-dde9-498a-824e-cc4f19436117",
-  "created": "2022-09-09T10:42:25Z",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/camtrap-dp-profile.json",
+  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20230206112303",
+  "id": "7cca70f5-ef8c-4f86-85fb-8f070937d7ab",
+  "created": "2023-02-06T11:23:03Z",
   "title": "Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany",
   "contributors": [
     {
       "title": "Axel Neukermans",
       "email": "axel.neukermans@inbo.be",
       "path": "https://orcid.org/0000-0003-0272-9180",
-      "role": "author",
+      "role": "contributor",
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
       "title": "Danny Van der beeck",
-      "email": "daniel.vanderbeeck@gmail.com",
-      "role": "contributor"
+      "email": "daniel.vanderbeeck@gmail.com"
     },
     {
       "title": "Emma Cartuyvels",
       "email": "emma.cartuyvels@inbo.be",
-      "role": "author",
+      "role": "principal investigator",
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
       "title": "Peter Desmet",
       "email": "peter.desmet@inbo.be",
       "path": "https://orcid.org/0000-0002-8442-8025",
-      "role": "maintainer",
+      "role": "contact",
       "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Research Institute for Nature and Forest (INBO)",
+      "path": "https://inbo.be",
+      "role": "rightsholder"
     },
     {
       "title": "Research Institute for Nature and Forest (INBO)",
@@ -86,7 +90,7 @@
       "title": "Agouti",
       "path": "https://www.agouti.eu",
       "email": "agouti@wur.nl",
-      "version": "v3.16"
+      "version": "v3.21"
     }
   ],
   "licenses": [
@@ -110,17 +114,17 @@
       "time lapse"
     ],
     "individualAnimals": false,
-    "classificationLevel": "sequence",
-    "sequenceInterval": 120
+    "classificationLevel": "event",
+    "eventInterval": 120
   },
   "coordinatePrecision": 0.001,
   "spatial": {
     "type": "Feature",
     "bbox": [
-      4.01330,
-      50.69905,
-      5.65869,
-      51.49608
+      4.013,
+      50.699,
+      5.659,
+      51.496
     ],
     "properties": {},
     "geometry": {
@@ -128,24 +132,24 @@
       "coordinates": [
         [
           [
-            4.01330,
-            50.69905
+            4.013,
+            50.699
           ],
           [
-            5.65869,
-            50.69905
+            5.659,
+            50.699
           ],
           [
-            5.65869,
-            51.49608
+            5.659,
+            51.496
           ],
           [
-            4.01330,
-            51.49608
+            4.013,
+            51.496
           ],
           [
-            4.01330,
-            50.69905
+            4.013,
+            50.699
           ]
         ]
       ]
@@ -158,8 +162,9 @@
   "taxonomic": [
     {
       "taxonID": "DGP6",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas platyrhynchos",
+      "taxonRank": "species",
       "vernacularNames": {
         "en": "mallard",
         "nl": "wilde eend"
@@ -167,7 +172,7 @@
     },
     {
       "taxonID": "DGPL",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas strepera",
       "taxonRank": "species",
       "vernacularNames": {
@@ -177,7 +182,7 @@
     },
     {
       "taxonID": "32FH",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea",
       "taxonRank": "genus",
       "vernacularNames": {
@@ -187,7 +192,7 @@
     },
     {
       "taxonID": "GCHS",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea cinerea",
       "taxonRank": "species",
       "vernacularNames": {
@@ -196,18 +201,18 @@
       }
     },
     {
-      "taxonID": "RQPW",
-      "taxonIDReference": "https://www.catalogueoflife.org",
-      "scientificName": "Castor fiber",
-      "taxonRank": "species",
+      "taxonID": "V2",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "scientificName": "Aves",
+      "taxonRank": "class",
       "vernacularNames": {
-        "en": "Eurasian beaver",
-        "nl": "bever"
+        "en": "bird sp.",
+        "nl": "vogel"
       }
     },
     {
       "taxonID": "6MB3T",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Homo sapiens",
       "taxonRank": "species",
       "vernacularNames": {
@@ -217,7 +222,7 @@
     },
     {
       "taxonID": "3Y9VW",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Martes foina",
       "taxonRank": "species",
       "vernacularNames": {
@@ -227,7 +232,7 @@
     },
     {
       "taxonID": "44QYC",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Mustela putorius",
       "taxonRank": "species",
       "vernacularNames": {
@@ -237,7 +242,7 @@
     },
     {
       "taxonID": "4RM67",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Rattus norvegicus",
       "taxonRank": "species",
       "vernacularNames": {
@@ -247,7 +252,7 @@
     },
     {
       "taxonID": "5BSG3",
-      "taxonIDReference": "https://www.catalogueoflife.org",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Vulpes vulpes",
       "taxonRank": "species",
       "vernacularNames": {

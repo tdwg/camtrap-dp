@@ -5,7 +5,7 @@
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "0\\.4"
+      "pattern": "0\\.6"
     }
   },  
   "allOf": [
@@ -80,7 +80,21 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title). Not to be confused with the title of the project that originated the package (`package.project.title`)."
         },
         "contributors": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property. Can include people and organizations."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property and restricts `role` values. Can include people and organizations.",
+          "items": {
+            "properties": {
+              "role": {
+                "description": "Role of the contributor. Defaults to `contributor`.",
+                "enum": [
+                  "contact",
+                  "principal investigator",
+                  "rightsholder",
+                  "publisher",
+                  "contributor"
+                ]
+              }
+            }
+          }
         },
         "description": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description). Not to be confused with the description of the project that originated the package (`package.project.description`)."
@@ -141,7 +155,7 @@
             "captureMethod",
             "individualAnimals",
             "classificationLevel",
-            "sequenceInterval"
+            "eventInterval"
           ],
           "properties": {
             "id": {
@@ -157,7 +171,7 @@
               "type": "string"
             },
             "description": {
-              "description": "Description of the project, ideally [Markdown](http://commonmark.org/) formatted. Not to be confused with the description of the package (`package.description`).",
+              "description": "Description of the project. Preferably formatted as [Markdown](http://commonmark.org/). Not to be confused with the description of the package (`package.description`).",
               "type": "string"
             },
             "path": {
@@ -195,21 +209,21 @@
               "type": "boolean"
             },
             "classificationLevel": {
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in the `observations` resource) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
+              "description": "Information about the focal level of the classification process. `event`: classifications (i.e. rows in the `observations` resource) are provided at an event level (multiple media files can be part of one event); `media`: classifications are available for each single media file.",
               "type": "string",
               "enum": [
-                "sequence",
+                "event",
                 "media"
               ]
             },
-            "sequenceInterval": {
-              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `media.sequenceID`.",
+            "eventInterval": {
+              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`.",
               "type": "integer"
             }
           }
         },
         "coordinatePrecision": {
-          "description": "Least precise coordinate precision of the `deployments.latitude` and `deployments.longitude` (least precise in case of mixed precision, e.g. `0.01` for coordinates of precision of 0.01 and 0.001 degree). Especially relevant when coordinates have been rounded to protect sensitive species.",
+          "description": "Least precise coordinate precision of the `deployments.latitude` and `deployments.longitude` (e.g. `0.01` for coordinates with a precision of 0.01 and 0.001 degree). Especially relevant when coordinates have been rounded to protect sensitive species.",
           "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinatePrecision",
           "type": "number",
           "example": 0.001
@@ -230,12 +244,12 @@
           ],
           "properties": {
             "start": {
-              "description": "Start date of the first deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "Start date of the first deployment. Formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             },
             "end": {
-              "description": "End date of the last (completed) deployment, as an ISO 8601 formatted string (`YYYY-MM-DD`).",
+              "description": "End date of the last (completed) deployment. Formatted as an ISO 8601 string (`YYYY-MM-DD`).",
               "type": "string",
               "format": "date"
             }
@@ -459,7 +473,7 @@
           }
         },
         "references": {
-          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References ideally include a DOI.",
+          "description": "List of references related to the package (e.g. references cited in `package.project.description`). References preferably include a DOI.",
           "type": "array",
           "items": {
             "type": "string"

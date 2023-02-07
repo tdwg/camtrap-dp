@@ -1,0 +1,29 @@
+# SITE SETTINGS
+title: Camtrap DP
+author: Camtrap DP Development Team
+url: "https://tdwg.github.io"
+baseurl: "/camtrap-dp"
+
+# SOCIAL PROFILES
+social:
+  github: tdwg/camtrap-dp
+
+# THEME SETTINGS
+theme: minima
+remote_theme: tdwg/petridish
+github_edit: true
+logo: /assets/theme/images/tdwg-logo-short.svg
+
+# BUILD SETTINGS
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - example
+  - tests
+  - "*.json"

@@ -8,13 +8,16 @@ description: Data exchange format for camera trap data
 
 **Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data.
 
+{:.alert .alert-warning}
+Camtrap DP is [under development](https://github.com/tdwg/camtrap-dp/milestone/1) and not yet ready for production use.
+
 ## Usage
 
 A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
 
 File | Description
 --- | ---
-`datapackage.json`{: .d-inline-block style="width:150px;"} | [Metadata](https://tdwg.github.io/camtrap-dp/metadata/) regarding the data package and camera trap project.
+`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](https://tdwg.github.io/camtrap-dp/metadata/) regarding the data package and camera trap project.
 `deployments.csv` | Table with camera trap [deployments](https://tdwg.github.io/camtrap-dp/data/#deployments).
 `media.csv` | Table with [media](https://tdwg.github.io/camtrap-dp/data/#media) files captured by the camera traps.
 `observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#observations) based on the media files.
@@ -55,13 +58,19 @@ pip install frictionless
 frictionless validate path/to/your/datapackage.json
 ```
 
+## Implementations
+
+- [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
+- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
+- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+
 ## Contribute
 
 Questions? Suggestions? Contribute to the development of Camtrap DP by watching the [repository](https://github.com/tdwg/camtrap-dp) and participating in [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2021) Camera Trap Data Package <https://github.com/tdwg/camtrap-dp>
+> Camtrap DP Development Team (2022) Camera Trap Data Package (Camtrap DP). <https://tdwg.github.io/camtrap-dp>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/), the [Mammal Research Institute Polish Academy of Sciences (MRI PAS)](https://ibs.bialowieza.pl/en/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).
 
