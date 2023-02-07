@@ -175,8 +175,8 @@
       "example": "2020-08-22T10:25:19Z"
     },
     {
-      "name": "classificationConfidence",
-      "description": "Accuracy confidence of the (most recent) classification. Expressed as a probability, with `1` being maximum confidence. Provide an approximate value for human classifications.",
+      "name": "classificationProbability",
+      "description": "Degree of certainty of the (most recent) classification. Expressed as a probability, with `1` being maximum certainty. Omit or provide an approximate probability for human classifications.",
       "type": "number",
       "constraints": {
         "required": false,
