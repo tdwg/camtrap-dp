@@ -16,7 +16,7 @@
     },
     {
       "name": "eventID",
-      "description": "Unique identifier of the event that was classified. Foreign key to `media.eventID`.",
+      "description": "Identifier of the event that was classified. Foreign key to `media.eventID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {
@@ -52,7 +52,7 @@
     },
     {
       "name": "taxonID",
-      "description": "Unique identifier of the `scientificName` as defined in `package.taxonomic.taxonID` for that scientific name.",
+      "description": "Identifier of the `scientificName` as defined in `package.taxonomic.taxonID` for that scientific name.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
       "type": "string",
       "constraints": {
@@ -132,7 +132,7 @@
     },
     {
       "name": "individualID",
-      "description": "Unique identifier of the observed individual.",
+      "description": "Identifier of the observed individual.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/organismID",
       "type": "string",
       "constraints": {
@@ -155,7 +155,7 @@
     },
     {
       "name": "classifiedBy",
-      "description": "Name or unique identifier of the person or AI algorithm that (most recently) classified the observation.",
+      "description": "Name or identifier of the person or AI algorithm that (most recently) classified the observation.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "type": "string",
       "constraints": {

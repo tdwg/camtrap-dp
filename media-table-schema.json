@@ -16,7 +16,7 @@
     },
     {
       "name": "deploymentID",
-      "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
+      "description": "Identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "type": "string",
       "constraints": {
@@ -26,7 +26,7 @@
     },
     {
       "name": "eventID",
-      "description": "Unique identifier of the event the media file belongs to. Events contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.eventInterval`.",
+      "description": "Identifier of the event the media file belongs to. Events contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.eventInterval`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {

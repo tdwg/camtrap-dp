@@ -16,7 +16,7 @@
     },
     {
       "name": "locationID",
-      "description": "Unique identifier of the deployment location.",
+      "description": "Identifier of the deployment location.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/locationID",
       "type": "string",
       "constraints": {
@@ -93,7 +93,7 @@
     },
     {
       "name": "setupBy",
-      "description": "Name or unique identifier of the person that deployed the camera.",
+      "description": "Name or identifier of the person that deployed the camera.",
       "type": "string",
       "constraints": {
         "required": false
@@ -102,7 +102,7 @@
     },
     {
       "name": "cameraID",
-      "description": "Unique identifier of the camera used for the deployment (e.g. the camera device serial number).",
+      "description": "Identifier of the camera used for the deployment (e.g. the camera device serial number).",
       "type": "string",
       "constraints": {
         "required": false
