@@ -8,7 +8,7 @@ layout: default
 {% assign properties1 = site.data[profile_file].allOf[1].properties %}
 {% assign required1 = site.data[profile_file].allOf[1].required %}
 
-<p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
+<p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
 {% for p1_raw in properties1 %}
   {% assign p1_name = p1_raw[0] %}
