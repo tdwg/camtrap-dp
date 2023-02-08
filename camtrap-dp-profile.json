@@ -45,7 +45,9 @@
                     ]
                   },
                   "profile": {
-                    "const": "tabular-data-resource"
+                    "enum": [
+                      "tabular-data-resource"
+                    ]
                   },
                   "schema": {
                     "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
