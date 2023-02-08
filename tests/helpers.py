@@ -7,6 +7,7 @@ THIS_SCRIPT_PATH = Path(__file__).parent
 REPOSITORY_ROOT_PATH = THIS_SCRIPT_PATH / ".."
 EXAMPLE_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
 PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
+RELAXED_PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile-relaxed.json" # File created in later step
 TABLE_SCHEMA_PATHS = [
     REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
     REPOSITORY_ROOT_PATH / "media-table-schema.json",
