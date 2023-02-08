@@ -1,13 +1,17 @@
 import sys
 from pathlib import Path
 from pprint import pprint
-
-from frictionless import validate_package  # type: ignore
+from frictionless import validate_package
 
 THIS_SCRIPT_PATH = Path(__file__).parent
 REPOSITORY_ROOT_PATH = THIS_SCRIPT_PATH / ".."
-EXAMPLE_DESCRIPTOR_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
-
+EXAMPLE_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
+PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
+TABLE_SCHEMA_PATHS = [
+    REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
+    REPOSITORY_ROOT_PATH / "media-table-schema.json",
+    REPOSITORY_ROOT_PATH / "observations-table-schema.json"
+]
 
 def validate_package_print_and_exit(descriptor_data: dict) -> None:
     report = validate_package(descriptor_data)
