@@ -36,6 +36,9 @@ layout: default
   {% elsif p1.items.properties %}
     {% assign properties2 = p1.items.properties %}
     {% assign required2 = p1.items.required %}
+  {% elsif p1.items.oneOf[0].properties %}
+    {% assign properties2 = p1.items.oneOf[0].properties %}
+    {% assign required2 = p1.items.oneOf[0].required %}
   {% else %}
     {% assign properties2 = false %}
   {% endif %}
