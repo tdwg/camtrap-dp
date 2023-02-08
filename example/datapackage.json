@@ -26,6 +26,17 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/observations-table-schema.json"
+    },
+    {
+      "name": "individuals",
+      "description": "Custom table/resource not part of the Camtrap DP model. Included to showcase that extending with more resources is possible.",
+      "data": [
+        {
+          "id": 1,
+          "individualName": "Reinaert",
+          "scientificName": "Vulpes vulpes"
+        }
+      ]
     }
   ],
   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/camtrap-dp-profile.json",

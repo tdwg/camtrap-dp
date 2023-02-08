@@ -27,35 +27,57 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`. See [Data](../data) for the requirements for those resources.",
           "minItems": 3,
           "items": {
-            "required": [
-              "schema",
-              "profile"
-            ],
-            "properties": {
-              "name": {
-                "description": "Identifier of the resource.",
-                "enum": [
-                  "deployments",
-                  "media",
-                  "observations"
-                ]
-              },
-              "profile": {
-                "const": "tabular-data-resource"
-              },
-              "schema": {
-                "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
-                "allOf": [
-                  {
-                    "$ref": "#$defs/version"
+            "oneOf": [
+              {
+                "required": [
+                  "name",
+                  "path",
+                  "profile",
+                  "schema"
+                ],
+                "properties": {
+                  "name": {
+                    "description": "Identifier of the resource.",
+                    "enum": [
+                      "deployments",
+                      "media",
+                      "observations"
+                    ]
                   },
-                  {
-                    "type": "string",
-                    "format": "uri"
+                  "profile": {
+                    "const": "tabular-data-resource"
+                  },
+                  "schema": {
+                    "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
+                    "allOf": [
+                      {
+                        "$ref": "#$defs/version"
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
                   }
-                ]
+                }
+              },
+              {
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "not": {
+                      "enum": [
+                        "deployments",
+                        "media",
+                        "observations"
+                      ]
+                    }
+                  }
+                }
               }
-            }
+            ]
           }
         },
         "profile": {
