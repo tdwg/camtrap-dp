@@ -46,19 +46,7 @@
               },
               "schema": {
                 "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
-                "$ref": "#$defs/version",
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "enum": [
-                      "deployments",
-                      "media",
-                      "observations"
-                    ]
-                  }
-                }
+                "$ref": "#$defs/version"
               }
             }
           }
