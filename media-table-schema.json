@@ -42,11 +42,11 @@
       "constraints": {
         "required": false,
         "enum": [
-          "motion detection",
-          "time lapse"
+          "motionDetection",
+          "timeLapse"
         ]
       },
-      "example": "motion detection"
+      "example": "motionDetection"
     },
     {
       "name": "timestamp",

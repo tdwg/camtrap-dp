@@ -196,19 +196,19 @@
       "constraints": {
         "required": false,
         "enum": [
-          "road paved",
-          "road dirt",
-          "trail hiking",
-          "trail game",
-          "road underpass",
-          "road overpass",
-          "road bridge",
+          "roadPaved",
+          "roadDirt",
+          "trailHiking",
+          "trailGame",
+          "roadUnderpass",
+          "roadOverpass",
+          "roadBridge",
           "culvert",
           "burrow",
-          "nest site",
+          "nestSite",
           "carcass",
-          "water source",
-          "fruiting tree"
+          "waterSource",
+          "fruitingTree"
         ]
       },
       "example": "culvert"

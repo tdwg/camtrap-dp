@@ -48,7 +48,7 @@
     {
       "title": "Emma Cartuyvels",
       "email": "emma.cartuyvels@inbo.be",
-      "role": "principal investigator",
+      "role": "principalInvestigator",
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
@@ -61,7 +61,7 @@
     {
       "title": "Research Institute for Nature and Forest (INBO)",
       "path": "https://inbo.be",
-      "role": "rightsholder"
+      "role": "rightsHolder"
     },
     {
       "title": "Research Institute for Nature and Forest (INBO)",
@@ -110,8 +110,8 @@
     "description": "Invasive alien species such as the coypu and muskrat pose a major threat to biodiversity and cost millions of euros annually. By feeding on rushes and reeds, these animals cause serious damage to the environment in which they live and endangered species suffer from habitat loss. The disappearance of reeds and digging in dikes represents a safety risk for humans in the lowland areas. With the LIFE project MICA (https://lifemica.eu), the partners from the participating countries want to develop a transnational plan for the management of coypu and muskrat populations in Europe and aim to reduce their population. The objective of an effective population control of coypu and muskrat is to protect lowlands from flooding, to prevent crop damage and loss of biodiversity. The objective of the project is to serve as a pilot and demonstration project in which ‘best practices’ are tested and new techniques are developed for a more efficient control of muskrat and coypu populations. By involving organisations from Belgium, Germany and the Netherlands, the project also promotes international cooperation and knowledge exchange in the field of muskrat and coypu management.",
     "samplingDesign": "targeted",
     "captureMethod": [
-      "motion detection",
-      "time lapse"
+      "motionDetection",
+      "timeLapse"
     ],
     "individualAnimals": false,
     "classificationLevel": "event",
