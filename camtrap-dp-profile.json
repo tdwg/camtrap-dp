@@ -44,7 +44,11 @@
                       "observations"
                     ]
                   },
+                  "path": {
+                    "description": "Path or URL to the data file."
+                  },
                   "profile": {
+                    "description": "[Profile](https://specs.frictionlessdata.io/profiles/) of the resource.",
                     "enum": [
                       "tabular-data-resource"
                     ]
