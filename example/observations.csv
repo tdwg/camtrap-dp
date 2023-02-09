@@ -1,7 +1,6 @@
 observationID,eventID,observationType,cameraSetup,taxonID,scientificName,count,countNew,lifeStage,sex,behavior,individualID,classificationMethod,classifiedBy,classificationTimestamp,classificationProbability,comments
 705e6036-aa3d-487c-a184-cf951747d8cb,4bb69c45-f6e5-4988-966a-6f7a8eac1117,animal,FALSE,DGP6,Anas platyrhynchos,1,,adult,female,,,human,Danny Van der beeck,2020-07-09T09:39:52Z,,
-87fdd8fa-4e85-4043-a258-30cc5f507191,f99bfff4-07d0-485b-a390-7cf04434c5cb,animal,FALSE,DGP6,Anas platyrhynchos,1,,adult,male,,,human,Danny Van der beeck,2020-07-09T09:40:32Z,,
-1fcdba64-14d2-490e-9afe-8503a78a8b47,f99bfff4-07d0-485b-a390-7cf04434c5cb,animal,FALSE,DGP6,Anas platyrhynchos,1,,adult,female,,,human,Danny Van der beeck,2020-07-09T09:40:44Z,,
+1fcdba64-14d2-490e-9afe-8503a78a8b47,f99bfff4-07d0-485b-a390-7cf04434c5cb,animal,FALSE,DGP6,Anas platyrhynchos,2,,adult,female,,,human,Danny Van der beeck,2020-07-09T09:40:44Z,,
 4729dc5c-303c-4c98-a7ef-3eeb716fed2c,45abeadc-731d-4445-8079-9fe1fb2ad085,animal,FALSE,4RM67,Rattus norvegicus,1,,,,,,human,Danny Van der beeck,2020-07-09T09:41:22Z,,
 a3cf89e5-37ea-41cd-88d9-76ab9f50c353,ea72c74f-ff22-4201-a1e9-b8c6548d4e3d,blank,FALSE,,,,,,,,,human,,,,
 254635b0-94b5-496f-bcc1-49dfdb6e0d46,52107a58-3658-4648-9351-fcbe466e33e2,animal,FALSE,DGP6,Anas platyrhynchos,1,,adult,female,,,human,Danny Van der beeck,2020-07-09T09:43:19Z,,
