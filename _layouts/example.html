@@ -44,10 +44,10 @@ layout: default
   {% assign event_media_count = event_media | size %}
   <h2 id="{{ event_id }}">Event: {{ event_id }}</h2>
   
-  <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
     <div class="carousel-inner">
       {% for med in event_media %}
-        <div class="carousel-item{% if forloop.first %} active{% endif %}" data-bs-interval="500">
+        <div class="carousel-item{% if forloop.first %} active{% endif %}">
           <img class="d-block w-100" src="{{ med.filePath }}" alt="{{ med.timestamp }}">
           <div class="carousel-caption d-none d-md-block">
             <p class="fs-1">{{ forloop.index }}</p>
