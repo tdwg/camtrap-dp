@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 from pprint import pprint
 from typing import Optional, List
-
 from frictionless import validate_package
 
 THIS_SCRIPT_PATH = Path(__file__).parent
@@ -15,7 +14,6 @@ TABLE_SCHEMA_PATHS = [
     REPOSITORY_ROOT_PATH / "media-table-schema.json",
     REPOSITORY_ROOT_PATH / "observations-table-schema.json"
 ]
-
 
 def validate_package_print_and_exit(descriptor_data: dict, paths_to_delete: Optional[List] = None) -> None:
     report = validate_package(descriptor_data)
