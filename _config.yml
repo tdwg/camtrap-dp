@@ -24,6 +24,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - example
-  - tests
+  - example/*
+  - tests/*
   - "*.json"
