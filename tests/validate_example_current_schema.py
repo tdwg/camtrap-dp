@@ -4,13 +4,12 @@ import os
 import json
 import shutil
 import re
-from pathlib import Path
 from httpserver import ServeDirectoryWithHTTP
 from helpers import validate_package_print_and_exit, EXAMPLE_PATH, PROFILE_PATH, RELAXED_PROFILE_PATH, TABLE_SCHEMA_PATHS
 
 if __name__ == "__main__":
     # Profile and schemas are referenced by URL in the descriptor (datapackage.json)
-    # Here we setup a local server to host the current profile and schemas
+    # Here we set up a local server to host the current profile and schemas
     httpd, address = ServeDirectoryWithHTTP(PROFILE_PATH.parent)
     server_address = address.replace("1.0.0.127.in-addr.arpa", "localhost")
 
@@ -37,8 +36,4 @@ if __name__ == "__main__":
         # Issue reported to frictionless: https://github.com/frictionlessdata/frictionless-py/issues/956
         os.chdir(EXAMPLE_PATH.parent)
 
-        validate_package_print_and_exit(descriptor_data)
-
-        # Remove "relaxed" profile
-        # TODO: doesn't get deleted
-        RELAXED_PROFILE_PATH.unlink()
+        validate_package_print_and_exit(descriptor_data, paths_to_delete=[RELAXED_PROFILE_PATH])
