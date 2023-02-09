@@ -27,3 +27,13 @@ exclude:
   - example/*
   - tests/*
   - "*.json"
+
+# FRONTMATTER DEFAULTS
+defaults:
+  - scope:
+      path: pages/example
+    values:
+      permalink: "/example/:basename/"
+      layout: example
+      title: Example dataset
+      toc: true
