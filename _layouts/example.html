@@ -100,6 +100,9 @@ layout: default
                   ({{ obs.sex }})
                 {% endif %}
               {% endif %}
+              {% if obs.classificationMethod == 'machine' %}
+                <span class="text-muted small">Classified by machine</span>    
+              {% endif %}
               <br>
             {% endfor %}
           </td>
@@ -118,6 +121,9 @@ layout: default
                 {% elsif obs.sex %}
                   ({{ obs.sex }})
                 {% endif %}
+              {% endif %}
+              {% if obs.classificationMethod == 'machine' %}
+                <span class="text-muted small">Classified by machine</span>    
               {% endif %}
               <br>
             {% endfor %}
