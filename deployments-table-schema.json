@@ -121,8 +121,8 @@
       "example": "Reconyx-PC800"
     },
     {
-      "name": "cameraInterval",
-      "description": "Time specified between shutter triggers when activity in the sensor will not trigger the shutter. Expressed in seconds.",
+      "name": "cameraDelay",
+      "description": "Predefined duration after a trigger when activity detected by the camera is ignored. Expressed in seconds.",
       "type": "integer",
       "constraints": {
         "required": false,
