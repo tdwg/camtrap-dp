@@ -190,6 +190,16 @@
       "example": 0.95
     },
     {
+      "name": "tags",
+      "description": "Tag(s) associated with the observation. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/tag",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "travelDirection:left"
+    },
+    {
       "name": "comments",
       "description": "Comments or notes about the observation.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
