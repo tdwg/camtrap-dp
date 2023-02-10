@@ -42,13 +42,17 @@
       "example": "animal"
     },
     {
-      "name": "cameraSetup",
-      "description": "`true` if the observation is part of the camera setup process (camera deployment, pickup, maintenance).",
-      "type": "boolean",
+      "name": "cameraSetupType",
+      "description": "Type of the camera setup action (if any) associated with the observation.",
+      "type": "string",
       "constraints": {
-        "required": false
+        "required": false,
+        "enum": [
+          "setup",
+          "calibration"
+        ]
       },
-      "example": false
+      "example": "calibration"
     },
     {
       "name": "taxonID",

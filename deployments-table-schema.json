@@ -93,7 +93,7 @@
     },
     {
       "name": "setupBy",
-      "description": "Name or identifier of the person that deployed the camera.",
+      "description": "Name or identifier of the person or organization that deployed the camera.",
       "skos:broadMatch": "http://rs.tdwg.org/hc/terms/samplingPerformedBy",
       "type": "string",
       "constraints": {
