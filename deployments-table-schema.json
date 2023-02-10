@@ -236,7 +236,7 @@
     {
       "name": "tags",
       "description": "Tag(s) associated with the deployment. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
-      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/tag",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/tag",
       "type": "string",
       "constraints": {
         "required": false
