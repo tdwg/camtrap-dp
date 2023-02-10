@@ -6,7 +6,7 @@
     {
       "name": "observationID",
       "description": "Unique identifier of the observation.",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "type": "string",
       "constraints": {
         "required": true,
@@ -170,7 +170,7 @@
     {
       "name": "classificationTimestamp",
       "description": "Date and time of the (most recent) classification. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "constraints": {

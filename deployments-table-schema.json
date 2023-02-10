@@ -37,7 +37,7 @@
     {
       "name": "latitude",
       "description": "Latitude of the deployment location in decimal degrees, using the WGS84 datum.",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
       "type": "number",
       "constraints": {
         "required": true,
@@ -49,7 +49,7 @@
     {
       "name": "longitude",
       "description": "Longitude of the deployment location in decimal degrees, using the WGS84 datum.",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
       "type": "number",
       "constraints": {
         "required": true,
@@ -72,7 +72,7 @@
     {
       "name": "start",
       "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "constraints": {
@@ -83,7 +83,7 @@
     {
       "name": "end",
       "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "constraints": {
