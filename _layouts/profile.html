@@ -25,9 +25,9 @@ layout: default
   {% if p1['skos:exactMatch'] %}
     <p class="small text-muted">Same as <a href="{{ p1['skos:exactMatch'] }}">{{ p1['skos:exactMatch'] }}</a></p>
   {% elsif p1['skos:narrowMatch'] %}
-    <p class="small text-muted">Narrower than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
+    <p class="small text-muted">Broader than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
   {% elsif p1['skos:broadMatch'] %}
-    <p class="small text-muted">Broader than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
+    <p class="small text-muted">Narrower than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
   {% endif %}
 
   {% if p1.properties %}
@@ -83,9 +83,9 @@ layout: default
             {% if p2['skos:exactMatch'] %}
               <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
             {% elsif p2['skos:narrowMatch'] %}
-              <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
+              <span class="small text-muted">Broader than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
             {% elsif p2['skos:broadMatch'] %}
-              <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
+              <span class="small text-muted">Narrower than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
             {% endif %}
           </td>
           <td>{{ p2.type }}</td>
