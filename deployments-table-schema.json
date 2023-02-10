@@ -225,7 +225,7 @@
       "example": "Mixed temperate low-land forest"
     },
     {
-      "name": "deploymentGroup",
+      "name": "deploymentGroups",
       "description": "Deployment group(s) associated with the deployment. Deployment groups can have a spatial (arrays, grids, clusters), temporal (sessions, seasons, months, years) or other context. Formatted as a pipe (`|`) separated list for multiple values, with values preferably formatted as `key:value` pairs.",
       "type": "string",
       "constraints": {
