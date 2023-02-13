@@ -6,5 +6,15 @@
   href: /metadata/
 - text: Data
   href: /data/
+- text: Example dataset
+  menu:
+  - text: Deployment 1
+    href: /example/00a2c20d-f038-490c-9b3f-7e32abfa0be7/
+  - text: Deployment 2
+    href: /example/29b7d356-4bb4-4ec4-b792-2af5cc32efa8/
+  - text: Deployment 3
+    href: /example/577b543a-2cf1-4b23-b6d2-cda7e2eac372/
+  - text: Deployment 4
+    href: /example/62c200a9-0e03-4495-bcd8-032944f6f5a1/
 - text: GitHub
   href: https://github.com/tdwg/camtrap-dp
