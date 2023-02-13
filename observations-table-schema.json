@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations based on the media files. Associated with deployments (`deploymentID`), sequences (`sequenceID`) and optionally individual media files (`mediaID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
+  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behaviour and/or individual.",
   "fields": [
     {
       "name": "observationID",
@@ -16,45 +16,12 @@
       }
     },
     {
-      "name": "deploymentID",
+      "name": "eventID",
       "type": "string",
       "format": "default",
-      "description": "Unique identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
-      "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "sequenceID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the sequence (collection of media files grouped by a predefined `package.project.sequenceInterval`) that is the source of the observation. Foreign key to `media.sequenceID`.",
+      "description": "Unique identifier of the event that was classified. Foreign key to `media.eventID`.",
       "example": "seq1",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "mediaID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the media file that is the source of the observation. Foreign key to `media.mediaID`. Leave empty for sequence-based observations.",
-      "example": "m1",
-      "skos:broadMatch": "http://purl.org/dc/terms/identifier",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
-      "name": "timestamp",
-      "type": "datetime",
-      "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time of the observation. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`). For file-based observations this is the `media.timestamp` of the associated media file (in `mediaID`), for sequence-based observations the `media.timestamp` of the first media file in the associated sequence (in `sequenceID`).",
-      "example": "2020-03-24T11:21:46Z",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "constraints": {
         "required": true
       }
@@ -125,7 +92,7 @@
       "name": "countNew",
       "type": "integer",
       "format": "default",
-      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire sequence (`sequenceID`) (optionally of given life stage, sex and behaviour).",
+      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behaviour).",
       "example": 2,
       "constraints": {
         "required": false,
@@ -263,24 +230,10 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "deploymentID",
-      "reference": {
-        "resource": "deployments",
-        "fields": "deploymentID"
-      }
-    },
-    {
-      "fields": "sequenceID",
+      "fields": "eventID",
       "reference": {
         "resource": "media",
-        "fields": "sequenceID"
-      }
-    },
-    {
-      "fields": "mediaID",
-      "reference": {
-        "resource": "media",
-        "fields": "mediaID"
+        "fields": "eventID"
       }
     }
   ]
