@@ -85,16 +85,6 @@
       "example": 5
     },
     {
-      "name": "countNew",
-      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behavior).",
-      "type": "integer",
-      "constraints": {
-        "required": false,
-        "minimum": 0
-      },
-      "example": 2
-    },
-    {
       "name": "lifeStage",
       "description": "Age class or life stage of the observed individual(s).",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/lifeStage",
