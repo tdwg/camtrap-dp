@@ -173,7 +173,7 @@
     },
     {
       "name": "timestampIssues",
-      "description": "`true` if timestamps in the `media` and `observations` resources for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
+      "description": "`true` if timestamps in the `media` resource for the deployment are known to have (unsolvable) issues (e.g. unknown timezone, am/pm switch).",
       "type": "boolean",
       "constraints": {
         "required": false
