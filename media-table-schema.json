@@ -1,141 +1,119 @@
 {
-  "name": "media",
   "title": "Media",
   "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in events (`eventID`). Includes timestamp and file path.",
   "fields": [
     {
       "name": "mediaID",
-      "type": "string",
-      "format": "default",
       "description": "Unique identifier of the media file.",
-      "example": "m1",
       "skos:broadMatch": "http://purl.org/dc/terms/identifier",
+      "type": "string",
       "constraints": {
         "required": true,
         "unique": true
-      }
+      },
+      "example": "m1"
     },
     {
       "name": "deploymentID",
+      "description": "Identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
-      "example": "dep1",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "dep1"
     },
     {
       "name": "eventID",
-      "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the event the media file belongs to. Events contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.eventInterval`.",
-      "example": "seq1",
+      "description": "Identifier of the event the media file belongs to. Events contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.eventInterval`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "type": "string",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "seq1"
     },
     {
       "name": "captureMethod",
-      "type": "string",
-      "format": "default",
       "description": "Method used to capture the media file.",
-      "example": "motion detection",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
+      "type": "string",
       "constraints": {
         "required": false,
         "enum": [
-          "motion detection",
-          "time lapse"
+          "motionDetection",
+          "timeLapse"
         ]
-      }
+      },
+      "example": "motionDetection"
     },
     {
       "name": "timestamp",
+      "description": "Date and time at which the media file was recorded. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
-      "description": "Date and time at which the media file was recorded. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
-      "example": "2020-03-24T11:21:46Z",
-      "skos:exactMatch": "http://ns.adobe.com/xap/1.0/CreateDate",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "2020-03-24T11:21:46Z"
     },
     {
       "name": "filePath",
-      "type": "string",
-      "format": "default",
       "description": "URL or relative path to the media file, respectively for externally hosted files or files that are part of the package.",
-      "example": "https://multimedia.agouti.eu/assets/6d65f3e4-4770-407b-b2bf-878983bf9872/file",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/accessURI",
+      "type": "string",
       "constraints": {
         "required": true,
         "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
-      }
+      },
+      "example": "https://multimedia.agouti.eu/assets/6d65f3e4-4770-407b-b2bf-878983bf9872/file"
     },
     {
       "name": "fileName",
-      "type": "string",
-      "format": "default",
       "description": "Name of the media file. If provided, one should be able to sort media files chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
-      "example": "IMG0001.jpg",
+      "type": "string",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "IMG0001.jpg"
     },
     {
       "name": "fileMediatype",
-      "type": "string",
-      "format": "default",
       "description": "Mediatype of the media file.",
-      "example": "image/jpeg",
+      "type": "string",
       "constraints": {
         "required": true
-      }
+      },
+      "example": "image/jpeg"
     },
     {
       "name": "exifData",
-      "type": "object",
-      "format": "default",
       "description": "EXIF data of the media file. Formatted as a valid JSON object.",
-      "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}",
+      "type": "object",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "{\"EXIF\":{\"ISO\":200,\"Make\":\"RECONYX\"}}"
     },
     {
-      "name": "favourite",
-      "type": "boolean",
-      "format": "default",
+      "name": "favorite",
       "description": "`true` if the media file is deemed of interest (e.g. an exemplar image of an individual).",
-      "example": true,
+      "type": "boolean",
       "constraints": {
         "required": false
-      }
+      },
+      "example": true
     },
     {
       "name": "comments",
-      "type": "string",
-      "format": "default",
       "description": "Comments or notes about the media file.",
-      "example": "corrupted file",
       "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
-      "constraints": {
-        "required": false
-      }
-    },
-    {
-      "name": "_id",
       "type": "string",
-      "format": "default",
-      "description": "Unique identifier of the media file as assigned by the data management system.",
-      "example": "",
-      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/providerManagedID",
       "constraints": {
         "required": false
-      }
+      },
+      "example": "corrupted file"
     }
   ],
   "missingValues": [

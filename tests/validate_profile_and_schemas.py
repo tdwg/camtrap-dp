@@ -1,24 +1,11 @@
-# This script validate the Camtrap-dp standard itself is valid (regarding JSON and Frictionless definitions)
-import json
+# This script validates the Camtrap-DP standard itself is valid (regarding JSON and Frictionless definitions)
+
 import sys
+import json
 from pathlib import Path
 from typing import List
-
-from frictionless import Schema  # type: ignore
-
-from helpers import REPOSITORY_ROOT_PATH
-
-THIS_SCRIPT_PATH = Path(__file__).parent
-
-
-PACKAGE_PROFILE = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
-
-TABLES = [
-    REPOSITORY_ROOT_PATH / "media-table-schema.json",
-    REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
-    REPOSITORY_ROOT_PATH / "observations-table-schema.json",
-]
-
+from frictionless import Schema
+from helpers import PROFILE_PATH, TABLE_SCHEMA_PATHS
 
 def validate_json(filepath: Path) -> bool:
     with open(filepath) as file:
@@ -29,42 +16,39 @@ def validate_json(filepath: Path) -> bool:
         else:
             return True
 
-
 def validate_schema(file_path: Path) -> bool:
     s = Schema(descriptor=file_path)
     return s.metadata_valid
 
-
 def get_schema_metadata_error_messages(file_path: Path) -> List[str]:
     """Return a list of error messages for the table schema at file_path
 
-    Undefined behaviour if the table schema is valid
+    Undefined behavior if the table schema is valid
     """
     s = Schema(descriptor=file_path)
     return [err.message for err in s.metadata_errors]
 
-
 if __name__ == "__main__":
     encountered_errors = False
 
-    print(PACKAGE_PROFILE.name)
-    result = validate_json(PACKAGE_PROFILE)
+    print(PROFILE_PATH.name)
+    result = validate_json(PROFILE_PATH)
     if result is True:
         print("✔︎ valid JSON")
     else:
         print("✕ valid JSON")
         encountered_errors = True
 
-    for table in TABLES:
-        print(f"\n{table.name}")
+    for table_schema in TABLE_SCHEMA_PATHS:
+        print(f"\n{table_schema.name}")
 
-        if validate_json(table):
+        if validate_json(table_schema):
             print("✔︎ valid JSON")
-            if validate_schema(table):
+            if validate_schema(table_schema):
                 print("✔︎ valid Table Schema")
             else:
                 print("✕ valid Table Schema, errors:")
-                for err in get_schema_metadata_error_messages(table):
+                for err in get_schema_metadata_error_messages(table_schema):
                     print(f"\t - {err}")
                 encountered_errors = True
         else:

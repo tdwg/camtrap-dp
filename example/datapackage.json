@@ -26,6 +26,17 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/observations-table-schema.json"
+    },
+    {
+      "name": "individuals",
+      "description": "Custom table/resource not part of the Camtrap DP model. Included to showcase that extending with more resources is possible.",
+      "data": [
+        {
+          "id": 1,
+          "individualName": "Reinaert",
+          "scientificName": "Vulpes vulpes"
+        }
+      ]
     }
   ],
   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/camtrap-dp-profile.json",
@@ -38,26 +49,30 @@
       "title": "Axel Neukermans",
       "email": "axel.neukermans@inbo.be",
       "path": "https://orcid.org/0000-0003-0272-9180",
-      "role": "author",
+      "role": "contributor",
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
       "title": "Danny Van der beeck",
-      "email": "daniel.vanderbeeck@gmail.com",
-      "role": "contributor"
+      "email": "daniel.vanderbeeck@gmail.com"
     },
     {
       "title": "Emma Cartuyvels",
       "email": "emma.cartuyvels@inbo.be",
-      "role": "author",
+      "role": "principalInvestigator",
       "organization": "Research Institute for Nature and Forest (INBO)"
     },
     {
       "title": "Peter Desmet",
       "email": "peter.desmet@inbo.be",
       "path": "https://orcid.org/0000-0002-8442-8025",
-      "role": "maintainer",
+      "role": "contact",
       "organization": "Research Institute for Nature and Forest (INBO)"
+    },
+    {
+      "title": "Research Institute for Nature and Forest (INBO)",
+      "path": "https://inbo.be",
+      "role": "rightsHolder"
     },
     {
       "title": "Research Institute for Nature and Forest (INBO)",
@@ -106,8 +121,8 @@
     "description": "Invasive alien species such as the coypu and muskrat pose a major threat to biodiversity and cost millions of euros annually. By feeding on rushes and reeds, these animals cause serious damage to the environment in which they live and endangered species suffer from habitat loss. The disappearance of reeds and digging in dikes represents a safety risk for humans in the lowland areas. With the LIFE project MICA (https://lifemica.eu), the partners from the participating countries want to develop a transnational plan for the management of coypu and muskrat populations in Europe and aim to reduce their population. The objective of an effective population control of coypu and muskrat is to protect lowlands from flooding, to prevent crop damage and loss of biodiversity. The objective of the project is to serve as a pilot and demonstration project in which ‘best practices’ are tested and new techniques are developed for a more efficient control of muskrat and coypu populations. By involving organisations from Belgium, Germany and the Netherlands, the project also promotes international cooperation and knowledge exchange in the field of muskrat and coypu management.",
     "samplingDesign": "targeted",
     "captureMethod": [
-      "motion detection",
-      "time lapse"
+      "motionDetection",
+      "timeLapse"
     ],
     "individualAnimals": false,
     "classificationLevel": "event",

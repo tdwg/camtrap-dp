@@ -1,10 +1,9 @@
 ---
+title: Camtrap DP
 background: /assets/home.jpg
 permalink: /
 description: Data exchange format for camera trap data
 ---
-
-# Camtrap DP
 
 **Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data.
 
