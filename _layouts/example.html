@@ -10,7 +10,7 @@ layout: default
 {% assign dep = site.data.deployments | where: 'deploymentID', dep_id | first %}
 {% assign media = site.data.media | where: 'deploymentID', dep_id %}
 {% assign media_observations = site.data.media-observations %}
-{% assign event_observations = site.data.observations %}
+{% assign event_observations = site.data.event-observations %}
 
 <h2 id="{{ dep_id }}">Deployment information</h2>
 
