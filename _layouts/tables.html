@@ -6,7 +6,7 @@ layout: default
 
 {% for table_schema_file in site.data["_tables"] %}
   {% assign table_schema = site.data[table_schema_file] %}
-  {% assign table_schema_id = table_schema.title | downcase | url_encode %}
+  {% assign table_schema_id = table_schema.title | downcase | replace: ' ', '-' %}
 
   <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
 
