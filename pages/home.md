@@ -16,11 +16,10 @@ A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/
 
 File | Description
 --- | ---
-`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](https://tdwg.github.io/camtrap-dp/metadata/) regarding the data package and camera trap project.
-`deployments.csv` | Table with camera trap [deployments](https://tdwg.github.io/camtrap-dp/data/#deployments).
-`media.csv` | Table with [media](https://tdwg.github.io/camtrap-dp/data/#media) files captured by the camera traps.
-`media-observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#media-observations) that are classified at media level.
-`event-observations.csv` | Table with [observations](https://tdwg.github.io/camtrap-dp/data/#event-observations) that are classified at event level.
+`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) regarding the data package and camera trap project.
+`deployments.csv` | Table with camera trap [deployments](data/#deployments).
+`media.csv` | Table with [media](data/#media) files captured by the camera traps.
+`media-observations.csv` and/or `event-observations` | Table with observations that are classified at respectively [media file](data/#media-observations) or [event](data/#event-observations) level.
 
 ## Example
 

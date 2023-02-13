@@ -1,6 +1,6 @@
 {
   "title": "Media observations",
-  "description": "Table with observations that are classified at media level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual.",
+  "description": "Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual.",
   "fields": [
     {
       "name": "observationID",
