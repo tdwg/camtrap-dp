@@ -134,7 +134,6 @@
       "timeLapse"
     ],
     "individualAnimals": false,
-    "classificationLevel": "event",
     "eventInterval": 120
   },
   "coordinatePrecision": 0.001,
