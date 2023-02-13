@@ -10,7 +10,7 @@ layout: default
 
   <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
 
-  <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
+  <p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
 
   {{ table_schema.description | markdownify }}
   

@@ -8,7 +8,7 @@ layout: default
 {% assign properties1 = site.data[profile_file].allOf[1].properties %}
 {% assign required1 = site.data[profile_file].allOf[1].required %}
 
-<p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
+<p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
 {% for p1_raw in properties1 %}
   {% assign p1_name = p1_raw[0] %}
@@ -36,6 +36,9 @@ layout: default
   {% elsif p1.items.properties %}
     {% assign properties2 = p1.items.properties %}
     {% assign required2 = p1.items.required %}
+  {% elsif p1.items.oneOf[0].properties %}
+    {% assign properties2 = p1.items.oneOf[0].properties %}
+    {% assign required2 = p1.items.oneOf[0].required %}
   {% else %}
     {% assign properties2 = false %}
   {% endif %}
