@@ -59,7 +59,7 @@
     },
     {
       "name": "coordinateUncertainty",
-      "description": "Horizontal distance in meters from the given `latitude` and `longitude` describing the smallest circle containing the deployment location. Especially relevant when coordinates are rounded to protect sensitive species.",
+      "description": "Horizontal distance from the given `latitude` and `longitude` describing the smallest circle containing the deployment location. Expressed in meters. Especially relevant when coordinates are rounded to protect sensitive species.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
       "type": "integer",
       "constraints": {
