@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Camera Trap Data Package",
-  "description": "Data exchange format for camera trap data. https://tdwg.github.io/camtrap-dp/",
+  "description": "Data exchange format for camera trap data. <https://tdwg.github.io/camtrap-dp/>",
   "type": "object",
   "$defs": {
     "version": {
