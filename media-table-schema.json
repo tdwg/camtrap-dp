@@ -25,7 +25,7 @@
     },
     {
       "name": "eventID",
-      "description": "Identifier of the event the media file belongs to. Events contain one or more media files (e.g. a single image or video or a sequence of successive images or videos) and are defined by `package.project.eventInterval`.",
+      "description": "Identifier of the event the media file belongs to. Events are defined by `package.project.eventInterval` and group one or more media files (e.g. a single image or video or a sequence of successive images or videos).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {

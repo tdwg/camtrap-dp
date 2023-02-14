@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         # 2. Replace schema URLs of the resources with local ones
         for table_schema in TABLE_SCHEMA_PATHS:
-            resource_index = next((i for i, item in enumerate(descriptor_data['resources']) if item["name"] == table_schema.name.split("-")[0]), None)
+            resource_index = next((i for i, item in enumerate(descriptor_data['resources']) if item["name"] == table_schema.name.replace("-table-schema.json", "")), None)
             descriptor_data['resources'][resource_index]['schema'] = f"{server_address}/{table_schema.name}"
 
         # Frictionless loads resource relative to the current directory, (and not to the descriptor)

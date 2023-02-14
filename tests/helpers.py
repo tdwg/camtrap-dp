@@ -12,7 +12,8 @@ RELAXED_PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile-relaxed.json" 
 TABLE_SCHEMA_PATHS = [
     REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
     REPOSITORY_ROOT_PATH / "media-table-schema.json",
-    REPOSITORY_ROOT_PATH / "observations-table-schema.json"
+    REPOSITORY_ROOT_PATH / "media-observations-table-schema.json",
+    REPOSITORY_ROOT_PATH / "event-observations-table-schema.json"
 ]
 
 def validate_package_print_and_exit(descriptor_data: dict, paths_to_delete: Optional[List] = None) -> None:

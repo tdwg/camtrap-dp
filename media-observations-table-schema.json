@@ -1,6 +1,6 @@
 {
-  "title": "Observations",
-  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual.",
+  "title": "Media observations",
+  "description": "Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Media observations are not required to be mutually exclusive, i.e. multiple classifications of the same observed individual(s) are allowed.",
   "fields": [
     {
       "name": "observationID",
@@ -14,14 +14,14 @@
       "example": "obs1"
     },
     {
-      "name": "eventID",
-      "description": "Identifier of the event that was classified. Foreign key to `media.eventID`.",
+      "name": "mediaID",
+      "description": "Identifier of the event that was classified. Foreign key to `media.mediaID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {
         "required": true
       },
-      "example": "seq1"
+      "example": "m1"
     },
     {
       "name": "observationType",
@@ -83,16 +83,6 @@
         "minimum": 1
       },
       "example": 5
-    },
-    {
-      "name": "countNew",
-      "description": "Number of new (= previously uncounted) individuals in the associated media file (`mediaID`) taking into account the entire event (`eventID`) (optionally of given life stage, sex and behavior).",
-      "type": "integer",
-      "constraints": {
-        "required": false,
-        "minimum": 0
-      },
-      "example": 2
     },
     {
       "name": "lifeStage",
@@ -217,10 +207,10 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "eventID",
+      "fields": "mediaID",
       "reference": {
         "resource": "media",
-        "fields": "eventID"
+        "fields": "mediaID"
       }
     }
   ]

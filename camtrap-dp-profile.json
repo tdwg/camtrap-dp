@@ -41,7 +41,8 @@
                     "enum": [
                       "deployments",
                       "media",
-                      "observations"
+                      "media-observations",
+                      "event-observations"
                     ]
                   },
                   "path": {
@@ -77,7 +78,8 @@
                       "enum": [
                         "deployments",
                         "media",
-                        "observations"
+                        "media-observations",
+                        "event-observations"
                       ]
                     }
                   }
@@ -177,7 +179,6 @@
             "samplingDesign",
             "captureMethod",
             "individualAnimals",
-            "classificationLevel",
             "eventInterval"
           ],
           "properties": {
@@ -229,16 +230,8 @@
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
               "type": "boolean"
-            },
-            "classificationLevel": {
-              "description": "Information about the focal level of the classification process. `event`: classifications (i.e. rows in the `observations` resource) are provided at an event level (multiple media files can be part of one event); `media`: classifications are available for each single media file.",
-              "type": "string",
-              "enum": [
-                "event",
-                "media"
-              ]
             },
             "eventInterval": {
               "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`.",
@@ -280,7 +273,7 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
+          "description": "Taxonomic coverage of the package, based on the unique `media/event-observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",

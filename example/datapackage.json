@@ -19,13 +19,22 @@
       "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/media-table-schema.json"
     },
     {
-      "name": "observations",
-      "path": "observations.csv",
+      "name": "media-observations",
+      "path": "media-observations.csv",
       "profile": "tabular-data-resource",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/media-observations-table-schema.json"
+    },
+    {
+      "name": "event-observations",
+      "path": "event-observations.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/event-observations-table-schema.json"
     },
     {
       "name": "individuals",
@@ -125,7 +134,6 @@
       "timeLapse"
     ],
     "individualAnimals": false,
-    "classificationLevel": "event",
     "eventInterval": 120
   },
   "coordinatePrecision": 0.001,
