@@ -66,6 +66,7 @@
         "required": false,
         "minimum": 1
       },
+      "unit": "m",
       "example": 100
     },
     {
@@ -137,6 +138,7 @@
         "required": false,
         "minimum": 0
       },
+      "unit": "m",
       "example": 1.2
     },
     {
@@ -148,6 +150,7 @@
         "minimum": -90,
         "maximum": 90
       },
+      "unit": "°",
       "example": -90
     },
     {
@@ -159,6 +162,7 @@
         "minimum": 0,
         "maximum": 360
       },
+      "unit": "°",
       "example": 225
     },
     {
@@ -169,6 +173,7 @@
         "required": false,
         "minimum": 0
       },
+      "unit": "m",
       "example": 9.5
     },
     {
