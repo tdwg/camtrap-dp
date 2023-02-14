@@ -57,7 +57,7 @@ layout: default
               <span class="small text-muted">Narrower than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
             {% endif %}
           </td>
-          <td>{{ field.type }}</td>
+          <td><span class="badge bg-secondary">{{ field.type }}</span></td>
         </tr>
       {% endfor %}
     </tbody>
