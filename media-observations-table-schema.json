@@ -134,6 +134,26 @@
       "example": "RD213"
     },
     {
+      "name": "individualPositionRadius",
+      "description": "Distance from the camera to the observed individual identified by `individualID`. Expressed in meters. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false
+      },
+      "unit": "m",
+      "example": 6.81
+    },
+    {
+      "name": "individualPositionAngle",
+      "description": "Angular distance from the camera view centerline to the observed individual identified by `individualID`. Expressed in degrees, with negative values left, `0` straight ahead and positive values right. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false
+      },
+      "unit": "°",
+      "example": -8.56
+    },
+    {
       "name": "classificationMethod",
       "description": "Method (most recently) used to classify the observation.",
       "type": "string",
