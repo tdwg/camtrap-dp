@@ -234,8 +234,9 @@
               "type": "boolean"
             },
             "eventInterval": {
-              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`.",
-              "type": "integer"
+              "description": "Maximum duration between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`. Expressed in seconds.",
+              "type": "integer",
+              "unit": "s"
             }
           }
         },
