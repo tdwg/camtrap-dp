@@ -15,7 +15,7 @@
     },
     {
       "name": "mediaID",
-      "description": "Identifier of the event that was classified. Foreign key to `media.mediaID`.",
+      "description": "Identifier of the media that was classified. Foreign key to `media.mediaID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {
