@@ -70,6 +70,15 @@
       "example": "https://multimedia.agouti.eu/assets/6d65f3e4-4770-407b-b2bf-878983bf9872/file"
     },
     {
+      "name": "filePublic",
+      "description": "`false` if the media file is not publicly accessible (e.g. to protect the privacy of people).",
+      "type": "boolean",
+      "constraints": {
+        "required": true
+      },
+      "example": true
+    },
+    {
       "name": "fileName",
       "description": "Name of the media file. If provided, one should be able to sort media files chronologically within a deployment on `timestamp` (first) and `fileName` (second).",
       "type": "string",

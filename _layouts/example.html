@@ -47,8 +47,14 @@ layout: default
   <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
     <div class="carousel-inner">
       {% for med in event_media %}
+        {% assign public = med.filePublic | downcase %}
+        {% if public == "false" %}
+          {% assign public = false %}
+        {% else %}
+          {% assign public = true %}
+        {% endif %}
         <div class="carousel-item{% if forloop.first %} active{% endif %}">
-          <img class="d-block w-100" src="{{ med.filePath }}" alt="{{ med.timestamp }}">
+          <img class="d-block w-100" src="{% if public %}{{ med.filePath }}{% else %}{{ '/assets/placeholder.svg' | relative_url }}{% endif %}" alt="{{ med.timestamp }}">
           <div class="carousel-caption d-none d-md-block">
             <p class="fs-1">{{ forloop.index }}</p>
           </div>
