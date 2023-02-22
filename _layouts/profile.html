@@ -91,7 +91,7 @@ layout: default
               <span class="small text-muted">Narrower than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
             {% endif %}
           </td>
-          <td>{{ p2.type }}</td>
+          <td><span class="badge bg-secondary">{{ p2.type }}</span></td>
         </tr>
       {% endfor %}
     </tbody>
