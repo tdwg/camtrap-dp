@@ -115,7 +115,7 @@
       "example": true
     },
     {
-      "name": "comments",
+      "name": "mediaComments",
       "description": "Comments or notes about the media file.",
       "skos:exactMatch": "http://rs.tdwg.org/ac/terms/comments",
       "type": "string",
