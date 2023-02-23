@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Camera Trap Data Package",
-  "description": "Data exchange format for camera trap data. https://tdwg.github.io/camtrap-dp/",
+  "description": "Data exchange format for camera trap data. <https://tdwg.github.io/camtrap-dp/>",
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "0\\.5"
+      "pattern": "0\\.6"
     }
   },  
   "allOf": [
@@ -26,41 +26,66 @@
         "resources": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`. See [Data](../data) for the requirements for those resources.",
           "minItems": 3,
-          "maxItems": 3,
           "items": {
-            "required": [
-              "schema",
-              "profile"
-            ],
-            "properties": {
-              "name": {
-                "description": "Identifier of the resource.",
-                "enum": [
-                  "deployments",
-                  "media",
-                  "observations"
-                ]
+            "oneOf": [
+              {
+                "required": [
+                  "name",
+                  "path",
+                  "profile",
+                  "schema"
+                ],
+                "properties": {
+                  "name": {
+                    "description": "Identifier of the resource.",
+                    "enum": [
+                      "deployments",
+                      "media",
+                      "media-observations",
+                      "event-observations"
+                    ]
+                  },
+                  "path": {
+                    "description": "Path or URL to the data file."
+                  },
+                  "profile": {
+                    "description": "[Profile](https://specs.frictionlessdata.io/profiles/) of the resource.",
+                    "enum": [
+                      "tabular-data-resource"
+                    ]
+                  },
+                  "schema": {
+                    "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
+                    "allOf": [
+                      {
+                        "$ref": "#$defs/version"
+                      },
+                      {
+                        "type": "string",
+                        "format": "uri"
+                      }
+                    ]
+                  }
+                }
               },
-              "profile": {
-                "const": "tabular-data-resource"
-              },
-              "schema": {
-                "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
-                "$ref": "#$defs/version",
+              {
                 "required": [
                   "name"
                 ],
                 "properties": {
                   "name": {
-                    "enum": [
-                      "deployments",
-                      "media",
-                      "observations"
-                    ]
+                    "not": {
+                      "enum": [
+                        "deployments",
+                        "media",
+                        "media-observations",
+                        "event-observations"
+                      ]
+                    }
                   }
                 }
               }
-            }
+            ]
           }
         },
         "profile": {
@@ -80,7 +105,21 @@
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#title). Not to be confused with the title of the project that originated the package (`package.project.title`)."
         },
         "contributors": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property. Can include people and organizations."
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#contributors). Camtrap DP makes this a required property and restricts `role` values. Can include people and organizations.",
+          "items": {
+            "properties": {
+              "role": {
+                "description": "Role of the contributor. Defaults to `contributor`.",
+                "enum": [
+                  "contact",
+                  "principalInvestigator",
+                  "rightsHolder",
+                  "publisher",
+                  "contributor"
+                ]
+              }
+            }
+          }
         },
         "description": {
           "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#description). Not to be confused with the description of the project that originated the package (`package.project.description`)."
@@ -140,8 +179,7 @@
             "samplingDesign",
             "captureMethod",
             "individualAnimals",
-            "classificationLevel",
-            "sequenceInterval"
+            "eventInterval"
           ],
           "properties": {
             "id": {
@@ -166,12 +204,13 @@
               "format": "uri"
             },
             "samplingDesign": {
-              "description": "Type of a sampling design/layout. The values are based on Wearn & Glover-Kapfer (2017, <https://doi.org/10.13140/RG.2.2.23409.17767>), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
+              "description": "Type of a sampling design/layout. The values are based on [Wearn & Glover-Kapfer (2017)](https://doi.org/10.13140/RG.2.2.23409.17767), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
+              "skos:broadMatch": "http://rs.tdwg.org/hc/terms/inventoryTypes",
               "type": "string",
               "enum": [
-                "simple random",
-                "systematic random",
-                "clustered random",
+                "simpleRandom",
+                "systematicRandom",
+                "clusteredRandom",
                 "experimental",
                 "targeted",
                 "opportunistic"
@@ -183,28 +222,21 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "motion detection",
-                  "time lapse"
+                  "motionDetection",
+                  "timeLapse"
                 ]
               },
               "uniqueItems": true,
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
               "type": "boolean"
             },
-            "classificationLevel": {
-              "description": "Information about a focal level of the classification process. `sequence`: classifications (i.e. rows in the `observations` resource) are provided at a sequence level (multiple media files can be part of one sequence); `media`: classifications are available for each single media file.",
-              "type": "string",
-              "enum": [
-                "sequence",
-                "media"
-              ]
-            },
-            "sequenceInterval": {
-              "description": "Maximum number of seconds between timestamps of successive media files to be considered part of a single sequence and be assigned the same `media.sequenceID`.",
-              "type": "integer"
+            "eventInterval": {
+              "description": "Maximum duration between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`. Expressed in seconds.",
+              "type": "integer",
+              "unit": "s"
             }
           }
         },
@@ -242,7 +274,7 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
+          "description": "Taxonomic coverage of the package, based on the unique `media/event-observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",

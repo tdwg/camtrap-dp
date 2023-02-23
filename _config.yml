@@ -18,11 +18,22 @@ logo: /assets/theme/images/tdwg-logo-short.svg
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - example
-  - tests
+  - example/*
+  - tests/*
   - "*.json"
+
+# FRONTMATTER DEFAULTS
+defaults:
+  - scope:
+      path: pages/example
+    values:
+      permalink: "/example/:basename/"
+      layout: example
+      title: Example dataset
+      toc: true

@@ -8,7 +8,7 @@ layout: default
 {% assign properties1 = site.data[profile_file].allOf[1].properties %}
 {% assign required1 = site.data[profile_file].allOf[1].required %}
 
-<p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
+<p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/{{ profile_file }}.json"><code>{{ profile_file }}.json</code></a></p>
 
 {% for p1_raw in properties1 %}
   {% assign p1_name = p1_raw[0] %}
@@ -25,9 +25,9 @@ layout: default
   {% if p1['skos:exactMatch'] %}
     <p class="small text-muted">Same as <a href="{{ p1['skos:exactMatch'] }}">{{ p1['skos:exactMatch'] }}</a></p>
   {% elsif p1['skos:narrowMatch'] %}
-    <p class="small text-muted">Narrower than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
+    <p class="small text-muted">Broader than <a href="{{ p1['skos:narrowMatch'] }}">{{ p1['skos:narrowMatch'] }}</a></p>
   {% elsif p1['skos:broadMatch'] %}
-    <p class="small text-muted">Broader than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
+    <p class="small text-muted">Narrower than <a href="{{ p1['skos:broadMatch'] }}">{{ p1['skos:broadMatch'] }}</a></p>
   {% endif %}
 
   {% if p1.properties %}
@@ -36,6 +36,9 @@ layout: default
   {% elsif p1.items.properties %}
     {% assign properties2 = p1.items.properties %}
     {% assign required2 = p1.items.required %}
+  {% elsif p1.items.oneOf[0].properties %}
+    {% assign properties2 = p1.items.oneOf[0].properties %}
+    {% assign required2 = p1.items.oneOf[0].required %}
   {% else %}
     {% assign properties2 = false %}
   {% endif %}
@@ -83,12 +86,12 @@ layout: default
             {% if p2['skos:exactMatch'] %}
               <span class="small text-muted">Same as <a href="{{ p2['skos:exactMatch'] }}">{{ p2['skos:exactMatch'] }}</a></span>
             {% elsif p2['skos:narrowMatch'] %}
-              <span class="small text-muted">Narrower than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
+              <span class="small text-muted">Broader than <a href="{{ p2['skos:narrowMatch'] }}">{{ p2['skos:narrowMatch'] }}</a></span>
             {% elsif p2['skos:broadMatch'] %}
-              <span class="small text-muted">Broader than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
+              <span class="small text-muted">Narrower than <a href="{{ p2['skos:broadMatch'] }}">{{ p2['skos:broadMatch'] }}</a></span>
             {% endif %}
           </td>
-          <td>{{ p2.type }}</td>
+          <td><span class="badge bg-secondary">{{ p2.type }}</span></td>
         </tr>
       {% endfor %}
     </tbody>

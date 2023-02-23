@@ -1,0 +1,237 @@
+{
+  "title": "Media observations",
+  "description": "Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Media observations are not required to be mutually exclusive, i.e. multiple classifications (e.g. human vs machine) of the same observed individual(s) are allowed.",
+  "fields": [
+    {
+      "name": "observationID",
+      "description": "Unique identifier of the observation.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true
+      },
+      "example": "obs1"
+    },
+    {
+      "name": "mediaID",
+      "description": "Identifier of the media that was classified. Foreign key to `media.mediaID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/associatedMedia",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "m1"
+    },
+    {
+      "name": "observationType",
+      "description": "Type of the observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a confidence level below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "animal",
+          "human",
+          "vehicle",
+          "blank",
+          "unknown",
+          "unclassified"
+        ]
+      },
+      "example": "animal"
+    },
+    {
+      "name": "cameraSetupType",
+      "description": "Type of the camera setup action (if any) associated with the observation.",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "setup",
+          "calibration"
+        ]
+      },
+      "example": "calibration"
+    },
+    {
+      "name": "taxonID",
+      "description": "Identifier of the `scientificName` as defined in `package.taxonomic.taxonID` for that scientific name.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "QLXL"
+    },
+    {
+      "name": "scientificName",
+      "description": "Scientific name of the observed individual(s).",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "Canis lupus"
+    },
+    {
+      "name": "count",
+      "description": "Number of observed individuals (optionally of given life stage, sex and behavior).",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/individualCount",
+      "type": "integer",
+      "constraints": {
+        "required": false,
+        "minimum": 1
+      },
+      "example": 5
+    },
+    {
+      "name": "lifeStage",
+      "description": "Age class or life stage of the observed individual(s).",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/lifeStage",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "adult",
+          "subadult",
+          "juvenile"
+        ]
+      },
+      "example": "adult"
+    },
+    {
+      "name": "sex",
+      "description": "Sex of the observed individual(s)",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/sex",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "female",
+          "male"
+        ]
+      },
+      "example": "female"
+    },
+    {
+      "name": "behavior",
+      "description": "Dominant behavior of the observed individual(s), preferably expressed as controlled values (e.g. grazing, browsing, rooting, vigilance, running, walking). Formatted as a pipe (`|`) separated list for multiple values, with the dominant behavior listed first.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/behavior",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "vigilance"
+    },
+    {
+      "name": "individualID",
+      "description": "Identifier of the observed individual.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/organismID",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "RD213"
+    },
+    {
+      "name": "individualPositionRadius",
+      "description": "Distance from the camera to the observed individual identified by `individualID`. Expressed in meters. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false
+      },
+      "unit": "m",
+      "example": 6.81
+    },
+    {
+      "name": "individualPositionAngle",
+      "description": "Angular distance from the camera view centerline to the observed individual identified by `individualID`. Expressed in degrees, with negative values left, `0` straight ahead and positive values right. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false
+      },
+      "unit": "°",
+      "example": -8.56
+    },
+    {
+      "name": "classificationMethod",
+      "description": "Method (most recently) used to classify the observation.",
+      "type": "string",
+      "constraints": {
+        "required": false,
+        "enum": [
+          "human",
+          "machine"
+        ]
+      },
+      "example": "human"
+    },
+    {
+      "name": "classifiedBy",
+      "description": "Name or identifier of the person or AI algorithm that (most recently) classified the observation.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "MegaDetector V5"
+    },
+    {
+      "name": "classificationTimestamp",
+      "description": "Date and time of the (most recent) classification. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "constraints": {
+        "required": false
+      },
+      "example": "2020-08-22T10:25:19Z"
+    },
+    {
+      "name": "classificationProbability",
+      "description": "Degree of certainty of the (most recent) classification. Expressed as a probability, with `1` being maximum certainty. Omit or provide an approximate probability for human classifications.",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "example": 0.95
+    },
+    {
+      "name": "observationTags",
+      "description": "Tag(s) associated with the observation. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/tag",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "travelDirection:left"
+    },
+    {
+      "name": "observationComments",
+      "description": "Comments or notes about the observation.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": ""
+    }
+  ],
+  "missingValues": [
+    "",
+    "NaN",
+    "nan"
+  ],
+  "primaryKey": "observationID",
+  "foreignKeys": [
+    {
+      "fields": "mediaID",
+      "reference": {
+        "resource": "media",
+        "fields": "mediaID"
+      }
+    }
+  ]
+}

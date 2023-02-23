@@ -1,16 +1,29 @@
 import sys
 from pathlib import Path
 from pprint import pprint
-
-from frictionless import validate_package  # type: ignore
+from typing import Optional, List
+from frictionless import validate_package
 
 THIS_SCRIPT_PATH = Path(__file__).parent
 REPOSITORY_ROOT_PATH = THIS_SCRIPT_PATH / ".."
-EXAMPLE_DESCRIPTOR_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
+EXAMPLE_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
+PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
+RELAXED_PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile-relaxed.json" # File created in later step
+TABLE_SCHEMA_PATHS = [
+    REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
+    REPOSITORY_ROOT_PATH / "media-table-schema.json",
+    REPOSITORY_ROOT_PATH / "media-observations-table-schema.json",
+    REPOSITORY_ROOT_PATH / "event-observations-table-schema.json"
+]
 
-
-def validate_package_print_and_exit(descriptor_data: dict) -> None:
+def validate_package_print_and_exit(descriptor_data: dict, paths_to_delete: Optional[List] = None) -> None:
     report = validate_package(descriptor_data)
+
+    # Cleanup
+    if paths_to_delete is not None:
+        for path in paths_to_delete:
+            path.unlink()
+
     if report.valid:
         print("✔︎ valid package")
         sys.exit(0)

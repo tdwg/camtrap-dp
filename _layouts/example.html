@@ -1,0 +1,142 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/example"><code>example dataset</code></a></p>
+
+{% assign dep_id = page.name | remove: '.md' %}
+{% assign dep = site.data.deployments | where: 'deploymentID', dep_id | first %}
+{% assign media = site.data.media | where: 'deploymentID', dep_id %}
+{% assign media_observations = site.data.media-observations %}
+{% assign event_observations = site.data.event-observations %}
+
+<h2 id="{{ dep_id }}">Deployment information</h2>
+
+<dl>
+  <dt>Location</dt>
+  <dd>
+    <code>{{ dep.locationName }}</code>
+    (<a href="https://www.google.com/maps/search/?api=1&query={{ dep.latitude }},{{ dep.longitude }}&zoom=12"><code>{{ dep.latitude }}, {{ dep.longitude }}</code></a>),
+    uncertainty: <code>{{ dep.coordinateUncertainty }}</code>m
+  <dd>
+  <dt>Duration</dt>
+  <dd>
+    <code>{{ dep.start }}</code> / <code>{{ dep.end }}</code>
+  </dd>
+  <dt>Camera setup</dt>
+  <dd>
+    interval: <code>{{ dep.cameraInterval }}</code>,
+    height: <code>{{ dep.cameraHeight }}</code>,
+    tilt: <code>{{ dep.cameraTilt }}</code>,
+    heading: <code>{{ dep.cameraHeading }}</code>
+  </dd>
+  <dt>Bait</dt>
+  <dd>
+    <code>{{ dep.baitUse }}</code>
+  </dd>
+</dl>
+
+{% assign event_ids = media | map: 'eventID' | uniq %}
+{% for event_id in event_ids %}
+  {% assign event_media = media | where: 'eventID', event_id %}
+  {% assign event_media_count = event_media | size %}
+  <h2 id="{{ event_id }}">Event: {{ event_id }}</h2>
+  
+  <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
+    <div class="carousel-inner">
+      {% for med in event_media %}
+        {% assign public = med.filePublic | downcase %}
+        {% if public == "false" %}
+          {% assign public = false %}
+        {% else %}
+          {% assign public = true %}
+        {% endif %}
+        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+          <img class="d-block w-100" src="{% if public %}{{ med.filePath }}{% else %}{{ '/assets/placeholder.svg' | relative_url }}{% endif %}" alt="{{ med.timestamp }}">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="fs-1">{{ forloop.index }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ event_id }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ event_id }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+          
+  <table class="table table-sm mt-4">
+    <colgroup>
+      <col width="6%">
+      <col width="47%">
+      <col width="47%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Media observations</th>
+        <th>Event observations</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for med in event_media %}
+        {% assign med_id = med.mediaID %}
+        <tr>
+          <td>
+            {{ forloop.index }}
+          </td>
+          <td title="mediaID: {{ med_id }}">
+            {% assign media_obs = media_observations | where: 'mediaID', med_id %}
+            {% for obs in media_obs %}
+              <code>{{ obs.observationType }}</code>
+              {% if obs.observationType == 'animal' %}
+                <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
+                <em>{{ obs.scientificName }}</em>
+                {% if obs.lifeStage and obs.sex %}
+                  ({{ obs.lifeStage }}, {{ obs.sex }})
+                {% elsif obs.lifeStage %}
+                  ({{ obs.lifeStage }})
+                {% elsif obs.sex %}
+                  ({{ obs.sex }})
+                {% endif %}
+              {% endif %}
+              {% if obs.classificationMethod == 'machine' %}
+                <span class="text-muted small">Classified by machine</span>    
+              {% endif %}
+              <br>
+            {% endfor %}
+          </td>
+          {% if forloop.first %}
+          <td title="eventID: {{ event_id }}" rowspan="{{ event_media_count }}">
+            {% assign event_obs = event_observations | where: 'eventID', event_id %}
+            {% for obs in event_obs %}
+              <code>{{ obs.observationType }}</code>
+              {% if obs.observationType == 'animal' %}
+                <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
+                <em>{{ obs.scientificName }}</em>
+                {% if obs.lifeStage and obs.sex %}
+                  ({{ obs.lifeStage }}, {{ obs.sex }})
+                {% elsif obs.lifeStage %}
+                  ({{ obs.lifeStage }})
+                {% elsif obs.sex %}
+                  ({{ obs.sex }})
+                {% endif %}
+              {% endif %}
+              {% if obs.classificationMethod == 'machine' %}
+                <span class="text-muted small">Classified by machine</span>    
+              {% endif %}
+              <br>
+            {% endfor %}
+          </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endfor %}

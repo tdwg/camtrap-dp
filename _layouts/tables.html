@@ -6,11 +6,11 @@ layout: default
 
 {% for table_schema_file in site.data["_tables"] %}
   {% assign table_schema = site.data[table_schema_file] %}
-  {% assign table_schema_id = table_schema.title | downcase | url_encode %}
+  {% assign table_schema_id = table_schema.title | downcase | replace: ' ', '-' %}
 
   <h2 id="{{ table_schema_id }}">{{ table_schema.title }}</h2>
 
-  <p class="small">Source: <a href="https://github.com/{{ site.github_username }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
+  <p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/{{ table_schema_file }}.json"><code>{{ table_schema_file }}.json</code></a></p>
 
   {{ table_schema.description | markdownify }}
   
@@ -30,8 +30,8 @@ layout: default
     <tbody>
       {% for field in table_schema.fields %}
         <tr class="text-break">
-          <td id="{{ table_schema_id }}.{{ field.name | downcase | url_encode }}">
-            <a href="#{{ table_schema_id }}.{{ field.name | downcase | url_encode }}"><code>{{ field.name }}</code></a>
+          <td id="{{ table_schema_id }}.{{ field.name }}">
+            <a href="#{{ table_schema_id }}.{{ field.name }}"><code>{{ field.name }}</code></a>
             {% if field.constraints.required %}*{% endif %}
           </td>
           <td>
@@ -52,12 +52,12 @@ layout: default
             {% if field['skos:exactMatch'] %}
               <span class="small text-muted">Same as <a href="{{ field['skos:exactMatch'] }}">{{ field['skos:exactMatch'] }}</a></span>
             {% elsif field['skos:narrowMatch'] %}
-              <span class="small text-muted">Narrower than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></span>
+              <span class="small text-muted">Broader than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></span>
             {% elsif field['skos:broadMatch'] %}
-              <span class="small text-muted">Broader than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
+              <span class="small text-muted">Narrower than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></span>
             {% endif %}
           </td>
-          <td>{{ field.type }}</td>
+          <td><span class="badge bg-secondary">{{ field.type }}</span></td>
         </tr>
       {% endfor %}
     </tbody>
