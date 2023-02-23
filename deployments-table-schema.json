@@ -238,7 +238,7 @@
       "example": "season:winter 2020 | grid:A1"
     },
     {
-      "name": "tags",
+      "name": "deploymentTags",
       "description": "Tag(s) associated with the deployment. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
       "skos:exactMatch": "http://rs.tdwg.org/ac/terms/tag",
       "type": "string",
@@ -248,7 +248,7 @@
       "example": "forest edge | bait:food"
     },
     {
-      "name": "comments",
+      "name": "deploymentComments",
       "description": "Comments or notes about the deployment.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/eventRemarks",
       "type": "string",

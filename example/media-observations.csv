@@ -1,4 +1,4 @@
-observationID,mediaID,observationType,cameraSetupType,taxonID,scientificName,count,lifeStage,sex,behavior,individualID,individualPositionRadius,individualPositionAngle,classificationMethod,classifiedBy,classificationTimestamp,classificationProbability,tags,comments
+observationID,mediaID,observationType,cameraSetupType,taxonID,scientificName,count,lifeStage,sex,behavior,individualID,individualPositionRadius,individualPositionAngle,classificationMethod,classifiedBy,classificationTimestamp,classificationProbability,observationTags,observationComments
 07840dcc-0d99-4ab4-973b-7e4a8e20b56d_1,07840dcc-0d99-4ab4-973b-7e4a8e20b56d,animal,,DGP6,Anas platyrhynchos,1,adult,female,,,,,human,Peter Desmet,,,,
 401386c7-cc7a-46e5-9160-48c6158624a3_1,401386c7-cc7a-46e5-9160-48c6158624a3,animal,,DGP6,Anas platyrhynchos,1,adult,female,,,,,human,Peter Desmet,,,,
 ca3ff293-89a4-425d-a853-5572837c5b83_1,ca3ff293-89a4-425d-a853-5572837c5b83,animal,,DGP6,Anas platyrhynchos,1,adult,female,,,,,human,Peter Desmet,,,,
