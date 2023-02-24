@@ -8,7 +8,7 @@ description: Data exchange format for camera trap data
 **Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data.
 
 {:.alert .alert-warning}
-Camtrap DP is [under development](https://github.com/tdwg/camtrap-dp/milestone/1) and not yet ready for production use.
+Camtrap DP is [under development](https://github.com/tdwg/camtrap-dp/milestone/1) and not yet recommended for production use.
 
 ## Usage
 
@@ -66,6 +66,8 @@ frictionless validate path/to/your/datapackage.json
 - [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
 - [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
 - [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+
+See also the recorded [November 2022 webinar](https://www.gbif.org/event/f68927-b5c1-4ac8-a4ac-7d47645/exploring-camera-trap-data) for an introduction to Camtrap DP and its intended adoption as a publication format by the Global Biodiversity Information Facility (GBIF).
 
 ## Contribute
 
