@@ -13,7 +13,7 @@ layout: default
 {% for p1_raw in properties1 %}
   {% assign p1_name = p1_raw[0] %}
   {% assign p1 = p1_raw[1] %}
-  {% assign p1_id = p1_name | downcase | url_encode %}
+  {% assign p1_id = p1_name %}
   
   <h2 id="{{ p1_id }}">
     {{ p1_name }}
@@ -61,7 +61,7 @@ layout: default
       {% for p2_raw in properties2 %}
         {% assign p2_name = p2_raw[0] %}
         {% assign p2 = p2_raw[1] %}
-        {% assign p2_id = p2_name | downcase | url_encode %}
+        {% assign p2_id = p2_name %}
 
         <tr class="text-break">
           <td id="{{ p1_id }}.{{ p2_id }}">

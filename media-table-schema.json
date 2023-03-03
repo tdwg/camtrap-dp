@@ -1,4 +1,5 @@
 {
+  "name": "media",
   "title": "Media",
   "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in events (`eventID`). Includes timestamp and file path.",
   "fields": [
