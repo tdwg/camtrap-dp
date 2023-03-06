@@ -139,7 +139,8 @@
       "description": "Distance from the camera to the observed individual identified by `individualID`. Expressed in meters. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
       "type": "number",
       "constraints": {
-        "required": false
+        "required": false,
+        "minimum": 0
       },
       "unit": "m",
       "example": 6.81
@@ -149,7 +150,9 @@
       "description": "Angular distance from the camera view centerline to the observed individual identified by `individualID`. Expressed in degrees, with negative values left, `0` straight ahead and positive values right. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
       "type": "number",
       "constraints": {
-        "required": false
+        "required": false,
+        "minimum": -90,
+        "maximum": 90
       },
       "unit": "°",
       "example": -8.56

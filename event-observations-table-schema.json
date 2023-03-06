@@ -139,7 +139,8 @@
       "description": "Average movement speed of the observed individual identified by `individualID`. Expressed in meters per second. Required for random encounter modelling (e.g. [Rowcliffe et al. 2016](https://doi.org/10.1002/rse2.17)).",
       "type": "number",
       "constraints": {
-        "required": false
+        "required": false,
+        "minimum": 0
       },
       "unit": "m/s",
       "example": 1.75
