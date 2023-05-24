@@ -1,7 +1,7 @@
 {
-  "name": "media-observations",
-  "title": "Media observations",
-  "description": "Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Media observations are not required to be mutually exclusive, i.e. multiple classifications (e.g. human vs machine) of the same observed individual(s) are allowed.",
+  "name": "observations",
+  "title": "Observations",
+  "description": "TODO: Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Media observations are not required to be mutually exclusive, i.e. multiple classifications (e.g. human vs machine) of the same observed individual(s) are allowed.",
   "fields": [
     {
       "name": "observationID",
@@ -15,14 +15,46 @@
       "example": "obs1"
     },
     {
+      "name": "deploymentID",
+      "description": "TODO: Identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "dep1"
+    },
+    {
       "name": "mediaID",
       "description": "Identifier of the media that was classified. Foreign key to `media.mediaID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/associatedMedia",
       "type": "string",
       "constraints": {
-        "required": true
+        "required": false
       },
       "example": "m1"
+    },
+    {
+      "name": "start",
+      "description": "TODO: Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "constraints": {
+        "required": true
+      },
+      "example": "2020-03-01T22:00:00Z"
+    },
+    {
+      "name": "end",
+      "description": "TODO: Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "constraints": {
+        "required": true
+      },
+      "example": "2020-04-01T22:00:00Z"
     },
     {
       "name": "observationType",
@@ -158,6 +190,17 @@
       "example": -8.56
     },
     {
+      "name": "individualSpeed",
+      "description": "Average movement speed of the observed individual identified by `individualID`. Expressed in meters per second. Required for random encounter modelling (e.g. [Rowcliffe et al. 2016](https://doi.org/10.1002/rse2.17)).",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      },
+      "unit": "m/s",
+      "example": 1.75
+    },
+    {
       "name": "classificationMethod",
       "description": "Method (most recently) used to classify the observation.",
       "type": "string",
@@ -230,6 +273,13 @@
   ],
   "primaryKey": "observationID",
   "foreignKeys": [
+    {
+      "fields": "deploymentID",
+      "reference": {
+        "resource": "deployments",
+        "fields": "deploymentID"
+      }
+    },
     {
       "fields": "mediaID",
       "reference": {
