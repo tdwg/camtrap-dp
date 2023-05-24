@@ -41,8 +41,7 @@
                     "enum": [
                       "deployments",
                       "media",
-                      "media-observations",
-                      "event-observations"
+                      "observations"
                     ]
                   },
                   "path": {
@@ -78,8 +77,7 @@
                       "enum": [
                         "deployments",
                         "media",
-                        "media-observations",
-                        "event-observations"
+                        "observations"
                       ]
                     }
                   }
