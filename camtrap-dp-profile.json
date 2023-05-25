@@ -7,7 +7,7 @@
     "version": {
       "pattern": "0\\.6"
     }
-  },  
+  },
   "allOf": [
     {
       "$ref": "https://frictionlessdata.io/schemas/data-package.json"
@@ -159,7 +159,7 @@
                 "enum": [
                   "data",
                   "media"
-                ] 
+                ]
               }
             }
           }
@@ -176,7 +176,8 @@
             "title",
             "samplingDesign",
             "captureMethod",
-            "individualAnimals"
+            "individualAnimals",
+            "observationLevel"
           ],
           "properties": {
             "id": {
@@ -227,8 +228,19 @@
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
               "type": "boolean"
+            },
+            "observationlevel": {
+              "description": "Level at which observations are provided. See also `observations.observationLevel`.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "media",
+                  "event"
+                ]
+              },
             }
           }
         },
@@ -266,7 +278,7 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage of the package, based on the unique `media/event-observations.scientificName`.",
+          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",
@@ -347,17 +359,17 @@
                 "example": "Canis"
               },
               "vernacularNames": {
-                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language codes should follow ISO 639-1 (e.g. `en` for English).",
+                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language codes should follow ISO 693-3 (e.g. `eng` for English).",
                 "type": "object",
                 "patternProperties": {
-                  "^[a-z]{2}$": {
+                  "^[a-z]{3}$": {
                     "description": "Common or vernacular name of the taxon in that language.",
                     "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/vernacularName",
-                    "type": "string"                    
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false,
-                "example": "{'en': 'wolf', 'fr': 'loup gris'}"
+                "example": "{'eng': 'wolf', 'fra': 'loup gris'}"
               }
             }
           }

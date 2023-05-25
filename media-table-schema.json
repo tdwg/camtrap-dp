@@ -1,7 +1,7 @@
 {
   "name": "media",
   "title": "Media",
-  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in events (`eventID`). Includes timestamp and file path.",
+  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`). Includes timestamp and file path.",
   "fields": [
     {
       "name": "mediaID",
@@ -23,16 +23,6 @@
         "required": true
       },
       "example": "dep1"
-    },
-    {
-      "name": "eventID",
-      "description": "Identifier of the event the media file belongs to. Events are defined by `package.project.eventInterval` and group one or more media files (e.g. a single image or video or a sequence of successive images or videos).",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "type": "string",
-      "constraints": {
-        "required": true
-      },
-      "example": "seq1"
     },
     {
       "name": "captureMethod",
@@ -127,9 +117,7 @@
     }
   ],
   "missingValues": [
-    "",
-    "NaN",
-    "nan"
+    ""
   ],
   "primaryKey": "mediaID",
   "foreignKeys": [
