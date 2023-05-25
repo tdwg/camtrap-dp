@@ -229,7 +229,7 @@
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
               "type": "boolean"
             },
             "observationlevel": {
@@ -284,7 +284,7 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage of the package, based on the unique `media/event-observations.scientificName`.",
+          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",
