@@ -177,6 +177,7 @@
             "samplingDesign",
             "captureMethod",
             "individualAnimals",
+            "observationLevel",
             "eventInterval"
           ],
           "properties": {
@@ -230,6 +231,17 @@
             "individualAnimals": {
               "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
               "type": "boolean"
+            },
+            "observationlevel": {
+              "description": "Level at which observations are provided. See also `observations.observationLevel`.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "media",
+                  "event"
+                ]
+              },
             },
             "eventInterval": {
               "description": "Maximum duration between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`. Expressed in seconds.",
