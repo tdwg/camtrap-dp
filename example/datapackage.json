@@ -183,8 +183,8 @@
       "scientificName": "Anas platyrhynchos",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "mallard",
-        "nl": "wilde eend"
+        "eng": "mallard",
+        "nld": "wilde eend"
       }
     },
     {
@@ -193,8 +193,8 @@
       "scientificName": "Anas strepera",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "gadwall",
-        "nl": "krakeend"
+        "eng": "gadwall",
+        "nld": "krakeend"
       }
     },
     {
@@ -203,8 +203,8 @@
       "scientificName": "Ardea",
       "taxonRank": "genus",
       "vernacularNames": {
-        "en": "great herons",
-        "nl": "reigers"
+        "eng": "great herons",
+        "nld": "reigers"
       }
     },
     {
@@ -213,8 +213,8 @@
       "scientificName": "Ardea cinerea",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "grey heron",
-        "nl": "blauwe reiger"
+        "eng": "grey heron",
+        "nld": "blauwe reiger"
       }
     },
     {
@@ -223,8 +223,8 @@
       "scientificName": "Aves",
       "taxonRank": "class",
       "vernacularNames": {
-        "en": "bird sp.",
-        "nl": "vogel"
+        "eng": "bird sp.",
+        "nld": "vogel"
       }
     },
     {
@@ -233,8 +233,8 @@
       "scientificName": "Homo sapiens",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "human",
-        "nl": "mens"
+        "eng": "human",
+        "nld": "mens"
       }
     },
     {
@@ -243,8 +243,8 @@
       "scientificName": "Martes foina",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "beech marten",
-        "nl": "steenmarter"
+        "eng": "beech marten",
+        "nld": "steenmarter"
       }
     },
     {
@@ -253,8 +253,8 @@
       "scientificName": "Mustela putorius",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "European polecat",
-        "nl": "bunzing"
+        "eng": "European polecat",
+        "nld": "bunzing"
       }
     },
     {
@@ -263,8 +263,8 @@
       "scientificName": "Rattus norvegicus",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "brown rat",
-        "nl": "bruine rat"
+        "eng": "brown rat",
+        "nld": "bruine rat"
       }
     },
     {
@@ -273,8 +273,8 @@
       "scientificName": "Vulpes vulpes",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "red fox",
-        "nl": "vos"
+        "eng": "red fox",
+        "nld": "vos"
       }
     }
   ],
@@ -292,5 +292,5 @@
       "relatedIdentifierType": "URL"
     }
   ],
-  "references": []
+  "references": [ ]
 }
