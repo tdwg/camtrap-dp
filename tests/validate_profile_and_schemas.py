@@ -7,6 +7,7 @@ from typing import List
 from frictionless import Schema
 from helpers import PROFILE_PATH, TABLE_SCHEMA_PATHS
 
+
 def validate_json(filepath: Path) -> bool:
     with open(filepath) as file:
         try:
@@ -16,17 +17,20 @@ def validate_json(filepath: Path) -> bool:
         else:
             return True
 
+
 def validate_schema(file_path: Path) -> bool:
-    s = Schema(descriptor=file_path)
-    return s.metadata_valid
+    report = Schema.validate_descriptor(descriptor=file_path)
+    return report.valid
+
 
 def get_schema_metadata_error_messages(file_path: Path) -> List[str]:
     """Return a list of error messages for the table schema at file_path
 
     Undefined behavior if the table schema is valid
     """
-    s = Schema(descriptor=file_path)
-    return [err.message for err in s.metadata_errors]
+    report = Schema.validate_descriptor(descriptor=file_path)
+    return [err.message for err in report.errors]
+
 
 if __name__ == "__main__":
     encountered_errors = False
