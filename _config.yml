@@ -15,6 +15,9 @@ github_edit: true
 logo: /assets/theme/images/tdwg-logo-short.svg
 
 # BUILD SETTINGS
+# The repository contains symlinks and therefore requires GitHub Actions to build the website
+# See https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/troubleshooting-jekyll-build-errors-for-github-pages-sites#config-file-error
+repository: tdwg/camtrap-dp # Required so Jekyll on GitHub Actions can access repo metadata
 markdown: kramdown
 plugins:
   - jekyll-feed
@@ -27,6 +30,7 @@ exclude:
   - example/*
   - tests/*
   - "*.json"
+  - vendor # Avoids https://github.com/jekyll/jekyll/issues/2938
 
 # FRONTMATTER DEFAULTS
 defaults:
