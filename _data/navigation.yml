@@ -6,6 +6,8 @@
   href: /metadata/
 - text: Data
   href: /data/
+- text: FAQ
+  href: /faq/
 - text: Example dataset
   menu:
   - text: Deployment 1
