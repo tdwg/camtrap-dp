@@ -35,6 +35,16 @@
       "example": "m1"
     },
     {
+      "name": "eventID",
+      "description": "TODO: Identifier of the event the media file belongs to. Events are defined by `package.project.eventInterval` and group one or more media files (e.g. a single image or video or a sequence of successive images or videos).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "sequence1"
+    },
+    {
       "name": "start",
       "description": "TODO: Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
@@ -55,6 +65,19 @@
         "required": true
       },
       "example": "2020-04-01T22:00:00Z"
+    },
+    {
+      "name": "observationLevel",
+      "description": "TODO",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "media",
+          "event"
+        ]
+      },
+      "example": "media"
     },
     {
       "name": "observationType",
