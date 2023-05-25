@@ -126,8 +126,7 @@
       "motionDetection",
       "timeLapse"
     ],
-    "individualAnimals": false,
-    "eventInterval": 120
+    "individualAnimals": false
   },
   "coordinatePrecision": 0.001,
   "spatial": {

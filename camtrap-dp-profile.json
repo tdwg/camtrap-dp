@@ -176,8 +176,7 @@
             "title",
             "samplingDesign",
             "captureMethod",
-            "individualAnimals",
-            "eventInterval"
+            "individualAnimals"
           ],
           "properties": {
             "id": {
@@ -230,11 +229,6 @@
             "individualAnimals": {
               "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
               "type": "boolean"
-            },
-            "eventInterval": {
-              "description": "Maximum duration between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`. Expressed in seconds.",
-              "type": "integer",
-              "unit": "s"
             }
           }
         },
