@@ -15,8 +15,7 @@ RELAXED_PROFILE_PATH = (
 TABLE_SCHEMA_PATHS = [
     REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
     REPOSITORY_ROOT_PATH / "media-table-schema.json",
-    REPOSITORY_ROOT_PATH / "media-observations-table-schema.json",
-    REPOSITORY_ROOT_PATH / "event-observations-table-schema.json",
+    REPOSITORY_ROOT_PATH / "observations-table-schema.json"
 ]
 
 

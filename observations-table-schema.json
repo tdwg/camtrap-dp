@@ -1,7 +1,7 @@
 {
-  "name": "event-observations",
-  "title": "Event observations",
-  "description": "Table with observations that are classified at event level. Associated with media files via `eventID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Event observations are required to be mutually exclusive, so that `count` can be summed.",
+  "name": "observations",
+  "title": "Observations",
+  "description": "Table with observations derived from the media files. Associated with deployments (`deploymentID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Observations can be made at different levels (`observationLevel`).",
   "fields": [
     {
       "name": "observationID",
@@ -15,14 +15,71 @@
       "example": "obs1"
     },
     {
-      "name": "eventID",
-      "description": "Identifier of the event that was classified. Foreign key to `media.eventID`.",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "name": "deploymentID",
+      "description": "Identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "type": "string",
       "constraints": {
         "required": true
       },
-      "example": "seq1"
+      "example": "dep1"
+    },
+    {
+      "name": "mediaID",
+      "description": "Identifier of the media file that was classified. Only applicable for media-based observations (`observationLevel` = `media`). Foreign key to `media.mediaID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/associatedMedia",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "m1"
+    },
+    {
+      "name": "eventID",
+      "description": "Identifier of the event the observation belongs to. Facilitates linking event-based and media-based observations with a permanent identifier.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "sequence1"
+    },
+    {
+      "name": "eventStart",
+      "description": "Date and time at which the event started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/startTimestamp",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "constraints": {
+        "required": true
+      },
+      "example": "2020-03-01T22:00:00Z"
+    },
+    {
+      "name": "eventEnd",
+      "description": "Date and time at which the event ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/endTimestamp",
+      "type": "datetime",
+      "format": "%Y-%m-%dT%H:%M:%S%z",
+      "constraints": {
+        "required": true
+      },
+      "example": "2020-04-01T22:00:00Z"
+    },
+    {
+      "name": "observationLevel",
+      "description": "Level at which the observation was classified. `media` for media-based observations that are directly associated with a media file (`mediaID`). These are especially useful for machine learning and don't need to be mutally exclusive (e.g. multiple classifications are allowed). `event` for event-based observations that consider an event (comprising a collection of media files). These are especially useful for ecological research and should be mutually exclusive, so that `count` can be summed.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "enum": [
+          "media",
+          "event"
+        ]
+      },
+      "example": "media"
     },
     {
       "name": "observationType",
@@ -135,6 +192,29 @@
       "example": "RD213"
     },
     {
+      "name": "individualPositionRadius",
+      "description": "Distance from the camera to the observed individual identified by `individualID`. Expressed in meters. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      },
+      "unit": "m",
+      "example": 6.81
+    },
+    {
+      "name": "individualPositionAngle",
+      "description": "Angular distance from the camera view centerline to the observed individual identified by `individualID`. Expressed in degrees, with negative values left, `0` straight ahead and positive values right. Required for distance analyses (e.g. [Howe et al. 2017](https://doi.org/10.1111/2041-210X.12790)) and random encounter modelling (e.g. [Rowcliffe et al. 2011](https://doi.org/10.1111/j.2041-210X.2011.00094.x)).",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": -90,
+        "maximum": 90
+      },
+      "unit": "°",
+      "example": -8.56
+    },
+    {
       "name": "individualSpeed",
       "description": "Average movement speed of the observed individual identified by `individualID`. Expressed in meters per second. Required for random encounter modelling (e.g. [Rowcliffe et al. 2016](https://doi.org/10.1002/rse2.17)).",
       "type": "number",
@@ -217,10 +297,17 @@
   "primaryKey": "observationID",
   "foreignKeys": [
     {
-      "fields": "eventID",
+      "fields": "deploymentID",
+      "reference": {
+        "resource": "deployments",
+        "fields": "deploymentID"
+      }
+    },
+    {
+      "fields": "mediaID",
       "reference": {
         "resource": "media",
-        "fields": "eventID"
+        "fields": "mediaID"
       }
     }
   ]
