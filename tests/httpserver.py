@@ -89,11 +89,14 @@ def ServeDirectoryWithHTTP(directory="."):
 
     def serve_forever(httpd):
         with httpd:  # to make sure httpd.server_close is called
-            _xprint("server about to serve files from directory (infinite request loop):", directory)
+            _xprint(
+                "server about to serve files from directory (infinite request loop):",
+                directory,
+            )
             httpd.serve_forever()
             _xprint("server left infinite request loop")
 
-    thread = Thread(target=serve_forever, args=(httpd, ))
+    thread = Thread(target=serve_forever, args=(httpd,))
     thread.setDaemon(True)
     thread.start()
 
@@ -102,8 +105,9 @@ def ServeDirectoryWithHTTP(directory="."):
 
 def _xprint(*args, **kwargs):
     """Wrapper function around print() that prepends the current thread name"""
-    print("[", current_thread().name, "]",
-          " ".join(map(str, args)), **kwargs, file=stderr)
+    print(
+        "[", current_thread().name, "]", " ".join(map(str, args)), **kwargs, file=stderr
+    )
 
 
 class _SimpleRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -117,4 +121,5 @@ class _SimpleRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     from doctest import testmod
+
     testmod(verbose=True)
