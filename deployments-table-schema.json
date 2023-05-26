@@ -71,7 +71,7 @@
       "example": 100
     },
     {
-      "name": "start",
+      "name": "deploymentStart",
       "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
@@ -82,7 +82,7 @@
       "example": "2020-03-01T22:00:00Z"
     },
     {
-      "name": "end",
+      "name": "deploymentEnd",
       "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
