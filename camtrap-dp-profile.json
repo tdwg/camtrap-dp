@@ -177,7 +177,7 @@
             "samplingDesign",
             "captureMethod",
             "individualAnimals",
-            "observationlevel"
+            "observationLevel"
           ],
           "properties": {
             "id": {
