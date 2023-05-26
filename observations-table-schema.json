@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "Table with observations derived from the media files. Associated with deployments (`deploymentID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Observations can be made at different levels (`observationLevel`). Media-based observations are directly associated with a media file (`mediaID`), are especially useful for machine learning and don't need to be mutually exclusive (e.g. multiple classifications are allowed). Event-based observations are about an event (`start`/`end`, optional `eventID`), are especially useful for ecological research and should be mutually exclusive, so that `count` can be summed.",
+  "description": "Table with observations derived from the media files. Associated with deployments (`deploymentID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Observations can be made at different levels (`observationLevel`).",
   "fields": [
     {
       "name": "observationID",
@@ -16,7 +16,7 @@
     },
     {
       "name": "deploymentID",
-      "description": "TODO: Identifier of the deployment the media file belongs to. Foreign key to `deployments.deploymentID`.",
+      "description": "Identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "type": "string",
       "constraints": {
@@ -26,7 +26,7 @@
     },
     {
       "name": "mediaID",
-      "description": "TODO: Identifier of the media that was classified. Foreign key to `media.mediaID`.",
+      "description": "Identifier of the media file that was classified. Only applicable for media-based observations (`observationLevel` = `media`). Foreign key to `media.mediaID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/associatedMedia",
       "type": "string",
       "constraints": {
@@ -36,7 +36,7 @@
     },
     {
       "name": "eventID",
-      "description": "TODO: Identifier of the event the media file belongs to. Events are defined by `package.project.eventInterval` and group one or more media files (e.g. a single image or video or a sequence of successive images or videos).",
+      "description": "Identifier of the event the observation belongs to. Facilitates linking event-based and media-based observations with a permanent identifier.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {
@@ -45,8 +45,8 @@
       "example": "sequence1"
     },
     {
-      "name": "start",
-      "description": "TODO: Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "name": "eventStart",
+      "description": "Date and time at which the event started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
@@ -56,8 +56,8 @@
       "example": "2020-03-01T22:00:00Z"
     },
     {
-      "name": "end",
-      "description": "TODO: Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
+      "name": "eventEnd",
+      "description": "Date and time at which the event ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
@@ -68,7 +68,7 @@
     },
     {
       "name": "observationLevel",
-      "description": "TODO",
+      "description": "Level at which the observation was classified. `media` for media-based observations that are directly associated with a media file (`mediaID`). These are especially useful for machine learning and don't need to be mutally exclusive (e.g. multiple classifications are allowed). `event` for event-based observations that consider an event (comprising a collection of media files). These are especially useful for ecological research and should be mutually exclusive, so that `count` can be summed.",
       "type": "string",
       "constraints": {
         "required": true,
