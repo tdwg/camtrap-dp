@@ -19,7 +19,7 @@ File | Description
 `datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) regarding the data package and camera trap project.
 `deployments.csv` | Table with camera trap [deployments](data/#deployments).
 `media.csv` | Table with [media](data/#media) files captured by the camera traps.
-`media-observations.csv` and/or `event-observations` | Table with observations that are classified at respectively [media file](data/#media-observations) or [event](data/#event-observations) level.
+`observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
 ## Example
 
@@ -43,12 +43,8 @@ To allow validation, the `datapackage.json` of your dataset should reference the
          "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/media-table-schema.json"
       },
       {
-         "name": "media-observations",
-         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/media-observations-table-schema.json"
-      },
-      {
-         "name": "event-observations",
-         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/event-observations-table-schema.json"
+         "name": "observations",
+         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/observations-table-schema.json"
       }
    ]
 }

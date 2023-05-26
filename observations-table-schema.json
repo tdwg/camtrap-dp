@@ -1,7 +1,7 @@
 {
   "name": "observations",
   "title": "Observations",
-  "description": "TODO: Table with observations that are classified at media file level. Associated with media files via `mediaID`. Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Media observations are not required to be mutually exclusive, i.e. multiple classifications (e.g. human vs machine) of the same observed individual(s) are allowed.",
+  "description": "Table with observations derived from the media files. Associated with deployments (`deploymentID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Observations can be made at different levels (`observationLevel`). Media-based observations are directly associated with a media file (`mediaID`), are especially useful for machine learning and don't need to be mutually exclusive (e.g. multiple classifications are allowed). Event-based observations are about an event (`start`/`end`, optional `eventID`), are especially useful for ecological research and should be mutually exclusive, so that `count` can be summed.",
   "fields": [
     {
       "name": "observationID",
