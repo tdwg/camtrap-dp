@@ -126,7 +126,11 @@
       "motionDetection",
       "timeLapse"
     ],
-    "individualAnimals": false
+    "individualAnimals": false,
+    "observationLevel": [
+      "media",
+      "event"
+    ]
   },
   "coordinatePrecision": 0.001,
   "spatial": {
