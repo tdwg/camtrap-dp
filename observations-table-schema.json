@@ -226,6 +226,54 @@
       "example": 1.75
     },
     {
+      "name": "bboxX",
+      "description": "Horizontal position of the top-left corner of a bounding box that encompasses the observed individual(s) in the media file identified by `mediaID`. Or the horizontal position of an object in that media file. Measured from the left and relative to media file width.",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/XFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "example": 0.2
+    },
+    {
+      "name": "bboxY",
+      "description": "Vertical position of the top-left corner of a bounding box that encompasses the observed individual(s) in the media file identified by `mediaID`. Or the vertical position of an object in that media file. Measured from the top and relative to the media file height.",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/YFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "example": 0.25
+    },
+    {
+      "name": "bboxWidth",
+      "description": "Width of a bounding box that encompasses the observed individual(s) in the media file identified by `mediaID`. Measured from the left of the bounding box and relative to the media file width.",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/widthFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 1e-15,
+        "maximum": 1
+      },
+      "example": 0.4
+    },
+    {
+      "name": "bboxHeight",
+      "description": "Height of the bounding box that encompasses the observed individual(s) in the media file identified by `mediaID`. Measured from the top of the bounding box and relative to the media file height.",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/heightFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 1e-15,
+        "maximum": 1
+      },
+      "example": 0.5
+    },
+    {
       "name": "classificationMethod",
       "description": "Method (most recently) used to classify the observation.",
       "type": "string",

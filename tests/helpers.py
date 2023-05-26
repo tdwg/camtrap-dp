@@ -15,7 +15,7 @@ RELAXED_PROFILE_PATH = (
 TABLE_SCHEMA_PATHS = [
     REPOSITORY_ROOT_PATH / "deployments-table-schema.json",
     REPOSITORY_ROOT_PATH / "media-table-schema.json",
-    REPOSITORY_ROOT_PATH / "observations-table-schema.json"
+    REPOSITORY_ROOT_PATH / "observations-table-schema.json",
 ]
 
 
@@ -41,7 +41,7 @@ def validate_package_print_and_exit(
 
         for task in report.tasks:
             if len(task.errors) != 0:
-                print(f"Errors for resource {task.resource['name']}:")
+                print(f"Errors for resource {task.name}:")
 
                 if len(task.errors) == 1:
                     errors_to_print = [
