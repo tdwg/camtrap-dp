@@ -48,6 +48,7 @@
       "name": "eventStart",
       "description": "Date and time at which the event started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/startTimestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "constraints": {
@@ -59,6 +60,7 @@
       "name": "eventEnd",
       "description": "Date and time at which the event ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "skos:narrowMatch": "http://rs.tdwg.org/ac/terms/endTimestamp",
       "type": "datetime",
       "format": "%Y-%m-%dT%H:%M:%S%z",
       "constraints": {
