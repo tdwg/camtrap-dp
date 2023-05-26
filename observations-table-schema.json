@@ -226,6 +226,54 @@
       "example": 1.75
     },
     {
+      "name": "bboxX",
+      "description": "The relative X coordinate of a bounding box upper-left corner, normalized to the image width. It can also be used to indicate X position of an object on the image.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/xFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "example": 0.5
+    },
+    {
+      "name": "bboxY",
+      "description": "The relative Y coordinate of a bounding box upper-left corner, normalized to the image height. It can also be used to indicate Y position of an object on the image.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/YFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "example": 0.5
+    },
+    {
+      "name": "bboxWidth",
+      "description": "The relative width of a bounding box, normalized to the image width. It has to be larger than zero.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/widthFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 1e-15,
+        "maximum": 1
+      },
+      "example": 0.5
+    },
+    {
+      "name": "bboxHeight",
+      "description": "The relative height of a bounding box, normalized to the image height. It has to be larger than zero.",
+      "skos:exactMatch": "http://rs.tdwg.org/ac/terms/heightFrac",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 1e-15,
+        "maximum": 1
+      },
+      "example": 0.5
+    },
+    {
       "name": "classificationMethod",
       "description": "Method (most recently) used to classify the observation.",
       "type": "string",
