@@ -6,35 +6,35 @@ layout: default
 
 <p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/example"><code>example dataset</code></a></p>
 
-{% assign dep_id = page.name | remove: '.md' %}
-{% assign dep = site.data.deployments | where: 'deploymentID', dep_id | first %}
-{% assign media = site.data.media | where: 'deploymentID', dep_id %}
 {% assign media_observations = site.data.media-observations %}
 {% assign event_observations = site.data.event-observations %}
+{% assign deployment_id = page.name | remove: '.md' %}
+{% assign deployment = site.data.deployments | where: 'deploymentID', deployment_id | first %}
+{% assign media = site.data.media | where: 'deploymentID', deployment_id %}
 
-<h2 id="{{ dep_id }}">Deployment information</h2>
+<h2 id="{{ deployment_id }}">Deployment information</h2>
 
 <dl>
   <dt>Location</dt>
   <dd>
-    <code>{{ dep.locationName }}</code>
-    (<a href="https://www.google.com/maps/search/?api=1&query={{ dep.latitude }},{{ dep.longitude }}&zoom=12"><code>{{ dep.latitude }}, {{ dep.longitude }}</code></a>),
-    uncertainty: <code>{{ dep.coordinateUncertainty }}</code>m
+    <code>{{ deployment.locationName }}</code>
+    (<a href="https://www.google.com/maps/search/?api=1&query={{ deployment.latitude }},{{ deployment.longitude }}&zoom=12"><code>{{ deployment.latitude }}, {{ deployment.longitude }}</code></a>),
+    uncertainty: <code>{{ deployment.coordinateUncertainty }}</code>m
   <dd>
   <dt>Duration</dt>
   <dd>
-    <code>{{ dep.start }}</code> / <code>{{ dep.end }}</code>
+    <code>{{ deployment.start }}</code> / <code>{{ deployment.end }}</code>
   </dd>
   <dt>Camera setup</dt>
   <dd>
-    interval: <code>{{ dep.cameraInterval }}</code>,
-    height: <code>{{ dep.cameraHeight }}</code>,
-    tilt: <code>{{ dep.cameraTilt }}</code>,
-    heading: <code>{{ dep.cameraHeading }}</code>
+    interval: <code>{{ deployment.cameraInterval }}</code>,
+    height: <code>{{ deployment.cameraHeight }}</code>,
+    tilt: <code>{{ deployment.cameraTilt }}</code>,
+    heading: <code>{{ deployment.cameraHeading }}</code>
   </dd>
   <dt>Bait</dt>
   <dd>
-    <code>{{ dep.baitUse }}</code>
+    <code>{{ deployment.baitUse }}</code>
   </dd>
 </dl>
 
