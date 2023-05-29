@@ -44,6 +44,7 @@ layout: default
   {% assign media_ids = media_observations | map: 'mediaID' | uniq %}
   {% comment %}The order of media_ids relies on the sorting in the observation table{% endcomment %}
   <h2 id="{{ event_id }}">Event: {{ event_id }}</h2>
+  
   <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
     <div class="carousel-inner">
       {% for media_id in media_ids %}
@@ -57,7 +58,7 @@ layout: default
         <div class="carousel-item{% if forloop.first %} active{% endif %}">
           <img class="d-block w-100" src="{% if public %}{{ med.filePath }}{% else %}{{ '/assets/placeholder.svg' | relative_url }}{% endif %}" alt="{{ med.timestamp }}">
           <div class="carousel-caption d-none d-md-block">
-            <p class="fs-1">{{ forloop.index }}</p>
+            <code class="fs-5 text-light">{{ media_id }}</code>
           </div>
         </div>
       {% endfor %}
@@ -71,71 +72,82 @@ layout: default
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-          
-  <table class="table table-sm mt-4">
+
+  <h4>Event-based observations</h4>
+  <table class="table table-sm font-monospace" style="font-size: 0.75em;">
     <colgroup>
-      <col width="6%">
-      <col width="47%">
-      <col width="47%">
+      <col width="15%">
+      <col width="15%">
+      <col width="15%">
+      <col width="10%">
+      <col width="20%">
+      <col width="5%">
+      <col width="10%">
+      <col width="10%">
     </colgroup>
     <thead>
       <tr>
-        <th>File</th>
-        <th>Media observations</th>
-        <th>Event observations</th>
+        <th>eventID</th>
+        <th>eventStart</th>
+        <th>eventEnd</th>
+        <th>observationType</th>
+        <th>scientificName</th>
+        <th>count</th>
+        <th>sex</th>
+        <th>lifeStage</th>
       </tr>
     </thead>
     <tbody>
-      {% for med in event_media %}
-        {% assign med_id = med.mediaID %}
+      {% for obs in event_observations %}
         <tr>
-          <td>
-            {{ forloop.index }}
-          </td>
-          <td title="mediaID: {{ med_id }}">
-            {% assign media_obs = media_observations | where: 'mediaID', med_id %}
-            {% for obs in media_obs %}
-              <code>{{ obs.observationType }}</code>
-              {% if obs.observationType == 'animal' %}
-                <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
-                <em>{{ obs.scientificName }}</em>
-                {% if obs.lifeStage and obs.sex %}
-                  ({{ obs.lifeStage }}, {{ obs.sex }})
-                {% elsif obs.lifeStage %}
-                  ({{ obs.lifeStage }})
-                {% elsif obs.sex %}
-                  ({{ obs.sex }})
-                {% endif %}
-              {% endif %}
-              {% if obs.classificationMethod == 'machine' %}
-                <span class="text-muted small">Classified by machine</span>    
-              {% endif %}
-              <br>
-            {% endfor %}
-          </td>
-          {% if forloop.first %}
-          <td title="eventID: {{ event_id }}" rowspan="{{ event_media_count }}">
-            {% assign event_obs = event_observations | where: 'eventID', event_id %}
-            {% for obs in event_obs %}
-              <code>{{ obs.observationType }}</code>
-              {% if obs.observationType == 'animal' %}
-                <span class="badge rounded-pill bg-secondary">{{ obs.count }}</span>
-                <em>{{ obs.scientificName }}</em>
-                {% if obs.lifeStage and obs.sex %}
-                  ({{ obs.lifeStage }}, {{ obs.sex }})
-                {% elsif obs.lifeStage %}
-                  ({{ obs.lifeStage }})
-                {% elsif obs.sex %}
-                  ({{ obs.sex }})
-                {% endif %}
-              {% endif %}
-              {% if obs.classificationMethod == 'machine' %}
-                <span class="text-muted small">Classified by machine</span>    
-              {% endif %}
-              <br>
-            {% endfor %}
-          </td>
-          {% endif %}
+          <td>{{ obs.eventID }}</td>
+          <td>{{ obs.eventStart | replace_first: 'T', ' T' }}</td>
+          <td>{{ obs.eventEnd | replace_first: 'T', ' T' }}</td>
+          <td>{{ obs.observationType }}</td>
+          <td>{{ obs.scientificName }}</td>
+          <td>{{ obs.count }}</td>
+          <td>{{ obs.sex }}</td>
+          <td>{{ obs.lifeStage }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h4>Media-based observations</h4>
+  <table class="table table-sm font-monospace" style="font-size: 0.75em;">
+    <colgroup>
+      <col width="15%">
+      <col width="15%">
+      <col width="15%">
+      <col width="10%">
+      <col width="20%">
+      <col width="5%">
+      <col width="10%">
+      <col width="10%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>mediaID</th>
+        <th>eventStart</th>
+        <th>eventEnd</th>
+        <th>observationType</th>
+        <th>scientificName</th>
+        <th>count</th>
+        <th>sex</th>
+        <th>lifeStage</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obs in media_observations %}
+        <tr>
+          <td>{{ obs.mediaID }}</td>
+          <td>{{ obs.eventStart | replace_first: 'T', ' T' }}</td>
+          <td>{{ obs.eventEnd | replace_first: 'T', ' T' }}</td>
+          <td>{{ obs.observationType }}</td>
+          <td>{{ obs.scientificName }}</td>
+          <td>{{ obs.count }}</td>
+          <td>{{ obs.sex }}</td>
+          <td>{{ obs.lifeStage }}</td>
         </tr>
       {% endfor %}
     </tbody>
