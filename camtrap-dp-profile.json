@@ -231,7 +231,7 @@
               "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
               "type": "boolean"
             },
-            "observationlevel": {
+            "observationLevel": {
               "description": "Level at which observations are provided. See also `observations.observationLevel`.",
               "type": "array",
               "items": {
