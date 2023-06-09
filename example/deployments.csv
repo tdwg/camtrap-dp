@@ -1,5 +1,5 @@
 deploymentID,locationID,locationName,latitude,longitude,coordinateUncertainty,deploymentStart,deploymentEnd,setupBy,cameraID,cameraModel,cameraDelay,cameraHeight,cameraTilt,cameraHeading,detectionDistance,timestampIssues,baitUse,featureType,habitat,deploymentGroups,deploymentTags,deploymentComments
-00a2c20d,e254a13c,B_HS_val 2_processiepark,51.496,4.774,187,2020-05-30T04:57:37+02:00,2020-07-01T11:41:41+02:00,Dennis,320,Reconyx-HF2X,0,1.30,-15,285,,,,,,,boven de stroom,
-29b7d356,2df5259b,B_DL_val 5_beek kleine vijver,51.181,5.655,187,2020-07-29T07:29:41+02:00,2020-08-08T06:20:40+02:00,Danny Van der beeck,250,Reconyx-HF2X,0,0.70,-15,350,,,,,,,boven de stroom,van 29/07/2020 tot 08/08/2020 120 foto's
-577b543a,ff1535c0,B_DL_val 3_dikke boom,51.184,5.659,187,2020-06-19T23:00:00+02:00,2020-06-29T01:33:22+02:00,Danny Van der beeck,303,Reconyx-HF2X,0,0.80,-15,20,,,,,,linkeroever,van 19/06/2020 tot 29/06/2020 63 foto's
-62c200a9,ce943ced,B_DM_val 4_'t WAD,50.699,4.013,187,2021-03-27T21:38:18+01:00,2021-04-18T22:25:00+01:00,Davy,315,Reconyx-HF2X,0,1.00,-15,55,,,,,,,,
+00a2c20d,e254a13c,B_HS_val 2_processiepark,51.496,4.774,187,2020-05-30T04:57:37+02:00,2020-07-01T11:41:41+02:00,Dennis,320,Reconyx-HF2X,0,1.30,-15,285,3.20,false,false,trailGame,,,boven de stroom,
+29b7d356,2df5259b,B_DL_val 5_beek kleine vijver,51.181,5.655,187,2020-07-29T07:29:41+02:00,2020-08-08T06:20:40+02:00,Danny Van der beeck,250,Reconyx-HF2X,0,0.70,-15,350,3.00,false,false,trailGame,,,boven de stroom,van 29/07/2020 tot 08/08/2020 120 foto's
+577b543a,ff1535c0,B_DL_val 3_dikke boom,51.184,5.659,187,2020-06-19T23:00:00+02:00,2020-06-29T01:33:22+02:00,Danny Van der beeck,303,Reconyx-HF2X,0,0.80,-15,20,3.00,false,false,trailGame,,linkeroever,van 19/06/2020 tot 29/06/2020 63 foto's
+62c200a9,ce943ced,B_DM_val 4_'t WAD,50.699,4.013,187,2021-03-27T21:38:18+01:00,2021-04-18T22:25:00+01:00,Davy,315,Reconyx-HF2X,0,1.00,-15,55,4.00,false,false,trailGame,,,,
