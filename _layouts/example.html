@@ -13,29 +13,41 @@ layout: default
 
 <h2 id="{{ deployment_id }}">Deployment information</h2>
 
-<dl>
-  <dt>Location</dt>
-  <dd>
-    <code>{{ deployment.locationName }}</code>
-    (<a href="https://www.google.com/maps/search/?api=1&query={{ deployment.latitude }},{{ deployment.longitude }}&zoom=12"><code>{{ deployment.latitude }}, {{ deployment.longitude }}</code></a>),
-    uncertainty: <code>{{ deployment.coordinateUncertainty }}</code>m
-  <dd>
-  <dt>Duration</dt>
-  <dd>
-    <code>{{ deployment.deploymentStart }}</code> / <code>{{ deployment..deploymentEnd }}</code>
-  </dd>
-  <dt>Camera setup</dt>
-  <dd>
-    interval: <code>{{ deployment.cameraInterval }}</code>,
-    height: <code>{{ deployment.cameraHeight }}</code>,
-    tilt: <code>{{ deployment.cameraTilt }}</code>,
-    heading: <code>{{ deployment.cameraHeading }}</code>
-  </dd>
-  <dt>Bait</dt>
-  <dd>
-    <code>{{ deployment.baitUse }}</code>
-  </dd>
-</dl>
+<h3 id="location">Location</h3>
+<ul>
+  <li>locationID: <code>{{ deployment.locationID }}</code></li>
+  <li>locationName: <code>{{ deployment.locationName }}</code></li>
+  <li>latitude, longitude:  <a href="https://www.google.com/maps/search/?api=1&query={{ deployment.latitude }},{{ deployment.longitude }}&zoom=12"><code>{{ deployment.latitude }}, {{ deployment.longitude }}</a></code></li>
+  <li>coordinateUncertainty:  <code>{{ deployment.coordinateUncertainty }}</code> m</li>
+</ul>
+
+<h3 id="duration">Duration</h3>
+<ul>
+  <li>deploymentStart: <code>{{ deployment.deploymentStart }}</code></li>
+  <li>deploymentEnd: <code>{{ deployment.deploymentEnd }}</code></li>
+</ul>
+
+<h3 id="camera-setup">Camera setup</h3>
+<ul>
+  <li>setupBy: <code>{{ deployment.setupBy }}</code></li>
+  <li>cameraID: <code>{{ deployment.cameraID }}</code></li>
+  <li>cameraModel: <code>{{ deployment.cameraModel }}</code></li>
+  <li>cameraDelay: <code>{{ deployment.cameraDelay }}</code> s</li>
+  <li>cameraHeight: <code>{{ deployment.cameraHeight }}</code> m</li>
+  <li>cameraTilt: <code>{{ deployment.cameraTilt }}</code> °</li>
+  <li>cameraHeading: <code>{{ deployment.cameraHeading }}</code> °</li>
+  <li>detectionDistance: <code>{{ deployment.detectionDistance }}</code> m</li>
+  <li>timestampIssues: <code>{{ deployment.timestampIssues }}</code></li>
+  <li>baitUse: <code>{{ deployment.baitUse }}</code></li>
+  <li>habitat: <code>{{ deployment.habitat }}</code></li>
+</ul>
+
+<h3 id="organizational">Organizational</h3>
+<ul>
+  <li>deploymentGroups: <code>{{ deployment.deploymentGroups }}</code></li>
+  <li>deploymentTags: <code>{{ deployment.deploymentTags }}</code></li>
+  <li>deploymentComments: <code>{{ deployment.deploymentComments }}</code></li>
+</ul>
 
 {% assign event_ids = observations | map: 'eventID' | uniq %}
 {% for event_id in event_ids %}
