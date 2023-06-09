@@ -90,7 +90,7 @@
     {
       "name": "exifData",
       "description": "EXIF data of the media file. Formatted as a valid JSON object.",
-      "type": "object",
+      "type": "any",
       "constraints": {
         "required": false
       },
