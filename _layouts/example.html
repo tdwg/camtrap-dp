@@ -61,6 +61,7 @@ layout: default
     <div class="carousel-inner">
       {% for media_id in media_ids %}
         {% assign med = media | where: 'mediaID', media_id | first %}
+        {% assign obs = media_observations | where: 'mediaID', media_id | first %}
         {% assign public = med.filePublic | downcase %}
         {% if public == "false" %}
           {% assign public = false %}
@@ -69,6 +70,16 @@ layout: default
         {% endif %}
         <div class="carousel-item{% if forloop.first %} active{% endif %}">
           <img class="d-block w-100" src="{% if public %}{{ med.filePath }}{% else %}{{ '/assets/placeholder.svg' | relative_url }}{% endif %}" alt="{{ med.timestamp }}">
+          {% if obs.bboxX %}
+            <div class="bbox" style="
+              position: absolute;
+              border: 3px solid red;
+              left: {{ obs.bboxX | times: 100 }}%;
+              top: {{ obs.bboxY | times: 100 }}%;
+              width: {{ obs.bboxWidth | times: 100 }}%;
+              height: {{ obs.bboxHeight | times: 100 }}%;
+            "></div>
+          {% endif %}
           <div class="carousel-caption d-none d-md-block">
             <code class="fs-5 text-light">{{ media_id }}</code>
           </div>
