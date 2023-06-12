@@ -23,7 +23,7 @@ File | Description
 
 ## Example
 
-[Example dataset](https://github.com/tdwg/camtrap-dp/tree/main/example) following Camtrap DP specifications.
+[Example dataset](example/) following Camtrap DP specifications.
 
 ## Validation
 

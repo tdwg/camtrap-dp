@@ -4,7 +4,7 @@ layout: default
 
 {{ content }}
 
-<p class="small">Source: <a href="{{ site.github.repository_url }}/blob/main/example"><code>example dataset</code></a></p>
+<p class="small">This page is generated from the <a href="../">example dataset</a>.</p>
 
 {% assign deployment_id = page.name | remove: '.md' %}
 {% assign deployment = site.data.deployments | where: 'deploymentID', deployment_id | first %}

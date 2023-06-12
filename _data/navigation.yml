@@ -8,6 +8,9 @@
   href: /data/
 - text: Example dataset
   menu:
+  - text: Example dataset
+    href: /example/
+  - text: "---"
   - text: Deployment 1
     href: /example/00a2c20d/
   - text: Deployment 2
