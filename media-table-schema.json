@@ -1,7 +1,7 @@
 {
   "name": "media",
   "title": "Media",
-  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`). Includes timestamp and file path.",
+  "description": "Table with media files (images/videos) recorded during deployments (`deploymentID`). Includes timestamp and file path.",
   "fields": [
     {
       "name": "mediaID",
@@ -90,7 +90,7 @@
     {
       "name": "exifData",
       "description": "EXIF data of the media file. Formatted as a valid JSON object.",
-      "type": "object",
+      "type": "any",
       "constraints": {
         "required": false
       },

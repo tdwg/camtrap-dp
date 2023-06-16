@@ -5,25 +5,21 @@ permalink: /
 description: Data exchange format for camera trap data
 ---
 
-**Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data.
-
 {:.alert .alert-warning}
 Camtrap DP is [under development](https://github.com/tdwg/camtrap-dp/milestone/1) and not yet recommended for production use.
 
-## Usage
-
-A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
+**Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data. A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
 
 File | Description
 --- | ---
-`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) regarding the data package and camera trap project.
-`deployments.csv` | Table with camera trap [deployments](data/#deployments).
-`media.csv` | Table with [media](data/#media) files captured by the camera traps.
+`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) about the data package and camera trap project.
+`deployments.csv` | Table with camera trap placements ([deployments](data/#deployments)).
+`media.csv` | Table with [media](data/#media) files recorded during deployments.
 `observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
 ## Example
 
-[Example dataset](https://github.com/tdwg/camtrap-dp/tree/main/example) following Camtrap DP specifications.
+See the [example dataset](example/).
 
 ## Validation
 
