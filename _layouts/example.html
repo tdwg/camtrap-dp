@@ -11,7 +11,7 @@ layout: default
 {% assign media = site.data.media | where: 'deploymentID', deployment_id %}
 {% assign observations = site.data.observations | where: 'deploymentID', deployment_id %}
 
-<h2 id="{{ deployment_id }}">Deployment information</h2>
+<h2 id="deployment">Deployment</h2>
 
 <h3 id="location">Location</h3>
 <ul>
@@ -49,13 +49,14 @@ layout: default
   <li>deploymentComments: <code>{{ deployment.deploymentComments }}</code></li>
 </ul>
 
+<h2 id="events">Events</h2>
 {% assign event_ids = observations | map: 'eventID' | uniq %}
 {% for event_id in event_ids %}
   {% assign media_observations = observations | where: 'eventID', event_id | where: 'observationLevel', 'media' %}
   {% assign event_observations = observations | where: 'eventID', event_id | where: 'observationLevel', 'event' %}
   {% assign media_ids = media_observations | map: 'mediaID' | uniq %}
   {% comment %}The order of media_ids relies on the sorting in the observation table{% endcomment %}
-  <h2 id="{{ event_id }}">Event: {{ event_id }}</h2>
+  <h3 id="{{ event_id }}">Event {{ event_id }}</h3>
   
   <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
     <div class="carousel-inner">
@@ -96,7 +97,7 @@ layout: default
     </button>
   </div>
 
-  <h4>Event-based observations</h4>
+  <h4 id="{{ event_id }}-event-observations">Event-based observations</h4>
   <table class="table table-sm font-monospace" style="font-size: 0.75em;">
     <colgroup>
       <col width="15%">
@@ -136,7 +137,7 @@ layout: default
     </tbody>
   </table>
 
-  <h4>Media-based observations</h4>
+  <h4 id="{{ event_id}}-media-observations">Media-based observations</h4>
   <table class="table table-sm font-monospace" style="font-size: 0.75em;">
     <colgroup>
       <col width="15%">
