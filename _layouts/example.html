@@ -49,13 +49,14 @@ layout: default
   <li>deploymentComments: <code>{{ deployment.deploymentComments }}</code></li>
 </ul>
 
+<h2 id="events">Events</h2>
 {% assign event_ids = observations | map: 'eventID' | uniq %}
 {% for event_id in event_ids %}
   {% assign media_observations = observations | where: 'eventID', event_id | where: 'observationLevel', 'media' %}
   {% assign event_observations = observations | where: 'eventID', event_id | where: 'observationLevel', 'event' %}
   {% assign media_ids = media_observations | map: 'mediaID' | uniq %}
   {% comment %}The order of media_ids relies on the sorting in the observation table{% endcomment %}
-  <h2 id="{{ event_id }}">Event: {{ event_id }}</h2>
+  <h3 id="{{ event_id }}">Event {{ event_id }}</h3>
   
   <div id="carousel-{{ event_id }}" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel" data-bs-keyboard="false" data-bs-interval="500">
     <div class="carousel-inner">
