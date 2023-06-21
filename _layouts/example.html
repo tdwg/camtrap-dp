@@ -11,7 +11,7 @@ layout: default
 {% assign media = site.data.media | where: 'deploymentID', deployment_id %}
 {% assign observations = site.data.observations | where: 'deploymentID', deployment_id %}
 
-<h2 id="{{ deployment_id }}">Deployment information</h2>
+<h2 id="deployment">Deployment</h2>
 
 <h3 id="location">Location</h3>
 <ul>
@@ -97,7 +97,7 @@ layout: default
     </button>
   </div>
 
-  <h4>Event-based observations</h4>
+  <h4 id="{{ event_id }}-event-observations">Event-based observations</h4>
   <table class="table table-sm font-monospace" style="font-size: 0.75em;">
     <colgroup>
       <col width="15%">
@@ -137,7 +137,7 @@ layout: default
     </tbody>
   </table>
 
-  <h4>Media-based observations</h4>
+  <h4 id="{{ event_id}}-media-observations">Media-based observations</h4>
   <table class="table table-sm font-monospace" style="font-size: 0.75em;">
     <colgroup>
       <col width="15%">
