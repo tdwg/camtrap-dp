@@ -17,6 +17,7 @@ File | Description
 `media.csv` | Table with [media](data/#media) files recorded during deployments.
 `observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
+
 ## Example
 
 See the [example dataset](example/).
@@ -58,6 +59,7 @@ frictionless validate path/to/your/datapackage.json
 - [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
 - [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
 - [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (upcoming release): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF).
 
 See also the recorded [November 2022 webinar](https://www.gbif.org/event/f68927-b5c1-4ac8-a4ac-7d47645/exploring-camera-trap-data) for an introduction to Camtrap DP and its intended adoption as a publication format by the Global Biodiversity Information Facility (GBIF).
 
