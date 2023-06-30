@@ -67,8 +67,12 @@ Questions? Suggestions? Contribute to the development of Camtrap DP by watching 
 
 ## Recommended citation
 
-> Camtrap DP Development Team (2022) Camera Trap Data Package (Camtrap DP). <https://tdwg.github.io/camtrap-dp>
+To cite Camtrap DP in general, use the preprint ([bibtex](citation.bib)):
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/), the [Mammal Research Institute Polish Academy of Sciences (MRI PAS)](https://ibs.bialowieza.pl/en/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).
+> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Dal Farra S, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023) Camtrap DP: An open standard for the FAIR exchange and archiving of camera trap data. EcoEvoRxiv. preprint <https://doi.org/10.32942/X2BC8J>
 
 Camtrap DP is endorsed by the camera trap data management systems [Agouti](https://www.agouti.eu/), [eMammal](https://emammal.si.edu/), [TRAPPER](https://doi.org/10.1111/2041-210X.12571), [Wildlife Insights](https://www.wildlifeinsights.org/) and already available as an export format in some of these.
+To cite a specific version of Camtrap DP, use:
+
+> Camtrap DP Development Team (\<year\>) Camera Trap Data Package (Camtrap DP). Version \<version\>. <https://tdwg.github.io/camtrap-dp> accessed on \<yyyy-mm-dd\>.
