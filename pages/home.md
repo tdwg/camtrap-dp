@@ -17,7 +17,7 @@ File | Description
 `media.csv` | Table with [media](data/#media) files recorded during deployments.
 `observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
-Want to learn more about Camtrap DP? Read our [preprint](https://doi.org/10.32942/X2BC8J) or watch the [November 2022 webinar](https://www.gbif.org/event/f68927-b5c1-4ac8-a4ac-7d47645/exploring-camera-trap-data).
+Want to learn more about Camtrap DP? Read our [preprint](https://doi.org/10.32942/X2BC8J) or watch the [November 2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data).
 
 ## Example
 
