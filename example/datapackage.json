@@ -40,7 +40,7 @@
     }
   ],
   "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0-rc.1/camtrap-dp-profile.json",
-  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20230206112303",
+  "name": "camtrap-dp-example-dataset",
   "id": "7cca70f5-ef8c-4f86-85fb-8f070937d7ab",
   "created": "2023-02-06T11:23:03Z",
   "title": "Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany",
