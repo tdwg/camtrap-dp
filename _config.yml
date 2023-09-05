@@ -1,8 +1,8 @@
 # SITE SETTINGS
 title: Camtrap DP
 author: Camtrap DP Development Team
-url: "https://tdwg.github.io"
-baseurl: "/camtrap-dp"
+url: "https://camtrap-dp.tdwg.org" # Custom domain is not set via CNAME, so url and baseurl need to be indicated
+baseurl: "" # Otherwise GitHub Pages will set this to "/camtrap-dp"
 
 # SOCIAL PROFILES
 social:
