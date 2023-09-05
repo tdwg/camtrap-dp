@@ -74,6 +74,6 @@ To cite Camtrap DP in general, use the preprint ([bibtex](citation.bib)):
 
 To cite a specific version of Camtrap DP, use:
 
-> Camtrap DP Development Team (\<year\>) Camera Trap Data Package (Camtrap DP). Version \<version\>. <https://tdwg.github.io/camtrap-dp> accessed on \<yyyy-mm-dd\>.
+> Camtrap DP Development Team (\<year\>) Camera Trap Data Package (Camtrap DP). Version \<version\>. <https://camtrap-dp.tdwg.org> accessed on \<yyyy-mm-dd\>.
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG).

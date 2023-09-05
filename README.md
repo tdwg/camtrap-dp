@@ -4,7 +4,7 @@
 
 ## Usage
 
-See the [documentation website](https://tdwg.github.io/camtrap-dp/).
+See the [documentation website](https://camtrap-dp.tdwg.org).
 
 ## Contribute
 
