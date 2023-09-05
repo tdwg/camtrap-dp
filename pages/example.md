@@ -42,4 +42,4 @@ The selected deployments covers a wide range of use cases:
 
 ## Citation
 
-> Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0. Research Institute for Nature and Forest (INBO). Dataset. <https://tdwg.github.io/camtrap-dp/example/>
+> Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0. Research Institute for Nature and Forest (INBO). Dataset. <https://camtrap-dp.tdwg.org/example/>
