@@ -26,7 +26,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - example/*
+  - example/*.csv
+  - example/*.json
   - tests/*
   - "*.json"
   - vendor # Avoids https://github.com/jekyll/jekyll/issues/2938
