@@ -22,8 +22,8 @@ Preview of the deployments, media and observations:
 
 - [Deployment 1](../example/00a2c20d/)
 - [Deployment 2](../example/29b7d356/)
-- [Deployment 3](../example/62c200a9/)
-- [Deployment 4](../example/577b543a/)
+- [Deployment 3](../example/577b543a/)
+- [Deployment 4](../example/62c200a9/)
 
 ## Use cases
 
