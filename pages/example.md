@@ -8,7 +8,7 @@ The example dataset is derived from an existing camera trap study and aims to il
 
 ## Background
 
-The dataset is derived from a [camera trap study](https://lifemica.eu/research-innovaties/camera-tracking/) designed to detect invasive muskrat and coypu populations in Belgium, the Netherlands and Germany. The study was led by Emma Cartuyvels and coordinated by the [Research Institute for Nature and Forest (INBO)](https://inbo.be). Data were managed and annotated at event-level in [Agouti.eu](https://www.agouti.eu/). The full dataset is published to the [Global Biodiversity Information Facility (GBIF)](https://doi.org/10.15468/5tb6ze). The example dataset contains four deployments of the original dataset (all located in Belgium) and was expanded to include media-based observations in addition to event-based ones.
+The dataset is derived from a [camera trap study](https://lifemica.eu/research-innovaties/camera-tracking/) designed to detect invasive muskrat and coypu populations in Belgium, the Netherlands and Germany. The study was led by Emma Cartuyvels and coordinated by the [Research Institute for Nature and Forest (INBO)](https://inbo.be). Data were managed and annotated at event-level in [Agouti.eu](https://www.agouti.eu/). The full dataset is published to the [Global Biodiversity Information Facility (GBIF)](https://doi.org/10.15468/5tb6ze). The example dataset contains four deployments of the original dataset (all located in Belgium) and was expanded to include media-based observations in addition to event-based ones. Media files are hosted remotely from `multimedia.agouti.eu`, except for one event ([`7245a2aa`](../example/62c200a9/#7245a2aa)) for which the media files are included in the dataset.
 
 ## Download
 
@@ -22,8 +22,8 @@ Preview of the deployments, media and observations:
 
 - [Deployment 1](../example/00a2c20d/)
 - [Deployment 2](../example/29b7d356/)
-- [Deployment 3](../example/62c200a9/)
-- [Deployment 4](../example/577b543a/)
+- [Deployment 3](../example/577b543a/)
+- [Deployment 4](../example/62c200a9/)
 
 ## Use cases
 

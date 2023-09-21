@@ -65,12 +65,14 @@ layout: default
         {% assign obs = media_observations | where: 'mediaID', media_id | first %}
         {% assign public = med.filePublic | downcase %}
         {% if public == "false" %}
-          {% assign public = false %}
+          {% assign file_path = '/assets/placeholder.svg' | relative_url %}
+        {% elsif med.filePath contains 'http' %}
+          {% assign file_path = med.filePath %}
         {% else %}
-          {% assign public = true %}
+          {% assign file_path = med.filePath | prepend: '/example/' | relative_url %}
         {% endif %}
         <div class="carousel-item{% if forloop.first %} active{% endif %}">
-          <img class="d-block w-100" src="{% if public %}{{ med.filePath }}{% else %}{{ '/assets/placeholder.svg' | relative_url }}{% endif %}" alt="{{ med.timestamp }}">
+          <img class="d-block w-100" src="{{ file_path }}" alt="{{ med.timestamp }}">
           {% if obs.bboxX %}
             <div class="bbox" style="
               position: absolute;
