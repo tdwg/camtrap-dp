@@ -80,11 +80,12 @@
     },
     {
       "name": "fileMediatype",
-      "description": "Mediatype of the media file.",
+      "description": "Mediatype of the media file. Expressed as an [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml).",
       "skos:broadMatch": "http://purl.org/dc/elements/1.1/format",
       "type": "string",
       "constraints": {
-        "required": true
+        "required": true,
+        "pattern": "^(image|video|audio)\/.*$"
       },
       "example": "image/jpeg"
     },
