@@ -81,6 +81,7 @@
     {
       "name": "fileMediatype",
       "description": "Mediatype of the media file.",
+      "skos:broadMatch": "http://purl.org/dc/elements/1.1/format",
       "type": "string",
       "constraints": {
         "required": true
