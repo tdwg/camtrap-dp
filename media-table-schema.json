@@ -63,6 +63,7 @@
     {
       "name": "filePublic",
       "description": "`false` if the media file is not publicly accessible (e.g. to protect the privacy of people).",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/serviceExpectation",
       "type": "boolean",
       "constraints": {
         "required": true
