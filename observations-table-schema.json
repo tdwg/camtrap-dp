@@ -113,7 +113,7 @@
     },
     {
       "name": "taxonID",
-      "description": "Identifier of the `scientificName` as defined in `package.taxonomic.taxonID` for that scientific name.",
+      "description": "Identifier of the taxon of the scientific name. Foreign key to `package.taxonomic.taxonID`.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
       "type": "string",
       "constraints": {
