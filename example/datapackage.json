@@ -173,7 +173,7 @@
   "taxonomic": [
     {
       "taxonID": "DGP6",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Anas platyrhynchos",
       "taxonRank": "species",
       "vernacularNames": {
@@ -183,7 +183,7 @@
     },
     {
       "taxonID": "DGPL",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Anas strepera",
       "taxonRank": "species",
       "vernacularNames": {
@@ -193,7 +193,7 @@
     },
     {
       "taxonID": "32FH",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Ardea",
       "taxonRank": "genus",
       "vernacularNames": {
@@ -203,7 +203,7 @@
     },
     {
       "taxonID": "GCHS",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Ardea cinerea",
       "taxonRank": "species",
       "vernacularNames": {
@@ -213,7 +213,7 @@
     },
     {
       "taxonID": "V2",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Aves",
       "taxonRank": "class",
       "vernacularNames": {
@@ -223,7 +223,7 @@
     },
     {
       "taxonID": "6MB3T",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Homo sapiens",
       "taxonRank": "species",
       "vernacularNames": {
@@ -233,7 +233,7 @@
     },
     {
       "taxonID": "3Y9VW",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Martes foina",
       "taxonRank": "species",
       "vernacularNames": {
@@ -243,7 +243,7 @@
     },
     {
       "taxonID": "44QYC",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Mustela putorius",
       "taxonRank": "species",
       "vernacularNames": {
@@ -253,7 +253,7 @@
     },
     {
       "taxonID": "4RM67",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Rattus norvegicus",
       "taxonRank": "species",
       "vernacularNames": {
@@ -263,7 +263,7 @@
     },
     {
       "taxonID": "5BSG3",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
+      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Vulpes vulpes",
       "taxonRank": "species",
       "vernacularNames": {
