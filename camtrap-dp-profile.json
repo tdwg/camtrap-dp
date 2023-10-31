@@ -284,7 +284,6 @@
             "type": "object",
             "required": [
               "taxonID",
-              "taxonIDReference",
               "scientificName"
             ],
             "properties": {
@@ -293,12 +292,6 @@
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
                 "type": "string",
                 "example": "QLXL"
-              },
-              "taxonIDReference": {
-                "description": "URL of the source (reference list) of the `taxonID`.",
-                "type": "string",
-                "format": "uri",
-                "example": "https://www.catalogueoflife.org"
               },
               "scientificName": {
                 "description": "Scientific name of the taxon.",
