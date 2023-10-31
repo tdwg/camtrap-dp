@@ -123,7 +123,7 @@
     },
     {
       "name": "cameraDelay",
-      "description": "Predefined duration after a trigger when activity detected by the camera is ignored. Expressed in seconds.",
+      "description": "Predefined duration after detection when further activity is ignored. Expressed in seconds.",
       "type": "integer",
       "constraints": {
         "required": false,
