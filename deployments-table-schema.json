@@ -134,6 +134,10 @@
     {
       "name": "cameraHeight",
       "description": "Height at which the camera was deployed. Expressed in meters. Not to be combined with `cameraDepth`.",
+      "skos:narrowMatch": [
+        "http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
+        "http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters"
+      ],
       "type": "number",
       "constraints": {
         "required": false,
