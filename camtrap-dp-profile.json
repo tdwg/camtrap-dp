@@ -283,21 +283,20 @@
           "items": {
             "type": "object",
             "required": [
-              "taxonID",
               "scientificName"
             ],
             "properties": {
-              "taxonID": {
-                "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxonIDReference`.",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
-                "type": "string",
-                "example": "QLXL"
-              },
               "scientificName": {
                 "description": "Scientific name of the taxon.",
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
                 "type": "string",
                 "example": "Canis lupus"
+              },
+              "taxonID": {
+                "description": "Unique identifier of the taxon. Preferably a global unique identifier issued by an authoritative checklist.",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
+                "type": "string",
+                "example": "https://www.checklistbank.org/dataset/COL2023/taxon/QLXL"
               },
               "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",
