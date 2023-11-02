@@ -32,11 +32,11 @@
       "constraints": {
         "required": false,
         "enum": [
-          "motionDetection",
+          "activityDetection",
           "timeLapse"
         ]
       },
-      "example": "motionDetection"
+      "example": "activityDetection"
     },
     {
       "name": "timestamp",
