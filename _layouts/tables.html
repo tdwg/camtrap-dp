@@ -51,13 +51,13 @@ layout: default
             {% endif %}
             <ul class="list-unstyled mb-0">
               {% if field['skos:exactMatch'] %}
-                <li class="small text-muted">Same as <a href="{{ field['skos:exactMatch'] }}">{{ field['skos:exactMatch'] }}</a></li>
+                <li class="small text-muted">Same as {% for term in field['skos:exactMatch'] %}<a href="{{ term }}">{{ term }}</a> {% endfor %}</li>
               {% endif %}
               {% if field['skos:narrowMatch'] %}
-                <li class="small text-muted">Broader than <a href="{{ field['skos:narrowMatch'] }}">{{ field['skos:narrowMatch'] }}</a></li>
+                <li class="small text-muted">Broader than {% for term in field['skos:narrowMatch'] %}<a href="{{ term }}">{{ term }}</a> {% endfor %}</a></li>
               {% endif %}
               {% if field['skos:broadMatch'] %}
-                <li class="small text-muted">Narrower than <a href="{{ field['skos:broadMatch'] }}">{{ field['skos:broadMatch'] }}</a></li>
+                <li class="small text-muted">Narrower than {% for term in field['skos:broadMatch'] %}<a href="{{ term }}">{{ term }}</a> {% endfor %}</a></li>
               {% endif %}
             </ul>
           </td>

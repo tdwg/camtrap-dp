@@ -133,7 +133,11 @@
     },
     {
       "name": "cameraHeight",
-      "description": "Height at which the camera was deployed. Expressed in meters.",
+      "description": "Height at which the camera was deployed. Expressed in meters. Not to be combined with `cameraDepth`.",
+      "skos:narrowMatch": [
+        "http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
+        "http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters"
+      ],
       "type": "number",
       "constraints": {
         "required": false,
@@ -141,6 +145,21 @@
       },
       "unit": "m",
       "example": 1.2
+    },
+    {
+      "name": "cameraDepth",
+      "description": "Depth at which the camera was deployed. Expressed in meters. Not to be combined with `cameraHeight`.",
+      "skos:narrowMatch": [
+        "http://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
+        "http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"
+      ],
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      },
+      "unit": "m",
+      "example": 4.8
     },
     {
       "name": "cameraTilt",
