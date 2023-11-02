@@ -172,9 +172,8 @@
   },
   "taxonomic": [
     {
-      "taxonID": "DGP6",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Anas platyrhynchos",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGP6",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "mallard",
@@ -182,9 +181,8 @@
       }
     },
     {
-      "taxonID": "DGPL",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Anas strepera",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGPL",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "gadwall",
@@ -192,9 +190,8 @@
       }
     },
     {
-      "taxonID": "32FH",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Ardea",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/32FH",
       "taxonRank": "genus",
       "vernacularNames": {
         "eng": "great herons",
@@ -202,9 +199,8 @@
       }
     },
     {
-      "taxonID": "GCHS",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Ardea cinerea",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/GCHS",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "grey heron",
@@ -212,9 +208,8 @@
       }
     },
     {
-      "taxonID": "V2",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Aves",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/V2",
       "taxonRank": "class",
       "vernacularNames": {
         "eng": "bird sp.",
@@ -222,9 +217,8 @@
       }
     },
     {
-      "taxonID": "6MB3T",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Homo sapiens",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/6MB3T",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "human",
@@ -232,9 +226,8 @@
       }
     },
     {
-      "taxonID": "3Y9VW",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Martes foina",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/3Y9VW",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "beech marten",
@@ -242,9 +235,8 @@
       }
     },
     {
-      "taxonID": "44QYC",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Mustela putorius",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/44QYC",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "European polecat",
@@ -252,9 +244,8 @@
       }
     },
     {
-      "taxonID": "4RM67",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Rattus norvegicus",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/4RM67",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "brown rat",
@@ -262,9 +253,8 @@
       }
     },
     {
-      "taxonID": "5BSG3",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/COL2023",
       "scientificName": "Vulpes vulpes",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/5BSG3",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "red fox",

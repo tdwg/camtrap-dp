@@ -112,16 +112,6 @@
       "example": "calibration"
     },
     {
-      "name": "taxonID",
-      "description": "Identifier of the taxon of the scientific name. Foreign key to `package.taxonomic.taxonID`.",
-      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
-      "type": "string",
-      "constraints": {
-        "required": false
-      },
-      "example": "QLXL"
-    },
-    {
       "name": "scientificName",
       "description": "Scientific name of the observed individual(s).",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
