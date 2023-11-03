@@ -220,7 +220,7 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "motionDetection",
+                  "activityDetection",
                   "timeLapse"
                 ]
               },

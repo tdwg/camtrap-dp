@@ -123,7 +123,7 @@
     "samplingDesign": "targeted",
     "path": "https://lifemica.eu",
     "captureMethod": [
-      "motionDetection",
+      "activityDetection",
       "timeLapse"
     ],
     "individualAnimals": false,
