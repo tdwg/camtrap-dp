@@ -69,8 +69,8 @@ To cite Camtrap DP in general, use the preprint ([bibtex](citation.bib)):
 
 > Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Dal Farra S, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023) Camtrap DP: An open standard for the FAIR exchange and archiving of camera trap data. EcoEvoRxiv. preprint <https://doi.org/10.32942/X2BC8J>
 
-To cite a specific version of Camtrap DP, use:
+To cite version 1.0 of Camtrap DP, use:
 
-> Camtrap DP Development Team (\<year\>) Camera Trap Data Package (Camtrap DP). Version \<version\>. <https://camtrap-dp.tdwg.org> accessed on \<yyyy-mm-dd\>.
+> Desmet P, Bubnicki JW, Camtrap DP Development Team. (2023). Camtrap DP (1.0). Biodiversity Information Standards (TDWG). <https://doi.org/10.5281/zenodo.10068760>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG).
