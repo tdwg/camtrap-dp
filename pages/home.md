@@ -14,7 +14,7 @@ File | Description
 `media.csv` | Table with [media](data/#media) files recorded during deployments.
 `observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
-Want to learn more about Camtrap DP? Read our [preprint](https://doi.org/10.32942/X2BC8J) or watch the [November 2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data).
+[Read our paper](https://doi.org/10.1002/rse2.374) to learn more about Camtrap DP.
 
 ## Example
 
@@ -67,10 +67,10 @@ Questions? Suggestions? Contribute to the development of Camtrap DP by watching 
 
 To cite Camtrap DP in general, use the preprint ([bibtex](citation.bib)):
 
-> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Dal Farra S, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023) Camtrap DP: An open standard for the FAIR exchange and archiving of camera trap data. EcoEvoRxiv. preprint <https://doi.org/10.32942/X2BC8J>
+> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Farra SD, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023). Camtrap DP: an open standard for the FAIR exchange and archiving of camera trap data. Remote Sensing in Ecology and Conservation. <https://doi.org/10.1002/rse2.374>
 
 To cite version 1.0 of Camtrap DP, use:
 
-> Desmet P, Bubnicki JW, Camtrap DP Development Team. (2023). Camtrap DP (1.0). Biodiversity Information Standards (TDWG). <https://doi.org/10.5281/zenodo.10068760>
+> Desmet P, Bubnicki JW, Camtrap DP Development Team (2023). Camtrap DP (1.0). Biodiversity Information Standards (TDWG). <https://doi.org/10.5281/zenodo.10068760>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG).
