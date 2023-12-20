@@ -135,12 +135,6 @@
   "coordinatePrecision": 0.001,
   "spatial": {
     "type": "Polygon",
-    "bbox": [
-      4.013,
-      50.699,
-      5.659,
-      51.496
-    ],
     "coordinates": [
       [
         [
