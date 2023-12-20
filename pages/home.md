@@ -14,7 +14,7 @@ File | Description
 `media.csv` | Table with [media](data/#media) files recorded during deployments.
 `observations.csv` | Table with [observations](data/#observations) derived from the media files.
 
-Want to learn more about Camtrap DP? Read our [preprint](https://doi.org/10.32942/X2BC8J) or watch the [November 2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data).
+[Read our paper](https://doi.org/10.1002/rse2.374) to learn more about Camtrap DP.
 
 ## Example
 
@@ -57,7 +57,7 @@ frictionless validate path/to/your/datapackage.json
 - [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
 - [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
 - [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
-- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (version 3.0): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF).
+- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (version 3.0): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF). See the [November 2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data) for context and [Reyserhove et al. (2023)](https://doi.org/10.35035/doc-0qzp-2x37) for publication guidelines.
 
 ## Contribute
 
@@ -67,10 +67,10 @@ Questions? Suggestions? Contribute to the development of Camtrap DP by watching 
 
 To cite Camtrap DP in general, use the preprint ([bibtex](citation.bib)):
 
-> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Dal Farra S, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023) Camtrap DP: An open standard for the FAIR exchange and archiving of camera trap data. EcoEvoRxiv. preprint <https://doi.org/10.32942/X2BC8J>
+> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Farra SD, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023). Camtrap DP: an open standard for the FAIR exchange and archiving of camera trap data. Remote Sensing in Ecology and Conservation. <https://doi.org/10.1002/rse2.374>
 
-To cite a specific version of Camtrap DP, use:
+To cite version 1.0 of Camtrap DP, use:
 
-> Camtrap DP Development Team (\<year\>) Camera Trap Data Package (Camtrap DP). Version \<version\>. <https://camtrap-dp.tdwg.org> accessed on \<yyyy-mm-dd\>.
+> Desmet P, Bubnicki JW, Camtrap DP Development Team (2023). Camtrap DP (1.0). Biodiversity Information Standards (TDWG). <https://doi.org/10.5281/zenodo.10068760>
 
 Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG).
