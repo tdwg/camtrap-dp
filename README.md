@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10068759.svg)](https://doi.org/10.5281/zenodo.10068759)
 
-**Camera Trap Data Package** (or **Camtrap DP** for short) is a community-developed data exchange format for camera trap data.
+**Camera Trap Data Package** (Camtrap DP) is a community-developed data exchange format for camera trap data.
 
 ## Usage
 
