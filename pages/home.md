@@ -22,6 +22,13 @@ See [Bubnicki et al. (2023)](https://doi.org/10.1002/rse2.374) to learn more abo
 
 See the [example dataset](example/).
 
+## Software
+
+- [camtrapdp](https://inbo.github.io/camtrapdp): R package to read and manipulate Camtrap DP.
+- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
+- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (v3): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF). See the [2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data) for context and [Reyserhove et al. (2023)](https://doi.org/10.35035/doc-0qzp-2x37) for publication guidelines.
+
 ## Validation
 
 To allow validation, the `datapackage.json` of your dataset should reference the used version of Camtrap DP, both in `profile` and the resources' `schema`:
@@ -53,13 +60,6 @@ You can validate your dataset against the specifications of Camtrap DP (and Fric
 pip install frictionless
 frictionless validate path/to/your/datapackage.json
 ```
-
-## Implementations
-
-- [camtrapdp](https://inbo.github.io/camtrapdp): R package to read and manipulate Camtrap DP.
-- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
-- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
-- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (v3): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF). See the [2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data) for context and [Reyserhove et al. (2023)](https://doi.org/10.35035/doc-0qzp-2x37) for publication guidelines.
 
 ## Contribute
 
