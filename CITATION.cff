@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: 'To cite "Camtrap DP" in publications use:'
+type: software
+license: MIT
+title: Camera Trap Data Package (Camtrap DP)
+version: 1.0
+authors:
+  - given-names: Peter
+    family-names: Desmet
+    email: peter.desmet@inbo.be
+    affiliation: Research Institute for Nature and Forest (INBO)
+    orcid: https://orcid.org/0000-0002-8442-8025
+  - family-names: Bubnicki
+    given-names: Jakub W.
+    email: kbubnicki@ibs.bialowieza.pl
+    affiliation: Mammal Research Institute, Polish Academy of Sciences & Open Science Conservation Fund
+    orcid: https://orcid.org/0000-0002-2064-3113
+  - name: Camtrap DP Development Team
+repository-code: https://github.com/tdwg/camtrap-dp
+url: https://camtrap-dp.tdwg.org/
+date-released: '2023-11-03'
+doi: 10.5281/zenodo.10068760
