@@ -3,7 +3,7 @@ message: 'To cite "Camtrap DP" in publications use:'
 type: software
 license: MIT
 title: Camera Trap Data Package (Camtrap DP)
-version: 1.0
+version: 1.0.1
 authors:
   - given-names: Peter
     family-names: Desmet
@@ -18,5 +18,5 @@ authors:
   - name: Camtrap DP Development Team
 repository-code: https://github.com/tdwg/camtrap-dp
 url: https://camtrap-dp.tdwg.org/
-date-released: '2023-11-03'
+date-released: '2024-08-21'
 doi: 10.5281/zenodo.10068760
