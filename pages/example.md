@@ -14,8 +14,8 @@ The dataset is derived from a [camera trap study](https://lifemica.eu/research-i
 
 Camtrap DP version | Dataset download | Dataset on GitHub
 --- | --- | ---
-`1.0` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-outline-primary}
 `1.0.1` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0.1/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0.1/example){:.btn .btn-sm .btn-outline-primary}
+`1.0` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-outline-primary}
 
 ## Preview
 
