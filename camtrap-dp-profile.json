@@ -10,7 +10,7 @@
   },
   "allOf": [
     {
-      "$ref": "https://frictionlessdata.io/schemas/data-package.json"
+      "$ref": "https://specs.frictionlessdata.io/schemas/data-package.json"
     },
     {
       "required": [
