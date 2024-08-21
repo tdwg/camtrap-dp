@@ -5,12 +5,12 @@
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "1\\.0"
+      "pattern": "1\\.0\\.1"
     }
   },
   "allOf": [
     {
-      "$ref": "https://frictionlessdata.io/schemas/data-package.json"
+      "$ref": "https://specs.frictionlessdata.io/schemas/data-package.json"
     },
     {
       "required": [
