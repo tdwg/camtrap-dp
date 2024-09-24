@@ -113,7 +113,8 @@
                   "principalInvestigator",
                   "rightsHolder",
                   "publisher",
-                  "contributor"
+                  "contributor",
+                  "funder"
                 ]
               }
             }

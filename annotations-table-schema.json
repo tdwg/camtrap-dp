@@ -1,11 +1,32 @@
 {
-  "name": "observations",
-  "title": "Observations",
-  "description": "Table with observations derived from the media files. Associated with deployments (`deploymentID`). Observations can mark non-animal events (camera setup, human, blank) or one or more animal observations (`observationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Observations can be made at different levels (`observationLevel`).",
+  "name": "annotations",
+  "title": "annotations",
+  "description": "Table with annotations derived from the media files. Associated with deployments (`deploymentID`). annotations can mark non-animal events (camera setup, human, blank) or one or more animal annotations (`annotationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. annotations can be made at different levels (`annotationLevel`).",
   "fields": [
     {
+      "name": "annotationID",
+      "description": "Unique identifier of the annotation.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true
+      },
+      "example": "ann2"
+    },
+    {
+      "name": "annotationSourceID",
+      "description": "Identifier of a previous annotation used as input, providing the provenance of annotations made by either machines or humans.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "ann1"
+    },
+    {
       "name": "observationID",
-      "description": "Unique identifier of the observation.",
+      "description": "Unique identifier of the (consensus) observation the annotation belongs to. Foreign key to `observations.observationID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
       "type": "string",
       "constraints": {
@@ -13,10 +34,10 @@
         "unique": true
       },
       "example": "obs1"
-    },
+    },  
     {
       "name": "deploymentID",
-      "description": "Identifier of the deployment the observation belongs to. Foreign key to `deployments.deploymentID`.",
+      "description": "Identifier of the deployment the annotation belongs to. Foreign key to `deployments.deploymentID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
       "type": "string",
       "constraints": {
@@ -26,7 +47,7 @@
     },
     {
       "name": "mediaID",
-      "description": "Identifier of the media file that was classified. Only applicable for media-based observations (`observationLevel` = `media`). Foreign key to `media.mediaID`.",
+      "description": "Identifier of the media file that was classified. Only applicable for media-based annotations (`annotationLevel` = `media`). Foreign key to `media.mediaID`.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/associatedMedia",
       "type": "string",
       "constraints": {
@@ -36,7 +57,7 @@
     },
     {
       "name": "eventID",
-      "description": "Identifier of the event the observation belongs to. Facilitates linking event-based and media-based observations with a permanent identifier.",
+      "description": "Identifier of the event the annotation belongs to. Facilitates linking event-based and media-based annotations with a permanent identifier.",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
       "type": "string",
       "constraints": {
@@ -69,8 +90,8 @@
       "example": "2020-04-01T22:00:00Z"
     },
     {
-      "name": "observationLevel",
-      "description": "Level at which the observation was classified. `media` for media-based observations that are directly associated with a media file (`mediaID`). These are especially useful for machine learning and don't need to be mutually exclusive (e.g. multiple classifications are allowed). `event` for event-based observations that consider an event (comprising a collection of media files). These are especially useful for ecological research and should be mutually exclusive, so that their `count` can be summed.",
+      "name": "annotationLevel",
+      "description": "Level at which the annotation was classified. `media` for media-based annotations that are directly associated with a media file (`mediaID`). These are especially useful for machine learning and don't need to be mutually exclusive (e.g. multiple classifications are allowed). `event` for event-based annotations that consider an event (comprising a collection of media files). These are especially useful for ecological research and should be mutually exclusive, so that their `count` can be summed.",
       "type": "string",
       "constraints": {
         "required": true,
@@ -82,8 +103,8 @@
       "example": "media"
     },
     {
-      "name": "observationType",
-      "description": "Type of the observation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a `classificationProbability` below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
+      "name": "annotationType",
+      "description": "Type of the annotation. All categories in this vocabulary have to be understandable from an AI point of view. `unknown` describes classifications with a `classificationProbability` below some predefined threshold i.e. neither humans nor AI can say what was recorded.",
       "type": "string",
       "constraints": {
         "required": true,
@@ -100,7 +121,7 @@
     },
     {
       "name": "cameraSetupType",
-      "description": "Type of the camera setup action (if any) associated with the observation.",
+      "description": "Type of the camera setup action (if any) associated with the annotation.",
       "type": "string",
       "constraints": {
         "required": false,
@@ -287,7 +308,7 @@
     },
     {
       "name": "classificationMethod",
-      "description": "Method (most recently) used to classify the observation.",
+      "description": "Method (most recently) used to classify the annotation.",
       "type": "string",
       "constraints": {
         "required": false,
@@ -300,13 +321,23 @@
     },
     {
       "name": "classifiedBy",
-      "description": "Name or identifier of the person or AI algorithm that (most recently) classified the observation.",
+      "description": "Name or identifier of the person or AI algorithm that (most recently) classified the annotation.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "type": "string",
       "constraints": {
         "required": false
       },
       "example": "MegaDetector V5"
+    },
+    {
+      "name": "classifiedByModelID",
+      "description": "Unique identifier of the model used for the annotation. Foreign key to `models.modelID`.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "mod1"
     },
     {
       "name": "classificationTimestamp",
@@ -331,8 +362,8 @@
       "example": 0.95
     },
     {
-      "name": "observationTags",
-      "description": "Tag(s) associated with the observation. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
+      "name": "annotationTags",
+      "description": "Tag(s) associated with the annotation. Formatted as a pipe (`|`) separated list for multiple values, with values optionally formatted as `key:value` pairs.",
       "skos:exactMatch": "http://rs.tdwg.org/ac/terms/tag",
       "type": "string",
       "constraints": {
@@ -341,8 +372,8 @@
       "example": "travelDirection:left"
     },
     {
-      "name": "observationComments",
-      "description": "Comments or notes about the observation.",
+      "name": "annotationComments",
+      "description": "Comments or notes about the annotation.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
       "type": "string",
       "constraints": {
@@ -354,8 +385,15 @@
   "missingValues": [
     ""
   ],
-  "primaryKey": "observationID",
+  "primaryKey": "annotationID",
   "foreignKeys": [
+    {
+      "fields": "annotationSourceID",
+      "reference": {
+        "resource": "",
+        "fields": "annotationID"
+      }
+    },
     {
       "fields": "deploymentID",
       "reference": {
