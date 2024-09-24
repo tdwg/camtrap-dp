@@ -1,7 +1,7 @@
 {
   "name": "annotations",
   "title": "annotations",
-  "description": "Table with annotations derived from the media files. Associated with deployments (`deploymentID`). annotations can mark non-animal events (camera setup, human, blank) or one or more animal annotations (`annotationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. annotations can be made at different levels (`annotationLevel`).",
+  "description": "Table with annotations derived from the media files. Associated with deployments (`deploymentID`). Annotations can mark non-animal events (camera setup, human, blank) or one or more animal annotations (`annotationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Annotations can be made at different levels (`annotationLevel`).",
   "fields": [
     {
       "name": "annotationID",
@@ -406,6 +406,13 @@
       "reference": {
         "resource": "media",
         "fields": "mediaID"
+      }
+    },
+    {
+      "fields": "classifiedByModelID",
+      "reference": {
+        "resource": "models",
+        "fields": "modelID"
       }
     }
   ]
