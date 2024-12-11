@@ -5,6 +5,7 @@ permalink: /faq/
 toc: true
 ---
 
+{:id="x"}
 ## How do I do x
 
 Text
@@ -18,6 +19,7 @@ y | 2
 SELECT * FROM table
 ```
 
+{:id="y"}
 ## How do I do y
 
 ...
