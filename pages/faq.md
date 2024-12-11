@@ -5,25 +5,6 @@ permalink: /faq/
 toc: true
 ---
 
-{:id="x"}
-## How do I do x
-
-Text
-
-field 1 | field 2
---- | ---
-x | 1
-y | 2
-
-```SQL
-SELECT * FROM table
-```
-
-{:id="y"}
-## How do I do y
-
-...
-
 {:id="bboxes"}
 ## How to describe bounding boxes?
 
@@ -51,7 +32,83 @@ If you have a use case for describing non-animal observations using camtrap-dp, 
 {:id="measurements"}
 ## How to include measurements in a data package?
 
-todo
+There are two ways to include additional information (values not covered by the standard fields) in a camtrap-dp data package:
+- Using tags
+
+Deployment and observation tables include `deploymentTags` and `observationTags` fields. These fields can be used to store additional information as pipe-delimited key:value pairs. For example, this is how temperature and snow cover information could be represented in the deployment table:
+
+deploymentID | deploymentTags
+--- | ---
+dep1 | temperature:20 &#x7c; snow_cover:false
+dep2 | temperature:-5 &#x7c; snow_cover:true
+
+There are some drawbacks to using this method. Storing additional information in the media table is not possible, since it does not contain a tags field. Additionally, data represented this way is difficult to parse.
+
+- Using a custom table
+
+A custom table can be added to the data package to store additional information. This requires providing a schema for the additional table. This schema has to contain the foreign key to the referenced table (`deploymentID`, `observationID` or `mediaID`) and the additional fields. This in an example schema for the deployment measurement table:
+```JSON
+{
+    "name": "deployment-measurements",
+    "title": "Deployment measurements",
+    "description": "Table with weather measurements for deployments. Associated with deployments (`deploymentID`).",
+    "fields": [
+        {
+            "name": "deploymentID",
+            "description": "Identifier of the deployment. Foreign key to `deployments.deploymentID`.",
+            "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
+            "type": "string",
+            "constraints": {
+                "required": true
+            },
+            "example": "dep1"
+        },
+        {
+            "name": "temperature",
+            "description": "Temperature (in Celsius) at the time of the observation.)",
+            "type": "number",
+            "constraints": {
+                "required": false,
+                "minimum": -50,
+                "maximum": 100
+            },
+            "example": 19.5
+        },
+        {
+            "name": "snowCover",
+            "description": "Snow cover present at the time of the observation.",
+            "type": "boolean",
+            "constraints": {
+                "required": false
+            },
+            "example": true
+        }
+    ],
+    "foreignKeys": [
+        {
+            "fields": "deploymentID",
+            "reference": {
+                "resource": "deployments",
+                "fields": "deploymentID"
+            }
+        }
+    ]
+}
+```
+
+The schema has to be added to the `datapackage.json` file in the `resources` field.
+
+This is an example table following the above schema:
+
+deploymentID | temperature | snowCover
+--- | --- | ---
+dep1 | 20 | false
+dep2 | -5 | true
+
+We recommend this approach for storing additional information. It allows for easy parsing and merging of tables and is more flexible than using tags.
+
+For more details, see [this github issue](https://github.com/tdwg/camtrap-dp/issues/358).
+
 
 {:id="merge"}
 ## How to merge data packages describing different projects?
