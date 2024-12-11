@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Camera Trap Data Package",
-  "description": "Data exchange format for camera trap data. <https://tdwg.github.io/camtrap-dp/>",
+  "description": "Data exchange format for camera trap data. <https://camtrap-dp.tdwg.org>",
   "type": "object",
   "$defs": {
     "version": {
-      "pattern": "0\\.6"
+      "pattern": "1\\.0\\.1"
     }
-  },  
+  },
   "allOf": [
     {
-      "$ref": "https://frictionlessdata.io/schemas/data-package.json"
+      "$ref": "https://specs.frictionlessdata.io/schemas/data-package.json"
     },
     {
       "required": [
@@ -24,7 +24,7 @@
       ],
       "properties": {
         "resources": {
-          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`. See [Data](../data) for the requirements for those resources.",
+          "description": "See [Data Package specification](https://specs.frictionlessdata.io/data-package/#resource-information). Camtrap DP further requires each object to be a [Tabular Data Resource](https://specs.frictionlessdata.io/tabular-data-resource/) with a specific `name` and `schema`. See [Data](https://camtrap-dp.tdwg.org/data) for the requirements for those resources.",
           "minItems": 3,
           "items": {
             "oneOf": [
@@ -41,8 +41,7 @@
                     "enum": [
                       "deployments",
                       "media",
-                      "media-observations",
-                      "event-observations"
+                      "observations"
                     ]
                   },
                   "path": {
@@ -58,7 +57,7 @@
                     "description": "URL of the used Camtrap DP Table Schema version (e.g. `https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0/deployments-table-schema.json`).",
                     "allOf": [
                       {
-                        "$ref": "#$defs/version"
+                        "$ref": "#/$defs/version"
                       },
                       {
                         "type": "string",
@@ -78,8 +77,7 @@
                       "enum": [
                         "deployments",
                         "media",
-                        "media-observations",
-                        "event-observations"
+                        "observations"
                       ]
                     }
                   }
@@ -161,7 +159,7 @@
                 "enum": [
                   "data",
                   "media"
-                ] 
+                ]
               }
             }
           }
@@ -179,7 +177,7 @@
             "samplingDesign",
             "captureMethod",
             "individualAnimals",
-            "eventInterval"
+            "observationLevel"
           ],
           "properties": {
             "id": {
@@ -205,7 +203,7 @@
             },
             "samplingDesign": {
               "description": "Type of a sampling design/layout. The values are based on [Wearn & Glover-Kapfer (2017)](https://doi.org/10.13140/RG.2.2.23409.17767), pages 80-82: `simple random`: random distribution of sampling locations; `systematic random`: random distribution of sampling locations, but arranged in a regular pattern; `clustered random`: random distribution of sampling locations, but clustered in arrays; `experimental`: non-random distribution aimed to study an effect, including the before-after control-impact (BACI) design; `targeted`: non-random distribution optimized for capturing specific target species (often using various bait types); `opportunistic`: opportunistic camera trapping (usually with a small number of cameras).",
-              "skos:broadMatch": "http://rs.tdwg.org/hc/terms/inventoryTypes",
+              "skos:broadMatch": "http://rs.tdwg.org/eco/terms/inventoryTypes",
               "type": "string",
               "enum": [
                 "simpleRandom",
@@ -222,7 +220,7 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "motionDetection",
+                  "activityDetection",
                   "timeLapse"
                 ]
               },
@@ -230,13 +228,19 @@
               "minItems": 1
             },
             "individualAnimals": {
-              "description": "`true` if the project includes marked or recognizable individuals. See also `media/event-observations.individualID`.",
+              "description": "`true` if the project includes marked or recognizable individuals. See also `observations.individualID`.",
               "type": "boolean"
             },
-            "eventInterval": {
-              "description": "Maximum duration between timestamps of successive media files to be considered part of a single event and be assigned the same `media.eventID`. Expressed in seconds.",
-              "type": "integer",
-              "unit": "s"
+            "observationLevel": {
+              "description": "Level at which observations are provided. See also `observations.observationLevel`.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "media",
+                  "event"
+                ]
+              }
             }
           }
         },
@@ -274,33 +278,25 @@
           }
         },
         "taxonomic": {
-          "description": "Taxonomic coverage of the package, based on the unique `media/event-observations.scientificName`.",
+          "description": "Taxonomic coverage of the package, based on the unique `observations.scientificName`.",
           "type": "array",
           "items": {
             "type": "object",
             "required": [
-              "taxonID",
-              "taxonIDReference",
               "scientificName"
             ],
             "properties": {
-              "taxonID": {
-                "description": "Unique identifier of the taxon according to the taxonomic reference list defined by `taxonIDReference`.",
-                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
-                "type": "string",
-                "example": "QLXL"
-              },
-              "taxonIDReference": {
-                "description": "URL of the source (reference list) of the `taxonID`.",
-                "type": "string",
-                "format": "uri",
-                "example": "https://www.catalogueoflife.org"
-              },
               "scientificName": {
                 "description": "Scientific name of the taxon.",
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/scientificName",
                 "type": "string",
                 "example": "Canis lupus"
+              },
+              "taxonID": {
+                "description": "Unique identifier of the taxon. Preferably a global unique identifier issued by an authoritative checklist.",
+                "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
+                "type": "string",
+                "example": "https://www.checklistbank.org/dataset/COL2023/taxon/QLXL"
               },
               "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",
@@ -355,17 +351,17 @@
                 "example": "Canis"
               },
               "vernacularNames": {
-                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language codes should follow ISO 639-1 (e.g. `en` for English).",
+                "description": "Common or vernacular names of the taxon, as `languageCode: vernacular name` pairs. Language codes should follow ISO 693-3 (e.g. `eng` for English).",
                 "type": "object",
                 "patternProperties": {
-                  "^[a-z]{2}$": {
+                  "^[a-z]{3}$": {
                     "description": "Common or vernacular name of the taxon in that language.",
                     "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/vernacularName",
-                    "type": "string"                    
+                    "type": "string"
                   }
                 },
                 "additionalProperties": false,
-                "example": "{'en': 'wolf', 'fr': 'loup gris'}"
+                "example": "{'eng': 'wolf', 'fra': 'loup gris'}"
               }
             }
           }

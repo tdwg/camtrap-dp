@@ -7,7 +7,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/deployments-table-schema.json"
     },
     {
       "name": "media",
@@ -16,25 +16,16 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/media-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/media-table-schema.json"
     },
     {
-      "name": "media-observations",
-      "path": "media-observations.csv",
+      "name": "observations",
+      "path": "observations.csv",
       "profile": "tabular-data-resource",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/media-observations-table-schema.json"
-    },
-    {
-      "name": "event-observations",
-      "path": "event-observations.csv",
-      "profile": "tabular-data-resource",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/event-observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/observations-table-schema.json"
     },
     {
       "name": "individuals",
@@ -48,8 +39,8 @@
       ]
     }
   ],
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/0.6/camtrap-dp-profile.json",
-  "name": "mica-management-of-invasive-coypu-and-muskrat-in-europe-20230206112303",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/camtrap-dp-profile.json",
+  "name": "camtrap-dp-example-dataset",
   "id": "7cca70f5-ef8c-4f86-85fb-8f070937d7ab",
   "created": "2023-02-06T11:23:03Z",
   "title": "Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany",
@@ -90,7 +81,7 @@
     }
   ],
   "description": "MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany is an occurrence dataset published by the Research Institute of Nature and Forest (INBO). It is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. This dataset is a sample of the original dataset and serves as an example of a Camera Trap Data Package (Camtrap DP).",
-  "version": "1.0",
+  "version": "1.0.1",
   "keywords": [
     "camera traps",
     "public awareness campaign",
@@ -104,7 +95,7 @@
     "coypu"
   ],
   "image": "",
-  "homepage": "",
+  "homepage": "https://camtrap-dp.tdwg.org/example/",
   "sources": [
     {
       "title": "Agouti",
@@ -123,7 +114,7 @@
       "scope": "media"
     }
   ],
-  "bibliographicCitation": "Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0. Research Institute for Nature and Forest (INBO). Dataset. https://github.com/tdwg/camtrap-dp/tree/main/example",
+  "bibliographicCitation": "Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0.1. Research Institute for Nature and Forest (INBO). Dataset. https://camtrap-dp.tdwg.org/example/",
   "project": {
     "id": "86cabc14-d475-4439-98a7-e7b590bed60e",
     "title": "Management of Invasive Coypu and muskrAt in Europe",
@@ -132,21 +123,18 @@
     "samplingDesign": "targeted",
     "path": "https://lifemica.eu",
     "captureMethod": [
-      "motionDetection",
+      "activityDetection",
       "timeLapse"
     ],
     "individualAnimals": false,
-    "eventInterval": 120
+    "observationLevel": [
+      "media",
+      "event"
+    ]
   },
   "coordinatePrecision": 0.001,
   "spatial": {
     "type": "Polygon",
-    "bbox": [
-      4.013,
-      50.699,
-      5.659,
-      51.496
-    ],
     "coordinates": [
       [
         [
@@ -178,110 +166,100 @@
   },
   "taxonomic": [
     {
-      "taxonID": "DGP6",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas platyrhynchos",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGP6",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "mallard",
-        "nl": "wilde eend"
+        "eng": "mallard",
+        "nld": "wilde eend"
       }
     },
     {
-      "taxonID": "DGPL",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Anas strepera",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGPL",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "gadwall",
-        "nl": "krakeend"
+        "eng": "gadwall",
+        "nld": "krakeend"
       }
     },
     {
-      "taxonID": "32FH",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/32FH",
       "taxonRank": "genus",
       "vernacularNames": {
-        "en": "great herons",
-        "nl": "reigers"
+        "eng": "great herons",
+        "nld": "reigers"
       }
     },
     {
-      "taxonID": "GCHS",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Ardea cinerea",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/GCHS",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "grey heron",
-        "nl": "blauwe reiger"
+        "eng": "grey heron",
+        "nld": "blauwe reiger"
       }
     },
     {
-      "taxonID": "V2",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Aves",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/V2",
       "taxonRank": "class",
       "vernacularNames": {
-        "en": "bird sp.",
-        "nl": "vogel"
+        "eng": "bird sp.",
+        "nld": "vogel"
       }
     },
     {
-      "taxonID": "6MB3T",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Homo sapiens",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/6MB3T",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "human",
-        "nl": "mens"
+        "eng": "human",
+        "nld": "mens"
       }
     },
     {
-      "taxonID": "3Y9VW",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Martes foina",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/3Y9VW",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "beech marten",
-        "nl": "steenmarter"
+        "eng": "beech marten",
+        "nld": "steenmarter"
       }
     },
     {
-      "taxonID": "44QYC",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Mustela putorius",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/44QYC",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "European polecat",
-        "nl": "bunzing"
+        "eng": "European polecat",
+        "nld": "bunzing"
       }
     },
     {
-      "taxonID": "4RM67",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Rattus norvegicus",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/4RM67",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "brown rat",
-        "nl": "bruine rat"
+        "eng": "brown rat",
+        "nld": "bruine rat"
       }
     },
     {
-      "taxonID": "5BSG3",
-      "taxonIDReference": "https://www.checklistbank.org/dataset/3LR",
       "scientificName": "Vulpes vulpes",
+      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/5BSG3",
       "taxonRank": "species",
       "vernacularNames": {
-        "en": "red fox",
-        "nl": "vos"
+        "eng": "red fox",
+        "nld": "vos"
       }
     }
   ],
   "relatedIdentifiers": [
     {
       "relationType": "IsDerivedFrom",
-      "relatedIdentifier": "https://doi.org/10.5281/zenodo.5590881",
+      "relatedIdentifier": "https://doi.org/10.15468/5tb6ze",
       "resourceTypeGeneral": "Dataset",
       "relatedIdentifierType": "DOI"
     },
@@ -292,5 +270,5 @@
       "relatedIdentifierType": "URL"
     }
   ],
-  "references": []
+  "references": [ ]
 }

@@ -5,25 +5,29 @@ permalink: /
 description: Data exchange format for camera trap data
 ---
 
-**Camera Trap Data Package** (or **Camtrap DP** for short) is a community developed data exchange format for camera trap data.
-
-{:.alert .alert-warning}
-Camtrap DP is [under development](https://github.com/tdwg/camtrap-dp/milestone/1) and not yet recommended for production use.
-
-## Usage
-
-A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
+**Camera Trap Data Package** (Camtrap DP) is a community-developed data exchange format for camera trap data. A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
 
 File | Description
 --- | ---
-`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) regarding the data package and camera trap project.
-`deployments.csv` | Table with camera trap [deployments](data/#deployments).
-`media.csv` | Table with [media](data/#media) files captured by the camera traps.
-`media-observations.csv` and/or `event-observations` | Table with observations that are classified at respectively [media file](data/#media-observations) or [event](data/#event-observations) level.
+`datapackage.json`{:.d-inline-block style="width:150px;"} | [Metadata](metadata/) about the data package and camera trap project.
+`deployments.csv` | Table with camera trap placements ([deployments](data/#deployments)).
+`media.csv` | Table with [media](data/#media) files recorded during deployments.
+`observations.csv` | Table with [observations](data/#observations) derived from the media files.
+
+## Context
+
+See [Bubnicki et al. (2023)](https://doi.org/10.1002/rse2.374) to learn more about Camtrap DP.
 
 ## Example
 
-[Example dataset](https://github.com/tdwg/camtrap-dp/tree/main/example) following Camtrap DP specifications.
+See the [example dataset](example/).
+
+## Software
+
+- [camtrapdp](https://inbo.github.io/camtrapdp): R package to read and manipulate Camtrap DP.
+- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
+- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
+- [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) (v3): Online software tool to publish biodiversity datasets to the Global Biodiversity Information Facility (GBIF). See the [2022 webinar](https://www.gbif.org/composition/4fZGV2vrXjo3rNxySz41sj/exploring-camera-trap-data) for context and [Reyserhove et al. (2023)](https://doi.org/10.35035/doc-0qzp-2x37) for publication guidelines.
 
 ## Validation
 
@@ -43,12 +47,8 @@ To allow validation, the `datapackage.json` of your dataset should reference the
          "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/media-table-schema.json"
       },
       {
-         "name": "media-observations",
-         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/media-observations-table-schema.json"
-      },
-      {
-         "name": "event-observations",
-         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/event-observations-table-schema.json"
+         "name": "observations",
+         "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/<version>/observations-table-schema.json"
       }
    ]
 }
@@ -61,22 +61,16 @@ pip install frictionless
 frictionless validate path/to/your/datapackage.json
 ```
 
-## Implementations
-
-- [camtraptor](https://inbo.github.io/camtraptor): R package to read, explore and visualize Camtrap DP.
-- [Agouti](https://agouti.eu): Data management platform, uses Camtrap DP as export format.
-- [TRAPPER](https://os-conservation.org/projects/trapper): Data management platform, uses Camtrap DP as export format.
-
-See also the recorded [November 2022 webinar](https://www.gbif.org/event/f68927-b5c1-4ac8-a4ac-7d47645/exploring-camera-trap-data) for an introduction to Camtrap DP and its intended adoption as a publication format by the Global Biodiversity Information Facility (GBIF).
-
 ## Contribute
 
 Questions? Suggestions? Contribute to the development of Camtrap DP by watching the [repository](https://github.com/tdwg/camtrap-dp) and participating in [issue discussions](https://github.com/tdwg/camtrap-dp/issues).
 
-## Recommended citation
+## Citation
 
-> Camtrap DP Development Team (2022) Camera Trap Data Package (Camtrap DP). <https://tdwg.github.io/camtrap-dp>
+To cite the Camtrap DP paper:
 
-Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG). It was originally developed by the [Open Science Conservation Fund](https://os-conservation.org/), the [Mammal Research Institute Polish Academy of Sciences (MRI PAS)](https://ibs.bialowieza.pl/en/) and the [Research Institute for Nature and Forest (INBO)](https://inbo.be/en).
+> Bubnicki JW, Norton B, Baskauf SJ, Bruce T, Cagnacci F, Casaer J, Churski M, Cromsigt JPGM, Farra SD, Fiderer C, Forrester TD, Hendry H, Heurich M, Hofmeester TR, Jansen PA, Kays R, Kuijper DPJ, Liefting Y, Linnell JDC, Luskin MS, Mann C, Milotic T, Newman P, Niedballa J, Oldoni D, Ossi F, Robertson T, Rovero F, Rowcliffe M, Seidenari L, Stachowicz I, Stowell D, Tobler MW, Wieczorek J, Zimmermann F, Desmet P (2023). Camtrap DP: an open standard for the FAIR exchange and archiving of camera trap data. Remote Sensing in Ecology and Conservation. <https://doi.org/10.1002/rse2.374>
 
-Camtrap DP is endorsed by the camera trap data management systems [Agouti](https://www.agouti.eu/), [eMammal](https://emammal.si.edu/), [TRAPPER](https://doi.org/10.1111/2041-210X.12571), [Wildlife Insights](https://www.wildlifeinsights.org/) and already available as an export format in some of these.
+To cite the Camtrap DP standard, use the [citation provided by GitHub](https://github.com/tdwg/camtrap-dp), which is generated from a `CITATION.cff` file. See [About CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) for more info.
+
+Camtrap DP is managed by the [Machine Observations Interest Group](https://www.tdwg.org/community/mobs/) of Biodiversity Information Standards (TDWG).

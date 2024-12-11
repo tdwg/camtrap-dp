@@ -20,7 +20,7 @@ def ServeDirectoryWithHTTP(directory="."):
     The server serves files from the given *directory*. The port listening on
     will automatically be picked by the operating system to avoid race
     conditions when trying to bind to an open port that turns out not to be
-    free afterall. The hostname is always "localhost".
+    free after all. The hostname is always "localhost".
 
     Parameters
     ----------
@@ -33,7 +33,7 @@ def ServeDirectoryWithHTTP(directory="."):
         The HTTP server which is serving files from a separate thread.
 
         It is not super necessary but you might want to call shutdown() on the
-        returned HTTP server object. This will stop the inifinite request loop
+        returned HTTP server object. This will stop the infinite request loop
         running in the thread which in turn will then exit. The reason why this
         is only optional is that the thread in which the server runs is a daemon
         thread which will be terminated when the main thread ends.
@@ -89,11 +89,14 @@ def ServeDirectoryWithHTTP(directory="."):
 
     def serve_forever(httpd):
         with httpd:  # to make sure httpd.server_close is called
-            _xprint("server about to serve files from directory (infinite request loop):", directory)
+            _xprint(
+                "server about to serve files from directory (infinite request loop):",
+                directory,
+            )
             httpd.serve_forever()
             _xprint("server left infinite request loop")
 
-    thread = Thread(target=serve_forever, args=(httpd, ))
+    thread = Thread(target=serve_forever, args=(httpd,))
     thread.setDaemon(True)
     thread.start()
 
@@ -102,8 +105,9 @@ def ServeDirectoryWithHTTP(directory="."):
 
 def _xprint(*args, **kwargs):
     """Wrapper function around print() that prepends the current thread name"""
-    print("[", current_thread().name, "]",
-          " ".join(map(str, args)), **kwargs, file=stderr)
+    print(
+        "[", current_thread().name, "]", " ".join(map(str, args)), **kwargs, file=stderr
+    )
 
 
 class _SimpleRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -117,4 +121,5 @@ class _SimpleRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     from doctest import testmod
+
     testmod(verbose=True)

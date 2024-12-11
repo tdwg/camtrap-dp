@@ -1,7 +1,7 @@
 {
   "name": "media",
   "title": "Media",
-  "description": "Table with media files (images/videos) captured by the camera traps. Associated with deployments (`deploymentID`) and organized in events (`eventID`). Includes timestamp and file path.",
+  "description": "Table with media files (images/videos) recorded during deployments (`deploymentID`). Includes timestamp and file path.",
   "fields": [
     {
       "name": "mediaID",
@@ -25,16 +25,6 @@
       "example": "dep1"
     },
     {
-      "name": "eventID",
-      "description": "Identifier of the event the media file belongs to. Events are defined by `package.project.eventInterval` and group one or more media files (e.g. a single image or video or a sequence of successive images or videos).",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventID",
-      "type": "string",
-      "constraints": {
-        "required": true
-      },
-      "example": "seq1"
-    },
-    {
       "name": "captureMethod",
       "description": "Method used to capture the media file.",
       "skos:broadMatch": "http://rs.tdwg.org/ac/terms/resourceCreationTechnique",
@@ -42,11 +32,11 @@
       "constraints": {
         "required": false,
         "enum": [
-          "motionDetection",
+          "activityDetection",
           "timeLapse"
         ]
       },
-      "example": "motionDetection"
+      "example": "activityDetection"
     },
     {
       "name": "timestamp",
@@ -73,6 +63,7 @@
     {
       "name": "filePublic",
       "description": "`false` if the media file is not publicly accessible (e.g. to protect the privacy of people).",
+      "skos:broadMatch": "http://rs.tdwg.org/ac/terms/serviceExpectation",
       "type": "boolean",
       "constraints": {
         "required": true
@@ -90,17 +81,19 @@
     },
     {
       "name": "fileMediatype",
-      "description": "Mediatype of the media file.",
+      "description": "Mediatype of the media file. Expressed as an [IANA Media Type](https://www.iana.org/assignments/media-types/media-types.xhtml).",
+      "skos:broadMatch": "http://purl.org/dc/elements/1.1/format",
       "type": "string",
       "constraints": {
-        "required": true
+        "required": true,
+        "pattern": "^(image|video|audio)\/.*$"
       },
       "example": "image/jpeg"
     },
     {
       "name": "exifData",
       "description": "EXIF data of the media file. Formatted as a valid JSON object.",
-      "type": "object",
+      "type": "any",
       "constraints": {
         "required": false
       },
@@ -127,9 +120,7 @@
     }
   ],
   "missingValues": [
-    "",
-    "NaN",
-    "nan"
+    ""
   ],
   "primaryKey": "mediaID",
   "foreignKeys": [

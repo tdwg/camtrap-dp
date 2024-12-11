@@ -1,7 +1,7 @@
 {
   "name": "deployments",
   "title": "Deployments",
-  "description": "Table with camera trap deployments. Includes `deploymentID`, start, end, location and camera setup information.",
+  "description": "Table with camera trap placements (deployments). Includes `deploymentID`, start, end, location and camera setup information.",
   "fields": [
     {
       "name": "deploymentID",
@@ -71,7 +71,7 @@
       "example": 100
     },
     {
-      "name": "start",
+      "name": "deploymentStart",
       "description": "Date and time at which the deployment was started. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
@@ -82,7 +82,7 @@
       "example": "2020-03-01T22:00:00Z"
     },
     {
-      "name": "end",
+      "name": "deploymentEnd",
       "description": "Date and time at which the deployment was ended. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/eventDate",
       "type": "datetime",
@@ -95,7 +95,7 @@
     {
       "name": "setupBy",
       "description": "Name or identifier of the person or organization that deployed the camera.",
-      "skos:broadMatch": "http://rs.tdwg.org/hc/terms/samplingPerformedBy",
+      "skos:broadMatch": "http://rs.tdwg.org/eco/terms/samplingPerformedBy",
       "type": "string",
       "constraints": {
         "required": false
@@ -123,7 +123,7 @@
     },
     {
       "name": "cameraDelay",
-      "description": "Predefined duration after a trigger when activity detected by the camera is ignored. Expressed in seconds.",
+      "description": "Predefined duration after detection when further activity is ignored. Expressed in seconds.",
       "type": "integer",
       "constraints": {
         "required": false,
@@ -133,7 +133,11 @@
     },
     {
       "name": "cameraHeight",
-      "description": "Height at which the camera was deployed. Expressed in meters.",
+      "description": "Height at which the camera was deployed. Expressed in meters. Not to be combined with `cameraDepth`.",
+      "skos:narrowMatch": [
+        "http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
+        "http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters"
+      ],
       "type": "number",
       "constraints": {
         "required": false,
@@ -141,6 +145,21 @@
       },
       "unit": "m",
       "example": 1.2
+    },
+    {
+      "name": "cameraDepth",
+      "description": "Depth at which the camera was deployed. Expressed in meters. Not to be combined with `cameraHeight`.",
+      "skos:narrowMatch": [
+        "http://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
+        "http://rs.tdwg.org/dwc/terms/maximumDepthInMeters"
+      ],
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": 0
+      },
+      "unit": "m",
+      "example": 4.8
     },
     {
       "name": "cameraTilt",
@@ -260,9 +279,7 @@
     }
   ],
   "missingValues": [
-    "",
-    "NaN",
-    "nan"
+    ""
   ],
   "primaryKey": "deploymentID"
 }

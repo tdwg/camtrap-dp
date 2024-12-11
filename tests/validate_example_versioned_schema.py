@@ -5,8 +5,9 @@ import json
 from helpers import validate_package_print_and_exit, EXAMPLE_PATH
 
 if __name__ == "__main__":
-    # Frictionless loads resource relative to the current directory, (and not to the descriptor)
-    # Issue reported to frictionless: https://github.com/frictionlessdata/frictionless-py/issues/956
+    # Frictionless loads resource relative to the current directory,
+    # (and not to the descriptor). Issue reported to frictionless:
+    # https://github.com/frictionlessdata/frictionless-py/issues/956
     os.chdir(EXAMPLE_PATH.parent)
 
     with open(EXAMPLE_PATH) as json_file:
