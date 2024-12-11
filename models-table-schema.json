@@ -1,0 +1,21 @@
+{
+  "name": "models",
+  "title": "models",
+  "description": "Table with details of the ML/AI models used to produce the annotations.",
+  "fields": [
+    {
+      "name": "modelID",
+      "description": "Unique identifier of the model.",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true
+      },
+      "example": "mod1"
+    }
+  ],
+  "missingValues": [
+    ""
+  ],
+  "primaryKey": "modelID"
+}
