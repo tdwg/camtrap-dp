@@ -109,11 +109,11 @@
               "role": {
                 "description": "Role of the contributor. Defaults to `contributor`.",
                 "enum": [
+                  "contributor",
                   "contact",
                   "principalInvestigator",
                   "rightsHolder",
                   "publisher",
-                  "contributor",
                   "funder"
                 ]
               }

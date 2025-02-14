@@ -217,14 +217,14 @@
     },
     {
       "name": "individualLength",
-      "description": "Length of the observed individual identified by `individualID`. Expressed in centimetres.",
+      "description": "Length of the observed individual identified by `individualID`. Expressed in meters.",
       "type": "number",
       "constraints": {
         "required": false,
         "minimum": 0
       },
-      "unit": "cm",
-      "example": 10
+      "unit": "m",
+      "example": 0.1
     },
     {
       "name": "individualBiomass",
@@ -309,6 +309,16 @@
       "example": "MegaDetector V5"
     },
     {
+      "name": "modelID",
+      "description": "Unique identifier of the model used for the annotation. Foreign key to `models.modelID`.",
+      "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
+      "type": "string",
+      "constraints": {
+        "required": false
+      },
+      "example": "mod1"
+    },
+    {
       "name": "classificationTimestamp",
       "description": "Date and time of the (most recent) classification. Formatted as an ISO 8601 string with timezone designator (`YYYY-MM-DDThh:mm:ssZ` or `YYYY-MM-DDThh:mm:ss±hh:mm`).",
       "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/dateIdentified",
@@ -368,6 +378,13 @@
       "reference": {
         "resource": "media",
         "fields": "mediaID"
+      }
+    },
+    {
+      "fields": "modelID",
+      "reference": {
+        "resource": "models",
+        "fields": "modelID"
       }
     }
   ]

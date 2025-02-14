@@ -6,7 +6,7 @@
     {
       "name": "annotationID",
       "description": "Unique identifier of the annotation.",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/identificationID",
       "type": "string",
       "constraints": {
         "required": true,
@@ -17,7 +17,7 @@
     {
       "name": "annotationSourceID",
       "description": "Identifier of a previous annotation used as input, providing the provenance of annotations made by either machines or humans.",
-      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/occurrenceID",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/identificationID",
       "type": "string",
       "constraints": {
         "required": false
@@ -330,7 +330,7 @@
       "example": "MegaDetector V5"
     },
     {
-      "name": "classifiedByModelID",
+      "name": "modelID",
       "description": "Unique identifier of the model used for the annotation. Foreign key to `models.modelID`.",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/identifiedBy",
       "type": "string",
@@ -409,7 +409,7 @@
       }
     },
     {
-      "fields": "classifiedByModelID",
+      "fields": "modelID",
       "reference": {
         "resource": "models",
         "fields": "modelID"

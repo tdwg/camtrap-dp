@@ -174,15 +174,6 @@
       "example": -90
     },
     {
-      "name": "cameraSettings",
-      "description": "Other custom camera settings used for the deployment. Formatted as a valid JSON object.",
-      "type": "any",
-      "constraints": {
-        "required": false
-      },
-      "example": "{\"setting1\":200,\"setting2\":true}"
-    },
-    {
       "name": "cameraHeading",
       "description": "Angle at which the camera was deployed in the horizontal plane. Expressed in decimal degrees clockwise from north, with values ranging from `0` to `360`: `0` = north, `90` = east, `180` = south, `270` = west.",
       "type": "integer",
@@ -193,6 +184,15 @@
       },
       "unit": "°",
       "example": 225
+    },
+    {
+      "name": "cameraSettings",
+      "description": "Other camera settings used for the deployment. Formatted as a valid JSON object.",
+      "type": "any",
+      "constraints": {
+        "required": false
+      },
+      "example": "{\"setting1\":200,\"setting2\":true}"
     },
     {
       "name": "detectionDistance",
