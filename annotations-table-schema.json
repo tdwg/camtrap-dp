@@ -1,7 +1,7 @@
 {
   "name": "annotations",
   "title": "annotations",
-  "description": "Table with annotations derived from the media files. Associated with deployments (`deploymentID`). Annotations can mark non-animal events (camera setup, human, blank) or one or more animal annotations (`annotationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Annotations can be made at different levels (`annotationLevel`).",
+  "description": "Table with annotations derived from the media files. Associated with deployments (`deploymentID`). Annotations can mark non-animal events (camera setup, human, blank) or one or more animal annotations (`annotationType` = `animal`) of a certain taxon, count, life stage, sex, behavior and/or individual. Annotations can be made at different levels (`annotationLevel`). The purpose of this table is to show the history of annotating resources and to enable comparison of different annotation methods. Annotations do not need to be mutually exclusive: multiple annotations of a certain taxon, count, life stage, sex, behavior and/or individual per one media resource or event are allowed.",
   "fields": [
     {
       "name": "annotationID",
@@ -91,7 +91,7 @@
     },
     {
       "name": "annotationLevel",
-      "description": "Level at which the annotation was classified. `media` for media-based annotations that are directly associated with a media file (`mediaID`). These are especially useful for machine learning and don't need to be mutually exclusive (e.g. multiple classifications are allowed). `event` for event-based annotations that consider an event (comprising a collection of media files). These are especially useful for ecological research and should be mutually exclusive, so that their `count` can be summed.",
+      "description": "Level at which the annotation was classified. `media` for media-based annotations that are directly associated with a media file (`mediaID`). `event` for event-based annotations that consider an event (comprising a collection of media files). ",
       "type": "string",
       "constraints": {
         "required": true,
