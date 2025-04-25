@@ -15,19 +15,19 @@ The `bboxX` and `bboxY` fields represent the coordinates of the top-left corner 
 {:id="multiple-events"}
 ## How to describe multiple events related to a single resource?
 
-Multiple records in the observations table can reference the same media. See the [github issue](https://github.com/tdwg/camtrap-dp/issues/39).
+Multiple records in the observations table can reference the same media. See [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/39).
 
 {:id="multi-camera"}
 ## How to handle multi-camera deployments?
 
-See the [github issue](https://github.com/tdwg/camtrap-dp/issues/328).
+See [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/328).
 
 {:id="non-animal"}
 ## Can I describe plant or fungus observations using camtrap-dp?
 
 Currently, possible values for the [`observationType`](/data/#observations.observationType) field in the observations table are: `animal`, `human`, `vehicle`, `blank`, `unknown` and `unclassified`. This definition does not allow for observations of plants or fungi. 
 
-If you have a use case for describing non-animal observations using camtrap-dp, please let us know in [this github issue](https://github.com/tdwg/camtrap-dp/issues/346).
+If you have a use case for describing non-animal observations using camtrap-dp, please let us know in [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/346).
 
 {:id="measurements"}
 ## How to include measurements in a data package?
@@ -109,7 +109,7 @@ dep2 | -5 | true
 
 We recommend this approach for storing additional information. It allows for easier parsing and merging of tables and is more flexible than using tags.
 
-For more details, see [this github issue](https://github.com/tdwg/camtrap-dp/issues/358).
+For more details, see [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/358).
 
 
 {:id="merge"}
