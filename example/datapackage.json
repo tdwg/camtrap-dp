@@ -265,7 +265,7 @@
     },
     {
       "relationType": "IsSupplementTo",
-      "relatedIdentifier": "https://inbo.github.io/camtraptor/",
+      "relatedIdentifier": "https://inbo.github.io/camtrapdp/",
       "resourceTypeGeneral": "Software",
       "relatedIdentifierType": "URL"
     }
