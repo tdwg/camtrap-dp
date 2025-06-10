@@ -330,7 +330,7 @@
     }
   ],
   "missingValues": [
-    "", "NA", "nan"
+    "", "NA", "NaN"
   ],
   "primaryKey": "observationID",
   "foreignKeys": [

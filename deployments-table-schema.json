@@ -279,7 +279,7 @@
     }
   ],
   "missingValues": [
-    "", "NA", "nan"
+    "", "NA", "NaN"
   ],
   "primaryKey": "deploymentID"
 }
