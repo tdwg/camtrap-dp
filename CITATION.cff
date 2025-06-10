@@ -3,7 +3,7 @@ message: 'To cite "Camtrap DP" in publications use:'
 type: software
 license: MIT
 title: Camera Trap Data Package (Camtrap DP)
-version: 1.0.1
+version: 1.0.2
 authors:
   - given-names: Peter
     family-names: Desmet
