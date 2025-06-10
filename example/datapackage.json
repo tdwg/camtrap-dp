@@ -7,7 +7,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/deployments-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/deployments-table-schema.json"
     },
     {
       "name": "media",
@@ -16,7 +16,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/media-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/media-table-schema.json"
     },
     {
       "name": "observations",
@@ -25,7 +25,7 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/observations-table-schema.json"
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/observations-table-schema.json"
     },
     {
       "name": "individuals",
@@ -39,7 +39,7 @@
       ]
     }
   ],
-  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/camtrap-dp-profile.json",
+  "profile": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/camtrap-dp-profile.json",
   "name": "camtrap-dp-example-dataset",
   "id": "7cca70f5-ef8c-4f86-85fb-8f070937d7ab",
   "created": "2023-02-06T11:23:03Z",
@@ -81,7 +81,7 @@
     }
   ],
   "description": "MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany is an occurrence dataset published by the Research Institute of Nature and Forest (INBO). It is part of the LIFE project MICA, in which innovative techniques are tested for a more efficient control of muskrat and coypu populations, both invasive species. This dataset is a sample of the original dataset and serves as an example of a Camera Trap Data Package (Camtrap DP).",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "camera traps",
     "public awareness campaign",
@@ -114,7 +114,7 @@
       "scope": "media"
     }
   ],
-  "bibliographicCitation": "Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0.1. Research Institute for Nature and Forest (INBO). Dataset. https://camtrap-dp.tdwg.org/example/",
+  "bibliographicCitation": "Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0.2. Research Institute for Nature and Forest (INBO). Dataset. https://camtrap-dp.tdwg.org/example/",
   "project": {
     "id": "86cabc14-d475-4439-98a7-e7b590bed60e",
     "title": "Management of Invasive Coypu and muskrAt in Europe",

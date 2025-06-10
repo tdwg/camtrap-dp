@@ -14,6 +14,7 @@ The dataset is derived from a [camera trap study](https://lifemica.eu/research-i
 
 Camtrap DP version | Dataset download | Dataset on GitHub
 --- | --- | ---
+`1.0.2` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0.2/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0.2/example){:.btn .btn-sm .btn-outline-primary}
 `1.0.1` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0.1/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0.1/example){:.btn .btn-sm .btn-outline-primary}
 `1.0` | [Download](https://download-directory.github.io?url=https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-primary target="_blank"} | [GitHub](https://github.com/tdwg/camtrap-dp/tree/1.0/example){:.btn .btn-sm .btn-outline-primary}
 
@@ -43,4 +44,4 @@ The selected deployments covers a wide range of use cases:
 
 ## Citation
 
-> Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0.1. Research Institute for Nature and Forest (INBO). Dataset. <https://camtrap-dp.tdwg.org/example/>
+> Desmet P, Neukermans A, Van der beeck D, Cartuyvels E (2022). Sample from: MICA - Muskrat and coypu camera trap observations in Belgium, the Netherlands and Germany. Version 1.0.2. Research Institute for Nature and Forest (INBO). Dataset. <https://camtrap-dp.tdwg.org/example/>
