@@ -6,7 +6,7 @@
   href: /metadata/
 - text: Data
   href: /data/
-- text: Example dataset
+- text: Example
   menu:
   - text: Example dataset
     href: /example/
@@ -21,5 +21,7 @@
     href: /example/62c200a9/
 - text: FAQ
   href: /faq/
+- text: Changelog
+  href: /changelog/
 - text: GitHub
   href: https://github.com/tdwg/camtrap-dp
