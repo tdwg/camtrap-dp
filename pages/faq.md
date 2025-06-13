@@ -8,7 +8,7 @@ toc: true
 {:id="bboxes"}
 ## How to describe bounding boxes of detected objects?
 
-In Camtrap DP, in the [observations](/data/#observations) table there are four terms used to describe bounding boxes: [`bboxX`](/data/#observations.bboxX), [`bboxY`](/data/#observations.bboxY), [`bboxWidth`](/data/#observations.bboxWidth), and [`bboxHeight`](/data/#observations.bboxHeight). The values for all these fields are numbers between 0 and 1, relative to the image size.
+In the [observations](/data/#observations) table there are four terms used to describe bounding boxes: [`bboxX`](/data/#observations.bboxX), [`bboxY`](/data/#observations.bboxY), [`bboxWidth`](/data/#observations.bboxWidth), and [`bboxHeight`](/data/#observations.bboxHeight). The values for all these fields are numbers between 0 and 1, relative to the image size.
 
 The `bboxX` and `bboxY` fields represent the coordinates of the top-left corner of the bounding box. `bboxX` is measured from the left edge of the image, while `bboxY` is measured from the top edge. `bboxWidth` represents the width of the bounding box, measured from its left edge to its right edge. Similarly, `bboxHeight` represents the height of the bounding box, measured from its top edge to its bottom edge.
 
@@ -23,20 +23,20 @@ Multiple records in the observations table can reference the same media. See [th
 See [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/328).
 
 {:id="non-animal"}
-## Can I describe plant or fungus observations using camtrap-dp?
+## Can I describe plant or fungus observations using Camtrap DP?
 
 Currently, possible values for the [`observationType`](/data/#observations.observationType) field in the observations table are: `animal`, `human`, `vehicle`, `blank`, `unknown` and `unclassified`. This definition does not allow for observations of plants or fungi. 
 
-If you have a use case for describing non-animal observations using camtrap-dp, please let us know in [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/346).
+If you have a use case for describing non-animal observations using Camtrap DP, please let us know in [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/346).
 
 {:id="measurements"}
 ## How to include measurements in a data package?
 
-There are two ways to include additional information (values not covered by the standard fields) in a camtrap-dp data package:
+There are two ways to include additional information (values not covered by the standard fields) in a Camtrap DP:
 
 ### Using tags
 
-Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. These fields can be used to store additional information as pipe-delimited key:value pairs. For example, this is how temperature and snow cover information could be represented in the deployment table:
+Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. You can use these fields to store additional information as key:value pairs, separated by a pipe character (|). For example, this is how temperature and snow cover information could be represented in the deployment table:
 
 deploymentID | deploymentTags
 --- | ---
@@ -47,7 +47,7 @@ There are some drawbacks to using this method. Storing additional information in
 
 ### Using a custom table
 
-A custom table can be added to the data package to store additional information. This requires providing a schema for the additional table. The schema must include a foreign key to the referenced table ([`deploymentID`](/data/#deployments.deploymentID), [`observationID`](/data/#observations.observationID), or [`mediaID`](/data/#media.mediaID)) and the additional fields. Here is an example schema for the deployment measurement table:
+You can add a custom table to the data package to store additional information. This requires providing a schema for the additional table. The schema must include a foreign key to the referenced table ([`deploymentID`](/data/#deployments.deploymentID), [`observationID`](/data/#observations.observationID), or [`mediaID`](/data/#media.mediaID)) and the additional fields. Here is an example schema for the deployment measurement table:
 
 ```json
 {
@@ -98,7 +98,7 @@ A custom table can be added to the data package to store additional information.
 }
 ```
 
-The schema has to be added to the `datapackage.json` file in the [`resources`](/metadata/#resources) field.
+You need to add this table to the `datapackage.json` file in the [`resources`](/metadata/#resources) field.
 
 This is an example table following the schema above:
 
@@ -111,13 +111,12 @@ We recommend this approach for storing additional information. It allows for eas
 
 For more details, see [this GitHub issue](https://github.com/tdwg/camtrap-dp/issues/358).
 
-
 {:id="merge"}
 ## How to merge data packages describing different projects?
 
-By design, a single camtrap-dp data package describes a single project. However, there are some use cases (for example, a meta-analysis) where merging multiple data packages could be beneficial.
+By design, a single Camtrap DP data package describes a single project. However, there are some use cases (for example, a meta-analysis) where merging multiple data packages could be beneficial.
 
-We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipulate camtrap-dp data packages. The R package includes the [merge function](https://inbo.github.io/camtrapdp/reference/merge_camtrapdp.html), which can be used to merge two data packages into one. The resulting data package will be in a valid camtrap-dp format and can be published.
+We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipulate Camtrap DP. The R package includes the [merge function](https://inbo.github.io/camtrapdp/reference/merge_camtrapdp.html) that lets you combine two data packages into a single valid Camtrap DP.
 
-Refer to the merge function documentation to understand how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
+Consult the merge function documentation to understand exactly how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
 
