@@ -116,7 +116,7 @@ For more details, see [this GitHub issue](https://github.com/tdwg/camtrap-dp/iss
 
 By design, a single Camtrap DP data package describes a single project. However, there are some use cases (for example, a meta-analysis) where merging multiple data packages could be beneficial.
 
-We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipulate Camtrap DP. The R package includes the [merge function](https://inbo.github.io/camtrapdp/reference/merge_camtrapdp.html) that lets you combines two data packages into a single, publishable, and valid Camtrap DP.
+We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipulate Camtrap DP. The R package includes the [merge function](https://inbo.github.io/camtrapdp/reference/merge_camtrapdp.html) that lets you combine two data packages into a single valid Camtrap DP.
 
 Consult the merge function documentation to understand exactly how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
 
