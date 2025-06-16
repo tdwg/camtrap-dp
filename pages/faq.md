@@ -120,3 +120,9 @@ We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipul
 
 Consult the merge function documentation to understand exactly how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
 
+{:id="ask"}
+## Have a question?
+
+Don't see your question answered here?
+
+[Ask it in our discussion forum](https://github.com/tdwg/camtrap-dp/discussions){:.btn .btn-primary}
