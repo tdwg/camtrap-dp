@@ -51,50 +51,50 @@ You can add a custom table to the data package to store additional information. 
 
 ```json
 {
-    "name": "deployment-measurements",
-    "title": "Deployment measurements",
-    "description": "Table with weather measurements for deployments. Associated with deployments (`deploymentID`).",
-    "fields": [
-        {
-            "name": "deploymentID",
-            "description": "Identifier of the deployment. Foreign key to `deployments.deploymentID`.",
-            "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
-            "type": "string",
-            "constraints": {
-                "required": true
-            },
-            "example": "dep1"
-        },
-        {
-            "name": "temperature",
-            "description": "Temperature (in Celsius) at the time of the observation.)",
-            "type": "number",
-            "constraints": {
-                "required": false,
-                "minimum": -50,
-                "maximum": 100
-            },
-            "example": 19.5
-        },
-        {
-            "name": "snowCover",
-            "description": "Snow cover present at the time of the observation.",
-            "type": "boolean",
-            "constraints": {
-                "required": false
-            },
-            "example": true
-        }
-    ],
-    "foreignKeys": [
-        {
-            "fields": "deploymentID",
-            "reference": {
-                "resource": "deployments",
-                "fields": "deploymentID"
-            }
-        }
-    ]
+  "name": "deployment-measurements",
+  "title": "Deployment measurements",
+  "description": "Table with weather measurements for deployments. Associated with deployments (`deploymentID`).",
+  "fields": [
+    {
+      "name": "deploymentID",
+      "description": "Identifier of the deployment. Foreign key to `deployments.deploymentID`.",
+      "skos:broadMatch": "http://rs.tdwg.org/dwc/terms/parentEventID",
+      "type": "string",
+      "constraints": {
+        "required": true
+      },
+      "example": "dep1"
+    },
+    {
+      "name": "temperature",
+      "description": "Temperature (in Celsius) at the time of the observation.)",
+      "type": "number",
+      "constraints": {
+        "required": false,
+        "minimum": -50,
+        "maximum": 100
+      },
+      "example": 19.5
+    },
+    {
+      "name": "snowCover",
+      "description": "Snow cover present at the time of the observation.",
+      "type": "boolean",
+      "constraints": {
+        "required": false
+      },
+      "example": true
+    }
+  ],
+  "foreignKeys": [
+    {
+      "fields": "deploymentID",
+      "reference": {
+        "resource": "deployments",
+        "fields": "deploymentID"
+      }
+    }
+  ]
 }
 ```
 
