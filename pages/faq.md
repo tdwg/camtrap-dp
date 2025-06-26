@@ -5,6 +5,10 @@ permalink: /faq/
 toc: true
 ---
 
+<!-- References -->
+[camtrapdp]: https://inbo.github.io/camtrapdp/
+[frictionless-py]: https://framework.frictionlessdata.io/
+
 {:id="bboxes"}
 ## How to describe bounding boxes of detected objects?
 
@@ -120,45 +124,54 @@ We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipul
 
 Consult the merge function documentation to understand exactly how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
 
-{:id="parquet"}
-## Can I use Parquet format instead of CSV for very large tables (>1M rows)?
+{:id="large-tables"}
+## Do I need to use CSV files?
 
-[Apache Parquet](https://parquet.apache.org/) is an open source data file format, designed for efficient data storage and retrieval. `"mediatype": "application/vnd.apache.parquet"` is a [registered media type](https://www.iana.org/assignments/media-types/application/vnd.apache.parquet).
+No. Some studies have media and observations tables with over a million records, which may be hard to produce or consume as CSV files. Here are two approaches for formatting large files:
 
-Frictionless framework can be used to read and write Parquet files after installing an [extension](https://framework.frictionlessdata.io/docs/formats/parquet.html). 
-As of Camtrap DP [1.0.2](https://github.com/tdwg/camtrap-dp/releases/tag/1.0.2), the standard supports using Parquet files for storing data. This is an example of the `resources` section of the package metadata, adapted for using Parquet format files:
+### gzipped CSV files
 
-```
-    "resources": [
-        {
-            "name": "deployments",
-            "type": "table",
-            "profile": "tabular-data-resource",
-            "path": "deployments.parquet",
-            "format": "parquet",
-            "mediatype": "application/vnd.apache.parquet",
-            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/deployments-table-schema.json"
-        },
-        {
-            "name": "media",
-            "type": "table",
-            "profile": "tabular-data-resource",
-            "path": "media.parquet",
-            "format": "parquet",
-            "mediatype": "application/vnd.apache.parquet",
-            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/media-table-schema.json"
-        },
-        {
-            "name": "observations",
-            "type": "table",
-            "profile": "tabular-data-resource",
-            "path": "observations.parquet",
-            "format": "parquet",
-            "mediatype": "application/vnd.apache.parquet",
-            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/observations-table-schema.json"
-        }
-    ],
-```
+By compressing a CSV file, you can often reduce its size by a factor. We recommend gzip over zip, as it allows direct file reading. Compressed CSV files are supported in all versions of Camtrap DP, by [frictionless-py][frictionless-py] and the [camtrapdp][camtrapdp] R package.
+
+1. Compress the file:
+
+    ```
+    gzip media.csv
+    ```
+
+2. Refer to the compressed CSV file in the `datapackage.json` as follows:
+
+    ```json
+    {
+      "name": "media",
+      "path": "media.csv.gz",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "UTF-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/media-table-schema.json"
+    }
+    ```
+
+### Apache parquet
+
+[Apache Parquet](https://parquet.apache.org/) is an open source data file format, designed for efficient data storage and retrieval. Parquet files are supported in Camtrap DP 1.0.2, by the [frictionless-py][frictionless-py] after installing an [extension](https://framework.frictionlessdata.io/docs/formats/parquet.html), but **not by the [camtrapdp][camtrapdp] R package** (as it is not yet supported by [its dependency](https://github.com/frictionlessdata/frictionless-r/issues/117)).
+
+1. Create the parquet file (e.g. with the arrow R package).
+
+2. Refer to the parquet file in the `datapackage.json` as follows:
+
+    ```json
+    {
+      "name": "media",
+      "path": "media.parquet",
+      "profile": "tabular-data-resource",
+      "format": "parquet",
+      "mediatype": "application/vnd.apache.parquet",
+      "encoding": "UTF-8",
+      "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.2/media-table-schema.json"
+    }
+    ```
 
 {:id="ask"}
 ## Have a question?
