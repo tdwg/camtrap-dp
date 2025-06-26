@@ -36,7 +36,7 @@ There are two ways to include additional information (values not covered by the 
 
 ### Using tags
 
-Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. You can use these fields to store additional information as key:value pairs, separated by a pipe character (|). For example, this is how temperature and snow cover information could be represented in the deployment table:
+Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. You can use these fields to store additional information as key:value pairs, separated by a pipe character (&#x7c;). For example, this is how temperature and snow cover information could be represented in the deployment table:
 
 deploymentID | deploymentTags
 --- | ---
@@ -119,6 +119,46 @@ By design, a single Camtrap DP data package describes a single project. However,
 We provide an [R package](https://inbo.github.io/camtrapdp/) to read and manipulate Camtrap DP. The R package includes the [merge function](https://inbo.github.io/camtrapdp/reference/merge_camtrapdp.html) that lets you combine two data packages into a single valid Camtrap DP.
 
 Consult the merge function documentation to understand exactly how specific fields are merged to avoid information loss. Please note that when merging data packages x and y, the [`project$samplingDesign`](/metadata/#project.samplingDesign) field in the resulting package will be set to the value of `project$samplingDesign` from data package x. Therefore, we recommend merging data packages only for projects that use the same sampling design.
+
+{:id="parquet"}
+## Can I use Parquet format instead of CSV for very large tables (>1M rows)?
+
+[Apache Parquet](https://parquet.apache.org/) is an open source data file format, designed for efficient data storage and retrieval. `"mediatype": "application/vnd.apache.parquet"` is a [registered media type](https://www.iana.org/assignments/media-types/application/vnd.apache.parquet).
+
+Frictionless framework can be used to read and write Parquet files after installing an [extension](https://framework.frictionlessdata.io/docs/formats/parquet.html). 
+As of Camtrap DP [1.0.2](https://github.com/tdwg/camtrap-dp/releases/tag/1.0.2), the standard supports using Parquet files for storing data. This is an example of the `resources` section of the package metadata, adapted for using Parquet format files:
+
+```
+    "resources": [
+        {
+            "name": "deployments",
+            "type": "table",
+            "profile": "tabular-data-resource",
+            "path": "deployments.parquet",
+            "format": "parquet",
+            "mediatype": "application/vnd.apache.parquet",
+            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/deployments-table-schema.json"
+        },
+        {
+            "name": "media",
+            "type": "table",
+            "profile": "tabular-data-resource",
+            "path": "media.parquet",
+            "format": "parquet",
+            "mediatype": "application/vnd.apache.parquet",
+            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/media-table-schema.json"
+        },
+        {
+            "name": "observations",
+            "type": "table",
+            "profile": "tabular-data-resource",
+            "path": "observations.parquet",
+            "format": "parquet",
+            "mediatype": "application/vnd.apache.parquet",
+            "schema": "https://raw.githubusercontent.com/tdwg/camtrap-dp/1.0.1/observations-table-schema.json"
+        }
+    ],
+```
 
 {:id="ask"}
 ## Have a question?
