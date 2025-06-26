@@ -36,7 +36,7 @@ There are two ways to include additional information (values not covered by the 
 
 ### Using tags
 
-Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. You can use these fields to store additional information as key:value pairs, separated by a pipe character (&#x7c;). For example, this is how temperature and snow cover information could be represented in the deployment table:
+Deployment and observation tables include [`deploymentTags`](/data/#deployments.deploymentTags) and [`observationTags`](/data/#observations.observationTags) fields. You can use these fields to store additional information as key:value pairs, separated by a pipe character (`|`). For example, this is how temperature and snow cover information could be represented in the deployment table:
 
 deploymentID | deploymentTags
 --- | ---
