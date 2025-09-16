@@ -3,6 +3,7 @@ title: Camtrap DP
 background: /assets/home.jpg
 permalink: /
 description: Data exchange format for camera trap data
+toc: true
 ---
 
 **Camera Trap Data Package** (Camtrap DP) is a community-developed data exchange format for camera trap data. A Camtrap DP is a [Frictionless Data Package](https://specs.frictionlessdata.io/data-package/) that consists of:
