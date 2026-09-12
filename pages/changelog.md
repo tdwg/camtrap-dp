@@ -6,6 +6,12 @@ toc: true
 
 ## Camtrap DP (development version)
 
+##### Package
+
+###### Example dataset
+
+- The `exifData` values in `media.csv` are now valid JSON ([#463](https://github.com/tdwg/camtrap-dp/issues/463)).
+
 ##### Documentation
 
 - The website now has a [Changelog section](https://camtrap-dp.tdwg.org/changelog/) (inspired by [NEWS.md](https://inbo.github.io/camtrapdp/news/index.html) in R packages), so developers have an overview of upcoming changes and previous releases ([#410](https://github.com/tdwg/camtrap-dp/issues/410)).
