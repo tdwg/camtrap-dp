@@ -8,6 +8,7 @@ from frictionless import validate
 THIS_SCRIPT_PATH = Path(__file__).parent
 REPOSITORY_ROOT_PATH = THIS_SCRIPT_PATH / ".."
 EXAMPLE_PATH = REPOSITORY_ROOT_PATH / "example" / "datapackage.json"
+EXAMPLE_MEDIA_PATH = REPOSITORY_ROOT_PATH / "example" / "media.csv"
 PROFILE_PATH = REPOSITORY_ROOT_PATH / "camtrap-dp-profile.json"
 RELAXED_PROFILE_PATH = (
     REPOSITORY_ROOT_PATH / "camtrap-dp-profile-relaxed.json"
