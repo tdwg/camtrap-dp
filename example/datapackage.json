@@ -167,7 +167,7 @@
   "taxonomic": [
     {
       "scientificName": "Anas platyrhynchos",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGP6",
+      "taxonID": "col:DGP6",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "mallard",
@@ -176,7 +176,7 @@
     },
     {
       "scientificName": "Anas strepera",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/DGPL",
+      "taxonID": "col:DGPL",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "gadwall",
@@ -185,7 +185,7 @@
     },
     {
       "scientificName": "Ardea",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/32FH",
+      "taxonID": "col:32FH",
       "taxonRank": "genus",
       "vernacularNames": {
         "eng": "great herons",
@@ -194,7 +194,7 @@
     },
     {
       "scientificName": "Ardea cinerea",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/GCHS",
+      "taxonID": "col:GCHS",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "grey heron",
@@ -203,7 +203,7 @@
     },
     {
       "scientificName": "Aves",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/V2",
+      "taxonID": "col:V2",
       "taxonRank": "class",
       "vernacularNames": {
         "eng": "bird sp.",
@@ -212,7 +212,7 @@
     },
     {
       "scientificName": "Homo sapiens",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/6MB3T",
+      "taxonID": "col:6MB3T",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "human",
@@ -221,7 +221,7 @@
     },
     {
       "scientificName": "Martes foina",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/3Y9VW",
+      "taxonID": "col:3Y9VW",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "beech marten",
@@ -230,7 +230,7 @@
     },
     {
       "scientificName": "Mustela putorius",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/44QYC",
+      "taxonID": "col:44QYC",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "European polecat",
@@ -239,7 +239,7 @@
     },
     {
       "scientificName": "Rattus norvegicus",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/4RM67",
+      "taxonID": "col:4RM67",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "brown rat",
@@ -248,7 +248,7 @@
     },
     {
       "scientificName": "Vulpes vulpes",
-      "taxonID": "https://www.checklistbank.org/dataset/COL2023/taxon/5BSG3",
+      "taxonID": "col:5BSG3",
       "taxonRank": "species",
       "vernacularNames": {
         "eng": "red fox",

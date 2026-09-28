@@ -297,7 +297,7 @@
                 "description": "Unique identifier of the taxon. Preferably a global unique identifier issued by an authoritative checklist.",
                 "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/taxonID",
                 "type": "string",
-                "example": "https://www.checklistbank.org/dataset/COL2023/taxon/QLXL"
+                "example": "col:QLXL"
               },
               "taxonRank": {
                 "description": "Taxonomic rank of the scientific name.",

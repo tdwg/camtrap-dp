@@ -149,7 +149,7 @@
     },
     {
       "name": "sex",
-      "description": "Sex of the observed individual(s)",
+      "description": "Sex of the observed individual(s).",
       "skos:exactMatch": "http://rs.tdwg.org/dwc/terms/sex",
       "type": "string",
       "constraints": {
